@@ -50,10 +50,10 @@ class ProjectsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Project->create();
 			if ($this->Project->save($this->request->data)) {
-				$this->Session->setFlash(__('The project has been saved.'));
+				$this->Session->setFlash(__('The project has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The project could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The project could not be saved. Please, try again.'), 'flash_danger');
 			}
 		}
 		$clients = $this->Project->Client->find('list');

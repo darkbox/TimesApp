@@ -50,10 +50,10 @@ class ClientsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Client->create();
 			if ($this->Client->save($this->request->data)) {
-				$this->Session->setFlash(__('The client has been saved.'));
+				$this->Session->setFlash(__('The client has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The client could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The client could not be saved. Please, try again.'), 'flash_danger');
 			}
 		}
 		$taxes = $this->Client->Tax->find('list');
@@ -73,10 +73,10 @@ class ClientsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Client->save($this->request->data)) {
-				$this->Session->setFlash(__('The client has been saved.'));
+				$this->Session->setFlash(__('The client has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The client could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The client could not be saved. Please, try again.'), 'flash_danger');
 			}
 		} else {
 			$options = array('conditions' => array('Client.' . $this->Client->primaryKey => $id));
@@ -100,9 +100,9 @@ class ClientsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Client->delete()) {
-			$this->Session->setFlash(__('The client has been deleted.'));
+			$this->Session->setFlash(__('The client has been deleted.'), 'flash_success');
 		} else {
-			$this->Session->setFlash(__('The client could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('The client could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}}
