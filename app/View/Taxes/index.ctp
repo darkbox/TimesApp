@@ -21,7 +21,8 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tax['Tax']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $tax['Tax']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $tax['Tax']['id']), null, __('Are you sure you want to delete # %s?', $tax['Tax']['id'])); ?>
+			<?php echo $this->Fn5->confirmModal('Hola', __('Are you sure you want to delete # %s?', $tax['Tax']['id']), array('action' => 'delete', $tax['Tax']['id'])); ?>
+			<?php //echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $tax['Tax']['id']), null, __('Are you sure you want to delete # %s?', $tax['Tax']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

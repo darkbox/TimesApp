@@ -1,11 +1,10 @@
-<?php $appName = 'TimesApp' ?>
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="en">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>
-		<?php echo $appName ?>:
+		TimesApp:
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
@@ -51,5 +50,6 @@
     <!-- Scripts -->
     <?php echo $this->Html->script('jquery.min'); ?>
     <?php echo $this->Html->script('foundation.min'); ?>
+    <?php echo $this->Html->script('app'); ?>
 </body>
 </html>
