@@ -183,8 +183,8 @@ select {
 /* line 218, ../bower_components/foundation/scss/foundation/components/_grid.scss */
 .row .row {
   width: auto;
-  margin-left: -0.9375rem;
-  margin-right: -0.9375rem;
+  margin-left: -0.3125rem;
+  margin-right: -0.3125rem;
   margin-top: 0;
   margin-bottom: 0;
   max-width: none;
@@ -219,8 +219,8 @@ select {
 /* line 224, ../bower_components/foundation/scss/foundation/components/_grid.scss */
 .column,
 .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
   width: 100%;
   float: left;
 }
@@ -420,8 +420,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
     float: left;
   }
 
@@ -760,8 +760,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
     float: left;
   }
 
@@ -1268,8 +1268,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
     float: left;
   }
 
@@ -1620,7 +1620,7 @@ select {
 /* line 42, ../bower_components/foundation/scss/foundation/components/_accordion.scss */
 .accordion .content {
   display: none;
-  padding: 0.9375rem;
+  padding: 0.3125rem;
 }
 /* line 45, ../bower_components/foundation/scss/foundation/components/_accordion.scss */
 .accordion .content.active {
@@ -1720,7 +1720,7 @@ select {
   display: block;
   height: auto;
   float: left;
-  padding: 0 0.9375rem 1.875rem;
+  padding: 0 0.3125rem 0.625rem;
 }
 
 @media only screen {
@@ -1759,11 +1759,11 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-2 > li:nth-child(2n+1) {
     padding-left: 0rem;
-    padding-right: 0.9375rem;
+    padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-2 > li:nth-child(2n) {
-    padding-left: 0.9375rem;
+    padding-left: 0.3125rem;
     padding-right: 0rem;
   }
 
@@ -1783,16 +1783,16 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-3 > li:nth-child(3n+1) {
     padding-left: 0rem;
-    padding-right: 1.25rem;
+    padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-3 > li:nth-child(3n+2) {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0.20833rem;
+    padding-right: 0.20833rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-3 > li:nth-child(3n) {
-    padding-left: 1.25rem;
+    padding-left: 0.41667rem;
     padding-right: 0rem;
   }
 
@@ -1812,21 +1812,21 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-4 > li:nth-child(4n+1) {
     padding-left: 0rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-4 > li:nth-child(4n+2) {
-    padding-left: 0.46875rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-4 > li:nth-child(4n+3) {
-    padding-left: 0.9375rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-4 > li:nth-child(4n+2) {
+    padding-left: 0.15625rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-4 > li:nth-child(4n+3) {
+    padding-left: 0.3125rem;
+    padding-right: 0.15625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-4 > li:nth-child(4n) {
-    padding-left: 1.40625rem;
+    padding-left: 0.46875rem;
     padding-right: 0rem;
   }
 
@@ -1846,26 +1846,26 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-5 > li:nth-child(5n+1) {
     padding-left: 0rem;
-    padding-right: 1.5rem;
+    padding-right: 0.5rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-5 > li:nth-child(5n+2) {
-    padding-left: 0.375rem;
-    padding-right: 1.125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-5 > li:nth-child(5n+3) {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-5 > li:nth-child(5n+4) {
-    padding-left: 1.125rem;
+    padding-left: 0.125rem;
     padding-right: 0.375rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-5 > li:nth-child(5n+3) {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-5 > li:nth-child(5n+4) {
+    padding-left: 0.375rem;
+    padding-right: 0.125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-5 > li:nth-child(5n) {
-    padding-left: 1.5rem;
+    padding-left: 0.5rem;
     padding-right: 0rem;
   }
 
@@ -1885,31 +1885,31 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-6 > li:nth-child(6n+1) {
     padding-left: 0rem;
-    padding-right: 1.5625rem;
+    padding-right: 0.52083rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-6 > li:nth-child(6n+2) {
-    padding-left: 0.3125rem;
-    padding-right: 1.25rem;
+    padding-left: 0.10417rem;
+    padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-6 > li:nth-child(6n+3) {
-    padding-left: 0.625rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-6 > li:nth-child(6n+4) {
-    padding-left: 0.9375rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-6 > li:nth-child(6n+5) {
-    padding-left: 1.25rem;
+    padding-left: 0.20833rem;
     padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-6 > li:nth-child(6n+4) {
+    padding-left: 0.3125rem;
+    padding-right: 0.20833rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-6 > li:nth-child(6n+5) {
+    padding-left: 0.41667rem;
+    padding-right: 0.10417rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-6 > li:nth-child(6n) {
-    padding-left: 1.5625rem;
+    padding-left: 0.52083rem;
     padding-right: 0rem;
   }
 
@@ -1929,36 +1929,36 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-7 > li:nth-child(7n+1) {
     padding-left: 0rem;
-    padding-right: 1.60714rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-7 > li:nth-child(7n+2) {
-    padding-left: 0.26786rem;
-    padding-right: 1.33929rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-7 > li:nth-child(7n+3) {
-    padding-left: 0.53571rem;
-    padding-right: 1.07143rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-7 > li:nth-child(7n+4) {
-    padding-left: 0.80357rem;
-    padding-right: 0.80357rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-7 > li:nth-child(7n+5) {
-    padding-left: 1.07143rem;
     padding-right: 0.53571rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-7 > li:nth-child(7n+6) {
-    padding-left: 1.33929rem;
+  .small-block-grid-7 > li:nth-child(7n+2) {
+    padding-left: 0.08929rem;
+    padding-right: 0.44643rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-7 > li:nth-child(7n+3) {
+    padding-left: 0.17857rem;
+    padding-right: 0.35714rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-7 > li:nth-child(7n+4) {
+    padding-left: 0.26786rem;
     padding-right: 0.26786rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-7 > li:nth-child(7n+5) {
+    padding-left: 0.35714rem;
+    padding-right: 0.17857rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-7 > li:nth-child(7n+6) {
+    padding-left: 0.44643rem;
+    padding-right: 0.08929rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-7 > li:nth-child(7n) {
-    padding-left: 1.60714rem;
+    padding-left: 0.53571rem;
     padding-right: 0rem;
   }
 
@@ -1978,41 +1978,41 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-8 > li:nth-child(8n+1) {
     padding-left: 0rem;
-    padding-right: 1.64063rem;
+    padding-right: 0.54688rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-8 > li:nth-child(8n+2) {
-    padding-left: 0.23438rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-8 > li:nth-child(8n+3) {
-    padding-left: 0.46875rem;
-    padding-right: 1.17188rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-8 > li:nth-child(8n+4) {
-    padding-left: 0.70313rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-8 > li:nth-child(8n+5) {
-    padding-left: 0.9375rem;
-    padding-right: 0.70313rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-8 > li:nth-child(8n+6) {
-    padding-left: 1.17188rem;
+    padding-left: 0.07813rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-8 > li:nth-child(8n+7) {
-    padding-left: 1.40625rem;
+  .small-block-grid-8 > li:nth-child(8n+3) {
+    padding-left: 0.15625rem;
+    padding-right: 0.39063rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-8 > li:nth-child(8n+4) {
+    padding-left: 0.23438rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-8 > li:nth-child(8n+5) {
+    padding-left: 0.3125rem;
     padding-right: 0.23438rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-8 > li:nth-child(8n+6) {
+    padding-left: 0.39063rem;
+    padding-right: 0.15625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-8 > li:nth-child(8n+7) {
+    padding-left: 0.46875rem;
+    padding-right: 0.07813rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-8 > li:nth-child(8n) {
-    padding-left: 1.64063rem;
+    padding-left: 0.54688rem;
     padding-right: 0rem;
   }
 
@@ -2032,46 +2032,46 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-9 > li:nth-child(9n+1) {
     padding-left: 0rem;
-    padding-right: 1.66667rem;
+    padding-right: 0.55556rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-9 > li:nth-child(9n+2) {
-    padding-left: 0.20833rem;
-    padding-right: 1.45833rem;
+    padding-left: 0.06944rem;
+    padding-right: 0.48611rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-9 > li:nth-child(9n+3) {
-    padding-left: 0.41667rem;
-    padding-right: 1.25rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-9 > li:nth-child(9n+4) {
-    padding-left: 0.625rem;
-    padding-right: 1.04167rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-9 > li:nth-child(9n+5) {
-    padding-left: 0.83333rem;
-    padding-right: 0.83333rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-9 > li:nth-child(9n+6) {
-    padding-left: 1.04167rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-9 > li:nth-child(9n+7) {
-    padding-left: 1.25rem;
+    padding-left: 0.13889rem;
     padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-9 > li:nth-child(9n+8) {
-    padding-left: 1.45833rem;
+  .small-block-grid-9 > li:nth-child(9n+4) {
+    padding-left: 0.20833rem;
+    padding-right: 0.34722rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-9 > li:nth-child(9n+5) {
+    padding-left: 0.27778rem;
+    padding-right: 0.27778rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-9 > li:nth-child(9n+6) {
+    padding-left: 0.34722rem;
     padding-right: 0.20833rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-9 > li:nth-child(9n+7) {
+    padding-left: 0.41667rem;
+    padding-right: 0.13889rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-9 > li:nth-child(9n+8) {
+    padding-left: 0.48611rem;
+    padding-right: 0.06944rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-9 > li:nth-child(9n) {
-    padding-left: 1.66667rem;
+    padding-left: 0.55556rem;
     padding-right: 0rem;
   }
 
@@ -2091,51 +2091,51 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-10 > li:nth-child(10n+1) {
     padding-left: 0rem;
-    padding-right: 1.6875rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+2) {
-    padding-left: 0.1875rem;
-    padding-right: 1.5rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+3) {
-    padding-left: 0.375rem;
-    padding-right: 1.3125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+4) {
-    padding-left: 0.5625rem;
-    padding-right: 1.125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+5) {
-    padding-left: 0.75rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+6) {
-    padding-left: 0.9375rem;
-    padding-right: 0.75rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+7) {
-    padding-left: 1.125rem;
     padding-right: 0.5625rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+8) {
-    padding-left: 1.3125rem;
+  .small-block-grid-10 > li:nth-child(10n+2) {
+    padding-left: 0.0625rem;
+    padding-right: 0.5rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-child(10n+3) {
+    padding-left: 0.125rem;
+    padding-right: 0.4375rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-child(10n+4) {
+    padding-left: 0.1875rem;
     padding-right: 0.375rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-10 > li:nth-child(10n+9) {
-    padding-left: 1.5rem;
+  .small-block-grid-10 > li:nth-child(10n+5) {
+    padding-left: 0.25rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-child(10n+6) {
+    padding-left: 0.3125rem;
+    padding-right: 0.25rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-child(10n+7) {
+    padding-left: 0.375rem;
     padding-right: 0.1875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-child(10n+8) {
+    padding-left: 0.4375rem;
+    padding-right: 0.125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-child(10n+9) {
+    padding-left: 0.5rem;
+    padding-right: 0.0625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-10 > li:nth-child(10n) {
-    padding-left: 1.6875rem;
+    padding-left: 0.5625rem;
     padding-right: 0rem;
   }
 
@@ -2154,58 +2154,58 @@ select {
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-11 > li:nth-child(11n+1) {
-    padding-left: 0.0rem;
-    padding-right: 1.70455rem;
+    padding-left: 0rem;
+    padding-right: 0.56818rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-11 > li:nth-child(11n+2) {
-    padding-left: 0.17045rem;
-    padding-right: 1.53409rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+3) {
-    padding-left: 0.34091rem;
-    padding-right: 1.36364rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+4) {
-    padding-left: 0.51136rem;
-    padding-right: 1.19318rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+5) {
-    padding-left: 0.68182rem;
-    padding-right: 1.02273rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+6) {
-    padding-left: 0.85227rem;
-    padding-right: 0.85227rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+7) {
-    padding-left: 1.02273rem;
-    padding-right: 0.68182rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+8) {
-    padding-left: 1.19318rem;
+    padding-left: 0.05682rem;
     padding-right: 0.51136rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+9) {
-    padding-left: 1.36364rem;
+  .small-block-grid-11 > li:nth-child(11n+3) {
+    padding-left: 0.11364rem;
+    padding-right: 0.45455rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-child(11n+4) {
+    padding-left: 0.17045rem;
+    padding-right: 0.39773rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-child(11n+5) {
+    padding-left: 0.22727rem;
     padding-right: 0.34091rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-11 > li:nth-child(11n+10) {
-    padding-left: 1.53409rem;
+  .small-block-grid-11 > li:nth-child(11n+6) {
+    padding-left: 0.28409rem;
+    padding-right: 0.28409rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-child(11n+7) {
+    padding-left: 0.34091rem;
+    padding-right: 0.22727rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-child(11n+8) {
+    padding-left: 0.39773rem;
     padding-right: 0.17045rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-child(11n+9) {
+    padding-left: 0.45455rem;
+    padding-right: 0.11364rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-child(11n+10) {
+    padding-left: 0.51136rem;
+    padding-right: 0.05682rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-11 > li:nth-child(11n) {
-    padding-left: 1.70455rem;
-    padding-right: 0.0rem;
+    padding-left: 0.56818rem;
+    padding-right: 0rem;
   }
 
   /* line 60, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
@@ -2224,61 +2224,61 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-12 > li:nth-child(12n+1) {
     padding-left: 0rem;
-    padding-right: 1.71875rem;
+    padding-right: 0.57292rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-12 > li:nth-child(12n+2) {
-    padding-left: 0.15625rem;
-    padding-right: 1.5625rem;
+    padding-left: 0.05208rem;
+    padding-right: 0.52083rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-12 > li:nth-child(12n+3) {
-    padding-left: 0.3125rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+4) {
-    padding-left: 0.46875rem;
-    padding-right: 1.25rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+5) {
-    padding-left: 0.625rem;
-    padding-right: 1.09375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+6) {
-    padding-left: 0.78125rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+7) {
-    padding-left: 0.9375rem;
-    padding-right: 0.78125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+8) {
-    padding-left: 1.09375rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+9) {
-    padding-left: 1.25rem;
+    padding-left: 0.10417rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+10) {
-    padding-left: 1.40625rem;
+  .small-block-grid-12 > li:nth-child(12n+4) {
+    padding-left: 0.15625rem;
+    padding-right: 0.41667rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-child(12n+5) {
+    padding-left: 0.20833rem;
+    padding-right: 0.36458rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-child(12n+6) {
+    padding-left: 0.26042rem;
     padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .small-block-grid-12 > li:nth-child(12n+11) {
-    padding-left: 1.5625rem;
+  .small-block-grid-12 > li:nth-child(12n+7) {
+    padding-left: 0.3125rem;
+    padding-right: 0.26042rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-child(12n+8) {
+    padding-left: 0.36458rem;
+    padding-right: 0.20833rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-child(12n+9) {
+    padding-left: 0.41667rem;
     padding-right: 0.15625rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-child(12n+10) {
+    padding-left: 0.46875rem;
+    padding-right: 0.10417rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-child(12n+11) {
+    padding-left: 0.52083rem;
+    padding-right: 0.05208rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .small-block-grid-12 > li:nth-child(12n) {
-    padding-left: 1.71875rem;
+    padding-left: 0.57292rem;
     padding-right: 0rem;
   }
 }
@@ -2318,11 +2318,11 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-2 > li:nth-child(2n+1) {
     padding-left: 0rem;
-    padding-right: 0.9375rem;
+    padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-2 > li:nth-child(2n) {
-    padding-left: 0.9375rem;
+    padding-left: 0.3125rem;
     padding-right: 0rem;
   }
 
@@ -2342,16 +2342,16 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-3 > li:nth-child(3n+1) {
     padding-left: 0rem;
-    padding-right: 1.25rem;
+    padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-3 > li:nth-child(3n+2) {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0.20833rem;
+    padding-right: 0.20833rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-3 > li:nth-child(3n) {
-    padding-left: 1.25rem;
+    padding-left: 0.41667rem;
     padding-right: 0rem;
   }
 
@@ -2371,21 +2371,21 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-4 > li:nth-child(4n+1) {
     padding-left: 0rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-4 > li:nth-child(4n+2) {
-    padding-left: 0.46875rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-4 > li:nth-child(4n+3) {
-    padding-left: 0.9375rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-4 > li:nth-child(4n+2) {
+    padding-left: 0.15625rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-4 > li:nth-child(4n+3) {
+    padding-left: 0.3125rem;
+    padding-right: 0.15625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-4 > li:nth-child(4n) {
-    padding-left: 1.40625rem;
+    padding-left: 0.46875rem;
     padding-right: 0rem;
   }
 
@@ -2405,26 +2405,26 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-5 > li:nth-child(5n+1) {
     padding-left: 0rem;
-    padding-right: 1.5rem;
+    padding-right: 0.5rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-5 > li:nth-child(5n+2) {
-    padding-left: 0.375rem;
-    padding-right: 1.125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-5 > li:nth-child(5n+3) {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-5 > li:nth-child(5n+4) {
-    padding-left: 1.125rem;
+    padding-left: 0.125rem;
     padding-right: 0.375rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-5 > li:nth-child(5n+3) {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-5 > li:nth-child(5n+4) {
+    padding-left: 0.375rem;
+    padding-right: 0.125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-5 > li:nth-child(5n) {
-    padding-left: 1.5rem;
+    padding-left: 0.5rem;
     padding-right: 0rem;
   }
 
@@ -2444,31 +2444,31 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-6 > li:nth-child(6n+1) {
     padding-left: 0rem;
-    padding-right: 1.5625rem;
+    padding-right: 0.52083rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-6 > li:nth-child(6n+2) {
-    padding-left: 0.3125rem;
-    padding-right: 1.25rem;
+    padding-left: 0.10417rem;
+    padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-6 > li:nth-child(6n+3) {
-    padding-left: 0.625rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-6 > li:nth-child(6n+4) {
-    padding-left: 0.9375rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-6 > li:nth-child(6n+5) {
-    padding-left: 1.25rem;
+    padding-left: 0.20833rem;
     padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-6 > li:nth-child(6n+4) {
+    padding-left: 0.3125rem;
+    padding-right: 0.20833rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-6 > li:nth-child(6n+5) {
+    padding-left: 0.41667rem;
+    padding-right: 0.10417rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-6 > li:nth-child(6n) {
-    padding-left: 1.5625rem;
+    padding-left: 0.52083rem;
     padding-right: 0rem;
   }
 
@@ -2488,36 +2488,36 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-7 > li:nth-child(7n+1) {
     padding-left: 0rem;
-    padding-right: 1.60714rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-7 > li:nth-child(7n+2) {
-    padding-left: 0.26786rem;
-    padding-right: 1.33929rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-7 > li:nth-child(7n+3) {
-    padding-left: 0.53571rem;
-    padding-right: 1.07143rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-7 > li:nth-child(7n+4) {
-    padding-left: 0.80357rem;
-    padding-right: 0.80357rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-7 > li:nth-child(7n+5) {
-    padding-left: 1.07143rem;
     padding-right: 0.53571rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-7 > li:nth-child(7n+6) {
-    padding-left: 1.33929rem;
+  .medium-block-grid-7 > li:nth-child(7n+2) {
+    padding-left: 0.08929rem;
+    padding-right: 0.44643rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-7 > li:nth-child(7n+3) {
+    padding-left: 0.17857rem;
+    padding-right: 0.35714rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-7 > li:nth-child(7n+4) {
+    padding-left: 0.26786rem;
     padding-right: 0.26786rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-7 > li:nth-child(7n+5) {
+    padding-left: 0.35714rem;
+    padding-right: 0.17857rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-7 > li:nth-child(7n+6) {
+    padding-left: 0.44643rem;
+    padding-right: 0.08929rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-7 > li:nth-child(7n) {
-    padding-left: 1.60714rem;
+    padding-left: 0.53571rem;
     padding-right: 0rem;
   }
 
@@ -2537,41 +2537,41 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-8 > li:nth-child(8n+1) {
     padding-left: 0rem;
-    padding-right: 1.64063rem;
+    padding-right: 0.54688rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-8 > li:nth-child(8n+2) {
-    padding-left: 0.23438rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-8 > li:nth-child(8n+3) {
-    padding-left: 0.46875rem;
-    padding-right: 1.17188rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-8 > li:nth-child(8n+4) {
-    padding-left: 0.70313rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-8 > li:nth-child(8n+5) {
-    padding-left: 0.9375rem;
-    padding-right: 0.70313rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-8 > li:nth-child(8n+6) {
-    padding-left: 1.17188rem;
+    padding-left: 0.07813rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-8 > li:nth-child(8n+7) {
-    padding-left: 1.40625rem;
+  .medium-block-grid-8 > li:nth-child(8n+3) {
+    padding-left: 0.15625rem;
+    padding-right: 0.39063rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-8 > li:nth-child(8n+4) {
+    padding-left: 0.23438rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-8 > li:nth-child(8n+5) {
+    padding-left: 0.3125rem;
     padding-right: 0.23438rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-8 > li:nth-child(8n+6) {
+    padding-left: 0.39063rem;
+    padding-right: 0.15625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-8 > li:nth-child(8n+7) {
+    padding-left: 0.46875rem;
+    padding-right: 0.07813rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-8 > li:nth-child(8n) {
-    padding-left: 1.64063rem;
+    padding-left: 0.54688rem;
     padding-right: 0rem;
   }
 
@@ -2591,46 +2591,46 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-9 > li:nth-child(9n+1) {
     padding-left: 0rem;
-    padding-right: 1.66667rem;
+    padding-right: 0.55556rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-9 > li:nth-child(9n+2) {
-    padding-left: 0.20833rem;
-    padding-right: 1.45833rem;
+    padding-left: 0.06944rem;
+    padding-right: 0.48611rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-9 > li:nth-child(9n+3) {
-    padding-left: 0.41667rem;
-    padding-right: 1.25rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-9 > li:nth-child(9n+4) {
-    padding-left: 0.625rem;
-    padding-right: 1.04167rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-9 > li:nth-child(9n+5) {
-    padding-left: 0.83333rem;
-    padding-right: 0.83333rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-9 > li:nth-child(9n+6) {
-    padding-left: 1.04167rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-9 > li:nth-child(9n+7) {
-    padding-left: 1.25rem;
+    padding-left: 0.13889rem;
     padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-9 > li:nth-child(9n+8) {
-    padding-left: 1.45833rem;
+  .medium-block-grid-9 > li:nth-child(9n+4) {
+    padding-left: 0.20833rem;
+    padding-right: 0.34722rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-9 > li:nth-child(9n+5) {
+    padding-left: 0.27778rem;
+    padding-right: 0.27778rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-9 > li:nth-child(9n+6) {
+    padding-left: 0.34722rem;
     padding-right: 0.20833rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-9 > li:nth-child(9n+7) {
+    padding-left: 0.41667rem;
+    padding-right: 0.13889rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-9 > li:nth-child(9n+8) {
+    padding-left: 0.48611rem;
+    padding-right: 0.06944rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-9 > li:nth-child(9n) {
-    padding-left: 1.66667rem;
+    padding-left: 0.55556rem;
     padding-right: 0rem;
   }
 
@@ -2650,51 +2650,51 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-10 > li:nth-child(10n+1) {
     padding-left: 0rem;
-    padding-right: 1.6875rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+2) {
-    padding-left: 0.1875rem;
-    padding-right: 1.5rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+3) {
-    padding-left: 0.375rem;
-    padding-right: 1.3125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+4) {
-    padding-left: 0.5625rem;
-    padding-right: 1.125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+5) {
-    padding-left: 0.75rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+6) {
-    padding-left: 0.9375rem;
-    padding-right: 0.75rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+7) {
-    padding-left: 1.125rem;
     padding-right: 0.5625rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+8) {
-    padding-left: 1.3125rem;
+  .medium-block-grid-10 > li:nth-child(10n+2) {
+    padding-left: 0.0625rem;
+    padding-right: 0.5rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-child(10n+3) {
+    padding-left: 0.125rem;
+    padding-right: 0.4375rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-child(10n+4) {
+    padding-left: 0.1875rem;
     padding-right: 0.375rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-10 > li:nth-child(10n+9) {
-    padding-left: 1.5rem;
+  .medium-block-grid-10 > li:nth-child(10n+5) {
+    padding-left: 0.25rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-child(10n+6) {
+    padding-left: 0.3125rem;
+    padding-right: 0.25rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-child(10n+7) {
+    padding-left: 0.375rem;
     padding-right: 0.1875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-child(10n+8) {
+    padding-left: 0.4375rem;
+    padding-right: 0.125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-child(10n+9) {
+    padding-left: 0.5rem;
+    padding-right: 0.0625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-10 > li:nth-child(10n) {
-    padding-left: 1.6875rem;
+    padding-left: 0.5625rem;
     padding-right: 0rem;
   }
 
@@ -2713,58 +2713,58 @@ select {
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-11 > li:nth-child(11n+1) {
-    padding-left: 0.0rem;
-    padding-right: 1.70455rem;
+    padding-left: 0rem;
+    padding-right: 0.56818rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-11 > li:nth-child(11n+2) {
-    padding-left: 0.17045rem;
-    padding-right: 1.53409rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+3) {
-    padding-left: 0.34091rem;
-    padding-right: 1.36364rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+4) {
-    padding-left: 0.51136rem;
-    padding-right: 1.19318rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+5) {
-    padding-left: 0.68182rem;
-    padding-right: 1.02273rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+6) {
-    padding-left: 0.85227rem;
-    padding-right: 0.85227rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+7) {
-    padding-left: 1.02273rem;
-    padding-right: 0.68182rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+8) {
-    padding-left: 1.19318rem;
+    padding-left: 0.05682rem;
     padding-right: 0.51136rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+9) {
-    padding-left: 1.36364rem;
+  .medium-block-grid-11 > li:nth-child(11n+3) {
+    padding-left: 0.11364rem;
+    padding-right: 0.45455rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-child(11n+4) {
+    padding-left: 0.17045rem;
+    padding-right: 0.39773rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-child(11n+5) {
+    padding-left: 0.22727rem;
     padding-right: 0.34091rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-11 > li:nth-child(11n+10) {
-    padding-left: 1.53409rem;
+  .medium-block-grid-11 > li:nth-child(11n+6) {
+    padding-left: 0.28409rem;
+    padding-right: 0.28409rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-child(11n+7) {
+    padding-left: 0.34091rem;
+    padding-right: 0.22727rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-child(11n+8) {
+    padding-left: 0.39773rem;
     padding-right: 0.17045rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-child(11n+9) {
+    padding-left: 0.45455rem;
+    padding-right: 0.11364rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-child(11n+10) {
+    padding-left: 0.51136rem;
+    padding-right: 0.05682rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-11 > li:nth-child(11n) {
-    padding-left: 1.70455rem;
-    padding-right: 0.0rem;
+    padding-left: 0.56818rem;
+    padding-right: 0rem;
   }
 
   /* line 60, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
@@ -2783,61 +2783,61 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-12 > li:nth-child(12n+1) {
     padding-left: 0rem;
-    padding-right: 1.71875rem;
+    padding-right: 0.57292rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-12 > li:nth-child(12n+2) {
-    padding-left: 0.15625rem;
-    padding-right: 1.5625rem;
+    padding-left: 0.05208rem;
+    padding-right: 0.52083rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-12 > li:nth-child(12n+3) {
-    padding-left: 0.3125rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+4) {
-    padding-left: 0.46875rem;
-    padding-right: 1.25rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+5) {
-    padding-left: 0.625rem;
-    padding-right: 1.09375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+6) {
-    padding-left: 0.78125rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+7) {
-    padding-left: 0.9375rem;
-    padding-right: 0.78125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+8) {
-    padding-left: 1.09375rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+9) {
-    padding-left: 1.25rem;
+    padding-left: 0.10417rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+10) {
-    padding-left: 1.40625rem;
+  .medium-block-grid-12 > li:nth-child(12n+4) {
+    padding-left: 0.15625rem;
+    padding-right: 0.41667rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-child(12n+5) {
+    padding-left: 0.20833rem;
+    padding-right: 0.36458rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-child(12n+6) {
+    padding-left: 0.26042rem;
     padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .medium-block-grid-12 > li:nth-child(12n+11) {
-    padding-left: 1.5625rem;
+  .medium-block-grid-12 > li:nth-child(12n+7) {
+    padding-left: 0.3125rem;
+    padding-right: 0.26042rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-child(12n+8) {
+    padding-left: 0.36458rem;
+    padding-right: 0.20833rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-child(12n+9) {
+    padding-left: 0.41667rem;
     padding-right: 0.15625rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-child(12n+10) {
+    padding-left: 0.46875rem;
+    padding-right: 0.10417rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-child(12n+11) {
+    padding-left: 0.52083rem;
+    padding-right: 0.05208rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-12 > li:nth-child(12n) {
-    padding-left: 1.71875rem;
+    padding-left: 0.57292rem;
     padding-right: 0rem;
   }
 }
@@ -2877,11 +2877,11 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-2 > li:nth-child(2n+1) {
     padding-left: 0rem;
-    padding-right: 0.9375rem;
+    padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-2 > li:nth-child(2n) {
-    padding-left: 0.9375rem;
+    padding-left: 0.3125rem;
     padding-right: 0rem;
   }
 
@@ -2901,16 +2901,16 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-3 > li:nth-child(3n+1) {
     padding-left: 0rem;
-    padding-right: 1.25rem;
+    padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-3 > li:nth-child(3n+2) {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 0.20833rem;
+    padding-right: 0.20833rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-3 > li:nth-child(3n) {
-    padding-left: 1.25rem;
+    padding-left: 0.41667rem;
     padding-right: 0rem;
   }
 
@@ -2930,21 +2930,21 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-4 > li:nth-child(4n+1) {
     padding-left: 0rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-4 > li:nth-child(4n+2) {
-    padding-left: 0.46875rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-4 > li:nth-child(4n+3) {
-    padding-left: 0.9375rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-4 > li:nth-child(4n+2) {
+    padding-left: 0.15625rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-4 > li:nth-child(4n+3) {
+    padding-left: 0.3125rem;
+    padding-right: 0.15625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-4 > li:nth-child(4n) {
-    padding-left: 1.40625rem;
+    padding-left: 0.46875rem;
     padding-right: 0rem;
   }
 
@@ -2964,26 +2964,26 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-5 > li:nth-child(5n+1) {
     padding-left: 0rem;
-    padding-right: 1.5rem;
+    padding-right: 0.5rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-5 > li:nth-child(5n+2) {
-    padding-left: 0.375rem;
-    padding-right: 1.125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-5 > li:nth-child(5n+3) {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-5 > li:nth-child(5n+4) {
-    padding-left: 1.125rem;
+    padding-left: 0.125rem;
     padding-right: 0.375rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-5 > li:nth-child(5n+3) {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-5 > li:nth-child(5n+4) {
+    padding-left: 0.375rem;
+    padding-right: 0.125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-5 > li:nth-child(5n) {
-    padding-left: 1.5rem;
+    padding-left: 0.5rem;
     padding-right: 0rem;
   }
 
@@ -3003,31 +3003,31 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-6 > li:nth-child(6n+1) {
     padding-left: 0rem;
-    padding-right: 1.5625rem;
+    padding-right: 0.52083rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-6 > li:nth-child(6n+2) {
-    padding-left: 0.3125rem;
-    padding-right: 1.25rem;
+    padding-left: 0.10417rem;
+    padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-6 > li:nth-child(6n+3) {
-    padding-left: 0.625rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-6 > li:nth-child(6n+4) {
-    padding-left: 0.9375rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-6 > li:nth-child(6n+5) {
-    padding-left: 1.25rem;
+    padding-left: 0.20833rem;
     padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-6 > li:nth-child(6n+4) {
+    padding-left: 0.3125rem;
+    padding-right: 0.20833rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-6 > li:nth-child(6n+5) {
+    padding-left: 0.41667rem;
+    padding-right: 0.10417rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-6 > li:nth-child(6n) {
-    padding-left: 1.5625rem;
+    padding-left: 0.52083rem;
     padding-right: 0rem;
   }
 
@@ -3047,36 +3047,36 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-7 > li:nth-child(7n+1) {
     padding-left: 0rem;
-    padding-right: 1.60714rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-7 > li:nth-child(7n+2) {
-    padding-left: 0.26786rem;
-    padding-right: 1.33929rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-7 > li:nth-child(7n+3) {
-    padding-left: 0.53571rem;
-    padding-right: 1.07143rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-7 > li:nth-child(7n+4) {
-    padding-left: 0.80357rem;
-    padding-right: 0.80357rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-7 > li:nth-child(7n+5) {
-    padding-left: 1.07143rem;
     padding-right: 0.53571rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-7 > li:nth-child(7n+6) {
-    padding-left: 1.33929rem;
+  .large-block-grid-7 > li:nth-child(7n+2) {
+    padding-left: 0.08929rem;
+    padding-right: 0.44643rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-7 > li:nth-child(7n+3) {
+    padding-left: 0.17857rem;
+    padding-right: 0.35714rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-7 > li:nth-child(7n+4) {
+    padding-left: 0.26786rem;
     padding-right: 0.26786rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-7 > li:nth-child(7n+5) {
+    padding-left: 0.35714rem;
+    padding-right: 0.17857rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-7 > li:nth-child(7n+6) {
+    padding-left: 0.44643rem;
+    padding-right: 0.08929rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-7 > li:nth-child(7n) {
-    padding-left: 1.60714rem;
+    padding-left: 0.53571rem;
     padding-right: 0rem;
   }
 
@@ -3096,41 +3096,41 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-8 > li:nth-child(8n+1) {
     padding-left: 0rem;
-    padding-right: 1.64063rem;
+    padding-right: 0.54688rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-8 > li:nth-child(8n+2) {
-    padding-left: 0.23438rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-8 > li:nth-child(8n+3) {
-    padding-left: 0.46875rem;
-    padding-right: 1.17188rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-8 > li:nth-child(8n+4) {
-    padding-left: 0.70313rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-8 > li:nth-child(8n+5) {
-    padding-left: 0.9375rem;
-    padding-right: 0.70313rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-8 > li:nth-child(8n+6) {
-    padding-left: 1.17188rem;
+    padding-left: 0.07813rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-8 > li:nth-child(8n+7) {
-    padding-left: 1.40625rem;
+  .large-block-grid-8 > li:nth-child(8n+3) {
+    padding-left: 0.15625rem;
+    padding-right: 0.39063rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-8 > li:nth-child(8n+4) {
+    padding-left: 0.23438rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-8 > li:nth-child(8n+5) {
+    padding-left: 0.3125rem;
     padding-right: 0.23438rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-8 > li:nth-child(8n+6) {
+    padding-left: 0.39063rem;
+    padding-right: 0.15625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-8 > li:nth-child(8n+7) {
+    padding-left: 0.46875rem;
+    padding-right: 0.07813rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-8 > li:nth-child(8n) {
-    padding-left: 1.64063rem;
+    padding-left: 0.54688rem;
     padding-right: 0rem;
   }
 
@@ -3150,46 +3150,46 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-9 > li:nth-child(9n+1) {
     padding-left: 0rem;
-    padding-right: 1.66667rem;
+    padding-right: 0.55556rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-9 > li:nth-child(9n+2) {
-    padding-left: 0.20833rem;
-    padding-right: 1.45833rem;
+    padding-left: 0.06944rem;
+    padding-right: 0.48611rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-9 > li:nth-child(9n+3) {
-    padding-left: 0.41667rem;
-    padding-right: 1.25rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-9 > li:nth-child(9n+4) {
-    padding-left: 0.625rem;
-    padding-right: 1.04167rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-9 > li:nth-child(9n+5) {
-    padding-left: 0.83333rem;
-    padding-right: 0.83333rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-9 > li:nth-child(9n+6) {
-    padding-left: 1.04167rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-9 > li:nth-child(9n+7) {
-    padding-left: 1.25rem;
+    padding-left: 0.13889rem;
     padding-right: 0.41667rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-9 > li:nth-child(9n+8) {
-    padding-left: 1.45833rem;
+  .large-block-grid-9 > li:nth-child(9n+4) {
+    padding-left: 0.20833rem;
+    padding-right: 0.34722rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-9 > li:nth-child(9n+5) {
+    padding-left: 0.27778rem;
+    padding-right: 0.27778rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-9 > li:nth-child(9n+6) {
+    padding-left: 0.34722rem;
     padding-right: 0.20833rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-9 > li:nth-child(9n+7) {
+    padding-left: 0.41667rem;
+    padding-right: 0.13889rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-9 > li:nth-child(9n+8) {
+    padding-left: 0.48611rem;
+    padding-right: 0.06944rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-9 > li:nth-child(9n) {
-    padding-left: 1.66667rem;
+    padding-left: 0.55556rem;
     padding-right: 0rem;
   }
 
@@ -3209,51 +3209,51 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-10 > li:nth-child(10n+1) {
     padding-left: 0rem;
-    padding-right: 1.6875rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+2) {
-    padding-left: 0.1875rem;
-    padding-right: 1.5rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+3) {
-    padding-left: 0.375rem;
-    padding-right: 1.3125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+4) {
-    padding-left: 0.5625rem;
-    padding-right: 1.125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+5) {
-    padding-left: 0.75rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+6) {
-    padding-left: 0.9375rem;
-    padding-right: 0.75rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+7) {
-    padding-left: 1.125rem;
     padding-right: 0.5625rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+8) {
-    padding-left: 1.3125rem;
+  .large-block-grid-10 > li:nth-child(10n+2) {
+    padding-left: 0.0625rem;
+    padding-right: 0.5rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-child(10n+3) {
+    padding-left: 0.125rem;
+    padding-right: 0.4375rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-child(10n+4) {
+    padding-left: 0.1875rem;
     padding-right: 0.375rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-10 > li:nth-child(10n+9) {
-    padding-left: 1.5rem;
+  .large-block-grid-10 > li:nth-child(10n+5) {
+    padding-left: 0.25rem;
+    padding-right: 0.3125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-child(10n+6) {
+    padding-left: 0.3125rem;
+    padding-right: 0.25rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-child(10n+7) {
+    padding-left: 0.375rem;
     padding-right: 0.1875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-child(10n+8) {
+    padding-left: 0.4375rem;
+    padding-right: 0.125rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-child(10n+9) {
+    padding-left: 0.5rem;
+    padding-right: 0.0625rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-10 > li:nth-child(10n) {
-    padding-left: 1.6875rem;
+    padding-left: 0.5625rem;
     padding-right: 0rem;
   }
 
@@ -3272,58 +3272,58 @@ select {
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-11 > li:nth-child(11n+1) {
-    padding-left: 0.0rem;
-    padding-right: 1.70455rem;
+    padding-left: 0rem;
+    padding-right: 0.56818rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-11 > li:nth-child(11n+2) {
-    padding-left: 0.17045rem;
-    padding-right: 1.53409rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+3) {
-    padding-left: 0.34091rem;
-    padding-right: 1.36364rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+4) {
-    padding-left: 0.51136rem;
-    padding-right: 1.19318rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+5) {
-    padding-left: 0.68182rem;
-    padding-right: 1.02273rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+6) {
-    padding-left: 0.85227rem;
-    padding-right: 0.85227rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+7) {
-    padding-left: 1.02273rem;
-    padding-right: 0.68182rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+8) {
-    padding-left: 1.19318rem;
+    padding-left: 0.05682rem;
     padding-right: 0.51136rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+9) {
-    padding-left: 1.36364rem;
+  .large-block-grid-11 > li:nth-child(11n+3) {
+    padding-left: 0.11364rem;
+    padding-right: 0.45455rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-child(11n+4) {
+    padding-left: 0.17045rem;
+    padding-right: 0.39773rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-child(11n+5) {
+    padding-left: 0.22727rem;
     padding-right: 0.34091rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-11 > li:nth-child(11n+10) {
-    padding-left: 1.53409rem;
+  .large-block-grid-11 > li:nth-child(11n+6) {
+    padding-left: 0.28409rem;
+    padding-right: 0.28409rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-child(11n+7) {
+    padding-left: 0.34091rem;
+    padding-right: 0.22727rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-child(11n+8) {
+    padding-left: 0.39773rem;
     padding-right: 0.17045rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-child(11n+9) {
+    padding-left: 0.45455rem;
+    padding-right: 0.11364rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-child(11n+10) {
+    padding-left: 0.51136rem;
+    padding-right: 0.05682rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-11 > li:nth-child(11n) {
-    padding-left: 1.70455rem;
-    padding-right: 0.0rem;
+    padding-left: 0.56818rem;
+    padding-right: 0rem;
   }
 
   /* line 60, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
@@ -3342,61 +3342,61 @@ select {
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-12 > li:nth-child(12n+1) {
     padding-left: 0rem;
-    padding-right: 1.71875rem;
+    padding-right: 0.57292rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-12 > li:nth-child(12n+2) {
-    padding-left: 0.15625rem;
-    padding-right: 1.5625rem;
+    padding-left: 0.05208rem;
+    padding-right: 0.52083rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-12 > li:nth-child(12n+3) {
-    padding-left: 0.3125rem;
-    padding-right: 1.40625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+4) {
-    padding-left: 0.46875rem;
-    padding-right: 1.25rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+5) {
-    padding-left: 0.625rem;
-    padding-right: 1.09375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+6) {
-    padding-left: 0.78125rem;
-    padding-right: 0.9375rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+7) {
-    padding-left: 0.9375rem;
-    padding-right: 0.78125rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+8) {
-    padding-left: 1.09375rem;
-    padding-right: 0.625rem;
-  }
-  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+9) {
-    padding-left: 1.25rem;
+    padding-left: 0.10417rem;
     padding-right: 0.46875rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+10) {
-    padding-left: 1.40625rem;
+  .large-block-grid-12 > li:nth-child(12n+4) {
+    padding-left: 0.15625rem;
+    padding-right: 0.41667rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-child(12n+5) {
+    padding-left: 0.20833rem;
+    padding-right: 0.36458rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-child(12n+6) {
+    padding-left: 0.26042rem;
     padding-right: 0.3125rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
-  .large-block-grid-12 > li:nth-child(12n+11) {
-    padding-left: 1.5625rem;
+  .large-block-grid-12 > li:nth-child(12n+7) {
+    padding-left: 0.3125rem;
+    padding-right: 0.26042rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-child(12n+8) {
+    padding-left: 0.36458rem;
+    padding-right: 0.20833rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-child(12n+9) {
+    padding-left: 0.41667rem;
     padding-right: 0.15625rem;
   }
   /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-child(12n+10) {
+    padding-left: 0.46875rem;
+    padding-right: 0.10417rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-child(12n+11) {
+    padding-left: 0.52083rem;
+    padding-right: 0.05208rem;
+  }
+  /* line 83, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .large-block-grid-12 > li:nth-child(12n) {
-    padding-left: 1.71875rem;
+    padding-left: 0.57292rem;
     padding-right: 0rem;
   }
 }
@@ -6911,7 +6911,7 @@ table tfoot tr td {
 .tabs-content > .content {
   display: none;
   float: left;
-  padding: 0.9375rem 0;
+  padding: 0.3125rem 0;
   width: 100%;
 }
 /* line 74, ../bower_components/foundation/scss/foundation/components/_tabs.scss */
@@ -6921,7 +6921,7 @@ table tfoot tr td {
 }
 /* line 75, ../bower_components/foundation/scss/foundation/components/_tabs.scss */
 .tabs-content > .content.contained {
-  padding: 0.9375rem;
+  padding: 0.3125rem;
 }
 /* line 77, ../bower_components/foundation/scss/foundation/components/_tabs.scss */
 .tabs-content.vertical {
@@ -6929,7 +6929,7 @@ table tfoot tr td {
 }
 /* line 79, ../bower_components/foundation/scss/foundation/components/_tabs.scss */
 .tabs-content.vertical > .content {
-  padding: 0 0.9375rem;
+  padding: 0 0.3125rem;
 }
 
 @media only screen and (min-width: 40.063em) {
