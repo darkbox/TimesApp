@@ -2,7 +2,7 @@
 class Fn5Helper extends AppHelper {
 
 
-	public function confirmModal($title, $content, $url = null) {
+	public function confirmModal($title, $buttonLabel, $content, $url = null) {
 
 		$formName = str_replace('.', '', uniqid('post_', true));
 		$formUrl = $this->url($url);
@@ -13,10 +13,42 @@ class Fn5Helper extends AppHelper {
 
 		$onClick = 'document.' . $formName . '.submit();';
 
-		$out = "<div id='Modal" . $formName . "' class='reveal-modal' data-reveal><h2>" . $title . 
-		"</h2>" . $form . "<p>" . $content . "</p><button onclick='" . $onClick . " event.returnValue = false; return false;'>" . __('Accept') . "</button><a class='close-reveal-modal'>&#215;</a></div>";
+		$out = "<div id='Modal" . $formName . "' class='reveal-modal tiny' data-reveal><h2>" . $title . 
+		"</h2>" . $form . "<p>" . $content . "</p><button class='button danger' onclick='" . $onClick . " event.returnValue = false; return false;'>" . __('Accept') . "</button><a class='close-reveal-modal'>&#215;</a></div>";
 
-		$out .= "<a href='#' data-reveal-id='Modal" . $formName . "' data-reveal>Delete</a>";
+		$out .= "<a href='#' data-reveal-id='Modal" . $formName . "' data-reveal>" . $buttonLabel . "</a>";
+		return $out;
+	}
+
+
+	public function drawStatus($status){
+		$out = "";
+
+		switch ($status) {
+			case 1: // activo
+				$out = "<i class='status active has-tip' data-tooltip title='" . __('Active') . "'></i>";
+				break;
+			
+			default:
+				$out = "<i class='status inactive has-tip has-tip' data-tooltip title='" . __('Inactive') . "'></i>";
+				break;
+		}
+
+		return $out;
+	}
+
+
+	public function dropdownButton($title, $links = null){
+		$out = "<a href='#' data-dropdown='drop1' class='dropdown'>"
+		. $title . "</a><br>"
+		. "<ul id='drop1' data-dropdown-content class='f-dropdown'>";
+
+		foreach ($links as $key => $link) {
+			$out .= "<li>" . $link . "</li>";
+		}
+
+		$out .= "</ul>";
+
 		return $out;
 	}
 }

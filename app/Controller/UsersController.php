@@ -17,6 +17,13 @@ class UsersController extends AppController {
 	public $components = array('Paginator', 'Session');
 
 /**
+ * Helpers
+ *
+ * @var array
+ */
+	public $helpers = array('Gravatar');
+
+/**
  * index method
  *
  * @return void

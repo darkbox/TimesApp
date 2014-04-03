@@ -1,3 +1,14 @@
+<?php
+  $menuItems = array(
+    'Dashboard' => __('Dashboard'),
+    'Invoices' => __('Invoices'),
+    'Projects' => __('Projects'),
+    'Clients' => __('Clients'),
+    'Taxes' => __('Taxes'),
+    'Users' => __('Users'),
+    );
+?>
+
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
@@ -7,12 +18,11 @@
   </ul>
 
   <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a href="login.html">Invoices</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Clients</a></li>
-      <li><a href="#">Dashboard</a></li>
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <?php foreach ($menuItems as $controller => $title): ?>
+      <li><?php echo $this->Html->link($title, array('controller' => $controller, 'action' => 'index')); ?></li>
+      <?php endforeach; ?>
     </ul>
   </section>
 </nav>
