@@ -27,7 +27,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			<?php foreach ($users as $user): ?>
+			<?php foreach ($users as $user):?>
 			<tr>
 				<td><?php 
 					echo $this->Gravatar->image(h($user['User']['email']),
@@ -35,19 +35,19 @@
 							'default' => 'identicon',
 							'size' => 40
 							));
-					echo h($user['User']['name']); 
+					echo "&nbsp;" . h($user['User']['name']); 
 				?>&nbsp;</td>
 				<td><?php echo h($user['User']['role']); ?>&nbsp;</td>
 				<td><?php echo h($user['User']['created']); ?>&nbsp;</td>
 				<td><?php echo h($user['User']['status']); ?>&nbsp;</td>
-				<td class="actions">
+				<td>
 					<?php 
-					$links = array(
+						$links = array(
 						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $user['User']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $user['User']['id']), array('escape' => false)),
-						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $user['User']['id']), array('action' => 'delete', $user['User']['id']))
-					);
-					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links); 
+						$link3 = $this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $user['User']['id']), array('action' => 'delete', $user['User']['id'])));
+
+						echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $user['User']['id']); 
 					?>
 				</td>
 			</tr>

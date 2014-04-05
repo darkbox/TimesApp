@@ -4,7 +4,7 @@
   'country' => 'España',
   'stateProvince' => 'NoTime',
   'address' => 'NoTimeLand',
-  'city' => 'Cordoba',
+  'city' => 'Córdoba',
   'zipCode' => '14014',
   'email' => 'noreply@notime.es',
   'fax' => '234234234',

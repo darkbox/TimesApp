@@ -38,12 +38,12 @@ class Fn5Helper extends AppHelper {
 	}
 
 
-	public function dropdownButton($title, $links = null){
-		$out = "<a href='#' data-dropdown='drop1' class='dropdown'>"
+	public function dropdownButton($title, $links, $key){
+		$out = "<a href='#' data-dropdown='drop" . $key . "' class='dropdown'>"
 		. $title . "</a><br>"
-		. "<ul id='drop1' data-dropdown-content class='f-dropdown'>";
+		. "<ul id='drop" . $key . "' data-dropdown-content class='f-dropdown'>";
 
-		foreach ($links as $key => $link) {
+		foreach ($links as $link) {
 			$out .= "<li>" . $link . "</li>";
 		}
 

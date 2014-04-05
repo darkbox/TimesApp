@@ -34,4 +34,47 @@ define('APP_SETTINGS', APP . DS .  'Config' . DS . 'timesAppSettings.php');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+	public $components = array(
+		'Auth' => array(
+		'loginAction' => array(
+            'controller' => 'login',
+            'action' => 'index',
+        ),
+		'loginRedirect' => array('controller' => 'dashboard', 'action' => 'index'),
+		'logoutRedirect' => array('controller' => 'login', 'action' => 'index'),
+		'authError' => 'You don\'t have enough permissions.',
+		'authenticate' => array(
+			'Basic' => array('userModel' => 'User'),
+            'Form' => array(
+            	'userModel' => 'User',
+                'fields' => array('username' => 'email')
+            )
+        ),
+		'authorize' => array('Controller')
+		)
+	);
+
+
+	/**
+	* beforeFilter method
+	*
+	* @return void
+	*/
+	public function beforeFilter() {
+		// Permite acceder sin realizar login
+		//$this->Auth->allow('index', 'view','edit');
+		// Variable local accesibles en todas las vistas
+		$this->set('logged_in', $this->Auth->loggedIn());
+		$this->set('current_user', $this->Auth->user());
+	}
+
+	/**
+	* isAuthorized method
+	*
+	* @return boolean
+	*/
+	public function isAuthorized($user) {
+		return true;
+	}
 }
