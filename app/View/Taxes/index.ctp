@@ -13,7 +13,8 @@
 			<!-- Cabecera -->
 			<header>
 				<h1><?php echo __('Taxes'); ?></h1>
-				<?php echo $this->Html->link('<i class="fi-plus"></i> ' . __('New Tax'), array('action' => 'add'), array('class' => 'button tiny success radius right', 'style' => 'margin-top: 20px', 'escape' => false)); ?>
+				<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addTaxModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Tax'); ?></a>
+				<?php //echo $this->Html->link('<i class="fi-plus"></i> ' . __('New Tax'), array('action' => 'add'), array('class' => 'button tiny success radius right', 'style' => 'margin-top: 20px', 'escape' => false)); ?>
 			</header>
 			<!-- Contenido -->
 			<table cellpadding="0" cellspacing="0">
@@ -51,4 +52,35 @@
 			</div>
 		</div>
 	</div>
+</div>
+<!-- Modal add tax -->
+<div id="addTaxModal" class="reveal-modal medium" data-reveal>
+	<h2><?php echo __('Add tax'); ?></h2>
+	<div class="taxes form">
+	<form id="addTaxForm" method="post" action="/taxes/add" data-abide>
+		<div>
+			<label>Description <small>required</small>
+				<input type="text" name="data[Tax][description]" required>
+			</label>
+			<small class="error">Description is required and must be a string.</small>
+		</div>
+		<div>
+			<label>Status <small>required</small>
+				<select name="data[Tax][status]" required>
+					<option value="0"><?php echo __('Active'); ?></option>
+					<option value="1"><?php echo __('Inactive'); ?></option>
+				</select>
+			</label>
+			<small class="error">Status is required.</small>
+		</div>
+		<div>
+			<label>Rate <small>required</small>
+				<input type="number" name="data[Tax][rate]" required>
+			</label>
+			<small class="error">Rate is required and must be a number.</small>
+		</div>
+		<input type="submit" class="button tiny success radius" value="<?php echo __('Submit'); ?>">
+	</form>
+	</div>
+	<a class="close-reveal-modal">&#215;</a> 
 </div>
