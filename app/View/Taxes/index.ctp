@@ -57,7 +57,7 @@
 <div id="addTaxModal" class="reveal-modal medium" data-reveal>
 	<h2><?php echo __('Add tax'); ?></h2>
 	<div class="taxes form">
-	<form id="addTaxForm" method="post" action="/taxes/add" data-abide>
+	<form id="addTaxForm" method="post" action="<?php echo Router::url(array('controller' => 'Taxes', 'action' => 'add')); ?>" data-abide>
 		<div>
 			<label>Description <small>required</small>
 				<input type="text" name="data[Tax][description]" required>
