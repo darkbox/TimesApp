@@ -23,6 +23,9 @@
       <?php foreach ($menuItems as $controller => $title): ?>
       <li><?php echo $this->Html->link($title, array('controller' => $controller, 'action' => 'index')); ?></li>
       <?php endforeach; ?>
+      <?php if($logged_in): ?>
+        <li><a href="<?php echo Router::url(array('controller' => 'login', 'action' => 'out')); ?>" ><?php echo $current_user['name']; ?></a></li>
+      <?php endif; ?>
     </ul>
   </section>
 </nav>
