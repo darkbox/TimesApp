@@ -10,7 +10,7 @@
 		<div class="content active" id="panel1a">
 			<div class="row">
 				<div class="large-12 columns" style="padding: 20px">
-					<form action="/Settings" method="post">
+					<form action="<?php echo Router::url(array('controller' => 'Settings', 'action' => 'index')); ?>" method="post">
 						<h2><?php echo __('Profile'); ?></h2>
 						 <div class="row">
 						    <div class="medium-6 large-6 columns">

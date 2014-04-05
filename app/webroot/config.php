@@ -1,9 +1,9 @@
 <?php return array (
-  'companyName' => 'LOL',
+  'companyName' => 'NoTimeasdfasdf',
   'currency' => '€',
   'country' => 'Spain',
   'stateProvince' => 'Andalucia',
-  'address' => 'Somewhere',
+  'address' => 'nowhere',
   'city' => 'Córdoba',
   'zipCode' => '1400',
   'email' => 'noreply@notime.es',

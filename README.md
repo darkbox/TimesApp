@@ -7,3 +7,6 @@ A free and open source web application for tracking your time while working.
 + __server:__ localhost
 + __username:__ timesapp
 + __password:__ timesapp
+
+##App config file:
+app/Config/timesAppSettings.php

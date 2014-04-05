@@ -26,12 +26,6 @@
 Cache::config('default', array('engine' => 'File'));
 
 /**
- * Carga el fichero de configuración de la aplicación
- * TimesApp
- */
-Configure::load('timesAppSettings');
-
-/**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
  * App::build(array(

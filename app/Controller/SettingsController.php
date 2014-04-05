@@ -7,6 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
+
 class SettingsController extends AppController {
 
 /**
@@ -23,12 +24,15 @@ class SettingsController extends AppController {
 	 */
 	public function index(){
 		if($this->request->is('POST')){
-			Configure::write('TimesApp', $this->request->data['Settings']);
-			$this->Session->setFlash(__('Yours settings has been saved.'), 'flash_success');
+			if(file_put_contents(APP_SETTINGS, '<?php return ' . var_export($this->request->data['Settings'], true) . ';')){
+				$this->Session->setFlash(__('Yours settings has been saved.'), 'flash_success');
+			}else{
+				$this->Session->setFlash(__('An error has occurred while saving.'), 'flash_danger');
+			}
 		}
 
 		// Lee la configuracción por defecto
-		$appSettings = Configure::read('TimesApp');
+		$appSettings = include APP_SETTINGS;
 		$this->set('s', $appSettings);
 	}
 

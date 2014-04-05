@@ -21,6 +21,9 @@
 
 App::uses('Controller', 'Controller');
 
+// Path del fichero de configuración
+define('APP_SETTINGS', APP . DS .  'Config' . DS . 'timesAppSettings.php');
+
 /**
  * Application Controller
  *
