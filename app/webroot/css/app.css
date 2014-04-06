@@ -7280,7 +7280,7 @@ meta.foundation-mq-topbar {
   content: "";
   position: relative;
   bottom: -5px;
-  z-index: 400;
+  z-index: 10;
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0px;
