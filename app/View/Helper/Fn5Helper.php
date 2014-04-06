@@ -14,7 +14,7 @@ class Fn5Helper extends AppHelper {
 		$onClick = 'document.' . $formName . '.submit();';
 
 		$out = "<div id='Modal" . $formName . "' class='reveal-modal tiny' data-reveal><h2>" . $title . 
-		"</h2>" . $form . "<p>" . $content . "</p><button class='button danger' onclick='" . $onClick . " event.returnValue = false; return false;'>" . __('Accept') . "</button><a class='close-reveal-modal'>&#215;</a></div>";
+		"</h2>" . $form . "<p>" . $content . "</p><button class='button tiny radius alert' onclick='" . $onClick . " event.returnValue = false; return false;'>" . __('Accept') . "</button><a class='close-reveal-modal'>&#215;</a></div>";
 
 		$out .= "<a href='#' data-reveal-id='Modal" . $formName . "' data-reveal>" . $buttonLabel . "</a>";
 		return $out;

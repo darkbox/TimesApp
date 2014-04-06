@@ -39,7 +39,7 @@
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $tax['Tax']['id']), array('escape' => false)),
 						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $tax['Tax']['id']), array('action' => 'delete', $tax['Tax']['id']))
 					);
-					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links); 
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $tax['Tax']['id']); 
 					?>
 				</td>
 			</tr>

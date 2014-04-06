@@ -1,4 +1,4 @@
-<div class="row" style="margin-top: 30px;">
+<div class="row" style="margin-top: 40px;">
 	<div class="large-3 columns">
 		<?php echo $this->element('tiles/time'); ?>
 	</div>
