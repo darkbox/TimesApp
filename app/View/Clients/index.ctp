@@ -29,7 +29,7 @@
 			</thead>
 			<tbody>
 			<?php foreach ($clients as $client):?>
-				<?php if($client['Client']['status']==0 || $this->request->data('show')==1): ?>
+				<?php if($client['Client']['status']==1 || $this->request->data('show')==1): ?>
 					<tr>
 						<td><?php echo h($client['Client']['name']); ?>&nbsp;</td>
 						<td><?php echo h($client['Client']['email']); ?>&nbsp;</td>
@@ -75,8 +75,8 @@
 			<div class="medium-6 columns">
 				<label><?php echo __('Status'); ?> <small>required</small>
 					<select name="data[Client][status]" required>
-						<option value="0"><?php echo __('Active'); ?></option>
-						<option value="1"><?php echo __('Inactive'); ?></option>
+						<option value="1"><?php echo __('Active'); ?></option>
+						<option value="0"><?php echo __('Inactive'); ?></option>
 					</select>
 				</label>
 				<small class="error">Status is required.</small>
