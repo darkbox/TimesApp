@@ -1,5 +1,5 @@
 <h3>Log in to Your Account</h3>
-<form action="<?php Router::url(array('controller' => 'log', 'action' => 'in')); ?>" method="post" data-abide>
+<form action="<?php Router::url(array('controller' => 'login', 'action' => 'index')); ?>" method="post" data-abide>
 <div class="email-field">
   <label>Email
     <small>Required</small>
