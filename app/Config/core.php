@@ -216,10 +216,8 @@
  *
  */
 	Configure::write('Session', array(
-		'defaults' => 'cake',
-            'timeout'  => 14400,  // 4 hours 
-            'cookieTimeout' => 14400, // 4 hours 
-            'cookie' => 'TimesApp',
+		'defaults' => 'php',
+
    	));
 
 /**
