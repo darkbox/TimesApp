@@ -216,8 +216,11 @@
  *
  */
 	Configure::write('Session', array(
-		'defaults' => 'php'
-	));
+		'defaults' => 'cake',
+            'timeout'  => 14400,  // 4 hours 
+            'cookieTimeout' => 14400, // 4 hours 
+            'cookie' => 'TimesApp',
+   	));
 
 /**
  * A random string used in security hashing methods.

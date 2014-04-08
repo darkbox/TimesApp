@@ -31,6 +31,8 @@ class LoginController extends AppController {
 	 * @return  void redirection
 	 */
 	public function index(){
+		$this->layout = 'login';
+
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
 				return $this->redirect($this->Auth->redirect());

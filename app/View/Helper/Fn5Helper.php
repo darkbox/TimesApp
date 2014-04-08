@@ -29,7 +29,7 @@ class Fn5Helper extends AppHelper {
 				$out = "<i class='status active has-tip' data-tooltip title='" . __('Active') . "'></i>";
 				break;
 			
-			default:
+			default: // inactivo
 				$out = "<i class='status inactive has-tip has-tip' data-tooltip title='" . __('Inactive') . "'></i>";
 				break;
 		}
