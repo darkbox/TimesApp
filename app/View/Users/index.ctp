@@ -85,7 +85,7 @@
 			<small class="error">A password is required.</small>
 		</div>
 		<div class="row">
-			<div class="large-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Role'); ?> <small>required</small>
 					<select name="data[User][role]" data-invalid required>
 						<option value=""><?php echo __('Select an option'); ?></option>
@@ -95,7 +95,7 @@
 				</label>
 				<small class="error">Please select a role.</small>
 			</div>
-			<div class="large-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Status'); ?> <small>required</small>
 					<select name="data[User][status]" data-invalid required>
 						<option value="1"><?php echo __('Active'); ?></option>

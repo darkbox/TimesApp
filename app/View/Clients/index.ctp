@@ -66,13 +66,13 @@
 	<div class="clients form">
 	<form id="addClientForm" method="post" action="<?php echo Router::url(array('controller' => 'Clients', 'action' => 'add')); ?>" data-abide>
 		<div class="row">
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Name'); ?> <small>required</small>
 					<input type="text" name="data[Client][name]" required>
 				</label>
 				<small class="error">Name is required and must be a string.</small>
 			</div>
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Status'); ?> <small>required</small>
 					<select name="data[Client][status]" required>
 						<option value="1"><?php echo __('Active'); ?></option>
@@ -83,13 +83,13 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Email'); ?> <small>required</small>
 					<input type="email" name="data[Client][email]" required>
 				</label>
 				<small class="error">Email is required and must be valid.</small>
 			</div>
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Contact name'); ?>
 					<input type="text" name="data[Client][contact_name]">
 				</label>
@@ -101,12 +101,12 @@
 			</label>
 		</div>
 		<div class="row">
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('City'); ?>
 					<input type="text" name="data[Client][city]">
 				</label>
 			</div>
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Zip code'); ?>
 					<input type="number" name="data[Client][zip_code]">
 				</label>
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Country'); ?>
 					<input type="text" name="data[Client][country]">
 				</label>
@@ -126,13 +126,13 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Phone number'); ?>
 					<input type="number" name="data[Client][phone_number]">
 				</label>
 				<small class="error">Phone number must be a number.</small>
 			</div>
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Mobile number'); ?>
 					<input type="number" name="data[Client][mobile_number]">
 				</label>
@@ -140,19 +140,19 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Tax'); ?>
 					<input type="text" name="data[Client][tax_id]">
 				</label>
 			</div>
-			<div class="medium-6 columns">
+			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Language'); ?>
 					<input type="text" name="data[Client][language]">
 				</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="medium-6 column">
+			<div class="medium-6 large-6 column">
 				<label><?php echo __('Vat number'); ?>
 					<input type="text" name="data[Client][vat_number]">
 				</label>
