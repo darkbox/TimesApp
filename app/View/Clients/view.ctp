@@ -23,7 +23,7 @@
 		</dd>
 		<dt><?php echo __('Adress'); ?></dt>
 		<dd>
-			<?php echo h($client['Client']['adress']); ?>
+			<?php echo h($client['Client']['address']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('City'); ?></dt>

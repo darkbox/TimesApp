@@ -7,7 +7,7 @@
 		echo $this->Form->input('name');
 		echo $this->Form->input('email');
 		echo $this->Form->input('contact_name');
-		echo $this->Form->input('adress');
+		echo $this->Form->input('address');
 		echo $this->Form->input('city');
 		echo $this->Form->input('zip_code');
 		echo $this->Form->input('country');
