@@ -73,10 +73,10 @@ class ProjectsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Project->save($this->request->data)) {
-				$this->Session->setFlash(__('The project has been saved.'));
+				$this->Session->setFlash(__('The project has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The project could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The project could not be saved. Please, try again.'), 'flash_danger');
 			}
 		} else {
 			$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
@@ -100,9 +100,9 @@ class ProjectsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Project->delete()) {
-			$this->Session->setFlash(__('The project has been deleted.'));
+			$this->Session->setFlash(__('The project has been deleted.'), 'flash_success');
 		} else {
-			$this->Session->setFlash(__('The project could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('The project could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}}

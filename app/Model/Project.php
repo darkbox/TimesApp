@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Client $Client
  * @property Hour $Hour
+ * @property Invoice $Invoice
  */
 class Project extends AppModel {
 
@@ -41,7 +42,7 @@ class Project extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'billeable' => array(
+		'billable' => array(
 			'boolean' => array(
 				'rule' => array('boolean'),
 				//'message' => 'Your custom message here',
@@ -78,6 +79,19 @@ class Project extends AppModel {
 	public $hasMany = array(
 		'Hour' => array(
 			'className' => 'Hour',
+			'foreignKey' => 'project_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Invoice' => array(
+			'className' => 'Invoice',
 			'foreignKey' => 'project_id',
 			'dependent' => false,
 			'conditions' => '',
