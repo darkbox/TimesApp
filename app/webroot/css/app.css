@@ -9540,18 +9540,25 @@ i.inactive {
   box-sizing: border-box;
   position: relative;
   max-width: 1100px;
+  min-height: 450px;
   margin: 50px auto 50px auto;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.05) 0 1px 5px;
   overflow: hidden;
 }
+@media (max-width: 650px) {
+  /* line 112, ../scss/app.scss */
+  .page-wrapper {
+    overflow: auto;
+  }
+}
 
-/* line 124, ../scss/app.scss */
+/* line 129, ../scss/app.scss */
 .page-content {
   padding: 20px;
 }
 
-/* line 128, ../scss/app.scss */
+/* line 133, ../scss/app.scss */
 .page-nav {
   border-right: #edece4 1px solid;
   font-weight: 300;
@@ -9560,19 +9567,26 @@ i.inactive {
   margin-bottom: -2000px;
 }
 @media (max-width: 800px), (max-width: 800px) {
-  /* line 128, ../scss/app.scss */
+  /* line 133, ../scss/app.scss */
   .page-nav {
     position: static;
     width: auto;
   }
 }
-/* line 142, ../scss/app.scss */
+@media (max-width: 650px) {
+  /* line 133, ../scss/app.scss */
+  .page-nav {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+/* line 152, ../scss/app.scss */
 .page-nav ul {
   border-top: none;
   list-style: none;
   margin: 0;
 }
-/* line 149, ../scss/app.scss */
+/* line 159, ../scss/app.scss */
 .page-nav ul li a {
   display: block;
   padding: 10px 15px;
@@ -9583,32 +9597,32 @@ i.inactive {
   -moz-transition: color 0.3s ease,text-decoration 0.3s ease,background 0.3s ease;
   transition: color 0.3s ease,text-decoration 0.3s ease,background 0.3s ease;
 }
-/* line 160, ../scss/app.scss */
+/* line 170, ../scss/app.scss */
 .page-nav ul li a:hover {
   color: #242628;
   background: rgba(0, 0, 0, 0.04);
   text-decoration: none;
 }
-/* line 168, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 .page-nav .current {
   position: relative;
   color: #242628;
   font-weight: bold;
   background: #fff;
 }
-/* line 174, ../scss/app.scss */
+/* line 184, ../scss/app.scss */
 .page-nav .current a {
   color: #242628;
 }
-/* line 178, ../scss/app.scss */
+/* line 188, ../scss/app.scss */
 .page-nav .current a:hover {
   background: #fff;
 }
-/* line 182, ../scss/app.scss */
+/* line 192, ../scss/app.scss */
 .page-nav .current:hover {
   background: #fff;
 }
-/* line 184, ../scss/app.scss */
+/* line 194, ../scss/app.scss */
 .page-nav .current:after {
   content: " ";
   display: block;
