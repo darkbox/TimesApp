@@ -217,6 +217,8 @@
  */
 	Configure::write('Session', array(
 		'defaults' => 'php',
+		'cookie' => 'timesAppCookie',
+		'timeout' => 720 //12h
 
    	));
 
