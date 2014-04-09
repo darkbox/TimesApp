@@ -1,7 +1,7 @@
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-3 medium-3 columns">
-			<nav class="page-nav" style="height: 500px">
+			<nav class="page-nav">
 				<ul>
 				<li class="current"><a href="">Taxes</a></li>
 				<li><?php echo $this->Html->link(__('New Tax'), array('action' => 'add')); ?></li>

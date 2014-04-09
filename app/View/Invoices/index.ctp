@@ -1,7 +1,7 @@
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-3 medium-3 columns">
-			<nav class="page-nav" style="height: 500px">
+			<nav class="page-nav">
 				<ul>
 				<li class="current"><a href=""><?php echo __('Invoices'); ?></a></li>
 				<li><?php echo $this->Html->link(__('List Payments'), array('controller' => 'payments', 'action' => 'index')); ?> </li>
@@ -14,6 +14,7 @@
 			<!-- Cabecera -->
 			<header>
 				<h1><?php echo __('Invoices'); ?></h1>
+				<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addInvoiceModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Invoice'); ?></a>
 			</header>
 			<!-- Contenido -->
 			<table cellpadding="0" cellspacing="0">
