@@ -9543,36 +9543,33 @@ i.inactive {
   margin: 50px auto 50px auto;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.05) 0 1px 5px;
-  overflow: hidden;
 }
 
-/* line 124, ../scss/app.scss */
+/* line 123, ../scss/app.scss */
 .page-content {
   padding: 20px;
 }
 
-/* line 128, ../scss/app.scss */
+/* line 127, ../scss/app.scss */
 .page-nav {
   border-right: #edece4 1px solid;
   font-weight: 300;
   background: #fbfbf9;
-  padding-bottom: 2000px;
-  margin-bottom: -2000px;
 }
 @media (max-width: 800px), (max-width: 800px) {
-  /* line 128, ../scss/app.scss */
+  /* line 127, ../scss/app.scss */
   .page-nav {
     position: static;
     width: auto;
   }
 }
-/* line 142, ../scss/app.scss */
+/* line 139, ../scss/app.scss */
 .page-nav ul {
   border-top: none;
   list-style: none;
   margin: 0;
 }
-/* line 149, ../scss/app.scss */
+/* line 146, ../scss/app.scss */
 .page-nav ul li a {
   display: block;
   padding: 10px 15px;
@@ -9583,32 +9580,32 @@ i.inactive {
   -moz-transition: color 0.3s ease,text-decoration 0.3s ease,background 0.3s ease;
   transition: color 0.3s ease,text-decoration 0.3s ease,background 0.3s ease;
 }
-/* line 160, ../scss/app.scss */
+/* line 157, ../scss/app.scss */
 .page-nav ul li a:hover {
   color: #242628;
   background: rgba(0, 0, 0, 0.04);
   text-decoration: none;
 }
-/* line 168, ../scss/app.scss */
+/* line 165, ../scss/app.scss */
 .page-nav .current {
   position: relative;
   color: #242628;
   font-weight: bold;
   background: #fff;
 }
-/* line 174, ../scss/app.scss */
+/* line 171, ../scss/app.scss */
 .page-nav .current a {
   color: #242628;
 }
-/* line 178, ../scss/app.scss */
+/* line 175, ../scss/app.scss */
 .page-nav .current a:hover {
   background: #fff;
 }
-/* line 182, ../scss/app.scss */
+/* line 179, ../scss/app.scss */
 .page-nav .current:hover {
   background: #fff;
 }
-/* line 184, ../scss/app.scss */
+/* line 181, ../scss/app.scss */
 .page-nav .current:after {
   content: " ";
   display: block;

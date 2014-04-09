@@ -34,9 +34,9 @@
 	<div class="row">
     	<div class="large-12 columns">
     	<?php echo $this->Session->flash(); ?>
-    	<div class="page-wrapper">
+
 		<?php echo $this->fetch('content'); ?>
-		</div>
+
 		</div>
 	</div>
 
