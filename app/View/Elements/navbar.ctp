@@ -1,11 +1,11 @@
 <?php
   $menuItems = array(
-    'Dashboard' => __('Dashboard'),
-    'Invoices' => __('Invoices'),
-    'Projects' => __('Projects'),
-    'Clients' => __('Clients'),
-    'Taxes' => __('Taxes'),
-    'Users' => __('Users'),
+    'dashboard' => __('Dashboard'),
+    'invoices' => __('Invoices'),
+    'projects' => __('Projects'),
+    'clients' => __('Clients'),
+    'taxes' => __('Taxes'),
+    'users' => __('Users'),
     );
   $activeLink = $this->params['controller'];
 ?>
@@ -30,9 +30,16 @@
           ?>
       <li <?php echo $class; ?>><?php echo $this->Html->link($title, array('controller' => $controller, 'action' => 'index')); ?></li>
       <?php endforeach; ?>
-
       <?php if($logged_in): ?>
-        <li><a href="<?php echo Router::url(array('controller' => 'login', 'action' => 'out')); ?>" ><?php echo $current_user['name']; ?></a></li>
+        <li  class="has-dropdown">
+          <a href="#"><?php echo $current_user['name']; ?></a>
+          <ul class="dropdown">
+            <?php if($current_user['role'] == 'overlord'): ?>
+            <li><a href="<?php echo Router::url(array('controller' => 'settings', 'action' => 'index')); ?>" ><i class="fi-widget"></i> <?php echo __('Settings'); ?></a></li>
+            <?php endif; ?>
+            <li><a href="<?php echo Router::url(array('controller' => 'login', 'action' => 'out')); ?>" ><i class="fi-power"></i> <?php echo __('Logout'); ?></a></li>
+          </ul>
+        </li>
       <?php endif; ?>
     </ul>
   </section>

@@ -1,17 +1,31 @@
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-3 medium-3 columns">
-			<nav class="page-nav">
-				<ul>
-					<li class="current"><a href=""><?php echo __('Projects'); ?></a></li>
-					<li><?php echo $this->Html->link(__('List Hours'), array('controller' => 'hours', 'action' => 'index')); ?> </li>
-					<li><?php echo $this->Html->link(__('New Project'), array('action' => 'add')); ?></li>
-					<li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
-					<li><?php echo $this->Html->link(__('New Client'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
-					<li><?php echo $this->Html->link(__('List Hours'), array('controller' => 'hours', 'action' => 'index')); ?> </li>
-					<li><?php echo $this->Html->link(__('New Hour'), array('controller' => 'hours', 'action' => 'add')); ?> </li>
-				</ul>
-			</nav>
+			<?php
+			// Esto está en pruebas...
+			echo $this->element('side_navbar', array(
+				'sideBar' => array(
+					'titles' => array(
+						__('Projects'), 
+						__('List Hours'), 
+						__('New Project'), 
+						__('List Clients'), 
+						__('New Client'), 
+						__('List Hours'), 
+						__('New Hour'), 
+					),
+					'links' => array(
+						array('controller' => 'projects', 'action' => 'index'),
+						array('controller' => 'hours', 'action' => 'index'),
+						array('controller' => 'project', 'action' => 'add'),
+						array('controller' => 'clients', 'action' => 'index'),
+						array('controller' => 'clients', 'action' => 'add'),
+						array('controller' => 'hours', 'action' => 'index'),
+						array('controller' => 'hours', 'action' => 'add')
+					),
+					'active' => array('controller' => 'projects', 'action' => 'index')
+				)
+			)); ?>
 		</div>
 		<div class="large-9 medium-9 columns">
 			<div class="page-content">

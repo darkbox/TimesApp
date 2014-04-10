@@ -11,6 +11,7 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('app');
+		echo $this->Html->css('foundation-icons');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

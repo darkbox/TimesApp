@@ -1,3 +1,4 @@
+<div class="page-wrapper">
 <div class="row">
 	<div class="large-12 columns">
 	<dl class="tabs vertical" data-tab>
@@ -118,4 +119,5 @@
 		</div> 
 	</div>
 	</div>
+</div>
 </div>
