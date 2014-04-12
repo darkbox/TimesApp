@@ -9574,7 +9574,7 @@ i.inactive {
     width: auto;
   }
 }
-@media (max-width: 650px) {
+@media screen and (max-width: 650px) {
   /* line 133, ../scss/app.scss */
   .page-nav {
     margin-bottom: 0;
@@ -9634,4 +9634,210 @@ i.inactive {
   left: auto;
   width: 1px;
   background: white;
+}
+
+/* line 210, ../scss/app.scss */
+.global-footer {
+  padding: 20px;
+  font-size: 1.1rem;
+  background-color: #18191b;
+  border-bottom: #0a0a0a 5px solid;
+  display: block;
+  width: 100%;
+}
+@media screen and (max-width: 650px) {
+  /* line 210, ../scss/app.scss */
+  .global-footer {
+    padding: 0 15px;
+    text-align: center;
+  }
+}
+/* line 223, ../scss/app.scss */
+.global-footer .hidden {
+  text-indent: -9999px;
+  visibility: hidden;
+  display: none;
+}
+/* line 229, ../scss/app.scss */
+.global-footer .clearfix {
+  display: block;
+}
+/* line 232, ../scss/app.scss */
+.global-footer .clearfix:before {
+  content: " ";
+  display: table;
+}
+/* line 237, ../scss/app.scss */
+.global-footer .clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+/* line 244, ../scss/app.scss */
+.global-footer .footer-nav {
+  max-width: 1100px;
+  margin: 120px auto 80px auto;
+  border-bottom: #222426 1px solid;
+  position: relative;
+  text-transform: uppercase;
+  display: block;
+  color: #3c4043;
+}
+@media screen and (max-width: 650px) {
+  /* line 244, ../scss/app.scss */
+  .global-footer .footer-nav {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+/* line 259, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu {
+  float: right;
+  border-top: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+@media screen and (max-width: 650px) {
+  /* line 259, ../scss/app.scss */
+  .global-footer .footer-nav .footer-menu {
+    clear: both;
+    float: none;
+    min-height: 63px;
+    padding: 0;
+    display: block;
+    text-align: center;
+  }
+}
+/* line 276, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu .backToTop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  float: left;
+  font-size: 1em;
+  margin: 0;
+  display: list-item;
+  outline: 0;
+}
+@media screen and (max-width: 650px) {
+  /* line 276, ../scss/app.scss */
+  .global-footer .footer-nav .footer-menu .backToTop {
+    position: relative;
+  }
+}
+/* line 290, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu .backToTop:hover a {
+  color: #e2edf2;
+  background: inherit;
+}
+/* line 295, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu .backToTop a {
+  color: #4d5356;
+  border: none;
+  display: block;
+  font-size: 1.6em;
+  text-decoration: none;
+  transition: color 0.3s ease,text-decoration 0.3s ease,background 0.3s ease;
+  position: relative;
+}
+@media screen and (max-width: 650px) {
+  /* line 295, ../scss/app.scss */
+  .global-footer .footer-nav .footer-menu .backToTop a {
+    position: relative;
+    padding-top: 10px;
+  }
+}
+/* line 314, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu .footerList {
+  float: left;
+  font-size: 1em;
+  margin: 0;
+  display: list-item;
+}
+@media screen and (max-width: 650px) {
+  /* line 314, ../scss/app.scss */
+  .global-footer .footer-nav .footer-menu .footerList {
+    clear: both;
+    float: none;
+    display: inline-block;
+    margin: auto;
+  }
+}
+/* line 328, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu .footerList:last-child a {
+  padding-right: 0;
+}
+/* line 332, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu .footerList:hover a {
+  color: #e2edf2;
+  background: inherit;
+}
+/* line 337, ../scss/app.scss */
+.global-footer .footer-nav .footer-menu .footerList a {
+  color: #4d5356;
+  font-size: 0.7em;
+  border: none;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease,text-decoration 0.3s ease,background 0.3s ease;
+  outline: none;
+}
+@media screen and (max-width: 650px) {
+  /* line 337, ../scss/app.scss */
+  .global-footer .footer-nav .footer-menu .footerList a {
+    font-size: 0.7em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+/* line 358, ../scss/app.scss */
+.global-footer .footer-nav .social-menu {
+  float: right;
+  border-top: none;
+  font-size: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+@media screen and (max-width: 650px) {
+  /* line 358, ../scss/app.scss */
+  .global-footer .footer-nav .social-menu {
+    display: none;
+  }
+}
+/* line 371, ../scss/app.scss */
+.global-footer .footer-nav .social-menu .socialList {
+  float: left;
+  font-size: 1em;
+  margin: 0;
+  display: list-item;
+  list-style: none;
+  color: #3c4043;
+}
+/* line 379, ../scss/app.scss */
+.global-footer .footer-nav .social-menu .socialList:first-child a {
+  padding-left: 0;
+}
+/* line 383, ../scss/app.scss */
+.global-footer .footer-nav .social-menu .socialList:hover a {
+  color: #e2edf2;
+  background: inherit;
+}
+/* line 388, ../scss/app.scss */
+.global-footer .footer-nav .social-menu .socialList:last-child a {
+  padding-right: 0;
+}
+/* line 392, ../scss/app.scss */
+.global-footer .footer-nav .social-menu .socialList a {
+  padding: 10px;
+  color: #4d5356;
+  border: none;
+  font-size: 0.8em;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s ease,text-decoration 0.3s ease,background 0.3s ease;
 }
