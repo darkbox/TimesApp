@@ -12,5 +12,11 @@ class DashboardController extends AppController {
 	 */
 	public function index(){
 		$this->layout = 'dashboard';
+
+		$this->loadModel('Project');
+
+		//Retrieve all the projects
+		$projects = $this->Project->find('all');
+		$this->set(compact('projects'));
 	}	
 }

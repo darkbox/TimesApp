@@ -50,14 +50,43 @@
 			<?php foreach ($projects as $project): ?>
 			<tr>
 				<td><?php echo h($project['Project']['code']); ?>&nbsp;</td>
-				<td><?php echo h($project['Project']['status']); ?>&nbsp;</td>
+				<td><?php 
+
+					switch($project['Project']['status']){
+						case 0:
+							echo '<span class="secondary radius label">' . __('Planned') . '</span>';
+							break;
+						case 1:
+							echo '<span class="radius label">' . __('In progress') . '</span>';
+							break;
+						case 2:
+							echo '<span class="success radius label">' . __('Completed') . '</span>';
+							break;
+						case 3:
+							echo '<span class="alert radius label">' . __('Canceled') . '</span>';
+							break;
+					}
+
+				?>&nbsp;</td>
 				<td>
 					<?php echo $this->Html->link($project['Client']['name'], array('controller' => 'clients', 'action' => 'view', $project['Client']['id'])); ?>
 				</td>
 				<td><?php echo h($project['Project']['init_date']); ?>&nbsp;</td>
-				<td><?php echo h($project['Project']['deadline']); ?>&nbsp;</td>
+				<td><?php
+					if(h($project['Project']['deadline']) != "") 
+						echo h($project['Project']['deadline']);
+					else
+						echo '&#8734;';
+					?>&nbsp;</td>
 				<td class="actions">
-					
+					<?php 
+					$links = array(
+						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $project['Project']['id']), array('escape' => false)),
+						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $project['Project']['id']), array('escape' => false)),
+						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $project['Project']['id']), array('action' => 'delete', $project['Project']['id']))
+					);
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $project['Project']['id']); 
+					?>
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -104,8 +133,9 @@
 			<label><?php echo __('Client'); ?> <small>required</small>
 				<select name="data[Project][client_id]" data-invalid required>
 					<option value=""><?php echo __('Select a client'); ?></option>
-					<option value="0"></option>
-					<option value="1"></option>
+					<?php foreach ($clients as $id => $client): ?>
+						<option value="<?php echo $id; ?>"><?php echo $client; ?></option>
+					<?php endforeach; ?>
 				</select>
 			</label>
 			<small class="error">A client is required.</small>
