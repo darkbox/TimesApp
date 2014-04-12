@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 09, 2014 at 05:35 PM
+-- Generation Time: Apr 12, 2014 at 04:19 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `clients`
@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS `clients` (
 
 INSERT INTO `clients` (`id`, `name`, `email`, `contact_name`, `address`, `city`, `zip_code`, `country`, `state`, `phone_number`, `mobile_number`, `tax_id`, `language`, `vat_number`, `status`, `created`, `modified`) VALUES
 (1, 'NoTime S.L', 'contact@notime.es', 'Rafael García', 'C. inventada nº13', 'Córdoba', 14000, 'España', 'Andalucía', '555 67 89 53', '659 89 54 63', 6, 'Spanish', 'VAT NUMBER', 1, '2014-04-08 17:10:05', '2014-04-08 17:10:05'),
-(2, 'Darkbox Studios', 'contact@dbs.com', 'Rafael García', 'Somewhere on the third planet spinning around the sun', 'Córdoba', 14720, 'España', 'Andalucía', '957 65 89 12', '659 54 21 45', 6, 'Spanish', 'VAT NUMBER', 1, '2014-04-08 17:16:07', '2014-04-08 17:16:07');
+(2, 'Darkbox Studios', 'contact@dbs.com', 'Rafael García', 'Somewhere on the third planet spinning around the sun', 'Córdoba', 14720, 'España', 'Andalucía', '957 65 89 12', '659 54 21 45', 6, 'Spanish', 'VAT NUMBER', 1, '2014-04-08 17:16:07', '2014-04-08 17:16:07'),
+(3, 'Internal', 'rgtresd@gmail.com', 'Internal', '', '', NULL, '', '', '', '', NULL, '', '', 1, '2014-04-09 18:42:13', '2014-04-09 18:42:13');
 
 -- --------------------------------------------------------
 
@@ -166,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(120) NOT NULL,
-  `status` enum('Planned','In progress','Completed','Canceled') NOT NULL DEFAULT 'Planned',
+  `status` int(1) NOT NULL DEFAULT '0',
   `description` text,
   `client_id` int(11) NOT NULL,
   `init_date` date DEFAULT NULL,
@@ -178,7 +179,18 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `code`, `status`, `description`, `client_id`, `init_date`, `deadline`, `estimate_time`, `estimate_price`, `billable`, `created`, `modified`) VALUES
+(1, 'Mi primer proyecto', 0, 'Este proyecto es de prueba.', 1, NULL, NULL, '01:00:00', NULL, 0, '2014-04-09 19:09:47', '2014-04-09 19:09:47'),
+(2, 'TimesApp', 1, 'Una aplicación para ayudar a controlar el tiempo de tus proyectos y facturar mejor.', 1, NULL, NULL, '00:00:00', 3000, 0, '2014-04-12 15:17:36', '2014-04-12 15:17:36'),
+(3, 'Blog projectTimesApp', 2, '', 1, NULL, NULL, '15:38:00', NULL, 0, '2014-04-12 15:18:55', '2014-04-12 15:39:03'),
+(4, 'Projecto con Node js', 3, '', 3, NULL, NULL, '15:39:00', NULL, 0, '2014-04-12 15:19:17', '2014-04-12 15:39:14'),
+(5, 'Encuestas & informes', 2, '', 3, NULL, NULL, NULL, 3000, 0, '2014-04-12 15:40:43', '2014-04-12 15:40:43');
 
 -- --------------------------------------------------------
 
@@ -254,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `status`, `created`, `modified`) VALUES
 (1, 'Dexter', 'rgtresd@gmail.com', '7afc1acca61202fb3215ed44dd0470cdbd1e142c', 'overlord', 1, '2014-04-03 16:16:52', '2014-04-05 16:52:43'),
 (2, 'Jose', 'souanyirer@gmail.com', '811d4dc81ea67469ab1e4e8d048c7c1e5575da05', 'overlord', 1, '2014-04-05 14:15:39', '2014-04-05 16:36:33'),
-(3, 'Paco', 'pacovalmisa@gmail.com', '811d4dc81ea67469ab1e4e8d048c7c1e5575da05', 'minion', 1, '2014-04-05 15:26:31', '2014-04-05 16:36:41'),
+(3, 'Paco', 'pacovalmisa@gmail.com', '27a40e13da83533c08c1524b6a4787a8e11143f3', 'minion', 1, '2014-04-05 15:26:31', '2014-04-10 15:59:29'),
 (4, 'Jimmy', 'jimmy@timesapp.com', 'c67ae96c43ed863618c76ae02fc1f328d0120e07', 'minion', 0, '2014-04-08 16:46:46', '2014-04-08 16:49:43');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
