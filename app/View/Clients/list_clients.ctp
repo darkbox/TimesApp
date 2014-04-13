@@ -10,7 +10,7 @@
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 </thead>
-<tbody>
+<tbody id="clientsTableBody">
 <?php foreach ($clients as $client):?>
 	<tr>
 		<td><?php echo h($client['Client']['name']); ?>&nbsp;</td>

@@ -8,7 +8,8 @@
 					<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addClientModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Client'); ?></a>
 				</header>
 				<?php echo $this->Form->checkbox('show'); ?> <label for="show">Show inactive clients</label>
-				<div id="listClients"> <!-- tabla de clientes -->
+				<?php echo $this->Html->image('loadingImage.gif', array('class' => 'loadingImage', 'id' => 'loading-image')); ?>
+				<div id="listClients"> <!-- lista de clientes -->
 					<!-- Contenido -->
 					<table cellpadding="0" cellspacing="0">
 					<thead>
