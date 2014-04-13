@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2014 at 04:19 PM
+-- Generation Time: Apr 13, 2014 at 03:34 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `clients`
@@ -56,7 +56,8 @@ CREATE TABLE IF NOT EXISTS `clients` (
 INSERT INTO `clients` (`id`, `name`, `email`, `contact_name`, `address`, `city`, `zip_code`, `country`, `state`, `phone_number`, `mobile_number`, `tax_id`, `language`, `vat_number`, `status`, `created`, `modified`) VALUES
 (1, 'NoTime S.L', 'contact@notime.es', 'Rafael García', 'C. inventada nº13', 'Córdoba', 14000, 'España', 'Andalucía', '555 67 89 53', '659 89 54 63', 6, 'Spanish', 'VAT NUMBER', 1, '2014-04-08 17:10:05', '2014-04-08 17:10:05'),
 (2, 'Darkbox Studios', 'contact@dbs.com', 'Rafael García', 'Somewhere on the third planet spinning around the sun', 'Córdoba', 14720, 'España', 'Andalucía', '957 65 89 12', '659 54 21 45', 6, 'Spanish', 'VAT NUMBER', 1, '2014-04-08 17:16:07', '2014-04-08 17:16:07'),
-(3, 'Internal', 'rgtresd@gmail.com', 'Internal', '', '', NULL, '', '', '', '', NULL, '', '', 1, '2014-04-09 18:42:13', '2014-04-09 18:42:13');
+(3, 'Internal', 'rgtresd@gmail.com', 'Internal', '', '', NULL, '', '', '', '', NULL, '', '', 1, '2014-04-09 18:42:13', '2014-04-09 18:42:13'),
+(4, 'Paco ', 'pacovalmisa@gmail.com', 'Paco', '', '', NULL, '', '', '', '', NULL, '', '', 0, '2014-04-13 12:25:16', '2014-04-13 12:25:16');
 
 -- --------------------------------------------------------
 
@@ -68,13 +69,25 @@ CREATE TABLE IF NOT EXISTS `hours` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `hours` time NOT NULL,
+  `hours` decimal(10,2) NOT NULL,
   `billed` tinyint(1) NOT NULL DEFAULT '0',
   `note` varchar(200) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `hours`
+--
+
+INSERT INTO `hours` (`id`, `project_id`, `user_id`, `hours`, `billed`, `note`, `created`, `modified`) VALUES
+(2, 4, 1, '5.30', 0, 'this is a test note.', '2014-04-13 15:01:20', '2014-04-13 15:01:20'),
+(3, 4, 1, '3.00', 0, 'This is another test note.', '2014-04-13 15:03:15', '2014-04-13 15:03:15'),
+(4, 4, 1, '3.00', 0, 'This is another test note.', '2014-04-13 15:04:01', '2014-04-13 15:04:01'),
+(5, 4, 1, '2.00', 0, 'The test note strikes again.', '2014-04-13 15:05:45', '2014-04-13 15:05:45'),
+(6, 4, 1, '1.23', 0, 'I hope this will be the last test note cause it''s driving me crazy.', '2014-04-13 15:09:15', '2014-04-13 15:09:15'),
+(7, 2, 1, '11.56', 1, 'Doing some stuff.', '2014-04-13 15:19:13', '2014-04-13 15:19:13');
 
 -- --------------------------------------------------------
 
@@ -186,10 +199,10 @@ CREATE TABLE IF NOT EXISTS `projects` (
 --
 
 INSERT INTO `projects` (`id`, `code`, `status`, `description`, `client_id`, `init_date`, `deadline`, `estimate_time`, `estimate_price`, `billable`, `created`, `modified`) VALUES
-(1, 'Mi primer proyecto', 0, 'Este proyecto es de prueba.', 1, NULL, NULL, '01:00:00', NULL, 0, '2014-04-09 19:09:47', '2014-04-09 19:09:47'),
+(1, 'Mi primer proyecto', 0, 'Este proyecto es de prueba.', 1, NULL, NULL, '01:00:00', NULL, 1, '2014-04-09 19:09:47', '2014-04-09 19:09:47'),
 (2, 'TimesApp', 1, 'Una aplicación para ayudar a controlar el tiempo de tus proyectos y facturar mejor.', 1, NULL, NULL, '00:00:00', 3000, 0, '2014-04-12 15:17:36', '2014-04-12 15:17:36'),
 (3, 'Blog projectTimesApp', 2, '', 1, NULL, NULL, '15:38:00', NULL, 0, '2014-04-12 15:18:55', '2014-04-12 15:39:03'),
-(4, 'Projecto con Node js', 3, '', 3, NULL, NULL, '15:39:00', NULL, 0, '2014-04-12 15:19:17', '2014-04-12 15:39:14'),
+(4, 'Proyecto con Node js', 3, 'Proyecto realizado en Node js y MongoBD', 3, NULL, NULL, '15:39:00', NULL, 1, '2014-04-12 15:19:17', '2014-04-13 14:29:04'),
 (5, 'Encuestas & informes', 2, '', 3, NULL, NULL, NULL, 3000, 0, '2014-04-12 15:40:43', '2014-04-12 15:40:43');
 
 -- --------------------------------------------------------
