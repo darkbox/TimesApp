@@ -1,20 +1,13 @@
 <div class="page-wrapper">
 	<div class="row">
-		<div class="large-3 medium-3 columns">
-			<nav class="page-nav">
-				<ul>
-					<li class="current"><a href=""><?php echo __('Clients'); ?></a></li>
-					<li><?php echo $this->Html->link(__('New Client'), array('action' => 'add')); ?></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="large-9 medium-9 columns">
+		<div class="large-12 medium-12 columns">
 			<div class="page-content">
 				<!-- Cabecera -->
 				<header>
 					<h1><?php echo __('Clients'); ?></h1>
 					<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addClientModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Client'); ?></a>
 				</header>
+				<?php echo $this->Form->checkbox('show'); ?> <label for="show">Show inactive clients</label>
 				<div id="listClients"> <!-- tabla de clientes -->
 					<!-- Contenido -->
 					<table cellpadding="0" cellspacing="0">
@@ -53,9 +46,9 @@
 					<!-- Paginación -->
 					<?php echo $this->element('paginator'); ?>
 					<!-- Fin contenido -->
+
 				</div>
 			</div>
-			<?php echo $this->Form->checkbox('show'); ?> <label for="show">Show inactive clients</label>
 		</div>
 	</div>
 </div>
