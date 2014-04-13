@@ -141,9 +141,11 @@
 			<small class="error">A client is required.</small>
 		</div>
 		<div class="medium-6 large-6 columns">
-			<label><?php echo __('Billable'); ?>
-				<input type="checkbox" name="data[Project][billable]"/>
-			</label>
+			<div style="width: auto; height: 32px; display: inline-block; margin-bottom: 3px; margin-top: 22px;">
+				<input class="toggle" type="checkbox" id="showBillable" name="data[Project][billable]">
+	            <label class="toggle" for="showBillable" style="float: left;"><i class="toggle"></i></label>
+	            <label for="showBillable" style="display: block; float:left; width: auto; height: 32px; line-height: 2.2 !important"><?php echo __('Billable'); ?></label>
+            </div>
 		</div>
 		</div>
 		<div class="row">

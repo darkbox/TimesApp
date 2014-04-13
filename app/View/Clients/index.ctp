@@ -7,10 +7,19 @@
 					<h1><?php echo __('Clients'); ?></h1>
 					<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addClientModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Client'); ?></a>
 				</header>
-				<input class="toggle" type="checkbox" id="show">
-	            <label class="toggle" for="show"><i class="toggle"></i></label>
-	            <label for="show" style="display: inline-block;">Show inactive users</label>
-				<?php echo $this->Html->image('loadingImage.gif', array('class' => 'loadingImage', 'id' => 'loading-image')); ?>
+				<div class="row">
+					<div class="large-6 columns">
+					<div style="width: auto; height: 32px; display: inline-block; margin-bottom: 3px;">
+						<input class="toggle" type="checkbox" id="show">
+			            <label class="toggle" for="show" style="float: left;"><i class="toggle"></i></label>
+			            <label for="show" style="display: block; float:left; width: auto; height: 32px; line-height: 2.2 !important"><?php echo __('Show inactive users') ?></label>
+		            </div>
+		        	</div>
+		        	<div class="large-6 columns">
+		        		<?php echo $this->Html->image('loadingImage.gif', array('class' => 'loadingImage', 'id' => 'loading-image')); ?>
+		        	</div>
+				</div>
+				
 				<div id="listClients"> <!-- lista de clientes -->
 					<!-- Contenido -->
 					<table cellpadding="0" cellspacing="0">
