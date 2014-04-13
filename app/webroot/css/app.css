@@ -9846,8 +9846,16 @@ i.inactive {
   display: none;
 }
 
-/* line 413, ../scss/app.scss */
-label.toggle {
+/* line 414, ../scss/app.scss */
+.divToggle {
+  width: 300px;
+  height: 32px;
+  display: inline-block;
+  margin-bottom: 3px;
+  /* span */
+}
+/* line 420, ../scss/app.scss */
+.divToggle .firstLabel {
   display: block;
   width: 49px;
   height: 32px;
@@ -9859,15 +9867,10 @@ label.toggle {
   -webkit-transition: all 0.4s;
   margin-top: 0;
   margin-bottom: 5px !important;
+  float: left;
 }
-
-/* line 426, ../scss/app.scss */
-input.toggle {
-  display: none;
-}
-
-/* line 430, ../scss/app.scss */
-i.toggle {
+/* line 434, ../scss/app.scss */
+.divToggle .firstLabel i {
   height: 28px;
   width: 28px;
   background: #FFF;
@@ -9880,37 +9883,34 @@ i.toggle {
   box-shadow: 0 0 0 1px #e4e4e4, 0 3px 2px rgba(0, 0, 0, 0.25);
   pointer-events: none;
 }
-
-/* line 444, ../scss/app.scss */
-input.toggle:checked + label > i {
+/* line 449, ../scss/app.scss */
+.divToggle input {
+  display: none;
+}
+/* line 452, ../scss/app.scss */
+.divToggle input:checked + label > i {
   margin-left: 19px;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.25);
 }
-
-/* line 448, ../scss/app.scss */
-label.toggle:active {
-  box-shadow: inset 0 0 0 20px #E4E4E4;
-}
-
-/* line 451, ../scss/app.scss */
-label.toggle:active > i {
-  width: 34px;
-}
-
-/* line 454, ../scss/app.scss */
-input.toggle:checked + label:active > i {
-  margin-left: 13px;
-}
-
 /* line 457, ../scss/app.scss */
-input.toggle:checked + label {
+.divToggle input:checked + label {
   box-shadow: inset 0 0 0 20px #9fbb58;
   border: none;
 }
-
-/* span */
-/* line 465, ../scss/app.scss */
-span.toggle {
+/* line 462, ../scss/app.scss */
+.divToggle input:active {
+  box-shadow: inset 0 0 0 20px #E4E4E4;
+}
+/* line 466, ../scss/app.scss */
+.divToggle input:active > i {
+  width: 34px;
+}
+/* line 470, ../scss/app.scss */
+.divToggle input:checked + label:active > i {
+  margin-left: 13px;
+}
+/* line 476, ../scss/app.scss */
+.divToggle span {
   font-family: helvetica, arial, sans-serif;
   font-size: 13px;
   text-align: center;
@@ -9918,8 +9918,16 @@ span.toggle {
   margin-top: -80px;
   color: #707B82;
 }
-
-/* line 474, ../scss/app.scss */
-.toggleInline {
-  display: inline-block;
+/* line 485, ../scss/app.scss */
+.divToggle .toggleLabel {
+  display: block;
+  float: left;
+  width: auto;
+  height: 32px;
+  line-height: 2.2 !important;
+  padding-left: 7px;
+}
+/* line 494, ../scss/app.scss */
+.divToggle .toggle-push {
+  margin-top: 22px;
 }
