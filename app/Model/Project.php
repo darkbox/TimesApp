@@ -42,17 +42,15 @@ class Project extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'billable' => array(
-			'boolean' => array(
-				'rule' => array('boolean'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 	);
+
+	public function beforeSave($options = array()){
+		if($this->data['Project']['billable'] == 'on')
+			$this->data['Project']['billable'] = true;
+		else
+			$this->data['Project']['billable'] = false;
+		return true;
+	}
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

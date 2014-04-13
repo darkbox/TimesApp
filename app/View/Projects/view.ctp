@@ -1,119 +1,86 @@
-<div class="projects view">
-<h2><?php echo __('Project'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Code'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['code']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Status'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['status']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Description'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['description']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Client'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($project['Client']['name'], array('controller' => 'clients', 'action' => 'view', $project['Client']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Starting Date'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['starting_date']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Finishing Date'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['finishing_date']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Estimate Time'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['estimate_time']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Estimate Price'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['estimate_price']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Billeable'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['billeable']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($project['Project']['modified']); ?>
-			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Project'), array('action' => 'edit', $project['Project']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Project'), array('action' => 'delete', $project['Project']['id']), null, __('Are you sure you want to delete # %s?', $project['Project']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Projects'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Client'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Hours'), array('controller' => 'hours', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Hour'), array('controller' => 'hours', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Hours'); ?></h3>
-	<?php if (!empty($project['Hour'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Project Id'); ?></th>
-		<th><?php echo __('User Id'); ?></th>
-		<th><?php echo __('Hours'); ?></th>
-		<th><?php echo __('Billed'); ?></th>
-		<th><?php echo __('Note'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($project['Hour'] as $hour): ?>
-		<tr>
-			<td><?php echo $hour['id']; ?></td>
-			<td><?php echo $hour['project_id']; ?></td>
-			<td><?php echo $hour['user_id']; ?></td>
-			<td><?php echo $hour['hours']; ?></td>
-			<td><?php echo $hour['billed']; ?></td>
-			<td><?php echo $hour['note']; ?></td>
-			<td><?php echo $hour['created']; ?></td>
-			<td><?php echo $hour['modified']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'hours', 'action' => 'view', $hour['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'hours', 'action' => 'edit', $hour['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'hours', 'action' => 'delete', $hour['id']), null, __('Are you sure you want to delete # %s?', $hour['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Hour'), array('controller' => 'hours', 'action' => 'add')); ?> </li>
-		</ul>
+<div class="page-wrapper">
+	<div class="row">
+		<div class="large-12 medium-12 columns">
+			<div class="page-content">
+			<!-- Cabecera -->
+			<header>
+				<h1><?php echo __('Project'); ?></h1>
+				<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addHoursModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('Add hours'); ?></a>
+			</header>
+			<!-- Contenido -->
+			<section class="row">
+				<div class="large-12 columns">
+					<h3><?php echo h($project['Project']['code']) ?></h3>
+					<blockquote><?php echo h($project['Project']['description']) ?></blockquote>
+				</div>				
+			</section>
+			<section class="row">
+				<div class="large-12 columns">
+					<h2><?php echo __('Hours') ?></h2>
+					<table ellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<th><?php echo __('Note') ?></th>
+							<th><?php echo __('Hours') ?></th>
+							<th><?php echo __('Billed') ?></th>
+							<th><?php echo __('Date') ?></th>
+							<th><?php echo __('Actions') ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php if(count($project['Hour']) < 1): ?>
+							<tr>
+								<td colspan="5"><?php echo __('There are not related hours in this project'); ?></td>
+							</tr>
+						<?php endif; ?>
+						<?php foreach ($project['Hour'] as $hour): ?>
+						<tr>
+							<td><?php echo $hour['note']; ?></td>
+							<td><?php echo $hour['hours']; ?></td>
+							<td><?php echo $this->Fn5->drawStatus($hour['billed']); ?></td>
+							<td><?php echo $hour['created']; ?></td>
+							<td></td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+					</table>
+				</div>				
+			</section>
+			</div>
+		</div>
 	</div>
+</div>
+<!-- Modal add project -->
+<div id="addHoursModal" class="reveal-modal medium" data-reveal>
+	<h2><?php echo __('Add Hours'); ?></h2>
+	<div class="hours form">
+	<form id="addHoursForm" method="post" action="<?php echo Router::url(array('controller' => 'Hours', 'action' => 'add')); ?>" data-abide>
+		<div class="row">
+			<div class="medium-6 large-6 columns">
+				<label><?php echo __('Hours'); ?> <small>required</small>
+					<input type="text" name="data[Hour][hours]" maxlength="60" placeholder="Hours" required/>
+				</label>
+				<small class="error">Hours is required and must be a number.</small>
+			</div>
+			<div class="medium-6 large-6 columns">
+				<label><?php echo __('Bill'); ?>
+					<input type="checkbox" name="data[Hour][billed]" />
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<label><?php echo __('Note'); ?><small>Required</small>
+					<textarea name="data[Hour][note]" required></textarea>
+				</label>
+				<small class="error">Please, write a note.</small>
+			</div>
+		</div>
+
+		<input type="hidden" name="data[Hour][project_id]" value="<?php echo $project['Project']['id'] ?>"/>
+		<input type="hidden" name="data[Hour][user_id]" value="<?php echo $current_user['id'] ?>"/>
+		<input type="submit" class="button tiny success radius" value="<?php echo __('Submit'); ?>">
+	</form>
+	</div>
+	<a class="close-reveal-modal">&#215;</a> 
 </div>

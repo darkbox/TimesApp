@@ -49,7 +49,7 @@
 			<tbody>
 			<?php foreach ($projects as $project): ?>
 			<tr>
-				<td><?php echo h($project['Project']['code']); ?>&nbsp;</td>
+				<td><?php echo $this->Html->link($project['Project']['code'], array('action' => 'view', $project['Project']['id'])); ?>&nbsp;</td>
 				<td><?php 
 
 					switch($project['Project']['status']){

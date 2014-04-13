@@ -74,6 +74,7 @@ class ProjectsController extends AppController {
 			throw new NotFoundException(__('Invalid project'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+			debug($this->request->data);
 			if ($this->Project->save($this->request->data)) {
 				$this->Session->setFlash(__('The project has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));

@@ -50,10 +50,11 @@ class HoursController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Hour->create();
 			if ($this->Hour->save($this->request->data)) {
-				$this->Session->setFlash(__('The hour has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The hour has been saved.'), 'flash_success');
+				return $this->redirect(array('controller' => 'projects', 'action' => 'view', $this->request->data['Hour']['project_id']));
 			} else {
-				$this->Session->setFlash(__('The hour could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The hour could not be saved. Please, try again.'), 'flash_danger');
+				return $this->redirect(array('controller' => 'projects', 'action' => 'index'));
 			}
 		}
 		$projects = $this->Hour->Project->find('list');
