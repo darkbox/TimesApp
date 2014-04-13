@@ -7,9 +7,11 @@
 					<h1><?php echo __('Clients'); ?></h1>
 					<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addClientModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Client'); ?></a>
 				</header>
-				<input class="toggle" type="checkbox" id="show">
-	            <label class="toggle" for="show"><i class="toggle"></i></label>
-	            <label for="show" style="display: inline-block;">Show inactive users</label>
+				<div class="divToggle">
+	                <input type="checkbox" id="show">
+	                <label class="firstLabel" for="show"><i></i></label>
+	                <label class="toggleLabel" for="show">Drojas enlatadas</label>
+              	</div>
 				<?php echo $this->Html->image('loadingImage.gif', array('class' => 'loadingImage', 'id' => 'loading-image')); ?>
 				<div id="listClients"> <!-- lista de clientes -->
 					<!-- Contenido -->
