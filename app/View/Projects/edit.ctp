@@ -42,9 +42,11 @@
 					<small class="error">A client is required.</small>
 				</div>
 				<div class="medium-6 large-6 columns">
-					<label><?php echo __('Billable'); ?>
-						<input type="checkbox" name="data[Project][billable]" <?php if($this->request->data['Project']['billable']) echo 'checked'; ?>>
-					</label>
+					<div class="divToggle toggle-push">
+		                <input type="checkbox" id="showBillable" name="data[Project][billable]" <?php if($this->request->data['Project']['billable']) echo 'checked'; ?>>
+		                <label class="firstLabel" for="showBillable"><i></i></label>
+		                <label class="toggleLabel" for="showBillable"><?php echo __('Billable'); ?></label>
+		          	</div>
 				</div>
 			</div>
 			<div class="row">

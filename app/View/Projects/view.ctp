@@ -63,9 +63,11 @@
 				<small class="error">Hours is required and must be a number.</small>
 			</div>
 			<div class="medium-6 large-6 columns">
-				<label><?php echo __('Bill'); ?>
-					<input type="checkbox" name="data[Hour][billed]" />
-				</label>
+				<div class="divToggle toggle-push">
+	                <input type="checkbox" id="showBilled" name="data[Hour][billed]">
+	                <label class="firstLabel" for="showBilled"><i></i></label>
+	                <label class="toggleLabel" for="showBilled"><?php echo __('Bill'); ?></label>
+          		</div>
 			</div>
 		</div>
 		<div class="row">
