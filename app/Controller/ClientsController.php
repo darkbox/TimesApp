@@ -115,8 +115,6 @@ class ClientsController extends AppController {
 /**
  * listClients method
  *
- * @throws NotFoundException
- * @param string $id
  * @return void
  */
 	public function listClients() {

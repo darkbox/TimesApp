@@ -2,16 +2,33 @@ $(function() {
     var listClients = $('#listClients');
 
     $('#show').on('click', function() {
-
-                    listClients.empty();
-
+                    
                     if($(this).prop('checked')==true) {
-                        listClients.empty().load(getBaseURL() + 'clients/listClients?var=true');
+                       getContactList('true');
                     } else {
-                        listClients.empty().load(getBaseURL() + 'clients/listClients?var=false');
+                        getContactList('false');
                     }
                     
                 });
+
+    function getContactList(value) {
+        $.ajax({
+                url: getBaseURL() + 'clients/listClients?var=' + value,
+                cache: false,
+                beforeSend: function(){
+                    $('#loading-image').show();
+                },
+                success: function(html){
+                   
+                   setTimeout(function() {
+                        listClients.empty();
+                        $('#listClients').append(html);
+                        $('#loading-image').hide();
+                    }, 1000);
+                }
+            });
+    }
+
 });
 
 function getBaseURL() {

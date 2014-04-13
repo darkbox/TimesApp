@@ -69,7 +69,6 @@
     <?php echo $this->Html->script('jquery.min'); ?>
     <?php echo $this->Html->script('foundation.min'); ?>
     <?php echo $this->Html->script('app'); ?>
-    <?php echo $this->Js->writeBuffer(); // Write cached scripts ?>
     <?php echo $this->Html->script('listClients'); ?>
 </body>
 </html>

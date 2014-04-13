@@ -7,7 +7,8 @@
 					<h1><?php echo __('Clients'); ?></h1>
 					<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addClientModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Client'); ?></a>
 				</header>
-				<?php echo $this->Form->checkbox('show'); ?> <label for="show">Show inactive clients</label>
+				<input class="ios" type="checkbox" id="show">
+	            <label class="ios" for="show"><i class="ios"></i></label>Show inactive clients
 				<?php echo $this->Html->image('loadingImage.gif', array('class' => 'loadingImage', 'id' => 'loading-image')); ?>
 				<div id="listClients"> <!-- lista de clientes -->
 					<!-- Contenido -->
