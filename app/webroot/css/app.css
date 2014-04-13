@@ -9925,8 +9925,9 @@ i.inactive {
   width: auto;
   height: 32px;
   line-height: 2.2 !important;
+  padding-left: 7px;
 }
-/* line 493, ../scss/app.scss */
+/* line 494, ../scss/app.scss */
 .divToggle .toggle-push {
   margin-top: 22px;
 }
