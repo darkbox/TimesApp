@@ -6,9 +6,9 @@ $(function() {
                     listClients.empty();
 
                     if($(this).prop('checked')==true) {
-                        listClients.empty().load('listClients?var=true');
+                        listClients.empty().load(getBaseURL() + 'clients/listClients?var=true');
                     } else {
-                        listClients.empty().load('listClients?var=false');
+                        listClients.empty().load(getBaseURL() + 'clients/listClients?var=false');
                     }
                     
                 });

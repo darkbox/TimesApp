@@ -23,7 +23,11 @@ class ClientsController extends AppController {
  */
 	public function index() {
 		$this->Client->recursive = 0;
-		
+
+		$this->Paginator->settings = array(
+    	   	'conditions' => array('Client.status' => 1)
+    	);
+
 		$this->set('clients', $this->paginate());
 	}
 
@@ -118,7 +122,7 @@ class ClientsController extends AppController {
 	public function listClients() {
 	    $this->layout = 'ajax';
 
-	    if($_GET['var']=='true') {
+	    if($_GET['var']=='false') {
 
 		    $this->Paginator->settings = array(
     	    	'conditions' => array('Client.status' => 1)
