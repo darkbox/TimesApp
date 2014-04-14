@@ -1,14 +1,16 @@
 <div class="page-wrapper">
-<div class="row">
-	<div class="large-12 columns">
-	<dl class="tabs vertical" data-tab>
-		<dd class="active"><a href="#panel1a">General</a></dd>
-		<dd><a href="#panel2a">Invoices</a></dd>
-		<dd><a href="#panel3a">More stuff</a></dd>
-		<dd><a href="#panel4a">Others</a></dd> 
-	</dl> 
-	<div class="tabs-content vertical"> 
-		<div class="content active" id="panel1a">
+	<div class="row">
+		<div class="large-3 medium-3 columns">
+			<nav class="page-nav">
+				<ul>
+					<li class="current"><a href=""><?php echo __('General'); ?></a></li>
+					<li><a href=""><?php echo __('Invoices'); ?></a></li>
+					<li><a href=""><?php echo __('Other stuff'); ?></a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="large-9 medium-9 columns">
+			<div class="page-content">
 			<div class="row">
 				<div class="large-12 columns" style="padding: 20px">
 					<form action="<?php echo Router::url(array('controller' => 'Settings', 'action' => 'index')); ?>" method="post">
@@ -89,35 +91,7 @@
 					</form>
 				</div>
 			</div>
-		</div> 
-		<div class="content" id="panel2a"> 
-			<div class="row">
-				<div class="large-12 columns">
-					<form action="">
-						 <div class="row">
-						    <div class="large-12 columns">
-						      <label><?php echo __('Default terms') ?>
-						        <textarea></textarea>
-						      </label>
-						    </div>
-						  </div>
-						   <div class="row">
-						    <div class="large-12 columns">
-						      <label>Input Label
-						        <input type="text" placeholder="large-12.columns" />
-						      </label>
-						    </div>
-						  </div>
-					</form>
-				</div>
-			</div>
-		</div> <div class="content" id="panel3a"> 
-			<p>Panel 3 content goes here.</p> 
-		</div> 
-		<div class="content" id="panel4a"> 
-			<p>Panel 4 content goes here.</p> 
-		</div> 
+		</div>
+		</div> <!-- Fin contenido -->
 	</div>
-	</div>
-</div>
 </div>

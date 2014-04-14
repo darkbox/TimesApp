@@ -1,22 +1,23 @@
-
 <script type="text/javascript">
-
 $(document).ready(function(){
 	var data = {
-		labels : ["January","February","March","April","May","June","July"],
-		datasets : [
-			{
-				fillColor : "rgba(220,220,220,0.5)",
-				strokeColor : "rgba(220,220,220,1)",
-				pointColor : "rgba(220,220,220,1)",
-				pointStrokeColor : "#fff",
-				data : [65,59,90,81,56,55,40]
-			}
-		]
-	};
+	labels : ["Paid vs Due"],
+	datasets : [
+		{
+			fillColor : "rgba(159,187,88,0.5)",
+			strokeColor : "rgba(159,187,88,1)",
+			data : [65]
+		},
+		{
+			fillColor : "rgba(226,84,64,0.5)",
+			strokeColor : "rgba(226,84,64,1)",
+			data : [28]
+		}
+	]
+};
 
 	var options = {
-				
+
 	//Boolean - If we show the scale above the chart data			
 	scaleOverlay : false,
 	
@@ -32,10 +33,10 @@ $(document).ready(function(){
 	scaleStartValue : null,
 
 	//String - Colour of the scale line	
-	scaleLineColor : "rgba(0,0,0,0)",
+	scaleLineColor : "rgba(255,255,255,1)",
 	
 	//Number - Pixel width of the scale line	
-	scaleLineWidth : 1,
+	scaleLineWidth : 0,
 
 	//Boolean - Whether to show labels on the scale	
 	scaleShowLabels : false,
@@ -63,27 +64,18 @@ $(document).ready(function(){
 	
 	//Number - Width of the grid lines
 	scaleGridLineWidth : 1,	
+
+	//Boolean - If there is a stroke on each bar	
+	barShowStroke : true,
 	
-	//Boolean - Whether the line is curved between points
-	bezierCurve : true,
+	//Number - Pixel width of the bar stroke	
+	barStrokeWidth : 2,
 	
-	//Boolean - Whether to show a dot for each point
-	pointDot : true,
+	//Number - Spacing between each of the X value sets
+	barValueSpacing : 5,
 	
-	//Number - Radius of each point dot in pixels
-	pointDotRadius : 5,
-	
-	//Number - Pixel width of point dot stroke
-	pointDotStrokeWidth : 1,
-	
-	//Boolean - Whether to show a stroke for datasets
-	datasetStroke : true,
-	
-	//Number - Pixel width of dataset stroke
-	datasetStrokeWidth : 2,
-	
-	//Boolean - Whether to fill the dataset with a colour
-	datasetFill : true,
+	//Number - Spacing between data sets within X values
+	barDatasetSpacing : 1,
 	
 	//Boolean - Whether to animate the chart
 	animation : true,
@@ -99,15 +91,13 @@ $(document).ready(function(){
 	
 }
 
-	var ctx = document.getElementById("lines").getContext("2d");
-	var Line = new Chart(ctx).Line(data, options);
+
+	var ctx = document.getElementById("bar").getContext("2d");
+	var chart = new Chart(ctx).Bar(data,options);
 });
 </script>
-<section class="dash-tile" id="chart-tile" style="height: 490px;">
-	<header>
-		<h1>Total hours</h1>
-	</header>
-	<center style="margin-top: 30px">
-	<canvas id="lines" height="300" width="500" data-type="Lines" style="width: 500px; height: 300px;"></canvas>
+<section class="dash-tile" id="chart-tile">
+	<center>
+	<canvas id="bar" height="200" width="200" data-type="Bar" style="width: 200px; height: 200px;"></canvas>
 	</center>
 </section>

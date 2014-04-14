@@ -25,21 +25,25 @@ foreach ($projects as $value) {
 		<?php echo $this->element('tiles/time'); ?>
 	</div>
 	<div class="large-6 columns">
-		<?php echo $this->element('tiles/lines'); ?>
-	</div>
-	<div class="large-3 columns">
 		<?php echo $this->element('tiles/chart', array('planned' => $planned, 'inProgress' => $inProgress, 'completed' => $completed, 'canceled' => $canceled)); ?>
 	</div>
+	<div class="large-3 columns">
+		<?php echo $this->element('tiles/due'); ?>
+	</div>
 </div>
 <div class="row">
 	<div class="large-6 columns">
-		<?php echo $this->element('tiles/time'); ?>
+		<?php echo $this->element('tiles/lines'); ?>
 	</div>
-	<div class="large-3 columns">
-		<?php echo $this->element('tiles/time'); ?>
-	</div>
-	<div class="large-3 columns">
-		<?php echo $this->element('tiles/time'); ?>
+	<div class="large-6 columns">
+		<div class="row">
+			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>
+			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>
+			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>
+		</div>
 	</div>
 </div>
 <div class="row">
@@ -47,7 +51,7 @@ foreach ($projects as $value) {
 		<?php echo $this->element('tiles/time'); ?>
 	</div>
 	<div class="large-6 columns">
-		<?php echo $this->element('tiles/time'); ?>
+		<?php echo $this->element('tiles/chart', array('planned' => $planned, 'inProgress' => $inProgress, 'completed' => $completed, 'canceled' => $canceled)); ?>
 	</div>
 	<div class="large-3 columns">
 		<?php echo $this->element('tiles/time'); ?>

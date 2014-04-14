@@ -50,5 +50,5 @@
 <section class="dash-tile" id="time-tile">
 	<span>Today</span>
 	<h1 id="time"></h1>
-	<span id="date"><?php echo date('m/d/Y', time()); ?></span>
+	<span id="date"><?php echo date('l / F d / Y', time()); ?></span>
 </section>
