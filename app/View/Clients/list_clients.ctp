@@ -12,7 +12,11 @@
 </thead>
 <tbody>
 <?php foreach ($clients as $client):?>
-	<tr>
+	<?php if($client['Client']['status']==0): ?>
+		<tr class="inactiveClient">
+	<?php else: ?>
+		<tr>
+	<?php endif ?>
 		<td><?php echo h($client['Client']['name']); ?>&nbsp;</td>
 		<td><?php echo h($client['Client']['email']); ?>&nbsp;</td>
 		<td><?php echo h($client['Client']['city']); ?>&nbsp;</td>
