@@ -1,7 +1,7 @@
 $(function() {
     var listClients = $('#listClients');
 
-    $('#show').on('click', function() {
+    $('#showInactiveUsers').on('click', function() {
                     
                     if($(this).prop('checked')==true) {
                        getContactList('true');
