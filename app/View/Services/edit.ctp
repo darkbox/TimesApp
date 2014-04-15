@@ -1,25 +1,28 @@
-<div class="services form">
-<?php echo $this->Form->create('Service'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Service'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('code');
-		echo $this->Form->input('status');
-		echo $this->Form->input('description');
-		echo $this->Form->input('rate');
-		echo $this->Form->input('tax_id');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<div class="page-wrapper">
+	<div class="row">
+		<div class="large-12 medium-12 columns">
+			<div class="page-content">
+			<!-- Cabecera -->
+			<header>
+				<h1><?php echo __('Edit Service'); ?></h1>
+				<a href="<?php echo Router::url(array('controller' => 'services', 'action' => 'index')); ?>" class="button tiny secondary radius right" style="margin-top: 20px"><i class="fi-arrow-left"></i>&nbsp;<?php echo __('Go back'); ?></a>
+			</header>
+			<!-- Contenido -->
+			<div class="services form">
+			<?php echo $this->Form->create('Service'); ?>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Service.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Service.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Services'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Taxes'), array('controller' => 'taxes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tax'), array('controller' => 'taxes', 'action' => 'add')); ?> </li>
-	</ul>
+				<?php
+					echo $this->Form->input('id');
+					echo $this->Form->input('code');
+					echo $this->Form->input('status');
+					echo $this->Form->input('description');
+					echo $this->Form->input('rate');
+					echo $this->Form->input('tax_id');
+				?>
+			<input type="submit" class="button tiny radius success" value="<?php echo __('Save changes') ?>" />
+			<?php echo $this->Form->end(); ?>
+			</div>
+			</div>
+		</div>
+	</div>
 </div>

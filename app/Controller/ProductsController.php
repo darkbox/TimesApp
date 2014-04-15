@@ -24,6 +24,9 @@ class ProductsController extends AppController {
 	public function index() {
 		$this->Product->recursive = 0;
 		$this->set('products', $this->Paginator->paginate());
+
+		$taxes = $this->Product->Tax->find('list');
+		$this->set(compact('taxes'));
 	}
 
 /**
@@ -50,10 +53,10 @@ class ProductsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Product->create();
 			if ($this->Product->save($this->request->data)) {
-				$this->Session->setFlash(__('The product has been saved.'));
+				$this->Session->setFlash(__('The product has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The product could not be saved. Please, try again.'), 'flash_danger');
 			}
 		}
 		$taxes = $this->Product->Tax->find('list');
@@ -73,10 +76,10 @@ class ProductsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Product->save($this->request->data)) {
-				$this->Session->setFlash(__('The product has been saved.'));
+				$this->Session->setFlash(__('The product has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The product could not be saved. Please, try again.'), 'flash_danger');
 			}
 		} else {
 			$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
@@ -100,9 +103,9 @@ class ProductsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Product->delete()) {
-			$this->Session->setFlash(__('The product has been deleted.'));
+			$this->Session->setFlash(__('The product has been deleted.'), 'flash_success');
 		} else {
-			$this->Session->setFlash(__('The product could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('The product could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}}

@@ -7,21 +7,13 @@
 				'sideBar' => array(
 					'titles' => array(
 						__('Projects'), 
-						__('List Hours'), 
-						__('New Project'), 
-						__('List Clients'), 
-						__('New Client'), 
-						__('List Hours'), 
-						__('New Hour'), 
+						__('Add Hours'),
+						__('Timer'), 
 					),
 					'links' => array(
 						array('controller' => 'projects', 'action' => 'index'),
-						array('controller' => 'hours', 'action' => 'index'),
-						array('controller' => 'project', 'action' => 'add'),
-						array('controller' => 'clients', 'action' => 'index'),
-						array('controller' => 'clients', 'action' => 'add'),
-						array('controller' => 'hours', 'action' => 'index'),
-						array('controller' => 'hours', 'action' => 'add')
+						array('controller' => 'hours', 'action' => 'add'),
+						array('controller' => 'hours', 'action' => 'timer'),
 					),
 					'active' => array('controller' => 'projects', 'action' => 'index')
 				)

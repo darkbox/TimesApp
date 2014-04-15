@@ -5,7 +5,10 @@
 			<!-- Cabecera -->
 			<header>
 				<h1><?php echo __('Project'); ?></h1>
-				<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addHoursModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('Add hours'); ?></a>
+				<ul class="button-group radius right">
+					<li><a href="<?php echo Router::url(array('controller' => 'projects', 'action' => 'index')); ?>" class="button tiny secondary" style="margin-top: 20px"><i class="fi-arrow-left"></i>&nbsp;<?php echo __('Go back'); ?></a></li>
+					<li><a href="#" class="button tiny success" style="margin-top: 20px" data-reveal-id="addHoursModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('Add hours'); ?></a></li>
+				</ul>
 			</header>
 			<!-- Contenido -->
 			<section class="row">

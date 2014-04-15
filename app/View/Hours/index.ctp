@@ -51,5 +51,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- Modal add hour -->

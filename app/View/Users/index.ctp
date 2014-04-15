@@ -13,6 +13,7 @@
 			<thead>
 				<tr>
 					<th><?php echo $this->Paginator->sort('name'); ?></th>
+					<th><?php echo $this->Paginator->sort('email'); ?></th>
 					<th><?php echo $this->Paginator->sort('role'); ?></th>
 					<th><?php echo $this->Paginator->sort('created'); ?></th>
 					<th><?php echo $this->Paginator->sort('status'); ?></th>
@@ -30,6 +31,7 @@
 							));
 					echo "&nbsp;" . h($user['User']['name']); 
 				?>&nbsp;</td>
+				<td><?php echo h($user['User']['email']); ?>&nbsp;</td>
 				<td><?php echo h($user['User']['role']); ?>&nbsp;</td>
 				<td><?php echo h($user['User']['created']); ?>&nbsp;</td>
 				<td><?php echo $this->Fn5->drawStatus($user['User']['status']); ?>&nbsp;</td>

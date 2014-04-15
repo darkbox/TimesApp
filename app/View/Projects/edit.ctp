@@ -2,7 +2,12 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<div class="page-content">
-			<h1><?php echo __('Edit Project'); ?></h1>
+			<!-- Cabecera -->
+			<header>
+				<h1><?php echo __('Edit Project'); ?></h1>
+				<a href="<?php echo Router::url(array('controller' => 'projects', 'action' => 'index')); ?>" class="button tiny secondary radius right" style="margin-top: 20px"><i class="fi-arrow-left"></i>&nbsp;<?php echo __('Go back'); ?></a>
+			</header>
+
 			<form action="<?php echo Router::url(array('controller' => 'projects', 'action' => 'edit')) . '/' . $this->request->data['Project']['id'] ?>" method="post" data-abide>
 			<div class="row">
 				<div class="medium-6 large-6 columns">
