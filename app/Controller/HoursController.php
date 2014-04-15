@@ -42,6 +42,15 @@ class HoursController extends AppController {
 	}
 
 /**
+ * timer method
+ *
+ * @return void
+ */
+	public function timer() {
+		
+	}
+
+/**
  * add method
  *
  * @return void

@@ -27,6 +27,9 @@
           if($activeLink == 'taxes' || $activeLink == 'products' || $activeLink == 'services'){
             if($controller == 'taxes' || $controller == 'products' || $controller == 'services')
               $class ="class='active'";
+          }else if($activeLink == 'projects' || $activeLink == 'hours'){
+            if($controller == 'projects' || $controller == 'hours')
+              $class ="class='active'";
           }else{
             if($activeLink == $controller){
               $class ="class='active'";

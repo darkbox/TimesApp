@@ -17,6 +17,7 @@
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 		echo $this->Html->script('modernizr');
+    echo $this->Html->script('jquery.min'); 
 	?>
 </head>
 <body>
@@ -66,7 +67,7 @@
     </footer>
 
     <!-- Scripts -->
-    <?php echo $this->Html->script('jquery.min'); ?>
+    <?php //echo $this->Html->script('jquery.min'); ?>
     <?php echo $this->Html->script('foundation.min'); ?>
     <?php echo $this->Html->script('app'); ?>
     <?php echo $this->Html->script('listClients'); ?>
