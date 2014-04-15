@@ -67,6 +67,7 @@
 
     <!-- Scripts -->
     <?php echo $this->Html->script('jquery.min'); ?>
+    <?php echo $this->Html->script('foundation-datepicker'); ?>
     <?php echo $this->Html->script('foundation.min'); ?>
     <?php echo $this->Html->script('app'); ?>
     <?php echo $this->Html->script('listClients'); ?>
