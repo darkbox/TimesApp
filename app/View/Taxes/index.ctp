@@ -1,6 +1,15 @@
 <div class="page-wrapper">
 	<div class="row">
-		<div class="large-12 medium-12 columns">
+		<div class="large-3 medium-3 columns">
+			<nav class="page-nav">
+				<ul>
+				<li class="current"><a href=""><?php echo __('Taxes'); ?></a></li>
+				<li><?php echo $this->Html->link(__('Services'), array('controller' => 'services', 'action' => 'index')); ?> </li>
+				<li><?php echo $this->Html->link(__('Products'), array('controller' => 'products', 'action' => 'index')); ?> </li>
+				</ul>
+			</nav>
+		</div>
+		<div class="large-9 medium-9 columns">
 			<div class="page-content">
 			<!-- Cabecera -->
 			<header>

@@ -4,7 +4,7 @@
     'invoices' => __('Invoices'),
     'projects' => __('Projects'),
     'clients' => __('Clients'),
-    'taxes' => __('Taxes'),
+    'taxes' => __('Presets'),
     'users' => __('Users'),
     );
   $activeLink = $this->params['controller'];
@@ -22,11 +22,19 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <?php foreach ($menuItems as $controller => $title): ?>
-          <?php if($activeLink == $controller){
+          <?php 
+          $class="";
+          if($activeLink == 'taxes' || $activeLink == 'products' || $activeLink == 'services'){
+            if($controller == 'taxes' || $controller == 'products' || $controller == 'services')
               $class ="class='active'";
           }else{
+            if($activeLink == $controller){
+              $class ="class='active'";
+            }else{
               $class="";
+            }
           }
+          
           ?>
       <li <?php echo $class; ?>><?php echo $this->Html->link($title, array('controller' => $controller, 'action' => 'index')); ?></li>
       <?php endforeach; ?>
