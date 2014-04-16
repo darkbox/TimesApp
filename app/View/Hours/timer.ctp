@@ -17,6 +17,15 @@
 			</header>
 			<!-- Contenido -->
 			<style type="text/css">
+.timer-paused span{
+   -ms-animation-play-state:paused;
+   -o-animation-play-state:paused;
+   -moz-animation-play-state:paused;
+   -webkit-animation-play-state:paused;
+  animation-play-state: paused;
+}
+
+
 .timer-group {
   height: 400px;
   margin: 0 auto;
@@ -208,9 +217,11 @@ $(document).ready(function(){
   , one_hour = one_minute * 60
   , one_day = one_hour * 24
   , startDate = new Date()
-  , face = $('#lazy');
+  , lastPause = -1
+  , face = $('#lazy')
+  , show_status = $('#status')
+  , status = 0;
 
-// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 var requestAnimationFrame = (function() {
   return window.requestAnimationFrame       || 
          window.webkitRequestAnimationFrame || 
@@ -222,12 +233,52 @@ var requestAnimationFrame = (function() {
          };
 }());
 
-tick();
+bindTimer();
+
+function bindTimer() {
+  $('#btn_timer_reset').click(function(){
+    startDate = new Date();
+    status = 0;
+    $('#btn_timer_playStop').text(' Run ');
+    $('div#stop').each(function(){
+        $(this).removeClass("hand");
+      });
+    show_status.text('Paused');
+    face.text('00:00:00');
+  });
+
+  $('#btn_timer_playStop').click(function(){
+    if(status == 0){
+      status = 1;
+      $('#btn_timer_playStop').text('Pause');
+      $('div#stop').each(function(){
+        $(this).addClass("hand");
+        $(this).removeClass("timer-paused");
+      });
+      show_status.text('Running');
+      tick();
+    }else{
+      status = 0;
+      lastPause = new Date();
+       $('#btn_timer_playStop').text(' Run ');
+       $('div#stop').each(function(){
+        $(this).addClass("timer-paused");
+      });
+      show_status.text('Paused');
+    }
+  });
+
+  $('#btn_timer_submit').click(function(){
+    
+  });
+}
 
 function tick() {
-  var now = new Date()
-    , elapsed = now - startDate
-    , parts = [];
+  var now = new Date();
+ 
+  var elapsed = now - startDate
+  , parts = [];
+
 
   parts[0] = '' + Math.floor( elapsed / one_hour );
   parts[1] = '' + Math.floor( (elapsed % one_hour) / one_minute );
@@ -238,8 +289,10 @@ function tick() {
   parts[2] = (parts[2].length == 1) ? '0' + parts[2] : parts[2];
 
   face.text(parts.join(':'));
-  
-  requestAnimationFrame(tick);
+
+  if(status != 0){
+    requestAnimationFrame(tick);
+  }
   
 }
 });
@@ -250,19 +303,19 @@ function tick() {
 					<center>
 						<section class="timer-group">
 						  <div class="timer hour">
-						    <div class="hand"><span></span></div>
-						    <div class="hand"><span></span></div>
+						    <div id="stop" class="timer-paused"><span></span></div>
+						    <div id="stop" class="timer-paused"><span></span></div>
 						  </div>
 						  <div class="timer minute">
-						    <div class="hand"><span></span></div>
-						    <div class="hand"><span></span></div>
+						    <div id="stop" class="timer-paused"><span></span></div>
+						    <div id="stop" class="timer-paused"><span></span></div>
 						  </div>
 						  <div class="timer second">
-						    <div class="hand"><span></span></div>
-						    <div class="hand"><span></span></div>
+						    <div id="stop" class="timer-paused"><span></span></div>
+						    <div id="stop" class="timer-paused"><span></span></div>
 						  </div>
 						  <div class="face">
-						    <h2>Running</h2>
+						    <h2 id="status">Paused</h2>
 						    <p id="lazy">00:00:00</p>  
 						  </div>
 						</section>
@@ -270,24 +323,50 @@ function tick() {
 				</div>
 			</div>
 			<div class="row">
-				<div class="small-6 large-centered columns">
-					<form>
-						<div>
-							<label><?php echo __('Project'); ?>
-							<input type="text" name="">
-							</label>
-						</div>
-						<div>
-							<label><?php echo __('Note'); ?>
-							<input type="text" name="">
-							</label>
-						</div>
+				<div class="small-12 large-centered columns">
+					<form id="addTimerForm" action="<?php echo Router::url(array('controller' => 'hour', 'action' => 'add')) ?>" method="post" data-abide>
+            <div class="row">
+              <div style="width: 315px; margin: 0 auto;">
+                  <ul class="button-group radius" style="margin-top: 30px;"> 
+                    <li style="width: 105px"><a href="#" id="btn_timer_reset" class="button alert">Reset</a></li>
+                    <li style="width: 105px"><a href="#" id="btn_timer_playStop" class="button success"> Run </a></li>
+                    <li style="width: 105px"><a href="#" id="btn_timer_submit" class="button success">Submit</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="row">
+						<div class="medium-4 large-4 columns">
+              <label><?php echo __('Project'); ?> <small>required</small>
+                <select name="data[Hour][project_id]" required>
+                  <option value=""><?php echo __('Select a project') ?></option>
+                  <?php foreach($projects as $key => $project): ?>
+                  <option value="<?php echo $key ?>"><?php echo h($project) ?></option>
+                  <?php endforeach; ?>
+                </select>
+              </label>
+              <small class="error">A project is required.</small>
+            </div>
+            <div class="medium-4 large-4 columns">
+              <label><?php echo __('Service'); ?> <small>required</small>
+                <select name="data[Hour][service_id]" required>
+                  <option value=""><?php echo __('Select a service') ?></option>
+                  <?php foreach($services as $key => $service): ?>
+                  <option value="<?php echo $key ?>"><?php echo h($service) ?></option>
+                  <?php endforeach; ?>
+                </select>
+              </label>
+              <small class="error">A service is required.</small>
+            </div>
+            <div class="medium-4 large-4 columns divToggle" style="width: auto !important; margin-top: 22px; margin-right: 15px;">
+                <input type="checkbox" id="showBilled" name="data[Hour][billed]">
+                <label class="firstLabel" for="showBilled"><i></i></label>
+                <label class="toggleLabel" for="showBilled"><?php echo __('Billable to client'); ?></label>
+              </div>
+            </div>
+
+            <input type="hidden" id="hidden_hours" name="data[Hour][hours]" value="0.00">
+            <input type="hidden" id="hidden_user_id" name="data[Hour][user_id]" value="<?php echo $current_user['id'] ?>">
 					</form>
-					<ul class="button-group radius" style="margin-top: 30px; margin-left: 22px;"> 
-						<li><a href="#" id="timer_pause" class="button alert">Reset</a></li>
-						<li><a href="#" id="timer_playStop" class="button success">Pause</a></li>
-						<li><a href="#" id="timer_submit" class="button success">Submit</a></li>
-					</ul>
 				</div>
 			</div>
 

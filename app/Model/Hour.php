@@ -31,6 +31,16 @@ class Hour extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'service_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'user_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -74,6 +84,13 @@ class Hour extends AppModel {
 		'Project' => array(
 			'className' => 'Project',
 			'foreignKey' => 'project_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Service' => array(
+			'className' => 'Service',
+			'foreignKey' => 'service_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

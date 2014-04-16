@@ -31,6 +31,17 @@
 					<small class="error">A project is required.</small>
 				</div>
 				<div>
+					<label><?php echo __('Service'); ?> <small>required</small>
+						<select name="data[Hour][service_id]" required>
+							<option value=""><?php echo __('Select a service') ?></option>
+							<?php foreach($services as $key => $service): ?>
+							<option value="<?php echo $key ?>"><?php echo h($service) ?></option>
+							<?php endforeach; ?>
+						</select>
+					</label>
+					<small class="error">A service is required.</small>
+				</div>
+				<div>
 					<label><?php echo __('User'); ?> <small>required</small>
 						<select name="data[Hour][user_id]" required>
 							<option value=""><?php echo __('Select a user') ?></option>

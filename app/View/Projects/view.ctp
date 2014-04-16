@@ -59,13 +59,24 @@
 	<div class="hours form">
 	<form id="addHoursForm" method="post" action="<?php echo Router::url(array('controller' => 'Hours', 'action' => 'add')); ?>" data-abide>
 		<div class="row">
-			<div class="medium-6 large-6 columns">
+			<div class="medium-5 large-5 columns">
 				<label><?php echo __('Hours'); ?> <small>required</small>
 					<input type="text" name="data[Hour][hours]" maxlength="60" placeholder="Hours" required/>
 				</label>
 				<small class="error">Hours is required and must be a number.</small>
 			</div>
-			<div class="medium-6 large-6 columns">
+			<div class="medium-5 large-5 columns">
+				<label><?php echo __('Service'); ?> <small>required</small>
+					<select name="data[Hour][service_id]" required>
+						<option value=""><?php echo __('Select a service') ?></option>
+						<?php foreach($services as $key => $service): ?>
+						<option value="<?php echo $key ?>"><?php echo h($service) ?></option>
+						<?php endforeach; ?>
+					</select>
+				</label>
+				<small class="error">A service is required.</small>
+			</div>
+			<div class="medium-2 large-2 columns">
 				<div class="divToggle toggle-push">
 	                <input type="checkbox" id="showBilled" name="data[Hour][billed]">
 	                <label class="firstLabel" for="showBilled"><i></i></label>
