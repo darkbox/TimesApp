@@ -9937,3 +9937,222 @@ i.inactive {
 .inactiveClient td {
   color: #ccc;
 }
+
+/* datepicker css */
+/*!
+ * Datepicker for Foundation - less stylesheet, just version customized to foundation
+ *
+ * Copyright 2013 Peter Beno, najlepsiwebdesigner@gmail.com, @benopeter
+ * project website http: //foundation-datepicker.peterbeno.com
+ *
+ * Original project https: //github.com/eternicode/bootstrap-datepicker
+ *    Original author 2012 Stefan Petre
+ *    Improvements by Andrew Rowls
+ *    Licensed under the Apache License v2.0
+ *    http: //www.apache.org/licenses/LICENSE-2.0
+ */
+/* line 517, ../scss/app.scss */
+.datepicker.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  color: #333;
+  font-family: "Open Sans",sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 545, ../scss/app.scss */
+.datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
+  padding: 4px 5px;
+}
+
+/* line 548, ../scss/app.scss */
+.datepicker {
+  display: none;
+  position: absolute;
+  padding: 4px;
+  margin-top: 1px;
+  direction: ltr;
+}
+
+/* line 555, ../scss/app.scss */
+.datepicker-inline {
+  width: 220px;
+}
+
+/* line 558, ../scss/app.scss */
+.datepicker-rtl {
+  direction: rtl;
+}
+
+/* line 561, ../scss/app.scss */
+.datepicker-rtl table tr td span {
+  float: right;
+}
+
+/* line 564, ../scss/app.scss */
+.datepicker-dropdown {
+  top: 0;
+  left: 0;
+}
+
+/* line 568, ../scss/app.scss */
+.datepicker-dropdown:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+  left: 6px;
+}
+
+/* line 579, ../scss/app.scss */
+.datepicker-dropdown:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  position: absolute;
+  top: -6px;
+  left: 7px;
+}
+
+/* line 589, ../scss/app.scss */
+.datepicker > div {
+  display: none;
+}
+
+/* line 592, ../scss/app.scss */
+.datepicker.days div.datepicker-days {
+  display: block;
+}
+
+/* line 595, ../scss/app.scss */
+.datepicker.months div.datepicker-months {
+  display: block;
+}
+
+/* line 598, ../scss/app.scss */
+.datepicker.years div.datepicker-years {
+  display: block;
+}
+
+/* line 601, ../scss/app.scss */
+.datepicker table {
+  border: 0;
+  margin: 0;
+}
+
+/* line 605, ../scss/app.scss */
+.datepicker td, .datepicker th {
+  color: #333;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* line 625, ../scss/app.scss */
+.table-striped .datepicker table tr td, .table-striped .datepicker table tr th {
+  background-color: transparent;
+}
+
+/* line 628, ../scss/app.scss */
+.datepicker table tr td span {
+  display: block;
+  width: 23%;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+}
+
+/* line 637, ../scss/app.scss */
+.datepicker th.date-switch {
+  width: 145px;
+}
+
+/* line 640, ../scss/app.scss */
+.datepicker thead tr:first-child th, .datepicker tfoot tr:first-child th {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* line 644, ../scss/app.scss */
+.datepicker .cw {
+  font-size: 10px;
+  width: 12px;
+  padding: 0 2px 0 5px;
+  vertical-align: middle;
+}
+
+/* line 650, ../scss/app.scss */
+.datepicker thead tr:first-child th.cw {
+  cursor: default;
+  background-color: transparent;
+}
+
+/* line 654, ../scss/app.scss */
+.datepicker-dropdown:before, .datepicker-dropdown:after {
+  display: none;
+}
+
+/* line 657, ../scss/app.scss */
+.datepicker-close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 15px;
+  height: 30px;
+  padding: 0;
+  display: none;
+}
+
+/* line 666, ../scss/app.scss */
+.datepicker td.old, .datepicker td.new {
+  color: #999;
+}
+
+/* line 669, ../scss/app.scss */
+.datepicker td.day.disabled {
+  color: #eee;
+}
+
+/* line 673, ../scss/app.scss */
+.datepicker .dow {
+  font-weight: bold;
+}
+
+/* line 677, ../scss/app.scss */
+.datepicker .day:hover {
+  background: #9fbb58;
+}

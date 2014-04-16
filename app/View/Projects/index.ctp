@@ -143,12 +143,12 @@
 		<div class="row">
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Start'); ?>
-				<input type="text" name="data[Project][init_date]" id="dp1" />
+				<input type="text" name="data[Project][init_date]" placeholder="MM/DD/YYYY" id="dpProjectStartingDate" />
 				</label>
 			</div>
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('End'); ?>
-				<input type="text" name="data[Project][deadline]" id="dp2" />
+				<input type="text" name="data[Project][deadline]" placeholder="MM/DD/YYYY" id="dpProjectDeadLine" />
 				</label>
 			</div>
 		</div>
