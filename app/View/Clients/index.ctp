@@ -11,7 +11,11 @@
 				<div class="row">
 					<div class="large-6 columns">
 						<div class="divToggle">
-			                <input type="checkbox" id="showInactiveUsers">
+							<?php if(isset($toggleInactive) && $toggleInactive=='true'): ?>
+				                <input type="checkbox" id="showInactiveUsers" checked>
+				            <?php else: ?>
+				            	<input type="checkbox" id="showInactiveUsers">
+				            <?php endif ?>
 			                <label class="firstLabel" for="showInactiveUsers"><i></i></label>
 			                <label class="toggleLabel" for="showInactiveUsers"><?php echo __('Show inactive users') ?></label>
 		              	</div>
@@ -35,7 +39,11 @@
 					</thead>
 					<tbody>
 					<?php foreach ($clients as $client):?>
+						<?php if($client['Client']['status']==0): ?>
+							<tr class="inactiveClient">
+						<?php else: ?>
 						<tr>
+						<?php endif ?>
 							<td><?php echo h($client['Client']['name']); ?>&nbsp;</td>
 							<td><?php echo h($client['Client']['email']); ?>&nbsp;</td>
 							<td><?php echo h($client['Client']['city']); ?>&nbsp;</td>

@@ -24,11 +24,19 @@ class ClientsController extends AppController {
 	public function index() {
 		$this->Client->recursive = 0;
 
-		$this->Paginator->settings = array(
-    	   	'conditions' => array('Client.status' => 1)
-    	);
+		if(isset($_GET['var']) && $_GET['var']=='true') {
 
-		$this->set('clients', $this->paginate());
+			$this->set('toggleInactive', 'true');
+		    $this->Paginator->settings = array('conditions' => array());
+    	} else {
+    		
+    		$this->Paginator->settings = array(
+    	    	'conditions' => array('Client.status' => 1)
+    		);
+    	}
+
+	    $this->set('clients', $this->paginate());
+
 	}
 
 /**
@@ -110,24 +118,4 @@ class ClientsController extends AppController {
 			$this->Session->setFlash(__('The client could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
-	}
-
-/**
- * listClients method
- *
- * @return void
- */
-	public function listClients() {
-	    $this->layout = 'ajax';
-
-	    if($_GET['var']=='false') {
-
-		    $this->Paginator->settings = array(
-    	    	'conditions' => array('Client.status' => 1)
-    		);
-    	} else {
-    		$this->Paginator->settings = array('conditions' => array());
-    	}
-
-	    $this->set('clients', $this->paginate());
 	}}

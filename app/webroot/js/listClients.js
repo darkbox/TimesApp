@@ -13,7 +13,7 @@ $(function() {
 
     function getContactList(value) {
         $.ajax({
-                url: getBaseURL() + 'clients/listClients?var=' + value,
+                url: getBaseURL() + 'clients/index?var=' + value,
                 cache: false,
                 beforeSend: function(){
                     $('#loading-image').show();
@@ -21,8 +21,8 @@ $(function() {
                 success: function(html){
                    
                    setTimeout(function() {
-                        listClients.empty();
-                        $('#listClients').append(html);
+                        $('body').empty();
+                        $('body').append(html);
                         $('#loading-image').hide();
                     }, 1000);
                 }
