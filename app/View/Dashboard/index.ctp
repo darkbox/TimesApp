@@ -37,8 +37,8 @@ foreach ($projects as $value) {
 	</div>
 	<div class="large-6 columns">
 		<div class="row">
-			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>
-			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>
+			<div class="large-6 columns"><?php echo $this->element('tiles/users_status'); ?></div>
+			<div class="large-6 columns"><?php echo $this->element('tiles/vcard'); ?></div>
 		</div>
 		<div class="row">
 			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>

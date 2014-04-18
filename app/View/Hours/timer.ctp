@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-3 medium-3 columns">
@@ -90,4 +88,3 @@
 	</div>
 </div>
 <?php echo $this->Html->script('timer'); ?>
->>>>>>> 29639c0da5cbd297fa6f2581f7d97a5e8121f1ca

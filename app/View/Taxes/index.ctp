@@ -67,8 +67,8 @@
 		<div>
 			<label><?php echo __('Status'); ?> <small>required</small>
 				<select name="data[Tax][status]" data-invalid required>
-					<option value="0"><?php echo __('Active'); ?></option>
-					<option value="1"><?php echo __('Inactive'); ?></option>
+					<option value="1"><?php echo __('Active'); ?></option>
+					<option value="0"><?php echo __('Inactive'); ?></option>
 				</select>
 			</label>
 			<small class="error">Status is required.</small>

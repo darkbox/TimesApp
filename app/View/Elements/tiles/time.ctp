@@ -39,7 +39,49 @@
 
 	.dash-tile h1, h2, h3, h4, small{
 		color: #47494b;
-		font-weight: normal;
+		font-weight: 300;
+	}
+	
+	.dash-tile footer{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 30px;
+		border-top: 1px solid #f2f2f0;
+		text-transform: uppercase;
+	}
+
+	.dash-tile footer ul{
+		list-style: none;
+		display: block;
+	
+	}
+
+	.dash-tile footer ul li{
+		display: inline-block;
+	}
+
+	.dash-tile footer ul .btn {
+		position: absolute;
+		right: 0;
+		width: 35px;
+		height: 30px;
+		border-left: 1px solid #f2f2f0;
+	}
+
+	.dash-tile footer ul .btn a{
+		color: #bfbfb5;
+		font-size: 15px;
+		padding-left: 9px;
+		line-height: 30px;
+	}
+
+	.dash-tile footer h1, h2, h3, h4, small{
+		color: #bfbfb5;
+		font-size: 16px;
+		font-weight: 300;
+		text-transform: uppercase;
 	}
 
 	#time{

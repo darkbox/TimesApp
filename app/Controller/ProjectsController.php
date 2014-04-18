@@ -42,8 +42,11 @@ class ProjectsController extends AppController {
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
 		$this->set('project', $this->Project->find('first', $options));
 
-		$this->loadModel('Hour');		
-		$services = $this->Hour->Service->find('list');
+		$this->loadModel('Hour');
+		$options = array('conditions' => array(
+			'status' => 1
+			));		
+		$services = $this->Hour->Service->find('list', $options);
 		$users = $this->Hour->User->find('list');
 		$this->set(compact('services', 'users'));
 	}

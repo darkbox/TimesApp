@@ -32,8 +32,11 @@ class HoursController extends AppController {
  * @return void
  */
 	public function timer() {
-		$projects = $this->Hour->Project->find('list');
-		$services = $this->Hour->Service->find('list');
+		$options = array('conditions' => array(
+			'status' => 1
+			));
+		$projects = $this->Hour->Project->find('list', $options);
+		$services = $this->Hour->Service->find('list', $options);
 		$this->set(compact('projects', 'services'));
 	}
 
@@ -53,8 +56,11 @@ class HoursController extends AppController {
 				return $this->redirect(array('controller' => 'projects', 'action' => 'index'));
 			}
 		}
-		$projects = $this->Hour->Project->find('list');
-		$services = $this->Hour->Service->find('list');
+		$options = array('conditions' => array(
+			'status' => 1
+			));
+		$projects = $this->Hour->Project->find('list', $options);
+		$services = $this->Hour->Service->find('list', $options);
 		$users = $this->Hour->User->find('list');
 		$this->set(compact('projects', 'services', 'users'));
 	}

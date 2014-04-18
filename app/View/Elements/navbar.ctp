@@ -30,6 +30,12 @@
           }else if($activeLink == 'projects' || $activeLink == 'hours'){
             if($controller == 'projects' || $controller == 'hours')
               $class ="class='active'";
+          }else if($activeLink == 'invoices' || $activeLink == 'payments'){
+            if($controller == 'invoices' || $controller == 'payments')
+              $class ="class='active'";
+          }else if($activeLink == 'dashboard' || $activeLink == 'settings'){
+            if($controller == 'dashboard' || $controller == 'settings')
+              $class ="class='active'";
           }else{
             if($activeLink == $controller){
               $class ="class='active'";

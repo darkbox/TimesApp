@@ -4,8 +4,8 @@
 			<nav class="page-nav">
 				<ul>
 				<li class="current"><a href=""><?php echo __('Invoices'); ?></a></li>
-				<li><?php echo $this->Html->link(__('List Payments'), array('controller' => 'payments', 'action' => 'index')); ?> </li>
-				<li><?php echo $this->Html->link(__('New Payment'), array('controller' => 'payments', 'action' => 'add')); ?> </li>
+				<li><?php echo $this->Html->link(__('Payments'), array('controller' => 'payments', 'action' => 'index')); ?> </li>
+				<li><?php echo $this->Html->link(__('Add Payment'), array('controller' => 'payments', 'action' => 'add')); ?> </li>
 				</ul>
 			</nav>
 		</div>
