@@ -61,7 +61,7 @@
 
 				?>&nbsp;</td>
 				<td>
-					<?php echo $this->Html->link($project['Client']['name'], array('controller' => 'clients', 'action' => 'view', $project['Client']['id'])); ?>
+					<?php echo $this->Html->link($project['Client']['name'], array('controller' => 'clients', 'action' => 'edit', $project['Client']['id'])); ?>
 				</td>
 				<td><?php echo h($project['Project']['init_date']); ?>&nbsp;</td>
 				<td><?php
@@ -95,7 +95,7 @@
 <div id="addProjectModal" class="reveal-modal medium" data-reveal>
 	<h2><?php echo __('Add Project'); ?></h2>
 	<div class="projects form">
-	<form id="addProjectForm" method="post" action="<?php echo Router::url(array('controller' => 'Projects', 'action' => 'add')); ?>" data-abide>
+	<form id="addProjectForm" method="post" action="<?php echo Router::url(array('controller' => 'projects', 'action' => 'add')); ?>" data-abide>
 		<div class="row">
 		<div class="medium-6 large-6 columns">
 			<label><?php echo __('Code'); ?> <small>required</small>

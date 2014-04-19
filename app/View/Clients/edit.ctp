@@ -1,7 +1,14 @@
+<div class="page-wrapper">
+	<div class="row">
+		<div class="large-12 medium-12 columns">
+			<div class="page-content">
+				<!-- Cabecera -->
+				<header>
+					<h1><?php echo __('Edit Client'); ?></h1>
+					<a href="<?php echo Router::url(array('controller' => 'clients', 'action' => 'index'))?>" class="button tiny secondary radius right" style="margin-top: 20px"><i class="fi-arrow-left"></i>&nbsp;<?php echo __('Go back'); ?></a>
+				</header>
 <div class="clients form">
 <?php echo $this->Form->create('Client'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Client'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
@@ -19,18 +26,10 @@
 		echo $this->Form->input('vat_number');
 		echo $this->Form->input('status');
 	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<input type="submit" class="button tiny success radius" value="<?php echo __('Save Changes')?>">
+<?php echo $this->Form->end(); ?>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Client.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Client.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Clients'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Taxes'), array('controller' => 'taxes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tax'), array('controller' => 'taxes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
-	</ul>
+</div>
+</div>
+</div>
 </div>

@@ -37,7 +37,6 @@
 				<td class="actions">
 					<?php 
 					$links = array(
-						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $product['Product']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $product['Product']['id']), array('escape' => false)),
 						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $product['Product']['id']), array('action' => 'delete', $product['Product']['id']))
 					);

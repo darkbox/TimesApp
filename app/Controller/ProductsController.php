@@ -30,21 +30,6 @@ class ProductsController extends AppController {
 	}
 
 /**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Product->exists($id)) {
-			throw new NotFoundException(__('Invalid product'));
-		}
-		$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
-		$this->set('product', $this->Product->find('first', $options));
-	}
-
-/**
  * add method
  *
  * @return void

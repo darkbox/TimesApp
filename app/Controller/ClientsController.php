@@ -40,21 +40,6 @@ class ClientsController extends AppController {
 	}
 
 /**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Client->exists($id)) {
-			throw new NotFoundException(__('Invalid client'));
-		}
-		$options = array('conditions' => array('Client.' . $this->Client->primaryKey => $id));
-		$this->set('client', $this->Client->find('first', $options));
-	}
-
-/**
  * add method
  *
  * @return void

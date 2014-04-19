@@ -29,20 +29,6 @@ class ServicesController extends AppController {
 		$this->set(compact('taxes'));
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Service->exists($id)) {
-			throw new NotFoundException(__('Invalid service'));
-		}
-		$options = array('conditions' => array('Service.' . $this->Service->primaryKey => $id));
-		$this->set('service', $this->Service->find('first', $options));
-	}
 
 /**
  * add method

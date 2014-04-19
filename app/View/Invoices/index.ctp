@@ -14,7 +14,7 @@
 			<!-- Cabecera -->
 			<header>
 				<h1><?php echo __('Invoices'); ?></h1>
-				<a href="#" class="button tiny success radius right" style="margin-top: 20px" data-reveal-id="addInvoiceModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('New Invoice'); ?></a>
+				<a href="<?php echo Router::url(array('controller' => 'invoices', 'action' => 'add')) ?>" class="button tiny success radius right" style="margin-top: 20px"><i class="fi-plus"></i>&nbsp;<?php echo __('Create Invoice'); ?></a>
 			</header>
 			<!-- Contenido -->
 			<table cellpadding="0" cellspacing="0">

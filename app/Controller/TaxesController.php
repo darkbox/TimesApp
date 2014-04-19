@@ -29,21 +29,6 @@ class TaxesController extends AppController {
 	}
 
 /**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Tax->exists($id)) {
-			throw new NotFoundException(__('Invalid tax'));
-		}
-		$options = array('conditions' => array('Tax.' . $this->Tax->primaryKey => $id));
-		$this->set('tax', $this->Tax->find('first', $options));
-	}
-
-/**
  * add method
  *
  * @return void
