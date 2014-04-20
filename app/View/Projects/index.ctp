@@ -46,20 +46,20 @@
 
 					switch($project['Project']['status']){
 						case 0:
-							echo '<span class="secondary radius label">' . __('Planned') . '</span>';
+							echo '<span class="secondary radius label" style="width: 100%; text-align: center">' . __('Planned') . '</span>';
 							break;
 						case 1:
-							echo '<span class="radius label">' . __('In progress') . '</span>';
+							echo '<span class="radius label" style="width: 100%; text-align: center">' . __('In progress') . '</span>';
 							break;
 						case 2:
-							echo '<span class="success radius label">' . __('Completed') . '</span>';
+							echo '<span class="success radius label" style="width: 100%; text-align: center">' . __('Completed') . '</span>';
 							break;
 						case 3:
-							echo '<span class="alert radius label">' . __('Canceled') . '</span>';
+							echo '<span class="alert radius label" style="width: 100%; text-align: center">' . __('Canceled') . '</span>';
 							break;
 					}
 
-				?>&nbsp;</td>
+				?></td>
 				<td>
 					<?php echo $this->Html->link($project['Client']['name'], array('controller' => 'clients', 'action' => 'edit', $project['Client']['id'])); ?>
 				</td>
@@ -77,6 +77,12 @@
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $project['Project']['id']), array('escape' => false)),
 						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $project['Project']['id']), array('action' => 'delete', $project['Project']['id']))
 					);
+
+					// Es facturable?
+					if($project['Project']['billable'] == 1){
+						array_push($links, $this->Html->link('<i class="fi-plus"></i> ' . __('Invoice'), array('controller' => 'invoices','action' => 'add', $project['Project']['id']), array('escape' => false)));
+					}
+
 					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $project['Project']['id']); 
 					?>
 				</td>

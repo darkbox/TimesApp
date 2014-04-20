@@ -69,7 +69,7 @@
 			
 			<input type="hidden" name="_method" value="PUT" />
 			<input type="hidden" name="data[Project][id]" value="<?php echo $this->request->data['Project']['id']; ?>" />
-			<input type="submit" class="button tiny radius success" value="<?php echo __('Save Changes'); ?>" />
+			<input type="submit" class="button tiny radius success right" value="<?php echo __('Save Changes'); ?>" />
 			</form>
 			</div>
 		</div>

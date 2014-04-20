@@ -23,6 +23,13 @@ class ProjectsController extends AppController {
  */
 	public function index() {
 		$this->Project->recursive = 0;
+		$this->Paginator->settings = array(
+	        'limit' => 25,
+	        'order' => array(
+	            'Project.status' => 'asc'
+	        )
+	    );
+
 		$clients = $this->Project->Client->find('list');
 		$this->set(compact('clients'));
 		$this->set('projects', $this->Paginator->paginate());

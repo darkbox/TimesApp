@@ -29,7 +29,7 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'minLength' => array(
-				'rule' => array('minLength'),
+				'rule' => array('minLength', 3),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -46,6 +46,10 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'unique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'Email already exist',
+				),
 		),
 		'password' => array(
 			'notEmpty' => array(
@@ -76,7 +80,11 @@ class User extends AppModel {
 	* @return boolean
 	*/
 	public function beforeSave($options = array()) {
-        $this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+        if(!empty($this->data['User']['password'])) {
+        	$this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+	    } else {
+	        unset($this->data['User']['password']);
+	    }
         return true;
 	}
 }

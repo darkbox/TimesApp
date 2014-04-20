@@ -38,7 +38,6 @@
 				<td>
 					<?php 
 						$links = array(
-						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $user['User']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $user['User']['id']), array('escape' => false)),
 						$link3 = $this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $user['User']['id']), array('action' => 'delete', $user['User']['id'])));
 

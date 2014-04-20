@@ -1,21 +1,27 @@
-<div class="users form">
-<?php echo $this->Form->create('User'); ?>
-	<fieldset>
-		<legend><?php echo __('Add User'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('email');
-		echo $this->Form->input('password');
-		echo $this->Form->input('role');
-		echo $this->Form->input('status');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-	</ul>
+<div class="page-wrapper">
+	<div class="row">
+		
+		<div class="large-12 medium-12 columns">
+			<div class="page-content">
+			<!-- Cabecera -->
+			<header>
+				<h1><?php echo __('Add User'); ?></h1>
+				<a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'index')) ?>" class="button tiny secondary radius right" style="margin-top: 20px" ><i class="fi-arrow-left"></i>&nbsp;<?php echo __('Go back'); ?></a>
+			</header>
+			<!-- Contenido -->
+			<div class="users form">
+			<?php echo $this->Form->create('User'); ?>
+				<?php
+					echo $this->Form->input('name');
+					echo $this->Form->input('email');
+					echo $this->Form->input('password');
+					echo $this->Form->input('role');
+					echo $this->Form->input('status');
+				?>
+			<input type="submit" class="button tiny success radius right" value="<?php echo __('Add user') ?>">
+			<?php echo $this->Form->end(); ?>
+			</div>
+			</div>
+		</div>
+	</div>
 </div>
