@@ -49,13 +49,13 @@
 							<td><?php echo h($client['Client']['city']); ?>&nbsp;</td>
 							<td><?php echo h($client['Client']['state']); ?>&nbsp;</td>
 							<td><?php echo h($client['Client']['phone_number']); ?>&nbsp;</td>
-							<td>
+							<td class="action">
 								<?php 
 									$links = array(
 									$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $client['Client']['id']), array('escape' => false)),
 									$link3 = $this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $client['Client']['id']), array('action' => 'delete', $client['Client']['id'])));
 
-									echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $client['Client']['id']); 
+									echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $client['Client']['id']); 
 								?>
 							</td>
 						</tr>

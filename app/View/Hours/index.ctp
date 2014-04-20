@@ -30,7 +30,7 @@
 							<td><?php echo h($hour['Hour']['hours']); ?>&nbsp;</td>
 							<td><?php echo h($hour['Hour']['billed']); ?>&nbsp;</td>
 							<td><?php echo h($hour['Hour']['note']); ?>&nbsp;</td>
-							<td class="actions">
+							<td class="action">
 								<?php 
 									$links = array(
 										$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $hour['Hour']['id']), array('escape' => false)),
@@ -38,7 +38,7 @@
 										$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $hour['Hour']['id']), array('action' => 'delete', $hour['Hour']['id']))
 									);
 
-									echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $hour['Hour']['id']); 
+									echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $hour['Hour']['id']); 
 								?>
 							</td>
 						</tr>

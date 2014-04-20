@@ -70,7 +70,7 @@
 					else
 						echo '&#8734;';
 					?>&nbsp;</td>
-				<td class="actions">
+				<td class="action">
 					<?php 
 					$links = array(
 						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $project['Project']['id']), array('escape' => false)),
@@ -83,7 +83,7 @@
 						array_push($links, $this->Html->link('<i class="fi-plus"></i> ' . __('Invoice'), array('controller' => 'invoices','action' => 'add', $project['Project']['id']), array('escape' => false)));
 					}
 
-					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $project['Project']['id']); 
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $project['Project']['id']); 
 					?>
 				</td>
 			</tr>

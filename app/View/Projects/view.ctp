@@ -42,7 +42,7 @@
 							<td><?php echo $hour['hours']; ?></td>
 							<td><?php echo $this->Fn5->drawStatus($hour['billed']); ?></td>
 							<td><?php echo $hour['created']; ?></td>
-							<td></td>
+							<td class="action"></td>
 						</tr>
 						<?php endforeach; ?>
 					</tbody>

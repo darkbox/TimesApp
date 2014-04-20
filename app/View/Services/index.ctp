@@ -34,13 +34,13 @@
 				<td><?php echo h($service['Service']['description']); ?>&nbsp;</td>
 				<td><?php echo $this->Fn5->drawStatus($service['Service']['status']); ?>&nbsp;</td>
 				<td><?php echo number_format(h($service['Service']['rate']), 2); ?>&nbsp;</td>
-				<td class="actions">
+				<td class="action">
 					<?php 
 					$links = array(
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $service['Service']['id']), array('escape' => false)),
 						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $service['Service']['id']), array('action' => 'delete', $service['Service']['id']))
 					);
-					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $service['Service']['id']); 
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $service['Service']['id']); 
 					?>
 				</td>
 			</tr>

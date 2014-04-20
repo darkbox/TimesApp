@@ -32,13 +32,13 @@
 				<td><?php echo h($tax['Tax']['description']); ?>&nbsp;</td>
 				<td><?php echo $this->Fn5->drawStatus($tax['Tax']['status']); ?>&nbsp;</td>
 				<td><?php echo number_format(h($tax['Tax']['rate']), 2); ?>&nbsp;</td>
-				<td class="actions">
+				<td class="action">
 					<?php 
 					$links = array(
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $tax['Tax']['id']), array('escape' => false)),
 						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $tax['Tax']['id']), array('action' => 'delete', $tax['Tax']['id']))
 					);
-					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $tax['Tax']['id']); 
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $tax['Tax']['id']); 
 					?>
 				</td>
 			</tr>

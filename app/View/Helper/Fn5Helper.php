@@ -39,7 +39,7 @@ class Fn5Helper extends AppHelper {
 
 
 	public function dropdownButton($title, $links, $key){
-		$out = "<a href='#' data-dropdown='drop" . $key . "' class='dropdown'>"
+		$out = "<a href='#' data-options='align:left' data-dropdown='drop" . $key . "' class='dropdown'>"
 		. $title . "</a><br>"
 		. "<ul id='drop" . $key . "' data-dropdown-content class='f-dropdown'>";
 

@@ -40,7 +40,7 @@
 				<td><?php echo h($payment['Payment']['date']); ?>&nbsp;</td>
 				<td><?php echo h($payment['Payment']['created']); ?>&nbsp;</td>
 				<td><?php echo h($payment['Payment']['modified']); ?>&nbsp;</td>
-				<td class="actions">
+				<td class="action">
 					
 				</td>
 			</tr>

@@ -34,13 +34,13 @@
 				<td><?php echo h($product['Product']['description']); ?>&nbsp;</td>
 				<td><?php echo $this->Fn5->drawStatus($product['Product']['status']); ?>&nbsp;</td>
 				<td><?php echo number_format(h($product['Product']['unit_price']), 2); ?>&nbsp;</td>
-				<td class="actions">
+				<td class="action">
 					<?php 
 					$links = array(
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $product['Product']['id']), array('escape' => false)),
 						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $product['Product']['id']), array('action' => 'delete', $product['Product']['id']))
 					);
-					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ' . __('Options'), $links, $product['Product']['id']); 
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $product['Product']['id']); 
 					?>
 				</td>
 			</tr>

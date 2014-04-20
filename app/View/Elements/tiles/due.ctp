@@ -6,12 +6,12 @@ $(document).ready(function(){
 		{
 			fillColor : "rgba(159,187,88,0.5)",
 			strokeColor : "rgba(159,187,88,1)",
-			data : [65]
+			data : [100]
 		},
 		{
 			fillColor : "rgba(226,84,64,0.5)",
 			strokeColor : "rgba(226,84,64,1)",
-			data : [28]
+			data : [50]
 		}
 	]
 };
