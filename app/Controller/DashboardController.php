@@ -14,6 +14,7 @@ class DashboardController extends AppController {
 		$this->layout = 'dashboard';
 
 		$this->loadModel('Project');
+		$this->loadModel('Invoice');
 		$this->loadModel('User');
 
 		//Retrieve all the projects
@@ -24,6 +25,11 @@ class DashboardController extends AppController {
 			'inactive' => $this->User->find('count', array('conditions' => array('status' => 0))),
 			);
 		$this->set('users', $users);
+		
+		//Retrieve all de invoices
+		$invoices = $this->Invoice->find('all');
+
 		$this->set(compact('projects'));
+		$this->set(compact('invoices'));
 	}	
 }
