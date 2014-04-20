@@ -18,12 +18,18 @@ $(document).ready(function(){
 </script>
 <section class="dash-tile" id="chart-tile">
 	<div class="row">
-		<center>
-			<p style="margin-bottom: 5px;">
-				<span class="success radius label">Paid: <?php echo $paid; ?></span>
-				<span class="alert radius label">Due: <?php echo $due; ?></span>
+		<?php if($paid>0 || $due>0): ?>
+			<center>
+				<p style="margin-bottom: 5px;">
+					<span class="success radius label">Paid: <?php echo $paid; ?></span>
+					<span class="alert radius label">Due: <?php echo $due; ?></span>
+				<p>
+				<canvas id="pie" height="139" width="200" data-type="Pie" style="width: 109px; height: 200px;"></canvas>
+			</center>
+		<?php else: ?>
 			<p>
-			<canvas id="pie" height="139" width="200" data-type="Pie" style="width: 109px; height: 200px;"></canvas>
-		</center>
+				<?php echo __('There are no dued nor paid invoices.') ?>
+			<p>
+		<?php endif ?>
 	</div>
 </section>
