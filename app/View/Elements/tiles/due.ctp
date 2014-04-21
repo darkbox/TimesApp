@@ -12,8 +12,10 @@ $(document).ready(function(){
 		}		
 	];
 
-	var ctx = document.getElementById("pie").getContext("2d");
-	var chart = new Chart(ctx).Pie(data);
+	if( document.getElementById("pie") != null ) {
+		var ctx = document.getElementById("pie").getContext("2d");
+		var chart = new Chart(ctx).Pie(data);
+	}
 });
 </script>
 <section class="dash-tile" id="chart-tile">
@@ -22,13 +24,13 @@ $(document).ready(function(){
 			<center>
 				<p style="margin-bottom: 5px;">
 					<span class="success radius label">Paid: <?php echo $paid; ?></span>
-					<span class="alert radius label">Due: <?php echo $due; ?></span>
+					<span class="alert radius label">Dued: <?php echo $due; ?></span>
 				<p>
 				<canvas id="pie" height="139" width="200" data-type="Pie" style="width: 109px; height: 200px;"></canvas>
 			</center>
 		<?php else: ?>
 			<p>
-				<?php echo __('There are no dued nor paid invoices.') ?>
+				<?php echo __('There are neither dued nor paid invoices.') ?>
 			<p>
 		<?php endif ?>
 	</div>
