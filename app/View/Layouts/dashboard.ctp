@@ -29,8 +29,6 @@
 		   	</div>
 		</div>
 	</header>
-
-
 	<!-- Content -->
 	<div class="row">
     	<div class="large-12 columns">
@@ -38,32 +36,8 @@
 		<?php echo $this->fetch('content'); ?>
 		</div>
 	</div>
-
 	<!-- Footer -->
-    <footer class="global-footer">
-      <nav class="footer-nav" role="navigation">
-        <ul class="footer-menu">
-          <li class="backToTop"><a href=""><i class="fi-arrow-up"></i><span class="hidden">TimesApp</span></a></li>
-          <li class="footerList"><a href="">Dashboard</a></li>
-          <li class="footerList"><a href="">Invoices</a></li>
-          <li class="footerList"><a href="">Projects</a></li>
-          <li class="footerList"><a href="">Clients</a></li>
-          <li class="footerList"><a href="">Taxes</a></li>
-          <li class="footerList"><a href="">Users</a></li>
-          <li class="footerList"><a href="">Whatever</a></li>
-        </ul>
-        <div class="clearfix"></div>
-        <ul class="social-menu">
-          <li class="socialList"><a href="https://github.com/darkbox/TimesApp"><i class="fi-social-github"></i><span class="hidden">Github</span></a></li>
-          <li class="socialList"><a href=""><i class="fi-paw"></i><span class="hidden">HTML5</span></a></li>
-          <li class="socialList"><a href=""><i class="fi-paw"></i></i><span class="hidden">CSS3</span></a></li>
-          <li class="socialList"><a href=""><i class="fi-paw"></i><span class="hidden">Icon</span></a></li>
-          <li class="socialList"><a href=""><i class="fi-paw"></i><span class="hidden">Icon</span></a></li>
-        </ul>
-      </nav>
-      <div class="clearfix"></div>
-    </footer>
-    
+  	<?php echo $this->element('footer') ?>
     <!-- Scripts -->  
     <?php echo $this->Html->script('foundation.min'); ?>
     <?php echo $this->Html->script('Chart.min'); ?>
