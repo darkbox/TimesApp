@@ -27,20 +27,11 @@
 	</div>
 
 	 <!-- Página principal -->
-    <div id="login-wrapper" class="row" style="padding-top: 200px;">
+    <div id="login-wrapper" class="row" style="padding-top: 100px;">
       <div id="login" class="small-12 medium-6 large-4 small-centered columns page-wrapper" style="padding: 20px; display:none; min-height: 0 !important;">
         <?php echo $this->fetch('content'); ?>         
       </div>
     </div>
-
-     <!-- My footer -->
-    <footer id="body-footer" class="fixed-bottom">
-      <div class="row">
-        <div class="large-12 medium-12 columns">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, magnam, quis, nisi eaque voluptates molestias mollitia reiciendis veniam esse odio libero quisquam cupiditate dolor aliquam facilis magni repellat excepturi. Totam!</p>
-        </div>
-      </div>
-    </footer>
 
     <!-- Scripts -->
     <?php echo $this->Html->script('jquery.min'); ?>
@@ -48,9 +39,7 @@
     <?php echo $this->Html->script('app'); ?>
      <script type="text/javascript">
       $(document).ready(function() {
- 
-          $("#login").fadeIn(500);
-
+           $("#login").fadeIn(500);
       });
     </script>
 </body>
