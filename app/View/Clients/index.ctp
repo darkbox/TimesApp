@@ -173,5 +173,6 @@
 		<input type="submit" class="button tiny success radius" value="<?php echo __('Submit'); ?>">
 	</form>
 	</div>
-	<a class="close-reveal-modal">&#215;</a> 
+	<a class="close-reveal-modal">&#215;</a>
 </div>
+<?php echo $this->Html->script('listClients'); ?>

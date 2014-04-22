@@ -176,4 +176,5 @@
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
 
+<?php echo $this->Html->script('foundation-datepicker'); ?>
 <?php echo $this->Html->script('datepicker'); ?>

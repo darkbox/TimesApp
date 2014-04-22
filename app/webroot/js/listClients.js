@@ -4,14 +4,14 @@ $(function() {
     $('#showInactiveUsers').on('click', function() {
                     
                     if($(this).prop('checked')==true) {
-                       getContactList('true');
+                        window.location.href=getBaseURL() + 'clients/index?var=true';
                     } else {
-                        getContactList('false');
+                        window.location.href=getBaseURL() + 'clients/index?var=false';
                     }
                     
                 });
 
-    function getContactList(value) {
+/*    function getContactList(value) {
         $.ajax({
                 url: getBaseURL() + 'clients/index?var=' + value,
                 cache: false,
@@ -28,7 +28,7 @@ $(function() {
                 }
             });
     }
-
+*/
 });
 
 function getBaseURL() {
