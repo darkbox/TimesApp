@@ -24,6 +24,10 @@ class TaxesController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->Paginator->settings = array(
+	        'limit' => 10
+    	);
+
 		$this->Tax->recursive = 0;
 		$this->set('taxes', $this->Paginator->paginate());
 	}
