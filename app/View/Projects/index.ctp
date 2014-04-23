@@ -63,10 +63,10 @@
 				<td>
 					<?php echo $this->Html->link($project['Client']['name'], array('controller' => 'clients', 'action' => 'edit', $project['Client']['id'])); ?>
 				</td>
-				<td><?php echo h($project['Project']['init_date']); ?>&nbsp;</td>
+				<td><?php echo $project['Project']['init_date']; ?>&nbsp;</td>
 				<td><?php
 					if(h($project['Project']['deadline']) != "") 
-						echo h($project['Project']['deadline']);
+						echo $project['Project']['deadline'];
 					else
 						echo '&#8734;';
 					?>&nbsp;</td>
@@ -149,12 +149,12 @@
 		<div class="row">
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Start'); ?>
-				<input type="text" name="data[Project][init_date]" placeholder="MM/DD/YYYY" id="dpProjectStartingDate" />
+				<input type="text" name="data[Project][init_date]" placeholder="YYYY-MM-DD" id="dpProjectStartingDate" />
 				</label>
 			</div>
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('End'); ?>
-				<input type="text" name="data[Project][deadline]" placeholder="MM/DD/YYYY" id="dpProjectDeadLine" />
+				<input type="text" name="data[Project][deadline]" placeholder="YYYY-MM-DD" id="dpProjectDeadLine" />
 				</label>
 			</div>
 		</div>
@@ -176,5 +176,5 @@
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
 
-<?php echo $this->Html->script('foundation-datepicker'); ?>
+<?php echo $this->Html->script('zebra_datepicker'); ?>
 <?php echo $this->Html->script('datepicker'); ?>

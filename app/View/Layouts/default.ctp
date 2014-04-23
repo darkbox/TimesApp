@@ -11,6 +11,7 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('app');
+		echo $this->Html->css('zebra');
 		echo $this->Html->css('foundation-icons');
 
 		echo $this->fetch('meta');
@@ -42,12 +43,11 @@
 	</div>
 
 	<!-- Footer -->
-  <?php echo $this->element('footer') ?>
+  	<?php echo $this->element('footer') ?>
 
     <!-- Scripts -->
     <?php echo $this->Html->script('jquery.min'); ?>
     <?php echo $this->Html->script('foundation.min'); ?>
     <?php echo $this->Html->script('app'); ?>
-    <?php echo $this->Html->script('listClients'); ?>
 </body>
 </html>

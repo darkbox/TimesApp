@@ -1,30 +1,24 @@
-// implementation of disabled form fields
+$('#dpProjectDeadLine').prop('disabled', true);
 
-$(document).ready(function() {
-	var nowTemp = new Date();
-	var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+$('#dpProjectStartingDate').Zebra_DatePicker({
+  direction: true,
+  pair: $('#dpProjectDeadLine'),
 
-	$('#dpProjectDeadLine').prop('disabled', true);
+  onChange: function() {
+  	$('#dpProjectDeadLine').prop('disabled', false);
+  	$('#dpProjectDeadLine + button').removeClass("Zebra_DatePicker_Icon_Disabled");
+  }
+});
 
-	var checkin = $('#dpProjectStartingDate').fdatepicker({
-	    onRender: function (date) {
-	        //return date.valueOf() < now.valueOf() ? 'disabled' : '';
-	    }
-	}).on('changeDate', function (ev) {
-	    if (ev.date.valueOf() > checkout.date.valueOf()) {
-	        var newDate = new Date(ev.date)
-	        newDate.setDate(newDate.getDate() + 1);
-	        checkout.setValue(newDate);
-	    }
-	    checkin.hide();
-	    $('#dpProjectDeadLine').prop('disabled', false);
-	    $('#dpProjectDeadLine')[0].focus();
-	}).data('datepicker');
-	var checkout = $('#dpProjectDeadLine').fdatepicker({
-	    onRender: function (date) {
-	        return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-	    }
-	}).on('changeDate', function (ev) {
-	    checkout.hide();
-	}).data('datepicker');
+$('#dpProjectDeadLine').Zebra_DatePicker({
+  direction: 1
+});
+
+$('#dpProjectStartingDateEdit').Zebra_DatePicker({
+  direction: true,
+  pair: $('#dpProjectDeadLineEdit')
+});
+
+$('#dpProjectDeadLineEdit').Zebra_DatePicker({
+  direction: 1
 });

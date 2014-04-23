@@ -57,12 +57,12 @@
 			<div class="row">
 				<div class="medium-6 large-6 columns">
 					<label><?php echo __('Start'); ?>
-						<input type="text" name="data[Project][init_date]">
+						<input type="text" name="data[Project][init_date]" placeholder="MM/DD/YYYY" id="dpProjectStartingDateEdit" value="<?php echo $this->request->data['Project']['init_date'] ?>" />
 					</label>
 				</div>
 				<div class="medium-6 large-6 columns">
 					<label><?php echo __('End'); ?>
-						<input type="text" name="data[Project][deadline]">
+						<input type="text" name="data[Project][deadline]" placeholder="MM/DD/YYYY" id="dpProjectDeadLineEdit" value="<?php echo $this->request->data['Project']['deadline'] ?>" />
 					</label>
 				</div>
 			</div>
@@ -75,3 +75,5 @@
 		</div>
 	</div>
 </div>
+<?php echo $this->Html->script('zebra_datepicker'); ?>
+<?php echo $this->Html->script('datepicker'); ?>

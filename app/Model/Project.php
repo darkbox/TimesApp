@@ -50,12 +50,12 @@ class Project extends AppModel {
 	public function beforeSave($options = array()){
 		// dates
 		if(!empty($this->data['Project']['init_date'])){
-			$init_date = explode('/', $this->data['Project']['init_date']);
-			$this->data['Project']['init_date'] = $init_date[2] . '-' . $init_date[0] . '-' . $init_date[1];
+			$init_date = explode('-', $this->data['Project']['init_date']);
+			$this->data['Project']['init_date'] = $init_date[0] . '-' . $init_date[1] . '-' . $init_date[2];
 		}
 		if(!empty($this->data['Project']['deadline'])){
-			$deadline = explode('/', $this->data['Project']['deadline']);
-			$this->data['Project']['deadline'] = $deadline[2] . '-' . $deadline[0] . '-' . $deadline[1];
+			$deadline = explode('-', $this->data['Project']['deadline']);
+			$this->data['Project']['deadline'] = $deadline[0] . '-' . $deadline[1] . '-' . $deadline[2];
 		}
 
 		// billable
