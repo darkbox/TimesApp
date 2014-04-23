@@ -8,7 +8,7 @@
       <li class="footerList"><?php echo $this->Html->link(__('Clients'), array('controller' => 'clients', 'action' => 'index')) ?></li>
       <li class="footerList"><?php echo $this->Html->link(__('Presets'), array('controller' => 'presets', 'action' => 'index')) ?></li>
       <li class="footerList"><?php echo $this->Html->link(__('Users'), array('controller' => 'users', 'action' => 'index')) ?></li>
-      <li class="footerList"><?php echo $this->Html->link(__('Terms'), array('controller' => 'terms', 'action' => 'index')) ?></li>
+      <li class="footerList"><a href="https://github.com/darkbox/TimesApp/blob/master/LICENSE">License</a></li>
     </ul>
     <div class="clearfix"></div>
     <ul class="social-menu">
