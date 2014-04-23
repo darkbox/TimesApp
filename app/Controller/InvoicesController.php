@@ -50,10 +50,10 @@ class InvoicesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Invoice->create();
 			if ($this->Invoice->save($this->request->data)) {
-				$this->Session->setFlash(__('The invoice has been saved.'));
+				$this->Session->setFlash(__('The invoice has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
 			}
 		}
 		$projects = $this->Invoice->Project->find('list');
@@ -73,10 +73,10 @@ class InvoicesController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Invoice->save($this->request->data)) {
-				$this->Session->setFlash(__('The invoice has been saved.'));
+				$this->Session->setFlash(__('The invoice has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
 			}
 		} else {
 			$options = array('conditions' => array('Invoice.' . $this->Invoice->primaryKey => $id));
@@ -100,9 +100,9 @@ class InvoicesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Invoice->delete()) {
-			$this->Session->setFlash(__('The invoice has been deleted.'));
+			$this->Session->setFlash(__('The invoice has been deleted.'), 'flash_success');
 		} else {
-			$this->Session->setFlash(__('The invoice could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('The invoice could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}}

@@ -35,13 +35,39 @@
 					<?php echo $this->Html->link($invoice['Project']['code'], array('controller' => 'projects', 'action' => 'view', $invoice['Project']['id'])); ?>
 				</td>
 				<td><?php echo h($invoice['Invoice']['title']); ?>&nbsp;</td>
-				<td><?php echo h($invoice['Invoice']['status']); ?>&nbsp;</td>
+				<td><?php
+					switch (h($invoice['Invoice']['status'])) {
+					 	case 0: // draft
+					 		echo '<span class="secondary radius label" style="width: 100%; text-align: center">' . __('Draft') . '</span>';
+					 		break;
+					 	case 1: // sent
+					 		echo '<span class="warning radius label" style="width: 100%; text-align: center">' . __('Sent') . '</span>';
+					 		break;
+					 	case 2: // waitting payment
+					 		echo '<span class="alert radius label" style="width: 100%; text-align: center">' . __('Waitting') . '</span>';
+					 		break;
+					 	case 3: // Parcial
+					 		echo '<span class="primary radius label" style="width: 100%; text-align: center">' . __('Parcial') . '</span>';
+					 		break;
+					 	case 4: // Paid
+					 		echo '<span class="success radius label" style="width: 100%; text-align: center">' . __('Paid') . '</span>';
+					 		break;
+					 	default: // unknown
+					 		echo '<span class="alert radius label" style="width: 100%; text-align: center">' . __('Unknown') . '</span>';
+					 		break;
+					 } ?>
+				</td>
 				<td>&nbsp;</td>
 				<td><?php echo h($invoice['Invoice']['due']); ?>&nbsp;</td>
-				<td class="actions">
-					<?php echo $this->Html->link(__('View'), array('action' => 'view', $invoice['Invoice']['id'])); ?>
-					<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $invoice['Invoice']['id'])); ?>
-					<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $invoice['Invoice']['id']), null, __('Are you sure you want to delete # %s?', $invoice['Invoice']['id'])); ?>
+				<td class="action">
+					<?php 
+					$links = array(
+						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $invoice['Invoice']['id']), array('escape' => false)),
+						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $invoice['Invoice']['id']), array('escape' => false)),
+						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $invoice['Invoice']['id']), array('action' => 'delete', $invoice['Invoice']['id']))
+					);
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $invoice['Invoice']['id']); 
+					?>
 				</td>
 			</tr>
 			<?php endforeach; ?>
