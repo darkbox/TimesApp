@@ -10,7 +10,7 @@
 			</header>
 			<!-- Contenido -->
 			<div class="users form">
-			<?php echo $this->Form->create('User'); ?>
+			<form action="<?php echo Router::url(array('controller' => 'users', 'action' => 'add')) ?>" method="post">
 				<?php
 					echo $this->Form->input('name');
 					echo $this->Form->input('email');
@@ -19,7 +19,7 @@
 					echo $this->Form->input('status');
 				?>
 			<input type="submit" class="button tiny success radius right" value="<?php echo __('Add user') ?>">
-			<?php echo $this->Form->end(); ?>
+			</form>
 			</div>
 			</div>
 		</div>
