@@ -10,12 +10,27 @@
 			<!-- Contenido -->
 			<div class="invoices form">
 			<form action="<?php echo Router::url(array('controller' => 'invoices', 'action' => 'add')) ?>" id="InvoiceAddForm" method="post" accept-charset="utf-8" data-abide>
-				<div style="display:none;"><input name="_method" value="POST" type="hidden"></div>	
+				<div style="display:none;"><input name="_method" value="POST" type="hidden"></div>
+			<!-- Formulario básico -->	
+			<div class="row">
+				<div class="medium-8 large-8 columns">
+					
+				</div>
+				<div class="medium-4 large-4 columns">
+					<div>
+						<label><?php echo __('') ?> <small>Required</small>
+							<input type="text">
+						</label>
+						<small class="error"></small>
+					</div>
+				</div>
+			</div>
 
-			<!-- Show more -->			
+
+			<!-- Mostrar más -->			
 			<dl class="accordion" data-accordion>
 				<dd>
-					<a href="#showMorePanel"><?php echo __('Other options') ?></a>
+					<a href="#showMorePanel"><?php echo __('Invoice Settings') ?></a>
 				    <div id="showMorePanel" class="content">
 				      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				    </div>
@@ -25,7 +40,7 @@
 			<!-- Servicios -->
 			<div class="row">
 				<a href="#" class="button tiny success radius" style="margin-top: 20px" data-reveal-id="addServiceLineModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('Service'); ?></a>
-				<table  cellpadding="0" cellspacing="0">
+				<table  cellpadding="0" cellspacing="0" id="tableServiceLine">
 					<thead>
 						<tr>
 							<th><?php echo __('Service') ?></th>
@@ -38,7 +53,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr id="emptyListService">
 							<td colspan="7" style="text-align: center">List empty</td>
 						</tr>
 					</tbody>
@@ -47,7 +62,7 @@
 			<!-- Productos -->
 			<div class="row">
 				<a href="#" class="button tiny success radius" style="margin-top: 20px" data-reveal-id="addProductLineModal" data-reveal><i class="fi-plus"></i>&nbsp;<?php echo __('Product'); ?></a>
-				<table  cellpadding="0" cellspacing="0">
+				<table  cellpadding="0" cellspacing="0" id="tableProductLine">
 					<thead>
 						<tr>
 							<th><?php echo __('Product') ?></th>
@@ -60,7 +75,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr id="emptyListProduct">
 							<td colspan="7" style="text-align: center">List empty</td>
 						</tr>
 					</tbody>
@@ -82,13 +97,16 @@
 	<div class="row">
 		<div class="medium-12 large-12 columns">
 			<label> <small>Required</small>
-				<select name="" id="">
-					<option><?php echo __('Select an option') ?></option>
+				<select name="" id="serviceLine" data-invalid required>
+					<option value=""><?php echo __('Select an option') ?></option>
+					<?php foreach($services as $key => $service): ?>
+					<option value="<?php echo $key ?>"><?php echo h($service) ?></option>
+					<?php endforeach; ?>
 				</select>
 			</label>
 		</div>
-	</div>	
-	<button class="button tiny success radius right" ><?php echo __('Insert') ?></button>
+	</div>
+	<button class="button tiny success radius right" id="btnInsertService"><?php echo __('Insert') ?></button>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
 <!-- Modal add product line -->
@@ -97,12 +115,17 @@
 	<div class="row">
 		<div class="medium-12 large-12 columns">
 			<label> <small>Required</small>
-				<select name="" id="">
-					<option><?php echo __('Select an option') ?></option>
+				<select name="" id="productLine" data-invalid required>
+					<option value=""><?php echo __('Select an option') ?></option>
+					<?php foreach($products as $key => $product): ?>
+					<option value="<?php echo $key ?>"><?php echo h($product) ?></option>
+					<?php endforeach; ?>
 				</select>
 			</label>
 		</div>
 	</div>
-	<button class="button tiny success radius right" ><?php echo __('Insert') ?></button>
+	<button class="button tiny success radius right" id="btnInsertProduct"><?php echo __('Insert') ?></button>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
+
+<?php echo $this->Html->script('invoices'); ?>

@@ -57,7 +57,12 @@ class InvoicesController extends AppController {
 			}
 		}
 		$projects = $this->Invoice->Project->find('list');
-		$this->set(compact('projects'));
+		$this->loadModel('Service');
+		$this->loadModel('Product');
+		$options = array('conditions' => array('status' => 1));
+		$services = $this->Service->find('list', $options);
+		$products = $this->Product->find('list', $options);
+		$this->set(compact('projects','services', 'products'));
 	}
 
 /**
@@ -105,4 +110,36 @@ class InvoicesController extends AppController {
 			$this->Session->setFlash(__('The invoice could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+
+/**
+ * getLine method for Ajax request
+ * @param  number $type type of line
+ * @param  number $id   id of line
+ * @return void       
+ */
+	public function getLine($type=null, $id=null){
+		switch ($type) {
+			case 1: // service
+				$this->loadModel('Service');
+				if (!$this->Service->exists($id)) {
+					throw new NotFoundException(__('Invalid service'));
+				}
+				$options = array('conditions' => array('Service.' . $this->Service->primaryKey => $id));
+				$this->set('service', $this->Service->find('first', $options));
+				break;
+			case 2: // product
+				$this->loadModel('Product');
+				if (!$this->Product->exists($id)) {
+					throw new NotFoundException(__('Invalid product'));
+				}
+				$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
+				$this->set('product', $this->Product->find('first', $options));
+				break;
+			
+			default:
+
+				break;
+		}
+	}
+}
