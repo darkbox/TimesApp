@@ -26,12 +26,8 @@
 		</div>
 	</div>
 
-	 <!-- Página principal -->
-    <div id="login-wrapper" class="row" style="padding-top: 100px;">
-      <div id="login" class="small-12 medium-6 large-4 small-centered columns page-wrapper" style="padding: 20px; display:none; min-height: 0 !important;">
-        <?php echo $this->fetch('content'); ?>         
-      </div>
-    </div>
+	<!-- Página principal -->
+    <?php echo $this->fetch('content'); ?>         
 
     <!-- Scripts -->
     <?php echo $this->Html->script('jquery.min'); ?>

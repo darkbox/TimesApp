@@ -51,10 +51,10 @@ class User extends AppModel {
 				'message' => 'Email already exist',
 				),
 		),
-		'password' => array(
+		'role' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Select a role valid role',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+	$(".accordion").on("click", "a", function (event) {
+       $(".accordion").find(".content").slideToggle("slow");
+	});
+
 	$('#btnInsertService').click(function(event){
 		event.preventDefault();
 		var service = $('#serviceLine');

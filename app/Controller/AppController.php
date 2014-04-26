@@ -63,7 +63,7 @@ class AppController extends Controller {
 	*/
 	public function beforeFilter() {
 		// Permite acceder sin realizar login
-		//$this->Auth->allow('index', 'view','edit');
+		$this->Auth->allow('signup');
 		// Variable local accesibles en todas las vistas
 		$this->set('logged_in', $this->Auth->loggedIn());
 		$this->set('current_user', $this->Auth->user());

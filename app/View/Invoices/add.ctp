@@ -32,12 +32,6 @@
 				</div>
 				<div class="medium-4 large-4 columns">
 					<div>
-						<label><?php echo __('Invoice number') ?> <small>Required</small>
-							<input name="data[Invoice][invoice_number]" type="text" length="25" required>
-						</label>
-						<small class="error"></small>
-					</div>
-					<div>
 						<label><?php echo __('Invoice title') ?>
 							<input name="data[Invoice][title]" type="text" length="25">
 						</label>

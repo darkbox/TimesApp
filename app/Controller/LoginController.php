@@ -49,4 +49,32 @@ class LoginController extends AppController {
 	public function out(){
 		return $this->redirect($this->Auth->logout());
 	}
+
+/**
+ * [signUp description]
+ * @return [type] [description]
+ */
+	public function signup(){
+		$this->layout = 'login';
+		
+		if ($this->request->is('post')) {
+			$this->loadModel('User');
+			$this->User->create();
+
+			$this->request->data['User'] = $this->array_push_assoc($this->request->data['User'], 'role' , 'minion');
+			$this->request->data['User'] = $this->array_push_assoc($this->request->data['User'], 'status', 0);
+
+			if ($this->User->save($this->request->data)) {
+				$this->Session->setFlash(__('The user has been saved.'), 'flash_success');
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The user already exists.'), 'flash_danger');
+			}
+		}		
+	}
+
+	private function array_push_assoc($array, $key, $value){
+		$array[$key] = $value;
+		return $array;
+	}
 }

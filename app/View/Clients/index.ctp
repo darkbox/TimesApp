@@ -391,7 +391,19 @@
 			</div>
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Language'); ?>
-					<input type="text" name="data[Client][language]">
+					<select name="data[Client][language]">
+						<option value="english">English</option>
+						<option value="spanish" selected="selected">Spanish</option>
+						<option value="portuguese">Portuguese</option>
+						<option value="german">German</option>
+						<option value="french">French</option>
+						<option value="italian">Italian</option>
+						<option value="dutch">Dutch</option>
+						<option value="czech">Czech</option>
+						<option value="swedish">Swedish</option>
+						<option value="danish">Danish</option>
+						<option value="norwegian">Norwegian</option>
+					</select>
 				</label>
 			</div>
 		</div>
