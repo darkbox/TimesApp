@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="medium-4 large-4 columns">
-					<div>
+					<div class="dateError">
 						<label><?php echo __('Invoice number') ?> <small>Required</small>
 							<input name="data[Invoice][invoice_number]" type="text" length="25" required>
 						</label>
@@ -44,17 +44,17 @@
 					</div>
 				</div>
 				<div class="medium-4 large-4 columns">
-					<div>
+					<div class="dateError">
 						<label><?php echo __('Invoice date') ?> <small>Required</small>
-							<input name="data[Invoice][invoice_date]" type="date" required>
+							<input name="data[Invoice][invoice_date]" id="dpInvoiceDate" type="text" placeholder="YYYY-MM-DD" required data-abide-validator="dateValidate">
 						</label>
-						<small class="error">Please, select invoice date</small>
+						<small class="error">Please, select Invoice date that fall on or before Due date</small>
 					</div>
 					<div>
 						<label><?php echo __('Due date') ?> <small>Required</small>
-							<input name="data[Invoice][due_date]" type="date" required>
+							<input name="data[Invoice][due_date]" id="dpDueDate" type="text" placeholder="YYYY-MM-DD" required data-abide-validator="dateValidate">
 						</label>
-						<small class="error">Please, select a due date</small>
+						<small class="error">Please, select a due date that fall on or after Invoice date</small>
 					</div>
 				</div>
 			</div>
@@ -230,3 +230,5 @@
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
 <?php echo $this->Html->script('invoices'); ?>
+<?php echo $this->Html->script('zebra_datepicker'); ?>
+<?php echo $this->Html->script('datepicker'); ?>

@@ -30,3 +30,31 @@ $('#dpProjectDeadLineEdit').Zebra_DatePicker({
   offset: [-300, -5],
   show_icon: false
 });
+
+$('#dpInvoiceDate').Zebra_DatePicker({
+  direction: true,
+  pair: $('#dpDueDate'),
+  show_icon: false,
+  offset: [-300, -5],
+
+  onSelect: function() {
+    $('#dpDueDate').prop('disabled', false);
+    $('#dpDueDate + button').removeClass("Zebra_DatePicker_Icon_Disabled");
+    $('#dpInvoiceDate').blur();
+    $('#dpInvoiceDate').data('data-invalid');
+    if($('#dpInvoiceDate').val() > $('#dpDueDate').val()) {
+      $('#validDate').addClass('error');
+    }
+  }
+
+});
+
+$('#dpDueDate').Zebra_DatePicker({
+  direction: 1,
+  show_icon: false,
+  offset: [-300, -5],
+
+  onSelect: function() {
+    $('#dpDueDate').blur();
+  }
+});

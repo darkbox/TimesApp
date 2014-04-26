@@ -147,15 +147,17 @@
 		</div>
 		</div>
 		<div class="row">
-			<div class="medium-6 large-6 columns">
+			<div class="medium-6 large-6 columns dateError">
 				<label><?php echo __('Start'); ?>
-				<input type="text" name="data[Project][init_date]" placeholder="YYYY-MM-DD" id="dpProjectStartingDate" />
+				<input type="text" name="data[Project][init_date]" placeholder="YYYY-MM-DD" id="dpProjectStartingDate" data-abide-validator="dateValidateNoRequired"/>
 				</label>
+				<small class="error">Please, select Start date that fall on or before Deadline date</small>
 			</div>
-			<div class="medium-6 large-6 columns">
+			<div class="medium-6 large-6 columns dateError">
 				<label><?php echo __('End'); ?>
-				<input type="text" name="data[Project][deadline]" placeholder="YYYY-MM-DD" id="dpProjectDeadLine" />
+				<input type="text" name="data[Project][deadline]" placeholder="YYYY-MM-DD" id="dpProjectDeadLine" data-abide-validator="dateValidateNoRequired"/>
 				</label>
+				<small class="error">Please, select Deadline date that fall on or after Start date</small>
 			</div>
 		</div>
 		<div class="row">
