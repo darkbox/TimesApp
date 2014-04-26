@@ -39,6 +39,7 @@ $(document).ready(function(){
 			.done(function( data ) {
 			respond = data;
 			//Insertar linea
+			$(table).find('#emptyListService').remove();
 			$(table).find('tbody').append('<tr>' + respond + '<td><span class="remove-line"><i class="fi-minus"></i></span></td></tr>');
 			$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
@@ -53,7 +54,7 @@ $(document).ready(function(){
 			.done(function( data ) {
 			respond = data;
 			//Insertar linea
-
+			$(table).find('#emptyListProduct').remove();
 			$(table).find('tbody').append('<tr>' + respond + '<td><span class="remove-line"><i class="fi-minus"></i></span></td></tr>');
 			$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();

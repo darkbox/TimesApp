@@ -1,32 +1,3 @@
-<style type="text/css">
-	.remove-line{
-		display: block;
-		width: 35px;
-		height: 35px;
-		background-color: #E25440;
-		border-color: #C9341F;
-		color: #FFF;
-		text-align: center;
-		font-size: 18px;
-		line-height: 35px;
-	
-		-webkit-border-radius: 35px;
-		border-radius: 35px;
-	}
-
-	.remove-line:hover{
-		background-color: #C9341F;
-	}
-
-	#tableServiceLine tbody tr td input{
-		margin-top: 17px;
-	}
-
-	#tableProductLine tbody tr td input{
-		margin-top: 17px;
-	}
-</style>
-
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-12 medium-12 columns">
