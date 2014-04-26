@@ -13,15 +13,48 @@
 				<div style="display:none;"><input name="_method" value="POST" type="hidden"></div>
 			<!-- Formulario básico -->	
 			<div class="row">
-				<div class="medium-8 large-8 columns">
-					
+				<div class="medium-4 large-4 columns">
+					<div>
+						<label><?php echo __('Client')?> <small>Required</small>
+						<select name="data[Invoice][client_id]" required>
+							<option value=""><?php echo __('Select a client') ?></option>
+						</select>
+						</label>
+						<small class="error">Please, select a client</small>
+					</div>
+					<div>
+						<label><?php echo __('Project')?>
+						<select name="data[Invoice][project_id]">
+							<option value=""><?php echo __('Select a client before') ?></option>
+						</select>
+						</label>
+					</div>
 				</div>
 				<div class="medium-4 large-4 columns">
 					<div>
-						<label><?php echo __('') ?> <small>Required</small>
-							<input type="text">
+						<label><?php echo __('Invoice number') ?> <small>Required</small>
+							<input name="data[Invoice][invoice_number]" type="text" length="25" required>
 						</label>
 						<small class="error"></small>
+					</div>
+					<div>
+						<label><?php echo __('Invoice title') ?>
+							<input name="data[Invoice][title]" type="text" length="25">
+						</label>
+					</div>
+				</div>
+				<div class="medium-4 large-4 columns">
+					<div>
+						<label><?php echo __('Invoice date') ?> <small>Required</small>
+							<input name="data[Invoice][invoice_date]" type="date" required>
+						</label>
+						<small class="error">Please, select invoice date</small>
+					</div>
+					<div>
+						<label><?php echo __('Due date') ?> <small>Required</small>
+							<input name="data[Invoice][due_date]" type="date" required>
+						</label>
+						<small class="error">Please, select a due date</small>
 					</div>
 				</div>
 			</div>
@@ -32,7 +65,70 @@
 				<dd>
 					<a href="#showMorePanel"><?php echo __('Invoice Settings') ?></a>
 				    <div id="showMorePanel" class="content">
-				      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				    	<div class="row">
+				    		<div class="medium-12 large-12 columns">
+				    			<div class="row">
+				    			<div class="medium-4 large-4 columns">
+				    				<label><?php echo __('Currency Symbol') ?></label>
+				    				<select name="data[Invoice][currency_symbol]">
+										<option value="" selected="selected"></option>
+										<option value="$">$</option>
+										<option value="€">€</option>
+										<option value="£">£</option>
+										<option value="¥">¥</option>
+				    				</select>
+				    			</div>
+				    			<div class="medium-4 large-4 columns">
+				    				<label><?php echo __('Currency Code') ?></label>
+				    				<select name="data[Invoice][currency_code]">
+										<option value="" selected="selected"></option>
+										<option value="USD">USD</option>
+										<option value="EUR">EUR</option>
+										<option value="GBP">GBP</option>
+										<option value="JPY">JPY</option>
+										<option value="AUD">AUD</option>
+										<option value="CAD">CAD</option>
+										<option value="BRL">BRL</option>
+										<option value="CZK">CZK</option>
+										<option value="DKK">DKK</option>
+										<option value="HKD">HKD</option>
+										<option value="HUF">HUF</option>
+										<option value="ILS">ILS</option>
+										<option value="MYR">MYR</option>
+										<option value="MXN">MXN</option>
+										<option value="NZD">NZD</option>
+										<option value="NOK">NOK</option>
+										<option value="PHP">PHP</option>
+										<option value="PLN">PLN</option>
+										<option value="SGD">SGD</option>
+										<option value="SEK">SEK</option>
+										<option value="CHF">CHF</option>
+										<option value="TWD">TWD</option>
+										<option value="THB">THB</option>
+				    				</select>
+				    			</div>
+				    			<div class="medium-4 large-4 columns">
+					    			<div class="divToggle" style="margin-top: 22px">
+					                	<input name="data[Invoice][display_country]" type="checkbox" id="displayCountry" checked>
+				                		<label class="firstLabel" for="displayCountry"><i></i></label>
+				                		<label class="toggleLabel" for="displayCountry"><?php echo __('Display country') ?></label>
+			              			</div>
+			              		</div>
+		              			</div>		    			
+				    		</div>
+				    	</div>
+				    	<div class="row">
+				    		<div class="medium-6 large-6 columns">
+				    			<label><?php echo __('Notes visible to client')?>
+								<textarea name="data[Invoice][note]" id="" cols="30" rows="5"></textarea>
+				    			</label>
+				    		</div>
+				    		<div class="medium-6 large-6 columns">
+				    			<label><?php echo __('Terms')?>
+								<textarea name="data[Invoice][terms]" id="" cols="30" rows="5"></textarea>
+				    			</label>
+				    		</div>
+				    	</div>
 				    </div>
 				</dd>
 			</dl>
@@ -81,6 +177,13 @@
 					</tbody>
 				</table>
 			</div>
+			<!-- Total -->
+			<div class="row">
+				<div class="medium-12 large-12 columns">
+					<h3 class="right"><?php echo __('Total') ?> 0.00</h3>
+				</div>
+			</div>
+			<br><br>
 
 			<!-- Submit -->
 			<input type="submit" class="button tiny success radius right" value="<?php echo __('Save invoice') ?>">
