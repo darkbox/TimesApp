@@ -22,7 +22,7 @@
 			</div>
 			<div>
 				<label>Repeat password <small>Required</small>
-				<input type="password" maxlength="25" length="25" data-equalto="password" required>
+				<input type="password" id="password2" maxlength="25" length="25" data-abide-validator="equalTo" required>
 				</label>
 				<small class="error">A password is required and must be equals.</small>
 			</div>
