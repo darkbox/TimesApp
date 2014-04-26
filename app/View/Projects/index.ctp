@@ -151,7 +151,7 @@
 				<label><?php echo __('Start'); ?>
 				<input type="text" name="data[Project][init_date]" placeholder="YYYY-MM-DD" id="dpProjectStartingDate" data-abide-validator="dateValidateNoRequired"/>
 				</label>
-				<small class="error">Please, select Start date that fall on or before Deadline date</small>
+				<small class="error">Please, select Start date that fall on or before End date</small>
 			</div>
 			<div class="medium-6 large-6 columns dateError">
 				<label><?php echo __('End'); ?>
