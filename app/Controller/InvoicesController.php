@@ -119,6 +119,7 @@ class InvoicesController extends AppController {
  * @return void       
  */
 	public function getLine($type=null, $id=null){
+		$this->layout="ajax";		
 		switch ($type) {
 			case 1: // service
 				$this->loadModel('Service');

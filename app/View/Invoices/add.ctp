@@ -1,3 +1,32 @@
+<style type="text/css">
+	.remove-line{
+		display: block;
+		width: 35px;
+		height: 35px;
+		background-color: #E25440;
+		border-color: #C9341F;
+		color: #FFF;
+		text-align: center;
+		font-size: 18px;
+		line-height: 35px;
+	
+		-webkit-border-radius: 35px;
+		border-radius: 35px;
+	}
+
+	.remove-line:hover{
+		background-color: #C9341F;
+	}
+
+	#tableServiceLine tbody tr td input{
+		margin-top: 17px;
+	}
+
+	#tableProductLine tbody tr td input{
+		margin-top: 17px;
+	}
+</style>
+
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-12 medium-12 columns">
@@ -5,17 +34,17 @@
 			<!-- Cabecera -->
 			<header>
 				<h1><?php echo __('Create Invoice'); ?></h1>
-				<a href="<?php echo Router::url(array('controller' => 'invoices', 'action' => 'index')) ?>" class="button tiny alert radius right" style="margin-top: 20px"><i class="fi-x"></i>&nbsp;<?php echo __('Cancel'); ?></a>
+				<a href="<?php echo Router::url(array('controller' => 'invoices', 'action' => 'index')); ?>" class="button tiny alert radius right" style="margin-top: 20px"><i class="fi-x"></i>&nbsp;<?php echo __('Cancel'); ?></a>
 			</header>
 			<!-- Contenido -->
 			<div class="invoices form">
-			<form action="<?php echo Router::url(array('controller' => 'invoices', 'action' => 'add')) ?>" id="InvoiceAddForm" method="post" accept-charset="utf-8" data-abide>
+			<form action="<?php echo Router::url(array('controller' => 'invoices', 'action' => 'add')); ?>" id="InvoiceAddForm" method="post" accept-charset="utf-8" data-abide>
 				<div style="display:none;"><input name="_method" value="POST" type="hidden"></div>
 			<!-- Formulario básico -->	
 			<div class="row">
 				<div class="medium-4 large-4 columns">
 					<div>
-						<label><?php echo __('Client')?> <small>Required</small>
+						<label><?php echo __('Client') ?> <small>Required</small>
 						<select name="data[Invoice][client_id]" required>
 							<option value=""><?php echo __('Select a client') ?></option>
 						</select>
@@ -23,7 +52,7 @@
 						<small class="error">Please, select a client</small>
 					</div>
 					<div>
-						<label><?php echo __('Project')?>
+						<label><?php echo __('Project') ?>
 						<select name="data[Invoice][project_id]">
 							<option value=""><?php echo __('Select a client before') ?></option>
 						</select>
@@ -59,11 +88,10 @@
 				</div>
 			</div>
 
-
 			<!-- Mostrar más -->			
 			<dl class="accordion" data-accordion>
 				<dd>
-					<a href="#showMorePanel"><?php echo __('Invoice Settings') ?></a>
+					<a href="#showMorePanel"><i class="fi-widget"></i> <?php echo __('Invoice Settings') ?></a>
 				    <div id="showMorePanel" class="content">
 				    	<div class="row">
 				    		<div class="medium-12 large-12 columns">
@@ -119,12 +147,12 @@
 				    	</div>
 				    	<div class="row">
 				    		<div class="medium-6 large-6 columns">
-				    			<label><?php echo __('Notes visible to client')?>
+				    			<label><?php echo __('Notes visible to client') ?>
 								<textarea name="data[Invoice][note]" id="" cols="30" rows="5"></textarea>
 				    			</label>
 				    		</div>
 				    		<div class="medium-6 large-6 columns">
-				    			<label><?php echo __('Terms')?>
+				    			<label><?php echo __('Terms') ?>
 								<textarea name="data[Invoice][terms]" id="" cols="30" rows="5"></textarea>
 				    			</label>
 				    		</div>
@@ -145,7 +173,7 @@
 							<th><?php echo __('Rate') ?></th>
 							<th><?php echo __('Tax') ?></th>
 							<th><?php echo __('Total') ?></th>
-							<th><?php echo __('') ?></th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -167,7 +195,7 @@
 							<th><?php echo __('Unit price') ?></th>
 							<th><?php echo __('Tax') ?></th>
 							<th><?php echo __('Total') ?></th>
-							<th><?php echo __('') ?></th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -200,7 +228,7 @@
 	<div class="row">
 		<div class="medium-12 large-12 columns">
 			<label> <small>Required</small>
-				<select name="" id="serviceLine" data-invalid required>
+				<select name="" id="serviceLine">
 					<option value=""><?php echo __('Select an option') ?></option>
 					<?php foreach($services as $key => $service): ?>
 					<option value="<?php echo $key ?>"><?php echo h($service) ?></option>
@@ -209,7 +237,7 @@
 			</label>
 		</div>
 	</div>
-	<button class="button tiny success radius right" id="btnInsertService"><?php echo __('Insert') ?></button>
+	<a href="#" class="button tiny success radius right" id="btnInsertService"><?php echo __('Insert') ?></a>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
 <!-- Modal add product line -->
@@ -218,7 +246,7 @@
 	<div class="row">
 		<div class="medium-12 large-12 columns">
 			<label> <small>Required</small>
-				<select name="" id="productLine" data-invalid required>
+				<select name="" id="productLine">
 					<option value=""><?php echo __('Select an option') ?></option>
 					<?php foreach($products as $key => $product): ?>
 					<option value="<?php echo $key ?>"><?php echo h($product) ?></option>
@@ -227,8 +255,7 @@
 			</label>
 		</div>
 	</div>
-	<button class="button tiny success radius right" id="btnInsertProduct"><?php echo __('Insert') ?></button>
+	<a href="#" class="button tiny success radius right" id="btnInsertProduct"><?php echo __('Insert') ?></a>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
-
 <?php echo $this->Html->script('invoices'); ?>

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$('#btnInsertService').click(function(event){
 		event.preventDefault();
 		var service = $('#serviceLine');
@@ -14,6 +15,7 @@ $(document).ready(function(){
 			console.log('Error inserting service');
 		}
 	});
+
 	$('#btnInsertProduct').click(function(event){
 		event.preventDefault();
 		var product = $('#productLine');
@@ -37,8 +39,7 @@ $(document).ready(function(){
 			.done(function( data ) {
 			respond = data;
 			//Insertar linea
-			$('#emptyListService').remove();
-			$(table).find('tbody').append('<tr>' + respond + '<td><span class="remove-line">X</span></td></tr>');
+			$(table).find('tbody').append('<tr>' + respond + '<td><span class="remove-line"><i class="fi-minus"></i></span></td></tr>');
 			$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
 			});
@@ -52,8 +53,8 @@ $(document).ready(function(){
 			.done(function( data ) {
 			respond = data;
 			//Insertar linea
-			$('#emptyListService').remove();
-			$(table).find('tbody').append('<tr>' + respond + '<td><span class="remove-line">X</span></td></tr>');
+
+			$(table).find('tbody').append('<tr>' + respond + '<td><span class="remove-line"><i class="fi-minus"></i></span></td></tr>');
 			$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
 			});
