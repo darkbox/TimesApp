@@ -14,7 +14,7 @@ class Invoice extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'name';
+	public $displayField = 'title';
 
 /**
  * Validation rules
