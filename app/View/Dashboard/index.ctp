@@ -25,11 +25,11 @@ foreach ($projects as $value) {
 
 foreach ($invoices as $value) {
 	switch (intval($value['Invoice']['status'])) {
+		case 2: // due
 		case 3: // due
-		case 4: // due
 			$due++;
 			break;
-		case 5: // paid
+		case 4: // paid
 			$paid++;
 			break;
 	}
