@@ -1,4 +1,14 @@
-<?php if(isset($fromProject)){ debug($fromProject);} ?>
+<?php 
+	$client_id = -1;
+	$project_id = -1;
+
+  	if(isset($fromProject)){
+  		$client_id = $fromProject['Client']['id'];
+		$project_id =  $fromProject['Project']['id'];
+	} 
+
+	//debug($hoursServices);
+?>
 
 <div class="page-wrapper">
 	<div class="row">
@@ -21,7 +31,7 @@
 						<select name="data[Invoice][client_id]" required>
 							<option value=""><?php echo __('Select a client') ?></option>
 							<?php foreach($clients as $key => $client): ?>
-							<option value="<?php echo $key ?>"><?php echo h($client) ?></option>
+							<option value="<?php echo $key ?>" <?php if($client_id == $key){ echo 'selected="selected"';} ?>><?php echo h($client) ?></option>
 							<?php endforeach; ?>
 						</select>
 						</label>
@@ -147,9 +157,25 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php if(isset($hoursServices)): ?>
+							<?php $index = 999; ?>
+							<?php foreach($hoursServices as $hourService): ?>
+							<?php $index++; ?>
+							<tr>
+								<td><input type="text" name="data[Line][<?php echo $index; ?>][code]" value="<?php echo h($hourService['Service']['code']); ?>"></td>
+								<td><input type="text" name="data[Line][<?php echo $index; ?>][description]" value="<?php echo h($hourService['Service']['description']); ?>"></td>
+								<td><input type="number" name="data[Line][<?php echo $index; ?>][amount_hours]" value="<?php echo h($hourService[0]) ?>"></td>
+								<td><input type="number" name="data[Line][<?php echo $index; ?>][rate]" value="<?php echo h($hourService['Service']['rate']); ?>"></td>
+								<td><input type="text" name="data[Line][<?php echo $index; ?>][tax_id]" value="<?php echo h($hourService['Service']['tax_id']); ?>"></td>
+								<td><input type="hidden" name="data[Line][<?php echo $index; ?>][type]" value="1">0.00</td>
+								<td><span class="remove-line"><i class="fi-minus"></i></span></td>
+							</tr>
+							<?php endforeach; ?>
+						<?php else: ?>
 						<tr id="emptyListService">
 							<td colspan="7" style="text-align: center">List empty</td>
 						</tr>
+						<?php endif; ?>
 					</tbody>
 				</table>
 			</div>

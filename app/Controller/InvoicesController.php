@@ -62,7 +62,11 @@ class InvoicesController extends AppController {
 				throw new NotFoundException(__('Invalid project for invoicing'));
 			}
 			$options = array('conditions' => array('Project.' . $this->Invoice->Project->primaryKey => $fromProject));
-			$this->set('fromProject', $this->Invoice->Project->find('first', $options));
+
+			$theProject = $this->Invoice->Project->find('first', $options);
+			$this->set('fromProject', $theProject);
+			// Calcula las horas y servicios
+			$this->set('hoursServices', $this->getServicesFromHours($fromProject));
 		}
 
 
@@ -122,6 +126,39 @@ class InvoicesController extends AppController {
 			$this->Session->setFlash(__('The invoice could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+/**
+ * getServicesFromHours private method
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+	private function getServicesFromHours($id=null){
+		/*SELECT service_id, SUM(hours) FROM `hours` WHERE project_id = 4 AND billed = true GROUP BY service_id;*/
+		$this->loadModel('Hour');
+		$options = array(
+			'conditions' => array('project_id' => $id, 'billed' => true),
+			'fields' => array('service_id', 'SUM(hours) as hours'),
+			'group' => array('service_id')
+			);
+		$hours = $this->Hour->find('all', $options);
+
+		if(!empty($hours)){
+			$this->loadModel('Service');
+			$result = array();
+			foreach ($hours as $key => $value) {
+				$serviceOptions = array(
+					'conditions' => array(
+						'Service.id' => $value['Hour']['service_id'],
+						)
+					);
+				$result[$key] = $this->Service->find('first', $serviceOptions);
+				array_push($result[$key], $value[0]['hours']);
+			}
+		}else{
+			$result = null;
+		}
+		return $result;
 	}
 
 /**

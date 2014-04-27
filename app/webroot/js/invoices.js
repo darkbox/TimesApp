@@ -1,10 +1,12 @@
 $(document).ready(function(){
 
 	var index = 0;
+	initRemoveButtons('#tableServiceLine');
 
 	$(".accordion").on("click", "a", function (event) {
        $(".accordion").find(".content").slideToggle("fast");
 	});
+
 
 	$('#btnInsertService').click(function(event){
 		event.preventDefault();
@@ -37,6 +39,13 @@ $(document).ready(function(){
 			console.log('Error inserting product');
 		}
 	});
+
+
+	function initRemoveButtons(table){
+		$(table).on('click', '.remove-line', function(){
+				$(this).parents('tr').remove();
+			});
+	}
 
 	function addLineService(table, id){
 		var respond = "";
