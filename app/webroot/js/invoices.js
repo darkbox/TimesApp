@@ -64,11 +64,16 @@ $(document).ready(function(){
 			$(table).find('tbody').append('<tr class="trService">' + respond + '<td><span class="remove-line"><i class="fi-minus"></i></span></td></tr>');
 			$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
+				calcularSubtotal();
+				calcularTotal();
 			});
 
-			calcularParcial();
-			calcularSubtotal();
-			calcularTotal();
+			$('.aHours, .rate, .tax').on('change keyup', function(){
+				calcularParcial();
+				calcularSubtotal();
+				calcularTotal();
+			});
+
 		});
 	}
 
@@ -83,11 +88,16 @@ $(document).ready(function(){
 			$(table).find('tbody').append('<tr class="trProduct">' + respond + '<td><span class="remove-line"><i class="fi-minus"></i></span></td></tr>');
 			$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
+				calcularSubtotal();
+				calcularTotal();
 			});
 
-			calcularParcial();
-			calcularSubtotal();
-			calcularTotal();
+			$('.aHours, .rate, .tax').on('change keyup', function(){
+				calcularParcial();
+				calcularSubtotal();
+				calcularTotal();
+			});
+
 		});
 	}
 
@@ -107,79 +117,89 @@ $(document).ready(function(){
 	}
 
 	function calcularParcial() {
-		$('.aHours, .rate, .tax').on('change keyup', function(){
-			var bruto = 0;
-			var neto = 0;
-			var aHours = 0;
-			var rate = 0;
-			var tax = 0;
-			var value = 0;
+		var bruto = 0;
+		var neto = 0;
+		var aHours = 0;
+		var rate = 0;
+		var tax = 0;
+		var value = 0;
 
-			$('.trService').each(function(){
-				aHours = $(this).find('.aHours').val();
-				rate = $(this).find('.rate').val();
-				tax = $(this).find('.tax').val();
-				value = $(this).find('.value');
+		$('.trService').each(function(){
+			aHours = $(this).find('.aHours').val();
+			rate = $(this).find('.rate').val();
+			tax = $(this).find('.tax').val();
+			value = $(this).find('.value');
 
-				bruto = aHours * rate;
-				neto = bruto + ((bruto*tax)/100);
+			bruto = aHours * rate;
+			neto = bruto + ((bruto*tax)/100);
 
-				$(value).empty;
-				$(value).html(neto);
-			});
+			$(value).empty;
+			$(value).html(neto);
+		});
 
-			$('.trProduct').each(function(){
-				aHours = $(this).find('.aHours').val();
-				rate = $(this).find('.rate').val();
-				tax = $(this).find('.tax').val();
-				value = $(this).find('.value');
+		$('.trProduct').each(function(){
+			aHours = $(this).find('.aHours').val();
+			rate = $(this).find('.rate').val();
+			tax = $(this).find('.tax').val();
+			value = $(this).find('.value');
 
-				bruto = aHours * rate;
-				neto = bruto + ((bruto*tax)/100);
+			bruto = aHours * rate;
+			neto = bruto + ((bruto*tax)/100);
 
-				$(value).empty;
-				$(value).html(neto);
-			});
+			$(value).empty;
+			$(value).html(neto);
 		});
 
 	}
 
 	function calcularSubtotal() {
-		$('.aHours, .rate, .tax').on('change keyup', function(){
-			var sum = parseInt(0);
-			var value = 0;
+		var sum = parseInt(0);
+		var value = 0;
+		var cont = 0;
 
-			$('.trService').each(function(){
-				value = $(this).find('.value');
+		$('.trService').each(function(){
+			cont++;
+			value = $(this).find('.value');
 
-				sum += parseFloat($(value).html());
+			sum += parseFloat($(value).html());
 
-				$('#subServices').empty;
-				$('#subServices').html(sum);
-			});
-
-			sum = parseInt(0);
-
-			$('.trProduct').each(function(){
-				value = $(this).find('.value');
-
-				sum += parseFloat($(value).html());
-				
-				$('#subProducts').empty;
-				$('#subProducts').html(sum);
-			});
+			$('#subServices').empty;
+			$('#subServices').html(sum);
 		});
+
+		if(cont==0) {
+			$('#subServices').empty;
+			$('#subServices').html(0);
+		}
+
+		sum = parseInt(0);
+		cont = 0;
+
+		$('.trProduct').each(function(){
+			cont++;
+			value = $(this).find('.value');
+
+			sum += parseFloat($(value).html());
+			
+			$('#subProducts').empty;
+			$('#subProducts').html(sum);
+		});
+
+		if(cont==0) {
+			$('#subProducts').empty;
+			$('#subProducts').html(0);
+		}
+
+
 	}
 
 	function calcularTotal() {
-		$('.aHours, .rate, .tax').on('change keyup', function(){
-			var total = 0;
+		var total = 0;
 
-			total = parseFloat($('#subServices').html()) + parseFloat($('#subProducts').html())
+		total = parseFloat($('#subServices').html()) + parseFloat($('#subProducts').html())
 
-			$('#total').empty();
-			$('#total').html(total);
-		});
+		$('#total').empty();
+		$('#total').html(total);
 	}
 
 	function getBaseURL() {
