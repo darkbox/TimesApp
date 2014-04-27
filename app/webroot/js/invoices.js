@@ -88,9 +88,10 @@ $(document).ready(function(){
 		    data: { clientIdJS: $('#clientsList').val() },
 		    cache: false,
 		    success: function(response){
-		       
-	            $('#pojectsByClient').empty();
-	            $('#pojectsByClient').append(response);
+
+		    	$('#projectsByClient').prop('disabled', false);
+	            $('#projectsByClient').empty();
+	            $('#projectsByClient').append(response);
 		    }
 		});
 	}

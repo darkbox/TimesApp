@@ -39,7 +39,7 @@
 					</div>
 					<div>
 						<label><?php echo __('Project') ?>
-						<select name="data[Invoice][project_id]" id="pojectsByClient">
+						<select name="data[Invoice][project_id]" id="projectsByClient" disabled>
 							<option value=""><?php echo __('Select a client before') ?></option>
 						</select>
 						</label>

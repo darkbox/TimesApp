@@ -197,7 +197,6 @@ class InvoicesController extends AppController {
 
 /**
  * getProjectsByClient method for Ajax request
- * @param  number $id   id of client
  * @return void       
  */
 	public function getProjectsByClient(){
