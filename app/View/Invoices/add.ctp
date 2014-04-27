@@ -28,7 +28,7 @@
 				<div class="medium-4 large-4 columns">
 					<div>
 						<label><?php echo __('Client') ?> <small>Required</small>
-						<select name="data[Invoice][client_id]" required>
+						<select name="data[Invoice][client_id]" required id="clientsList">
 							<option value=""><?php echo __('Select a client') ?></option>
 							<?php foreach($clients as $key => $client): ?>
 							<option value="<?php echo $key ?>" <?php if($client_id == $key){ echo 'selected="selected"';} ?>><?php echo h($client) ?></option>
@@ -39,7 +39,7 @@
 					</div>
 					<div>
 						<label><?php echo __('Project') ?>
-						<select name="data[Invoice][project_id]">
+						<select name="data[Invoice][project_id]" id="pojectsByClient">
 							<option value=""><?php echo __('Select a client before') ?></option>
 						</select>
 						</label>
