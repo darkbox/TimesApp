@@ -204,7 +204,7 @@
 			<!-- Total -->
 			<div class="row">
 				<div class="medium-12 large-12 columns">
-					<h3 class="right"><?php echo __('Total') ?> 0.00</h3>
+					<h3 class="right"><small><?php echo __('Services') ?>: <span id="subServices">0</span> + <?php echo __('Products') ?>: <span id="subProducts">0</span> = </small><?php echo __('Total') ?> <span id="total">0.00</span></h3>
 				</div>
 			</div>
 			<br><br>

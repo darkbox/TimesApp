@@ -6,7 +6,7 @@
       <li class="footerList"><?php echo $this->Html->link(__('Invoices'), array('controller' => 'invoices', 'action' => 'index')) ?></li>
       <li class="footerList"><?php echo $this->Html->link(__('Projects'), array('controller' => 'projects', 'action' => 'index')) ?></li>
       <li class="footerList"><?php echo $this->Html->link(__('Clients'), array('controller' => 'clients', 'action' => 'index')) ?></li>
-      <li class="footerList"><?php echo $this->Html->link(__('Presets'), array('controller' => 'presets', 'action' => 'index')) ?></li>
+      <li class="footerList"><?php echo $this->Html->link(__('Presets'), array('controller' => 'taxes', 'action' => 'index')) ?></li>
       <li class="footerList"><?php echo $this->Html->link(__('Users'), array('controller' => 'users', 'action' => 'index')) ?></li>
       <li class="footerList"><a href="https://github.com/darkbox/TimesApp/blob/master/LICENSE">License</a></li>
     </ul>
