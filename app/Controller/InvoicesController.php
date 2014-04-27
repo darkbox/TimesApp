@@ -46,7 +46,7 @@ class InvoicesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($fromProject=null) {
 		if ($this->request->is('post')) {
 			$this->Invoice->create();
 			if ($this->Invoice->saveAll($this->request->data)) {
@@ -56,6 +56,17 @@ class InvoicesController extends AppController {
 				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
 			}
 		}
+		// Desde proyecto
+		if($fromProject != null){
+			if (!$this->Invoice->Project->exists($fromProject)) {
+				throw new NotFoundException(__('Invalid project for invoicing'));
+			}
+			$options = array('conditions' => array('Project.' . $this->Invoice->Project->primaryKey => $fromProject));
+			$this->set('fromProject', $this->Invoice->Project->find('first', $options));
+		}
+
+
+		// Normal
 		$options = array('conditions' => array('status' => 1));
 		$projects = $this->Invoice->Project->find('list');
 		$clients = $this->Invoice->Client->find('list', $options);

@@ -1,3 +1,5 @@
+<?php if(isset($fromProject)){ debug($fromProject);} ?>
+
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-12 medium-12 columns">
