@@ -194,4 +194,20 @@ class InvoicesController extends AppController {
 				break;
 		}
 	}
+
+/**
+ * getProjectsByClient method for Ajax request
+ * @param  number $id   id of client
+ * @return void       
+ */
+	public function getProjectsByClient(){
+		$this->layout="ajax";
+		if(isset($_POST['clientIdJS'])) {
+			$clientIdJS = $_POST['clientIdJS'];
+		}
+
+		$options = array('conditions' => array('client_id' => $clientIdJS, 'billable' => 1));
+		$projectsByClient = $this->Invoice->Project->find('all', $options);
+		$this->set('projects', $projectsByClient);
+	}
 }

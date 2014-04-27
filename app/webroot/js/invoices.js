@@ -40,6 +40,10 @@ $(document).ready(function(){
 		}
 	});
 
+	$('#clientsList').on('change', function(){
+		getProjectsByClient();
+	});
+
 
 	function initRemoveButtons(table){
 		$(table).on('click', '.remove-line', function(){
@@ -74,6 +78,20 @@ $(document).ready(function(){
 			$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
 			});
+		});
+	}
+
+	function getProjectsByClient() {
+	    $.ajax({
+	    	type: "POST",
+		    url: getBaseURL() + 'invoices/getProjectsByClient',
+		    data: { clientIdJS: $('#clientsList').val() },
+		    cache: false,
+		    success: function(response){
+		       
+	            $('#pojectsByClient').empty();
+	            $('#pojectsByClient').append(response);
+		    }
 		});
 	}
 
