@@ -22,16 +22,7 @@ class Invoice extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'project_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		
 		'title' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -51,38 +42,28 @@ class Invoice extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-		'due' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'name' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'email' => array(
-			'email' => array(
-				'rule' => array('email'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		)
 	);
+
+	public function beforeSave($options = array()){
+		// dates
+		if(!empty($this->data['Project']['invoice_date'])){
+			$init_date = explode('-', $this->data['Project']['invoice_date']);
+			$this->data['Project']['due_date'] = $init_date[0] . '-' . $init_date[1] . '-' . $init_date[2];
+		}
+		if(!empty($this->data['Project']['due_date'])){
+			$deadline = explode('-', $this->data['Project']['due_date']);
+			$this->data['Project']['due_date'] = $deadline[0] . '-' . $deadline[1] . '-' . $deadline[2];
+		}
+
+		// billable
+		if($this->data['Project']['display_country'] == 'on')
+			$this->data['Project']['display_country'] = true;
+		else
+			$this->data['Project']['display_country'] = false;
+		return true;
+	}
+
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -95,6 +76,13 @@ class Invoice extends AppModel {
 		'Project' => array(
 			'className' => 'Project',
 			'foreignKey' => 'project_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Client' => array(
+			'className' => 'Client',
+			'foreignKey' => 'client_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

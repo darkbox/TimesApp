@@ -51,36 +51,7 @@
 			<?php echo h($invoice['Invoice']['note']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Name'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['name']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Email'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['email']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Address'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['address']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Phone'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['phone']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Mobile'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['mobile']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Contact Name'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['contact_name']); ?>
-			&nbsp;
-		</dd>
+	
 		<dt><?php echo __('Created'); ?></dt>
 		<dd>
 			<?php echo h($invoice['Invoice']['created']); ?>

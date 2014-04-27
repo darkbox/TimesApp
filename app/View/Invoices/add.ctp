@@ -18,6 +18,9 @@
 						<label><?php echo __('Client') ?> <small>Required</small>
 						<select name="data[Invoice][client_id]" required>
 							<option value=""><?php echo __('Select a client') ?></option>
+							<?php foreach($clients as $key => $client): ?>
+							<option value="<?php echo $key ?>"><?php echo h($client) ?></option>
+							<?php endforeach; ?>
 						</select>
 						</label>
 						<small class="error">Please, select a client</small>

@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
+	var index = 0;
+
 	$(".accordion").on("click", "a", function (event) {
-       $(".accordion").find(".content").slideToggle("slow");
+       $(".accordion").find(".content").slideToggle("fast");
 	});
 
 	$('#btnInsertService').click(function(event){
@@ -39,7 +41,7 @@ $(document).ready(function(){
 	function addLineService(table, id){
 		var respond = "";
 		// Petición ajax
-		$.post(getBaseURL() + "invoices/getLine/1/" + id)
+		$.post(getBaseURL() + "invoices/getLine/1/" + id + "/" + index++)
 			.done(function( data ) {
 			respond = data;
 			//Insertar linea
@@ -54,7 +56,7 @@ $(document).ready(function(){
 	function addLineProduct(table, id){
 		var respond = "";
 		// Petición ajax
-		$.post(getBaseURL() + "invoices/getLine/2/" + id)
+		$.post(getBaseURL() + "invoices/getLine/2/" + id + "/" + index++)
 			.done(function( data ) {
 			respond = data;
 			//Insertar linea

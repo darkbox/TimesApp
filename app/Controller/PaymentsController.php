@@ -27,21 +27,6 @@ class PaymentsController extends AppController {
 	}
 
 /**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Payment->exists($id)) {
-			throw new NotFoundException(__('Invalid payment'));
-		}
-		$options = array('conditions' => array('Payment.' . $this->Payment->primaryKey => $id));
-		$this->set('payment', $this->Payment->find('first', $options));
-	}
-
-/**
  * add method
  *
  * @return void

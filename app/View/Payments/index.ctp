@@ -62,12 +62,12 @@
 		<div style="display:none;"><input name="_method" value="POST" type="hidden"></div>
 		<div class="row">
 		<div class="medium-6 large-6 columns">
-			<label><?php echo __('Project') ?><small>Required</small>
-				<select name="data[Payment][project_id]" required>
-					<option value=""><?php echo __('Select a project') ?></option>
+			<label><?php echo __('Invoice') ?><small>Required</small>
+				<select name="data[Payment][invoice_id]" required>
+					<option value=""><?php echo __('Select an invoice') ?></option>
 				</select>
 			</label>
-			<small class="error">Please, select a project.</small>
+			<small class="error">Please, select an invoice.</small>
 		</div>
 		<div class="medium-6 large-6 columns">
 			<label><?php echo __('Amount') ?><small>Required</small>

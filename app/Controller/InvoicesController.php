@@ -49,20 +49,21 @@ class InvoicesController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Invoice->create();
-			if ($this->Invoice->save($this->request->data)) {
+			if ($this->Invoice->saveAll($this->request->data)) {
 				$this->Session->setFlash(__('The invoice has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
 			}
 		}
+		$options = array('conditions' => array('status' => 1));
 		$projects = $this->Invoice->Project->find('list');
+		$clients = $this->Invoice->Client->find('list', $options);
 		$this->loadModel('Service');
 		$this->loadModel('Product');
-		$options = array('conditions' => array('status' => 1));
 		$services = $this->Service->find('list', $options);
 		$products = $this->Product->find('list', $options);
-		$this->set(compact('projects','services', 'products'));
+		$this->set(compact('projects','services', 'products', 'clients'));
 	}
 
 /**
@@ -118,7 +119,7 @@ class InvoicesController extends AppController {
  * @param  number $id   id of line
  * @return void       
  */
-	public function getLine($type=null, $id=null){
+	public function getLine($type=null, $id=null, $index=0){
 		$this->layout="ajax";		
 		switch ($type) {
 			case 1: // service
@@ -127,6 +128,7 @@ class InvoicesController extends AppController {
 					throw new NotFoundException(__('Invalid service'));
 				}
 				$options = array('conditions' => array('Service.' . $this->Service->primaryKey => $id));
+				$this->set('index', $index);
 				$this->set('service', $this->Service->find('first', $options));
 				break;
 			case 2: // product
@@ -135,6 +137,7 @@ class InvoicesController extends AppController {
 					throw new NotFoundException(__('Invalid product'));
 				}
 				$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
+				$this->set('index', $index);
 				$this->set('product', $this->Product->find('first', $options));
 				break;
 			
