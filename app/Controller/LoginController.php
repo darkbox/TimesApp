@@ -37,7 +37,7 @@ class LoginController extends AppController {
 			if ($this->Auth->login()) {
 				return $this->redirect($this->Auth->redirect());
 			} else {
-				$this->Session->setFlash(__('Wrong username or password'), 'flash_danger');
+				$this->Session->setFlash(__('Wrong email or password'), 'flash_danger');
 			}
 		}
 	}

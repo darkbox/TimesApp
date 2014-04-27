@@ -48,8 +48,10 @@ class AppController extends Controller {
 			'Basic' => array('userModel' => 'User'),
             'Form' => array(
             	'userModel' => 'User',
-                'fields' => array('username' => 'email')
-            )
+                'fields' => array('username' => 'email'),
+                'scope' => array('User.status' => 1),
+            ),
+
         ),
 		'authorize' => array('Controller')
 		)

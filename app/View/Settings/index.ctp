@@ -4,8 +4,7 @@
 			<nav class="page-nav">
 				<ul>
 					<li class="current"><a href=""><?php echo __('General'); ?></a></li>
-					<li><a href=""><?php echo __('Invoices'); ?></a></li>
-					<li><a href=""><?php echo __('Other stuff'); ?></a></li>
+					<li><a href="<?php echo Router::url(array('controller' => 'settings', 'action' => 'invoices')) ?>"><?php echo __('Invoices'); ?></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -20,11 +19,6 @@
 						      <label><?php echo __('Company name') ?>
 						      	<small>Required</small>
 						        <input type="text" name="data[Settings][companyName]" value="<?php echo $s['companyName']; ?>" required/>
-						      </label>
-						    </div>
-						    <div class="medium-6 large-6 columns">
-						      <label><?php echo __('Currency') ?>
-						        <input type="text" name="data[Settings][currency]" value="<?php echo $s['currency']; ?>" required/>
 						      </label>
 						    </div>
 						  </div>

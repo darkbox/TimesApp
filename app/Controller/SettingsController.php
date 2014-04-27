@@ -24,7 +24,10 @@ class SettingsController extends AppController {
 	 */
 	public function index(){
 		if($this->request->is('POST')){
-			if(file_put_contents(APP_SETTINGS, '<?php return ' . var_export($this->request->data['Settings'], true) . ';')){
+			// Recupera los valores
+			$appSettings = include APP_SETTINGS;
+			$appSettings = array_merge($appSettings, $this->request->data['Settings']);
+			if(file_put_contents(APP_SETTINGS, '<?php return ' . var_export($appSettings, true) . ';')){
 				$this->Session->setFlash(__('Yours settings has been saved.'), 'flash_success');
 			}else{
 				$this->Session->setFlash(__('An error has occurred while saving.'), 'flash_danger');
@@ -36,4 +39,27 @@ class SettingsController extends AppController {
 		$this->set('s', $appSettings);
 	}
 
+	public function invoices(){
+		if($this->request->is('POST')){
+			// Recupera los valores
+			$appSettings = include APP_SETTINGS;
+
+			if(isset($this->request->data['Settings']['display_country'])){
+				$this->request->data['Settings']['display_country'] = true;
+			}else{
+				$this->request->data['Settings']['display_country'] = false;
+			}
+
+			$appSettings = array_merge($appSettings, $this->request->data['Settings']);
+			if(file_put_contents(APP_SETTINGS, '<?php return ' . var_export($appSettings, true) . ';')){
+				$this->Session->setFlash(__('Yours settings has been saved.'), 'flash_success');
+			}else{
+				$this->Session->setFlash(__('An error has occurred while saving.'), 'flash_danger');
+			}
+		}
+
+		// Lee la configuracción por defecto
+		$appSettings = include APP_SETTINGS;
+		$this->set('s', $appSettings);
+	}
 }

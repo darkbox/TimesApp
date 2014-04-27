@@ -1,8 +1,7 @@
 <?php return array (
   'companyName' => 'NoTime',
-  'currency' => '€',
   'country' => 'España',
-  'stateProvince' => 'NoTime',
+  'stateProvince' => 'Córdoba',
   'address' => 'NoTimeLand',
   'city' => 'Córdoba',
   'zipCode' => '14014',
@@ -10,4 +9,9 @@
   'fax' => '234234234',
   'phone' => '23423423',
   'mobile' => '32432423',
+  'note' => 'Thank you!',
+  'term' => 'Please, pay me, I\'m begging you!',
+  'display_country' => true,
+  'currency_symbol' => '$',
+  'currency_code' => 'USD',
 );
