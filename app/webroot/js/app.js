@@ -7,7 +7,7 @@ $(document).foundation({
     },
     validators: {
     	dateValidate: function(el, required, parent) {
-    		if($('#dpInvoiceDate').val() > $('#dpDueDate').val()) {
+    		if($('#dpInvoiceDate').val() > $('#dpDueDate').val() || $('#dpInvoiceDate').val().length == 0 || $('#dpDueDate').val().length == 0) {
     			return false;
     		} else {
     			$('.dateError').removeClass('error');
