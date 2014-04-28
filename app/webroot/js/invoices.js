@@ -50,8 +50,6 @@ $(document).ready(function(){
 				$(this).parents('tr').remove();
 		});
 
-		$(this).find('.tax').find('option:selected').attr('tax-rate');
-
 		$('.aHours, .rate, .tax').on('change keyup', function(){
 				calcularParcial();
 				calcularSubtotal();
@@ -61,6 +59,7 @@ $(document).ready(function(){
 		calcularParcial();
 		calcularSubtotal();
 		calcularTotal();
+		numbersOnly();
 	}
 
 	function addLineService(table, id){
@@ -220,13 +219,17 @@ $(document).ready(function(){
 
 	function numbersOnly() {
 		$('.aHours, .rate').on('keydown', function(event){
-			if((event.which>=48 && event.which<=57) || event.which==9 || event.which==8 || (event.which>=37 && event.which<=40) || event.which==190) {
+			if((event.which>=48 && event.which<=57) || event.which==9 || event.which==8 || (event.which>=37 && event.which<=40) || event.which==190 || event.which==46) {
 			
 			} else {
 				event.preventDefault();
 			}
 
 			if($(this).val().length>9 && ((event.which>=48 && event.which<=57) || event.which==190)) {
+				event.preventDefault();
+			}
+
+			if($(this).val().indexOf('.')!=-1 && event.which==190) {
 				event.preventDefault();
 			}
 
