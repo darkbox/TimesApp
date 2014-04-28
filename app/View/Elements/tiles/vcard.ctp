@@ -1,10 +1,10 @@
 <section class="dash-tile" id="chart-tile" >
 	<ul class="vcard" style="border: none !important">
-		<li class="fn">No Time</li>
-		<li class="street-address">123 Colonial Ave.</li>
-		<li class="locality">Caprica City</li>
-		<li><span class="state">Caprica</span>, <span class="zip">12345</span></li>
-		<li class="email"><a href="#">contact@notime.com</a></li>
+		<li class="fn"><?php echo h($appSettings['companyName']) ?></li>
+		<li class="street-address"><?php echo h($appSettings['address']) ?></li>
+		<li class="locality"><?php echo h($appSettings['city']) ?></li>
+		<li><span class="state"><?php echo h($appSettings['stateProvince']) ?></span>, <span class="zip"><?php echo h($appSettings['zipCode']) ?></span></li>
+		<li class="email"><a href="#"><?php echo h($appSettings['email']) ?></a></li>
 	</ul>
 	<footer>
 		<ul>

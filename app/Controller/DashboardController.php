@@ -29,7 +29,10 @@ class DashboardController extends AppController {
 		//Retrieve all de invoices
 		$invoices = $this->Invoice->find('all');
 
-		$this->set(compact('projects'));
-		$this->set(compact('invoices'));
+		$this->set(compact('projects', 'invoices'));
+
+		// Settings
+		$appSettings = include APP_SETTINGS;
+		$this->set('appSettings', $appSettings);
 	}	
 }
