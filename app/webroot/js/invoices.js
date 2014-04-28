@@ -50,6 +50,8 @@ $(document).ready(function(){
 				$(this).parents('tr').remove();
 		});
 
+		$(this).find('.tax').find('option:selected').attr('tax-rate');
+
 		$('.aHours, .rate, .tax').on('change keyup', function(){
 				calcularParcial();
 				calcularSubtotal();
