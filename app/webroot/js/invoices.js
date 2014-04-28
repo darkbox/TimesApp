@@ -44,8 +44,6 @@ $(document).ready(function(){
 		getProjectsByClient();
 	});
 
-	
-
 
 	function initRemoveButtons(table){
 		$(table).on('click', '.remove-line', function(){
@@ -83,7 +81,7 @@ $(document).ready(function(){
 				calcularSubtotal();
 				calcularTotal();
 			});
-
+			numbersOnly(); //solo números en los input numéricos
 		});
 	}
 
@@ -107,7 +105,7 @@ $(document).ready(function(){
 				calcularSubtotal();
 				calcularTotal();
 			});
-
+			numbersOnly(); //solo números en los input numéricos
 		});
 	}
 
@@ -144,7 +142,7 @@ $(document).ready(function(){
 			neto = bruto + ((bruto*tax)/100);
 
 			$(value).empty;
-			$(value).html(neto);
+			$(value).html(roundToTwo(neto).toFixed(2));
 		});
 
 		$('.trProduct').each(function(){
@@ -157,7 +155,7 @@ $(document).ready(function(){
 			neto = bruto + ((bruto*tax)/100);
 
 			$(value).empty;
-			$(value).html(neto);
+			$(value).html(roundToTwo(neto).toFixed(2));
 		});
 
 	}
@@ -174,7 +172,7 @@ $(document).ready(function(){
 			sum += parseFloat($(value).html());
 
 			$('#subServices').empty;
-			$('#subServices').html(sum);
+			$('#subServices').html(roundToTwo(sum).toFixed(2));
 		});
 
 		if(cont==0) {
@@ -192,7 +190,7 @@ $(document).ready(function(){
 			sum += parseFloat($(value).html());
 			
 			$('#subProducts').empty;
-			$('#subProducts').html(sum);
+			$('#subProducts').html(roundToTwo(sum).toFixed(2));
 		});
 
 		if(cont==0) {
@@ -209,7 +207,23 @@ $(document).ready(function(){
 		total = parseFloat($('#subServices').html()) + parseFloat($('#subProducts').html())
 
 		$('#total').empty();
-		$('#total').html(total);
+		$('#total').html(roundToTwo(total).toFixed(2));
+		$('#invoice_amount').val(roundToTwo(total).toFixed(2));
+	}
+
+	function numbersOnly() {
+		$('.aHours, .rate').on('keydown', function(event){
+			if((event.which>=48 && event.which<=57) || event.which==9 || event.which==8 || (event.which>=37 && event.which<=40) || event.which==190) {
+			
+			} else {
+				event.preventDefault();
+			}
+
+			if($(this).val().length>9 && ((event.which>=48 && event.which<=57) || event.which==190)) {
+				event.preventDefault();
+			}
+
+		});
 	}
 
 	function getBaseURL() {
@@ -229,6 +243,10 @@ $(document).ready(function(){
 	        // Root Url for domain name
 	        return baseURL + "/";
 	    }
+	}
+
+	function roundToTwo(num) {    
+   		return +(Math.round(num + "e+2")  + "e-2");
 	}
 
 });
