@@ -233,7 +233,7 @@ $(document).ready(function(){
 				event.preventDefault();
 			}
 
-			if($(this).val().indexOf('.')!=-1 && event.which==190) {
+			if($(this).val().indexOf('.')!=-1 && (event.which==190 || event.which==110) ) {
 				event.preventDefault();
 			}
 
