@@ -105,6 +105,11 @@ $(document).ready(function(){
 				calcularSubtotal();
 				calcularTotal();
 			});
+
+			calcularParcial();
+			calcularSubtotal();
+			calcularTotal();
+
 			numbersOnly(); //solo números en los input numéricos
 		});
 	}
@@ -135,7 +140,7 @@ $(document).ready(function(){
 		$('.trService').each(function(){
 			aHours = $(this).find('.aHours').val();
 			rate = $(this).find('.rate').val();
-			tax = $(this).find('.tax').val();
+			tax = $(this).find('.tax').find('option:selected').attr('tax-rate');
 			value = $(this).find('.value');
 
 			bruto = aHours * rate;
@@ -148,7 +153,7 @@ $(document).ready(function(){
 		$('.trProduct').each(function(){
 			aHours = $(this).find('.aHours').val();
 			rate = $(this).find('.rate').val();
-			tax = $(this).find('.tax').val();
+			tax = $(this).find('.tax').find('option:selected').attr('tax-rate');
 			value = $(this).find('.value');
 
 			bruto = aHours * rate;
@@ -177,7 +182,7 @@ $(document).ready(function(){
 
 		if(cont==0) {
 			$('#subServices').empty;
-			$('#subServices').html(0);
+			$('#subServices').html(0.00.toFixed(2));
 		}
 
 		sum = parseInt(0);
@@ -195,7 +200,7 @@ $(document).ready(function(){
 
 		if(cont==0) {
 			$('#subProducts').empty;
-			$('#subProducts').html(0);
+			$('#subProducts').html(0.00.toFixed(2));
 		}
 
 

@@ -6,10 +6,7 @@
   		$client_id = $fromProject['Client']['id'];
 		$project_id =  $fromProject['Project']['id'];
 	} 
-
-	//debug($hoursServices);
 ?>
-
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-12 medium-12 columns">
@@ -41,6 +38,9 @@
 						<label><?php echo __('Project') ?>
 						<select name="data[Invoice][project_id]" id="projectsByClient" disabled>
 							<option value=""><?php echo __('Select a client before') ?></option>
+							<?php foreach($projects as $key => $project): ?>
+							<option value="<?php echo $key ?>" <?php if($project_id == $key){ echo 'selected="selected"';} ?>><?php echo h($project) ?></option>
+							<?php endforeach; ?>
 						</select>
 						</label>
 					</div>
@@ -117,7 +117,7 @@
 				    			</div>
 				    			<div class="medium-4 large-4 columns">
 					    			<div class="divToggle" style="margin-top: 22px">
-					                	<input name="data[Invoice][display_country]" type="checkbox" id="displayCountry" checked>
+					                	<input name="data[Invoice][display_country]" type="checkbox" id="displayCountry" <?php if($appSettings['display_country']){ echo 'checked'; } ?>>
 				                		<label class="firstLabel" for="displayCountry"><i></i></label>
 				                		<label class="toggleLabel" for="displayCountry"><?php echo __('Display country') ?></label>
 			              			</div>
@@ -128,12 +128,12 @@
 				    	<div class="row">
 				    		<div class="medium-6 large-6 columns">
 				    			<label><?php echo __('Notes visible to client') ?>
-								<textarea name="data[Invoice][note]" id="" cols="30" rows="5"></textarea>
+								<textarea name="data[Invoice][note]" id="" cols="30" rows="5"><?php echo h($appSettings['note']); ?></textarea>
 				    			</label>
 				    		</div>
 				    		<div class="medium-6 large-6 columns">
 				    			<label><?php echo __('Terms') ?>
-								<textarea name="data[Invoice][terms]" id="" cols="30" rows="5"></textarea>
+								<textarea name="data[Invoice][terms]" id="" cols="30" rows="5"><?php echo h($appSettings['term']); ?></textarea>
 				    			</label>
 				    		</div>
 				    	</div>
@@ -166,8 +166,15 @@
 								<input type="hidden" name="data[Line][<?php echo $index; ?>][type]" value="1"></td>
 								<td><input type="text" name="data[Line][<?php echo $index; ?>][description]" value="<?php echo h($hourService['Service']['description']); ?>"></td>
 								<td><input type="number" name="data[Line][<?php echo $index; ?>][amount_hours]" class="aHours" value="<?php echo h($hourService[0]) ?>"></td>
-								<td><input type="number" name="data[Line][<?php echo $index; ?>][rate]" class="rate" value="<?php echo h($hourService['Service']['rate']); ?>"></td>
-								<td><input type="text" name="data[Line][<?php echo $index; ?>][tax_id]" class="tax" value="<?php echo h($hourService['Service']['tax_id']); ?>"></td>
+								<td>
+									<input type="number" name="data[Line][<?php echo $index; ?>][rate]" class="rate" value="<?php echo h($hourService['Service']['rate']); ?>"></td>
+								<td>
+									<select name="data[Line][<?php echo $index; ?>][tax_id]" class="tax" style="margin: 0px;">
+										<?php foreach($taxes as $tax): ?>
+											<option tax-rate="<?php echo $tax['Tax']['rate'] ?>" value="<?php echo $tax['Tax']['id'] ?>" <?php if($tax['Tax']['id'] == $hourService['Service']['tax_id']){echo 'selected'; } ?> ><?php echo h($tax['Tax']['description']); ?></option>
+										<?php endforeach; ?>
+									</select>
+								</td>
 								<td class="value">0.00</td>
 								<td><span class="remove-line"><i class="fi-minus"></i></span></td>
 							</tr>
@@ -205,7 +212,7 @@
 			<!-- Total -->
 			<div class="row">
 				<div class="medium-12 large-12 columns">
-					<h3 class="right"><small><?php echo __('Services') ?>: <span id="subServices">0</span> + <?php echo __('Products') ?>: <span id="subProducts">0</span> = </small><?php echo __('Total') ?> <span id="total">0.00</span></h3>
+					<h3 class="right"><small><?php echo __('Services') ?>: <span id="subServices">0.00</span> + <?php echo __('Products') ?>: <span id="subProducts">0.00</span> = </small><?php echo __('Total') ?> <span id="total">0.00</span></h3>
 				</div>
 			</div>
 			<br><br>

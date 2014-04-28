@@ -74,11 +74,18 @@ class InvoicesController extends AppController {
 		$options = array('conditions' => array('status' => 1));
 		$projects = $this->Invoice->Project->find('list');
 		$clients = $this->Invoice->Client->find('list', $options);
+		$this->loadModel('Tax');
 		$this->loadModel('Service');
 		$this->loadModel('Product');
+		$taxes = $this->Tax->find('all', $options);
 		$services = $this->Service->find('list', $options);
 		$products = $this->Product->find('list', $options);
 		$this->set(compact('projects','services', 'products', 'clients'));
+		$this->set('taxes', $taxes);
+		
+		// Settings
+		$appSettings = include APP_SETTINGS;
+		$this->set('appSettings', $appSettings);
 	}
 
 /**
@@ -168,7 +175,8 @@ class InvoicesController extends AppController {
  * @return void       
  */
 	public function getLine($type=null, $id=null, $index=0){
-		$this->layout="ajax";		
+		$this->layout="ajax";
+
 		switch ($type) {
 			case 1: // service
 				$this->loadModel('Service');
@@ -193,6 +201,11 @@ class InvoicesController extends AppController {
 
 				break;
 		}
+
+		$this->loadModel('Tax');
+		$options = array('conditions' => array('status' => 1));
+		$taxes = $this->Tax->find('all', $options);
+		$this->set('taxes', $taxes);
 	}
 
 /**
