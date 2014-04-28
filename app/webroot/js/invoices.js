@@ -219,13 +219,17 @@ $(document).ready(function(){
 
 	function numbersOnly() {
 		$('.aHours, .rate').on('keydown', function(event){
-			if((event.which>=48 && event.which<=57) || event.which==9 || event.which==8 || (event.which>=37 && event.which<=40) || event.which==190 || event.which==46) {
+			if($(this).val().length==0 && (event.which==190 || event.which==110)) {
+				event.preventDefault();
+			}
+
+			if((event.which>=48 && event.which<=57) || (event.which>=96 && event.which<=105) || event.which==9 || event.which==8 || (event.which>=37 && event.which<=40) || event.which==190 || event.which==110 || event.which==46) {
 			
 			} else {
 				event.preventDefault();
 			}
 
-			if($(this).val().length>9 && ((event.which>=48 && event.which<=57) || event.which==190)) {
+			if($(this).val().length>9 && ((event.which>=48 && event.which<=57 ) || (event.which>=96 && event.which<=105) || event.which==190 || event.which==110)) {
 				event.preventDefault();
 			}
 
