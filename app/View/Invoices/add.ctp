@@ -161,13 +161,14 @@
 							<?php $index = 999; ?>
 							<?php foreach($hoursServices as $hourService): ?>
 							<?php $index++; ?>
-							<tr>
-								<td><input type="text" name="data[Line][<?php echo $index; ?>][code]" value="<?php echo h($hourService['Service']['code']); ?>"></td>
+							<tr class="trService">
+								<td><input type="text" name="data[Line][<?php echo $index; ?>][code]" value="<?php echo h($hourService['Service']['code']); ?>">
+								<input type="hidden" name="data[Line][<?php echo $index; ?>][type]" value="1"></td>
 								<td><input type="text" name="data[Line][<?php echo $index; ?>][description]" value="<?php echo h($hourService['Service']['description']); ?>"></td>
-								<td><input type="number" name="data[Line][<?php echo $index; ?>][amount_hours]" value="<?php echo h($hourService[0]) ?>"></td>
-								<td><input type="number" name="data[Line][<?php echo $index; ?>][rate]" value="<?php echo h($hourService['Service']['rate']); ?>"></td>
-								<td><input type="text" name="data[Line][<?php echo $index; ?>][tax_id]" value="<?php echo h($hourService['Service']['tax_id']); ?>"></td>
-								<td><input type="hidden" name="data[Line][<?php echo $index; ?>][type]" value="1">0.00</td>
+								<td><input type="number" name="data[Line][<?php echo $index; ?>][amount_hours]" class="aHours" value="<?php echo h($hourService[0]) ?>"></td>
+								<td><input type="number" name="data[Line][<?php echo $index; ?>][rate]" class="rate" value="<?php echo h($hourService['Service']['rate']); ?>"></td>
+								<td><input type="text" name="data[Line][<?php echo $index; ?>][tax_id]" class="tax" value="<?php echo h($hourService['Service']['tax_id']); ?>"></td>
+								<td class="value">0.00</td>
 								<td><span class="remove-line"><i class="fi-minus"></i></span></td>
 							</tr>
 							<?php endforeach; ?>
@@ -210,6 +211,7 @@
 			<br><br>
 
 			<!-- Submit -->
+			<input type="hidden" id="invoice_amount" name="data[Invoice][amount]" value="0">
 			<input type="submit" class="button tiny success radius right" value="<?php echo __('Save invoice') ?>">
 			</form>
 			</div>

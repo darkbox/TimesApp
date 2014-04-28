@@ -12,6 +12,6 @@
   'note' => 'Thank you!',
   'term' => 'Please, pay me, I\'m begging you!',
   'display_country' => true,
-  'currency_symbol' => 'drojas duras',
+  'currency_symbol' => '$',
   'currency_code' => 'USD',
 );

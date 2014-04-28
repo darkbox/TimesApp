@@ -51,6 +51,10 @@ $(document).ready(function(){
 		$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
 			});
+
+		calcularParcial();
+		calcularSubtotal();
+		calcularTotal();
 	}
 
 	function addLineService(table, id){
