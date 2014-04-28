@@ -50,7 +50,13 @@ $(document).ready(function(){
 	function initRemoveButtons(table){
 		$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
-			});
+		});
+
+		$('.aHours, .rate, .tax').on('change keyup', function(){
+				calcularParcial();
+				calcularSubtotal();
+				calcularTotal();
+		});
 
 		calcularParcial();
 		calcularSubtotal();
