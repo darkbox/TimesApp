@@ -72,7 +72,7 @@ class HoursController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $project_id = null) {
 		$this->Hour->id = $id;
 		if (!$this->Hour->exists()) {
 			throw new NotFoundException(__('Invalid hour'));
@@ -83,5 +83,5 @@ class HoursController extends AppController {
 		} else {
 			$this->Session->setFlash(__('The hour could not be deleted. Please, try again.'), 'flash_danger');
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller' => 'projects','action' => 'view', $project_id));
 	}}

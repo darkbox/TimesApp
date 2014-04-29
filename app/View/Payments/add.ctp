@@ -22,8 +22,11 @@
 					<div class="row">
 					<div class="medium-6 large-6 columns">
 						<label><?php echo __('Invoice') ?><small>Required</small>
-							<select name="data[Payment]invoice_id]" required>
+							<select name="data[Payment][invoice_id]" required>
 								<option value=""><?php echo __('Select an invoice') ?></option>
+								<?php foreach($invoices as $key => $invoice): ?>
+								<option value="<?php echo $key ?>"><?php echo $invoice ?></option>
+								<?php endforeach; ?>
 							</select>
 						</label>
 						<small class="error">Please, select an invoice.</small>
@@ -38,23 +41,7 @@
 					<div class="row">
 					<div class="medium-6 large-6 columns">
 						<label><?php echo __('Date') ?><small>Required</small>
-							<div class="row">
-								<div class="medium-4 columns">
-									<select name="data[Payment][day]" required>
-										<option></option>
-									</select>
-								</div>
-								<div class="medium-4 columns">
-									<select name="data[Payment][month]"  required>
-										<option></option>
-									</select>
-								</div>
-								<div class="medium-4 columns">
-									<select name="data[Payment][year]"  required>
-										<option></option>
-									</select>
-								</div>
-							</div>
+							
 						</label>
 						<small class="error">Date is required.</small>
 					</div>

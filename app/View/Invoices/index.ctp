@@ -23,7 +23,7 @@
 					<th><?php echo $this->Paginator->sort('project_id'); ?></th>
 					<th><?php echo $this->Paginator->sort('title'); ?></th>
 					<th><?php echo $this->Paginator->sort('status'); ?></th>
-					<th>Amount</th>
+					<th><?php echo $this->Paginator->sort('amount'); ?></th>
 					<th><?php echo $this->Paginator->sort('due'); ?></th>
 					<th class="actions"><?php echo __('Actions'); ?></th>
 				</tr>
@@ -57,18 +57,24 @@
 					 		break;
 					 } ?>
 				</td>
-				<td>&nbsp;</td>
-				<td><?php echo h($invoice['Invoice']['due']); ?>&nbsp;</td>
+				<td><?php echo number_format( h($invoice['Invoice']['amount']), 2) . h($invoice['Invoice']['currency_symbol']); ?>&nbsp;</td>
+				<td><?php echo number_format( h($invoice['Invoice']['due']), 2); ?>&nbsp;</td>
 				<td class="action">
 					<?php 
 					$links = array(
 						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $invoice['Invoice']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false, 'data-reveal-id' => 'sendInvoice', 'data-reveal' => true, 'class' => 'linkReceiver')),
 						$this->Html->link('<i class="fi-paperclip"></i> ' . __('Permalink'), array('action' => 'permalink', $invoice['Invoice']['id']), array('escape' => false)),
-						$this->Html->link('<i class="fi-download"></i> ' . __('Download pdf'), array('action' => 'download', $invoice['Invoice']['id']), array('escape' => false)),
-						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $invoice['Invoice']['id']), array('escape' => false)),
-						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $invoice['Invoice']['id']), array('action' => 'delete', $invoice['Invoice']['id']))
-					);
+						$this->Html->link('<i class="fi-download"></i> ' . __('Download pdf'), array('action' => 'download', $invoice['Invoice']['id']), array('escape' => false))
+						);
+
+					if($invoice['Invoice']['status'] == 0){
+						$links[] = $this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $invoice['Invoice']['id']), array('escape' => false));
+					}
+
+					$links[] = 
+						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $invoice['Invoice']['id']), array('action' => 'delete', $invoice['Invoice']['id']));
+
 					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $invoice['Invoice']['id']); 
 					?>
 					<input type="hidden" id="receiverMail" value="<?php echo $invoice['Client']['email']; ?>">

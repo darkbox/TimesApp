@@ -24,25 +24,32 @@
 					<thead>
 						<tr>
 							<th><?php echo __('Note') ?></th>
-							<th><?php echo __('Hours') ?></th>
-							<th><?php echo __('Billed') ?></th>
-							<th><?php echo __('Date') ?></th>
+							<th><?php echo $this->Paginator->sort('hours', __('Hours')) ?></th>
+							<th><?php echo $this->Paginator->sort('billed', __('Billed')) ?></th>
+							<th><?php echo $this->Paginator->sort('date', __('Date')) ?></th>
 							<th><?php echo __('Actions') ?></th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php if(count($project['Hour']) < 1): ?>
+						<?php if(count($hours) < 1): ?>
 							<tr>
 								<td colspan="5"><?php echo __('There are not related hours in this project'); ?></td>
 							</tr>
 						<?php endif; ?>
-						<?php foreach ($project['Hour'] as $hour): ?>
+						<?php foreach ($hours as $hour): ?>
 						<tr>
-							<td><?php echo $hour['note']; ?></td>
-							<td><?php echo $hour['hours']; ?></td>
-							<td><?php echo $this->Fn5->drawStatus($hour['billed']); ?></td>
-							<td><?php echo $hour['created']; ?></td>
-							<td class="action"></td>
+							<td><?php echo $hour['Hour']['note']; ?></td>
+							<td><?php echo $hour['Hour']['hours']; ?></td>
+							<td><?php echo $this->Fn5->drawStatus($hour['Hour']['billed']); ?></td>
+							<td><?php echo $hour['Hour']['created']; ?></td>
+							<td class="action">
+								<?php 
+								$links = array(
+									$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $hour['Hour']['id']), array('controller' => 'hours', 'action' => 'delete', $hour['Hour']['id'], $hour['Hour']['project_id']))
+								);
+								echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $hour['Hour']['id']); 
+								?>
+							</td>
 						</tr>
 						<?php endforeach; ?>
 					</tbody>

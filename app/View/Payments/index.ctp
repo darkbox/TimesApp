@@ -20,28 +20,25 @@
 			<table cellpadding="0" cellspacing="0">
 			<thead>
 				<tr>
-					<th><?php echo $this->Paginator->sort('id'); ?></th>
-					<th><?php echo $this->Paginator->sort('invoice_id'); ?></th>
+					<th><?php echo __('Invoice') ?></th>
 					<th><?php echo $this->Paginator->sort('amount'); ?></th>
 					<th><?php echo $this->Paginator->sort('date'); ?></th>
-					<th><?php echo $this->Paginator->sort('created'); ?></th>
-					<th><?php echo $this->Paginator->sort('modified'); ?></th>
 					<th class="actions"><?php echo __('Actions'); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 			<?php foreach ($payments as $payment): ?>
 			<tr>
-				<td><?php echo h($payment['Payment']['id']); ?>&nbsp;</td>
-				<td>
-					<?php echo $this->Html->link($payment['Invoice']['name'], array('controller' => 'invoices', 'action' => 'view', $payment['Invoice']['id'])); ?>
-				</td>
+				<td><?php echo h($payment['Invoice']['title']); ?>&nbsp;</td>
 				<td><?php echo h($payment['Payment']['amount']); ?>&nbsp;</td>
 				<td><?php echo h($payment['Payment']['date']); ?>&nbsp;</td>
-				<td><?php echo h($payment['Payment']['created']); ?>&nbsp;</td>
-				<td><?php echo h($payment['Payment']['modified']); ?>&nbsp;</td>
 				<td class="action">
-					
+					<?php 
+					$links = array(
+						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $payment['Payment']['id']), array('action' => 'delete', $payment['Payment']['id']))
+					);
+					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $payment['Payment']['id']); 
+					?>
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -65,6 +62,9 @@
 			<label><?php echo __('Invoice') ?><small>Required</small>
 				<select name="data[Payment][invoice_id]" required>
 					<option value=""><?php echo __('Select an invoice') ?></option>
+					<?php foreach($invoices as $key => $invoice): ?>
+					<option value="<?php echo $key ?>"><?php echo $invoice ?></option>
+					<?php endforeach; ?>
 				</select>
 			</label>
 			<small class="error">Please, select an invoice.</small>
@@ -79,23 +79,7 @@
 		<div class="row">
 		<div class="medium-6 large-6 columns">
 			<label><?php echo __('Date') ?><small>Required</small>
-				<div class="row">
-					<div class="medium-4 columns">
-						<select name="data[Payment][day]" required>
-							<option></option>
-						</select>
-					</div>
-					<div class="medium-4 columns">
-						<select name="data[Payment][month]"  required>
-							<option></option>
-						</select>
-					</div>
-					<div class="medium-4 columns">
-						<select name="data[Payment][year]"  required>
-							<option></option>
-						</select>
-					</div>
-				</div>
+				
 			</label>
 			<small class="error">Date is required.</small>
 		</div>

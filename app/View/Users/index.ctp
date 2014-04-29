@@ -29,7 +29,7 @@
 							'default' => 'identicon',
 							'size' => 40
 							));
-					echo "&nbsp;" . h($user['User']['name']); 
+					echo "&nbsp;&nbsp;" . h($user['User']['name']); 
 				?>&nbsp;</td>
 				<td><?php echo h($user['User']['email']); ?>&nbsp;</td>
 				<td><?php echo h($user['User']['role']); ?>&nbsp;</td>

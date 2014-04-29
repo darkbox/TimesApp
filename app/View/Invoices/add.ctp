@@ -25,7 +25,7 @@
 				<div class="medium-4 large-4 columns">
 					<div>
 						<label><?php echo __('Client') ?> <small>Required</small>
-						<select name="data[Invoice][client_id]" required id="clientsList">
+						<select name="data[Invoice][client_id]" required id="clientsList" <?php if($project_id > 0){ echo 'disabled'; } ?>>
 							<option value=""><?php echo __('Select a client') ?></option>
 							<?php foreach($clients as $key => $client): ?>
 							<option value="<?php echo $key ?>" <?php if($client_id == $key){ echo 'selected="selected"';} ?>><?php echo h($client) ?></option>
@@ -43,11 +43,14 @@
 							<?php endforeach; ?>
 						</select>
 						</label>
+						<?php if($project_id > 0): ?>
+						<input type="hidden" name="data[Invoice][project_id]" value="<?php echo $project_id ?>">
+						<?php endif; ?>
 					</div>
 				</div>
 				<div class="medium-4 large-4 columns">
 					<div>
-						<label><?php echo __('Invoice title') ?>
+						<label><?php echo __('Invoice title/number') ?>
 							<input name="data[Invoice][title]" type="text" length="25">
 						</label>
 					</div>

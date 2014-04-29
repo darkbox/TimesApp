@@ -3,7 +3,7 @@
 $(document).foundation({
   abide : {
     patterns: {
-      pass: /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/
+      pass: /^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W])|(?=.*[a-z])(?=.*[0-9])(?=.*[\\W])|(?=.*[A-Z])(?=.*[0-9])(?=.*[\\W])).{6,}$/
     },
     validators: {
     	dateValidate: function(el, required, parent) {
