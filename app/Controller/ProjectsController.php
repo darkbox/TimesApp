@@ -50,6 +50,9 @@ class ProjectsController extends AppController {
 		$this->set('project', $this->Project->find('first', $options));
 
 		$this->loadModel('Hour');
+		$conditions = array("Hour.project_id" => $id);
+		$this->set('hours', $this->paginate('Hour', $conditions));
+
 		$options = array('conditions' => array(
 			'status' => 1
 			));		

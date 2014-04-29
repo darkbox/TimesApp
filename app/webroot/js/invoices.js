@@ -48,6 +48,8 @@ $(document).ready(function(){
 	function initRemoveButtons(table){
 		$(table).on('click', '.remove-line', function(){
 				$(this).parents('tr').remove();
+				calcularSubtotal();
+				calcularTotal();
 		});
 
 		$('.aHours, .rate, .tax').on('change keyup', function(){
