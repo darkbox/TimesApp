@@ -33,6 +33,9 @@
 						</select>
 						</label>
 						<small class="error">Please, select a client</small>
+						<?php if($project_id > 0): ?>
+						<input type="hidden" name="data[Invoice][client_id]" value="<?php echo $client_id ?>">
+						<?php endif; ?>
 					</div>
 					<div>
 						<label><?php echo __('Project') ?>
