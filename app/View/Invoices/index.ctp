@@ -63,7 +63,7 @@
 					<?php 
 					$links = array(
 						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $invoice['Invoice']['id']), array('escape' => false)),
-						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false)),
+						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false, 'data-reveal-id' => 'sendInvoice', 'data-reveal' => true, 'class' => 'linkReceiver')),
 						$this->Html->link('<i class="fi-paperclip"></i> ' . __('Permalink'), array('action' => 'permalink', $invoice['Invoice']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-download"></i> ' . __('Download pdf'), array('action' => 'download', $invoice['Invoice']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $invoice['Invoice']['id']), array('escape' => false)),
@@ -71,6 +71,7 @@
 					);
 					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $invoice['Invoice']['id']); 
 					?>
+					<input type="hidden" id="receiverMail" value="<?php echo $invoice['Client']['email']; ?>">
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -83,3 +84,46 @@
 		</div>
 	</div>
 </div>
+
+<!-- Modal add tax -->
+<div id="sendInvoice" class="reveal-modal tiny" data-reveal>
+	<h2><?php echo __('Send invoice'); ?></h2>
+	<div class="clients form">
+	<form id="addClientForm" method="post" action="<?php echo Router::url(array('controller' => 'Invoices', 'action' => 'sendInvoice')); ?>" data-abide>
+		<div>
+			<b><?php echo __('The invoice will be sent to:'); ?></b><br />
+			<a id="receiverA"></a>
+			<input type="hidden" id="receiver" name="receiver" value="">
+		</div><br />
+		<div>
+			<label><?php echo __('Subject'); ?> <small>required</small>
+				<input type="text" name="subject" required>
+			</label>
+			<small class="error">Subject is required and must be a string.</small>
+		</div>
+
+		<div>
+			<label><?php echo __('Message'); ?> <small>required</small>
+				<textarea name="message"></textarea>
+			</label>
+			<small class="error">Message is required and must be a string.</small>
+		</div>
+		<input type="submit" class="button tiny success radius" value="<?php echo __('Send'); ?>">
+	</form>
+	</div>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+
+<script type="text/javascript">
+	$('.linkReceiver').on('click', function () {
+		var element = $(this).parent();
+		var list = element.parent();
+		var cell = list.parent();
+		var receiver = cell.find('#receiverMail').val();
+
+		console.log($(this).parent());
+		console.log($(this).parent().parent());
+		$('#receiver').val(receiver);
+		$('#receiverA').html(receiver);
+	});
+</script>

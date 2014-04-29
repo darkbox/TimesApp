@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
+
 /**
  * Invoices Controller
  *
@@ -221,6 +223,28 @@ class InvoicesController extends AppController {
 		$options = array('conditions' => array('client_id' => $clientIdJS, 'billable' => 1));
 		$projectsByClient = $this->Invoice->Project->find('all', $options);
 		$this->set('projects', $projectsByClient);
+	}
+
+/**
+ * sendInvoice method for sending invoice to client
+ * @return void       
+ */
+	public function sendInvoice(){
+		if(isset($_POST['subject']) && isset($_POST['message']) && isset($_POST['receiver'])) {
+			$Email = new CakeEmail('gmail');
+
+			$Email->to($_POST['receiver'])
+	        ->subject($_POST['subject']);
+	        
+	         if($Email->send($_POST['message'])) {
+
+		        $this->Session->setFlash(__('Mail sent.'), 'flash_success');
+		        return $this->redirect(array('controller'=>'Invoices','action'=>'index'));
+		    } else  {
+				$this->Session->setFlash(__('There was a problem during sending email.'), 'flash_danger');
+		    }
+		}
+		
 	}
 }
 
