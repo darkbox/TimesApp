@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 28, 2014 at 06:26 PM
+-- Generation Time: Apr 29, 2014 at 07:08 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `hours` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `hours`
@@ -92,9 +92,7 @@ INSERT INTO `hours` (`id`, `project_id`, `service_id`, `user_id`, `hours`, `bill
 (8, 3, 1, 1, '6.00', 1, 'Haciendo pruebas', '2014-04-15 16:13:03', '2014-04-15 16:13:03'),
 (10, 2, 1, 1, '2.00', 0, 'Creado el formulario para añadir horas', '2014-04-15 16:31:41', '2014-04-15 16:31:41'),
 (11, 1, 1, 1, '60.00', 1, 'Comprobando las horas', '2014-04-16 12:32:02', '2014-04-16 12:32:02'),
-(14, 1, 1, 1, '0.02', 1, 'Comprobando el timer.', '2014-04-17 11:51:40', '2014-04-17 11:51:40'),
 (15, 1, 1, 1, '1.67', 1, 'Continuo con las pruebas en el timer.', '2014-04-17 11:59:18', '2014-04-17 11:59:18'),
-(17, 1, 1, 1, '0.02', 1, 'Comprobado, el timer funciona correctamente.', '2014-04-17 12:27:17', '2014-04-17 12:27:17'),
 (18, 1, 3, 1, '23.00', 1, 'Mucho trabajo, poco dinero.', '2014-04-27 12:09:38', '2014-04-27 12:09:38');
 
 -- --------------------------------------------------------
@@ -122,18 +120,16 @@ CREATE TABLE IF NOT EXISTS `invoices` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `invoices`
 --
 
 INSERT INTO `invoices` (`id`, `project_id`, `client_id`, `title`, `status`, `due`, `amount`, `currency_symbol`, `currency_code`, `discount`, `terms`, `note`, `invoice_date`, `due_date`, `display_country`, `created`, `modified`) VALUES
-(1, 3, 0, 'Whatever', 3, 500, '0', '', '', 0, '', '', NULL, NULL, 0, '2014-04-20 18:12:38', '2014-04-20 18:13:50'),
+(1, 3, 0, 'Whatever', 3, 500, '0', '', '', 0, '', '', NULL, NULL, 0, '2014-04-20 18:12:38', '2014-04-29 17:35:01'),
 (2, 3, 0, 'Whatever', 4, 500, '0', '', '', 0, '', '', NULL, NULL, 0, '2014-04-20 18:12:38', '2014-04-23 16:00:45'),
-(8, NULL, 3, 'Probando facturas', 0, 0, '0', '$', 'USD', 0, 'No hay términos.', 'Esto es una prueba.', '2014-04-27', '2014-04-30', 1, '2014-04-27 10:42:45', '2014-04-27 10:42:45'),
-(9, NULL, 1, 'Comprobando ', 0, 0, '0', '€', 'EUR', 0, 'nada de nada', 'Sin nota', '2014-04-27', '2014-04-30', 1, '2014-04-27 13:35:50', '2014-04-27 13:35:50'),
-(11, NULL, 3, 'Test invoice', 0, 0, '489', '€', 'EUR', 0, 'Please, pay me, I''m begging you!', 'Thank you!', '2014-04-28', '2014-04-30', 1, '2014-04-28 18:23:47', '2014-04-28 18:23:47');
+(14, 1, 0, '000231', 0, 0, '1243', '€', 'USD', 0, 'Please, pay me, I''m begging you!', 'Thank you!', '2014-04-30', '2014-05-31', 1, '2014-04-29 17:18:37', '2014-04-29 17:18:37');
 
 -- --------------------------------------------------------
 
@@ -153,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `lines` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `lines`
@@ -176,7 +172,13 @@ INSERT INTO `lines` (`id`, `invoice_id`, `tax_id`, `type`, `code`, `description`
 (21, 11, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 10, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
 (22, 11, 6, 1, 'Standard modeling', 'A standard modeling hour.', 10, 20, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
 (23, 11, 5, 1, 'Texturing', 'Texturing proccess', 18, 5, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
-(24, 11, 6, 2, 'USB stick', 'Usb stick 1Gb storage', 15, 1, '2014-04-28 18:23:47', '2014-04-28 18:23:47');
+(24, 11, 6, 2, 'USB stick', 'Usb stick 1Gb storage', 15, 1, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
+(25, 12, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 61.67, '2014-04-29 16:07:55', '2014-04-29 16:07:55'),
+(26, 12, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-04-29 16:07:55', '2014-04-29 16:07:55'),
+(27, 13, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 61.67, '2014-04-29 16:12:08', '2014-04-29 16:12:08'),
+(28, 13, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-04-29 16:12:08', '2014-04-29 16:12:08'),
+(29, 14, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 61.67, '2014-04-29 17:18:37', '2014-04-29 17:18:37'),
+(30, 14, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-04-29 17:18:37', '2014-04-29 17:18:37');
 
 -- --------------------------------------------------------
 
@@ -185,13 +187,21 @@ INSERT INTO `lines` (`id`, `invoice_id`, `tax_id`, `type`, `code`, `description`
 --
 
 CREATE TABLE IF NOT EXISTS `payments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_id` int(11) NOT NULL,
-  `amount` double NOT NULL,
+  `amount` decimal(10,0) NOT NULL,
   `date` date NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `invoice_id`, `amount`, `date`, `created`) VALUES
+(2, 1, '60', '0000-00-00', '2014-04-29 17:55:30'),
+(3, 1, '80', '0000-00-00', '2014-04-29 17:56:42');
 
 -- --------------------------------------------------------
 

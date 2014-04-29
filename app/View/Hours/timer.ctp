@@ -38,7 +38,7 @@
             </div>
             <div class="row">
               <div class="medium-12 large-12 columns">
-                <small id="timeError" class="error" style="display: block; display: none; width:100%">You can not add less than one minute.</small></div>
+                <small id="timeError" class="error" style="display: block; display: none; width:100%">You can't add less than one minute.</small></div>
             </div>
             <div class="row">
 						<div class="medium-4 large-4 columns">
