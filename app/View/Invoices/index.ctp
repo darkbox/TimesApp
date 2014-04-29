@@ -127,8 +127,6 @@
 		var cell = list.parent();
 		var receiver = cell.find('#receiverMail').val();
 
-		console.log($(this).parent());
-		console.log($(this).parent().parent());
 		$('#receiver').val(receiver);
 		$('#receiverA').html(receiver);
 	});
