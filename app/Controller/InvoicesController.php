@@ -26,6 +26,10 @@ class InvoicesController extends AppController {
 	public function index() {
 		$this->Invoice->recursive = 0;
 		$this->set('invoices', $this->Paginator->paginate());
+
+		// Settings
+		$appSettings = include APP_SETTINGS;
+		$this->set('appSettings', $appSettings);
 	}
 
 /**
@@ -233,18 +237,14 @@ class InvoicesController extends AppController {
 		if(isset($_POST['subject']) && isset($_POST['message']) && isset($_POST['receiver'])) {
 			$Email = new CakeEmail('gmail');
 
-			$Email->to($_POST['receiver'])
-	        ->subject($_POST['subject']);
+			$Email->to($_POST['receiver'])->subject($_POST['subject']);
 	        
-	         if($Email->send($_POST['message'])) {
-
+	        if($Email->send($_POST['message'])) {
 		        $this->Session->setFlash(__('Mail sent.'), 'flash_success');
 		        return $this->redirect(array('controller'=>'Invoices','action'=>'index'));
 		    } else  {
 				$this->Session->setFlash(__('There was a problem during sending email.'), 'flash_danger');
 		    }
 		}
-		
 	}
 }
-

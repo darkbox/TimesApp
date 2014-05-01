@@ -32,7 +32,12 @@
 			<?php foreach ($invoices as $invoice): ?>
 			<tr>
 				<td>
-					<?php echo $this->Html->link($invoice['Project']['code'], array('controller' => 'projects', 'action' => 'view', $invoice['Project']['id'])); ?>
+					<?php 
+					if($invoice['Project']['id'] > 0){
+						echo $this->Html->link($invoice['Project']['code'], array('controller' => 'projects', 'action' => 'view', $invoice['Project']['id']));
+					}else{
+						echo __('None');
+					}?>
 				</td>
 				<td><?php echo h($invoice['Invoice']['title']); ?>&nbsp;</td>
 				<td><?php
@@ -57,8 +62,8 @@
 					 		break;
 					 } ?>
 				</td>
-				<td><?php echo number_format( h($invoice['Invoice']['amount']), 2) . h($invoice['Invoice']['currency_symbol']); ?>&nbsp;</td>
-				<td><?php echo number_format( h($invoice['Invoice']['due']), 2); ?>&nbsp;</td>
+				<td style="text-align: right"><?php echo number_format( h($invoice['Invoice']['amount']), 2) . h($invoice['Invoice']['currency_symbol']); ?>&nbsp;</td>
+				<td style="text-align: right"><?php echo number_format( h($invoice['Invoice']['due']), 2); ?>&nbsp;</td>
 				<td class="action">
 					<?php 
 					$links = array(
@@ -91,7 +96,7 @@
 	</div>
 </div>
 
-<!-- Modal add tax -->
+<!-- Modal send invoice -->
 <div id="sendInvoice" class="reveal-modal tiny" data-reveal>
 	<h2><?php echo __('Send invoice'); ?></h2>
 	<div class="clients form">
@@ -103,14 +108,14 @@
 		</div><br />
 		<div>
 			<label><?php echo __('Subject'); ?> <small>required</small>
-				<input type="text" name="subject" required>
+				<input type="text" name="subject" value="<?php echo $appSettings['email_subject']; ?>" required>
 			</label>
 			<small class="error">Subject is required and must be a string.</small>
 		</div>
 
 		<div>
 			<label><?php echo __('Message'); ?> <small>required</small>
-				<textarea name="message"></textarea>
+				<textarea name="message" rows="8" required><?php echo $appSettings['email_message']; ?></textarea>
 			</label>
 			<small class="error">Message is required and must be a string.</small>
 		</div>

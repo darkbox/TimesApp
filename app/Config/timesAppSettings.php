@@ -14,4 +14,15 @@
   'display_country' => false,
   'currency_symbol' => '$',
   'currency_code' => 'USD',
+  'email_subject' => 'Invoice',
+  'email_message' => 'Hello {{clientName}},
+
+Here is the invoice of {{amount}}.
+
+You can view the invoice online at:
+{{permalink}}
+
+Best regards,
+Dexter Morgan
+Darkbox studios',
 );

@@ -5,6 +5,7 @@
 				<ul>
 					<li><a href="<?php echo Router::url(array('controller' => 'settings', 'action' => 'index')) ?>"><?php echo __('General'); ?></a></li>
 					<li class="current"><a href="<?php echo Router::url(array('controller' => 'settings', 'action' => 'invoices')) ?>"><?php echo __('Invoices'); ?></a></li>
+					<li><a href="<?php echo Router::url(array('controller' => 'settings', 'action' => 'email')) ?>"><?php echo __('Email'); ?></a></li>
 				</ul>
 			</nav>
 		</div>

@@ -53,9 +53,10 @@
 				</div>
 				<div class="medium-4 large-4 columns">
 					<div>
-						<label><?php echo __('Invoice title/number') ?>
-							<input name="data[Invoice][title]" type="text" length="25">
+						<label><?php echo __('Invoice title/number') ?> <small>Required</small>
+							<input name="data[Invoice][title]" type="text" length="25" required>
 						</label>
+						<small class="error">This field is required</small>
 					</div>
 				</div>
 				<div class="medium-4 large-4 columns">
