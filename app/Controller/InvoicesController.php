@@ -240,6 +240,13 @@ class InvoicesController extends AppController {
 			$Email->to($_POST['receiver'])->subject($_POST['subject']);
 	        
 	        if($Email->send($_POST['message'])) {
+	        	// update status invoice to sent
+	        	if (!$this->Invoice->exists($_POST['invoice_id'])) {
+					throw new NotFoundException(__('Invalid invoice'));
+				}
+				$this->Invoice->id = $_POST['invoice_id'];
+				$this->Invoice->saveField('status', 1);
+
 		        $this->Session->setFlash(__('Mail sent.'), 'flash_success');
 		        return $this->redirect(array('controller'=>'Invoices','action'=>'index'));
 		    } else  {

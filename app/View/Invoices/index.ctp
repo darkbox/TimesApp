@@ -68,7 +68,7 @@
 					<?php 
 					$links = array(
 						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $invoice['Invoice']['id']), array('escape' => false)),
-						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false, 'data-reveal-id' => 'sendInvoice', 'data-reveal' => true, 'class' => 'linkReceiver')),
+						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false, 'data-reveal-id' => 'sendInvoice', 'data-reveal' => true, 'class' => 'linkReceiver', 'data-id' => $invoice['Invoice']['id'])),
 						$this->Html->link('<i class="fi-paperclip"></i> ' . __('Permalink'), array('action' => 'permalink', $invoice['Invoice']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-download"></i> ' . __('Download pdf'), array('action' => 'download', $invoice['Invoice']['id']), array('escape' => false))
 						);
@@ -105,6 +105,7 @@
 			<b><?php echo __('The invoice will be sent to:'); ?></b><br />
 			<a id="receiverA"></a>
 			<input type="hidden" id="receiver" name="receiver" value="">
+			<input type="hidden" id="invoice_id" name="invoice_id" value="">
 		</div><br />
 		<div>
 			<label><?php echo __('Subject'); ?> <small>required</small>
@@ -132,6 +133,7 @@
 		var cell = list.parent();
 		var receiver = cell.find('#receiverMail').val();
 
+		$('#invoice_id').val($(this).attr('data-id'));
 		$('#receiver').val(receiver);
 		$('#receiverA').html(receiver);
 	});
