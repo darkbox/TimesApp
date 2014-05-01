@@ -235,9 +235,9 @@ class InvoicesController extends AppController {
  */
 	public function sendInvoice(){
 		if(isset($_POST['subject']) && isset($_POST['message']) && isset($_POST['receiver'])) {
-			$Email = new CakeEmail('gmail');
+			$Email = new CakeEmail('smtp');
 
-			$Email->to($_POST['receiver'])->subject($_POST['subject']);
+			$Email->to('souanyirer@gmail.com');
 	        
 	        if($Email->send($_POST['message'])) {
 	        	// update status invoice to sent

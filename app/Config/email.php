@@ -39,7 +39,7 @@
  */
 class EmailConfig {
 
-	public $gmail = array(
+	public $smtp = array(
         'host' => 'ssl://smtp.gmail.com',
         'port' => 465,
         'username' => 'swagsura@gmail.com',
@@ -47,5 +47,16 @@ class EmailConfig {
         'transport' => 'Smtp',
         'from' => 'swagsura@gmail.com'
     );
+
+    /* 
+    	public $smtp = array(
+	        'host' => $appSettings['email_host'],
+	        'port' => (int)$appSettings['email_port'],
+	        'username' => $appSettings['email_username'],
+	        'password' => $appSettings['email_password'],
+	        'transport' => 'Smtp',
+	        'from' => $appSettings['email_from']
+   		);
+   	*/
 
 }

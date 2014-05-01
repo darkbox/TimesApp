@@ -197,7 +197,7 @@ function init(){
     tp.stopwatch('toggle');
 
     $(window).bind('beforeunload', function(){
-      return 'Save data before leave or you may lose it';
+      return 'Save data before leaving or you may lose it';
     });
 
 

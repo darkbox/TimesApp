@@ -30,6 +30,38 @@
 						      </label>
 						    </div>
 						  </div>
+						  <h2><?php echo __('Smtp options'); ?></h2>
+						  <div class="row">
+						    <div class="medium-6 large-6 columns">
+						      <label><?php echo __('Email username') ?>
+						       	<input type="text" name="data[Settings][email_username]" value="<?php echo h($s['email_username']) ?>">
+						      </label>
+						    </div>
+						    <div class="medium-6 large-6 columns">
+						      <label><?php echo __('Email password') ?>
+						       	<input type="password" name="data[Settings][email_password]" value="<?php echo h($s['email_password']) ?>">
+						      </label>
+						    </div>
+						  </div>
+						  <div class="row">
+						    <div class="medium-6 large-6 columns">
+						      <label><?php echo __('Email host') ?>
+						       	<input type="text" name="data[Settings][email_host]" value="<?php echo h($s['email_host']) ?>">
+						      </label>
+						    </div>
+						    <div class="medium-6 large-6 columns">
+						      <label><?php echo __('Email port') ?>
+						       	<input type="number" name="data[Settings][email_port]" value="<?php echo h($s['email_port']) ?>">
+						      </label>
+						    </div>
+						  </div>
+						  <div class="row">
+						    <div class="medium-6 large-6 columns">
+						      <label><?php echo __('Email sender') ?>
+						       	<input type="text" name="data[Settings][email_from]" value="<?php echo h($s['email_from']) ?>">
+						      </label>
+						    </div>
+						  </div>
 						<input type="submit" class="button tiny radius success" value="<?php echo __('Save'); ?>"/>
 					</form>
 				</div>
