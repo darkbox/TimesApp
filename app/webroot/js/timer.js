@@ -196,6 +196,11 @@ function init(){
 
     tp.stopwatch('toggle');
 
+    $(window).bind('beforeunload', function(){
+      return 'Save data before leave or you may lose it';
+    });
+
+
     if(!toggle){
       toggle = true;
       $('#btn_timer_playStop').text('Pause');
@@ -207,6 +212,7 @@ function init(){
     }
 
   });
+
   $('#btn_timer_submit').click(function(e){
     e.preventDefault();
 
@@ -222,7 +228,8 @@ function init(){
     if(totalHours <= 0.01666){
       $( "#timeError" ).toggle("fast", function(){});
     }else{
-      $( "#addTimerForm" ).submit();
+      $(window).unbind('beforeunload');
+      $('#addTimerForm').submit();
     }
     
   });
