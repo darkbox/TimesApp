@@ -26,7 +26,7 @@ Best regards,
 Dexter Morgan
 Darkbox studios',
   'email_username' => 'swagsura@gmail.com',
-  'email_password' => 'swagsura1234',
+  'email_password' => 'swag1234',
   'email_port' => '465',
   'email_host' => 'ssl://smtp.gmail.com',
   'email_from' => 'swagsura@gmail.com',

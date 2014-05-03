@@ -39,24 +39,26 @@
  */
 class EmailConfig {
 
-	public $smtp = array(
-        'host' => 'ssl://smtp.gmail.com',
-        'port' => 465,
-        'username' => 'swagsura@gmail.com',
-        'password' => 'swag1234',
-        'transport' => 'Smtp',
-        'from' => 'swagsura@gmail.com'
-    );
+    public $appSettings;
+    public $smtp;
 
-    /* 
-    	public $smtp = array(
-	        'host' => $appSettings['email_host'],
-	        'port' => (int)$appSettings['email_port'],
-	        'username' => $appSettings['email_username'],
-	        'password' => $appSettings['email_password'],
-	        'transport' => 'Smtp',
-	        'from' => $appSettings['email_from']
-   		);
-   	*/
+    public function __construct() {
+        // Do conditional assignments here.
+        $this->appSettings = include APP_SETTINGS;
+        $this->smtp();
+    }
+
+    public function smtp() {
+        
+        $this->smtp = array(
+            'host' => $this->appSettings['email_host'],
+            'port' => (int)$this->appSettings['email_port'],
+            'username' => $this->appSettings['email_username'],
+            'password' => $this->appSettings['email_password'],
+            'transport' => 'Smtp',
+            'from' => $this->appSettings['email_from']
+        );
+    }
+
 
 }
