@@ -92,7 +92,7 @@ foreach ($hours as $hour) {
 				break;
 		}
 	}
-} echo debug($hoursByMonth); ?>
+} ?>
 
 <div class="row" style="margin-top: 40px;">
 	<div class="large-3 columns">
