@@ -238,9 +238,10 @@ class InvoicesController extends AppController {
 			$Email = new CakeEmail('smtp');
 
 			$Email->to($_POST['receiver'])->subject($_POST['subject']);
-	        
-	        if($Email->send($_POST['message'])) {
-	        	// update status invoice to sent
+
+			try {
+			    $Email->send();
+			    // update status invoice to sent
 	        	if (!$this->Invoice->exists($_POST['invoice_id'])) {
 					throw new NotFoundException(__('Invalid invoice'));
 				}
@@ -249,9 +250,13 @@ class InvoicesController extends AppController {
 
 		        $this->Session->setFlash(__('Mail sent.'), 'flash_success');
 		        return $this->redirect(array('controller'=>'Invoices','action'=>'index'));
-		    } else  {
-				$this->Session->setFlash(__('There was a problem during sending email.'), 'flash_danger');
-		    }
+		        
+			} catch (SocketException $e) { // Exception would be too generic, so use SocketException here
+			    $errorMessage = $e->getMessage();
+			    $this->Session->setFlash(__('Check your Email settings.'), 'flash_danger');
+		    	return $this->redirect(array('controller'=>'Invoices','action'=>'index'));
+			}
+			
 		}
 	}
 }
