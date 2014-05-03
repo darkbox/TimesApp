@@ -11,7 +11,7 @@ class MobileController extends AppController {
 
 	function beforeFilter(){
 	    parent::beforeFilter();
-	    $this->Auth->allow(array('login', 'listActivities'));
+	    $this->Auth->allow(array('add', 'login', 'listActivities'));
 	}
 
 /**
@@ -20,6 +20,10 @@ class MobileController extends AppController {
 	public function add(){
 		$this->layout = 'ajax';
 		$this->render('index');
+
+		$this->loadModel('Hour');
+		$this->Hour->create();
+		$this->Hour->save($this->request->data);
 
 	}
 
