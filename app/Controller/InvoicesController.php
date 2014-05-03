@@ -250,10 +250,10 @@ class InvoicesController extends AppController {
 
 		        $this->Session->setFlash(__('Mail sent.'), 'flash_success');
 		        return $this->redirect(array('controller'=>'Invoices','action'=>'index'));
-		        
+
 			} catch (SocketException $e) { // Exception would be too generic, so use SocketException here
 			    $errorMessage = $e->getMessage();
-			    $this->Session->setFlash(__('Check your Email settings.'), 'flash_danger');
+			    $this->Session->setFlash(__('The email couldn\'t be sent. Check your Email settings.'), 'flash_danger');
 		    	return $this->redirect(array('controller'=>'Invoices','action'=>'index'));
 			}
 			

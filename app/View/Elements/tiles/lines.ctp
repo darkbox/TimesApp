@@ -3,14 +3,25 @@
 
 $(document).ready(function(){
 	var data = {
-		labels : ["January","February","March","April","May","June","July"],
+		labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
 		datasets : [
 			{
 				fillColor : "rgba(220,220,220,0.5)",
 				strokeColor : "rgba(220,220,220,1)",
 				pointColor : "rgba(220,220,220,1)",
 				pointStrokeColor : "#fff",
-				data : [65,59,90,81,56,55,40]
+				data : [$('#January').val(),
+						$('#February').val(),
+						$('#March').val(),
+						$('#April').val(),
+						$('#May').val(),
+						$('#June').val(),
+						$('#July').val(),
+						$('#August').val(),
+						$('#September').val(),
+						$('#October').val(),
+						$('#November').val(),
+						$('#December').val()]
 			}
 		]
 	};
@@ -38,7 +49,7 @@ $(document).ready(function(){
 	scaleLineWidth : 1,
 
 	//Boolean - Whether to show labels on the scale	
-	scaleShowLabels : false,
+	scaleShowLabels : true,
 	
 	//Interpolated JS string - can access value
 	scaleLabel : "<%=value%>",
@@ -110,4 +121,7 @@ $(document).ready(function(){
 	<center style="margin-top: 30px">
 	<canvas id="lines" height="300" width="500" data-type="Lines" style="width: 500px; height: 300px;"></canvas>
 	</center>
+	<?php foreach ($hoursByMonth as $index => $hours): ?>
+		<input type="hidden" id="<?php echo $index; ?>" value="<?php echo $hours; ?>">
+	<?php endforeach; ?>
 </section>

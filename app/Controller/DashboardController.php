@@ -15,6 +15,7 @@ class DashboardController extends AppController {
 
 		$this->loadModel('Project');
 		$this->loadModel('Invoice');
+		$this->loadModel('Hour');
 		$this->loadModel('User');
 
 		//Retrieve all the projects
@@ -26,10 +27,15 @@ class DashboardController extends AppController {
 			);
 		$this->set('users', $users);
 		
-		//Retrieve all de invoices
+		//Retrieve all the invoices
 		$invoices = $this->Invoice->find('all');
 
 		$this->set(compact('projects', 'invoices'));
+
+		//Retrieve all the hours
+		$hours = $this->Hour->find('all');
+
+		$this->set(compact('projects', 'hours'));
 
 		// Settings
 		$appSettings = include APP_SETTINGS;
