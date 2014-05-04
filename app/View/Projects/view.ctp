@@ -54,6 +54,9 @@
 						<?php endforeach; ?>
 					</tbody>
 					</table>
+					<!-- Paginación -->
+					<?php echo $this->element('paginator'); ?>
+					<!-- Fin contenido -->
 				</div>				
 			</section>
 			</div>

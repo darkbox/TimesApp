@@ -40,14 +40,40 @@ class PaymentsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+
 			$this->Payment->create();
 			if ($this->Payment->save($this->request->data)) {
 				$this->Session->setFlash(__('The payment has been saved.'), 'flash_success');
 
 				// Actualizar factura aquí
+				$this->Payment->Invoice->id = $this->request->data['Payment']['invoice_id'];
 
+				$options = array(
+					'conditions' => array(
+						'Invoice.id' => $this->request->data['Payment']['invoice_id']
+						),
+					'fields' => array(
+						'amount'
+					));
+				$invoice = $this->Payment->Invoice->find('first', $options);
 
-				return $this->redirect(array('action' => 'index'));
+				$totalPaid = 0;
+				$totalToPay = 0;
+
+				$totalToPay = $invoice['Invoice']['amount'];
+				foreach ($invoice['Payment'] as $payment) {
+					$totalPaid += $payment['amount'];
+				}
+				
+				if($totalPaid >= $totalToPay){
+					$this->Payment->Invoice->saveField('status', 4); // Pagado
+				}else{
+					$this->Payment->Invoice->saveField('status', 3); // Parcial
+				}
+
+				$this->Payment->Invoice->saveField('due', ($totalToPay - $totalPaid)); // DUE
+
+				return $this->redirect(array('controller' => 'invoices', 'action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The payment could not be saved. Please, try again.'), 'flash_danger');
 			}

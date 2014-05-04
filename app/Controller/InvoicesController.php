@@ -116,8 +116,14 @@ class InvoicesController extends AppController {
 			$options = array('conditions' => array('Invoice.' . $this->Invoice->primaryKey => $id));
 			$this->request->data = $this->Invoice->find('first', $options);
 		}
+
+		$options = array('conditions' => array('status' => 1));
 		$projects = $this->Invoice->Project->find('list');
-		$this->set(compact('projects'));
+		$clients = $this->Invoice->Client->find('list', $options);
+		$this->loadModel('Tax');
+		$taxes = $this->Tax->find('all', $options);
+		$this->set(compact('projects', 'clients'));
+		$this->set('taxes', $taxes);
 	}
 
 /**
@@ -246,7 +252,12 @@ class InvoicesController extends AppController {
 					throw new NotFoundException(__('Invalid invoice'));
 				}
 				$this->Invoice->id = $_POST['invoice_id'];
-				$this->Invoice->saveField('status', 1);
+
+				$invoice = $this->Invoice->find('first', array('conditions' => array('Invoice.id' => $this->Invoice->id)));
+
+				if($invoice['Invoice']['status'] < 2){
+					$this->Invoice->saveField('status', 1);
+				}
 
 		        $this->Session->setFlash(__('Mail sent.'), 'flash_success');
 		        return $this->redirect(array('controller'=>'Invoices','action'=>'index'));

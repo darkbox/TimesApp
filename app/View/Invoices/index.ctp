@@ -63,7 +63,7 @@
 					 } ?>
 				</td>
 				<td style="text-align: right"><?php echo number_format( h($invoice['Invoice']['amount']), 2) . h($invoice['Invoice']['currency_symbol']); ?>&nbsp;</td>
-				<td style="text-align: right"><?php echo number_format( h($invoice['Invoice']['due']), 2); ?>&nbsp;</td>
+				<td style="text-align: right"><?php echo number_format( h($invoice['Invoice']['due']), 2) . h($invoice['Invoice']['currency_symbol']); ?>&nbsp;</td>
 				<td class="action">
 					<?php 
 					$links = array(
