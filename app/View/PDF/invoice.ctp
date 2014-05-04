@@ -9,11 +9,13 @@ $html = '</pre>
 <h1>hello world</h1>
 <pre>';
  
- 
-$pdf->writeHTML($html, true, false, true, false, '');
+echo debug($invoice);
+echo debug($taxes);
+
+$pdf->writeHTML($appSettings['companyName'], true, false, true, false, '');
  
 $pdf->lastPage();
 
-$name = 1
+$name = 1;
  
 echo $pdf->Output(WWW_ROOT . 'files' . DS . 'pdf' . DS . $name . '.pdf', 'F');

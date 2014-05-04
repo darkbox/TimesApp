@@ -70,7 +70,7 @@
 						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $invoice['Invoice']['id']), array('escape' => false)),
 						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false, 'data-reveal-id' => 'sendInvoice', 'data-reveal' => true, 'class' => 'linkReceiver', 'data-id' => $invoice['Invoice']['id'])),
 						$this->Html->link('<i class="fi-paperclip"></i> ' . __('Permalink'), array('action' => 'permalink', $invoice['Invoice']['id']), array('escape' => false)),
-						$this->Html->link('<i class="fi-download"></i> ' . __('Download pdf'), array('action' => 'download', $invoice['Invoice']['id']), array('escape' => false))
+						$this->Html->link('<i class="fi-download"></i> ' . __('Download pdf'), array('action' => 'generatePDF', $invoice['Invoice']['id']), array('escape' => false))
 						);
 
 					if($invoice['Invoice']['status'] == 0){

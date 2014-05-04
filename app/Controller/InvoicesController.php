@@ -276,22 +276,24 @@ class InvoicesController extends AppController {
  * generatePDF method for generating invoice's PDF
  * @return void       
  */
-	public function generatePDF(){
+	public function generatePDF($id=null){
 
-		if (1) { //$this->request->is('post')
+		if ($id != null) {
 
 			// Settings
 			$appSettings = include APP_SETTINGS;
 			$this->set('appSettings', $appSettings);
 
-			/*$results = array();
-			$data = array();
+			// data
+			$invoice = array();
+			$options = array('conditions' => array('Invoice.id' => $id));
+			$invoice = $this->Invoice->find('first', $options);
+			$this->set('invoice', $invoice);
 
-			$this->set('report', $this->request->data);
-			$this->set('data', $data);
-			$this->set('results', $results);
-			$this->set('thePoll', $thePoll);
-*/
+			$this->loadModel('Tax');
+			$taxes = $this->Tax->find('all');
+			$this->set('taxes', $taxes);
+
 			$this->render('/PDF/invoice');
 
 		}else{
@@ -299,4 +301,21 @@ class InvoicesController extends AppController {
 
 		}
 	}
+
+	/*public function download_pdf() {
+ 
+	    $this->viewClass = 'Media';
+	 
+	    $params = array(
+	 
+	        'id' => 'test.pdf',
+	        'name' => 'your_test' ,
+	        'download' => true,
+	        'extension' => 'pdf',
+	        'path' => APP . 'files/pdf' . DS
+	    );
+	 
+	    $this->set($params);
+	 
+	}*/
 }
