@@ -48,8 +48,12 @@ class PaymentsController extends AppController {
 				// Actualizar factura aquí
 				$this->Payment->Invoice->id = $this->request->data['Payment']['invoice_id'];
 
-				$options = array('fields' => array(
-					'amount'
+				$options = array(
+					'conditions' => array(
+						'Invoice.id' => $this->request->data['Payment']['invoice_id']
+						),
+					'fields' => array(
+						'amount'
 					));
 				$invoice = $this->Payment->Invoice->find('first', $options);
 
