@@ -302,20 +302,33 @@ class InvoicesController extends AppController {
 		}
 	}
 
-	/*public function download_pdf() {
- 
-	    $this->viewClass = 'Media';
-	 
-	    $params = array(
-	 
-	        'id' => 'test.pdf',
-	        'name' => 'your_test' ,
-	        'download' => true,
-	        'extension' => 'pdf',
-	        'path' => APP . 'files/pdf' . DS
-	    );
-	 
-	    $this->set($params);
-	 
-	}*/
+/**
+ * permalink method for generating permalink's PDF
+ * @return void       
+ */
+	public function permalink($id=null){
+		$this->layout="permalink";
+		
+		if ($id != null) {
+
+			// Settings
+			$appSettings = include APP_SETTINGS;
+			$this->set('appSettings', $appSettings);
+
+			// data
+			$invoice = array();
+			$options = array('conditions' => array('Invoice.id' => $id));
+			$invoice = $this->Invoice->find('first', $options);
+			$this->set('invoice', $invoice);
+
+			$this->loadModel('Tax');
+			$taxes = $this->Tax->find('all');
+			$this->set('taxes', $taxes);
+
+		}else{
+			throw new BadRequestException(__('Error generating permalink'));
+
+		}
+	}
+
 }

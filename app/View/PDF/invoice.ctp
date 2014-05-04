@@ -18,4 +18,4 @@ $pdf->lastPage();
 
 $name = 1;
  
-echo $pdf->Output(WWW_ROOT . 'files' . DS . 'pdf' . DS . $name . '.pdf', 'F');
+echo $pdf->Output(WWW_ROOT . 'files' . DS . 'pdf' . DS . $name . '.pdf', 'D');
