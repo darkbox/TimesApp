@@ -116,8 +116,14 @@ class InvoicesController extends AppController {
 			$options = array('conditions' => array('Invoice.' . $this->Invoice->primaryKey => $id));
 			$this->request->data = $this->Invoice->find('first', $options);
 		}
+
+		$options = array('conditions' => array('status' => 1));
 		$projects = $this->Invoice->Project->find('list');
-		$this->set(compact('projects'));
+		$clients = $this->Invoice->Client->find('list', $options);
+		$this->loadModel('Tax');
+		$taxes = $this->Tax->find('all', $options);
+		$this->set(compact('projects', 'clients'));
+		$this->set('taxes', $taxes);
 	}
 
 /**
