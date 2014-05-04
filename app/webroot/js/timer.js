@@ -219,7 +219,7 @@ function init(){
     var parts = timeText.split(':');
     var totalHours = 0;
 
-    totalHours = (((parseInt(parts[0]) * 60) + parseInt(parts[1])) * 60) + parseInt(parts[2]);
+    totalHours = (((parseInt(parts[0]) * 3600) + parseInt(parts[1])) * 60) + parseInt(parts[2]);
     totalHours *= 0.00027777777777777778;
 
     $('#hidden_hours').val(totalHours);

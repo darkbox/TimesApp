@@ -41,4 +41,13 @@ class DashboardController extends AppController {
 		$appSettings = include APP_SETTINGS;
 		$this->set('appSettings', $appSettings);
 	}	
+
+/**
+ * download method
+ * @return response [description]
+ */
+	public function download() {
+	    $this->response->file(WWW_ROOT . 'files' . DS . 'android' . DS . 'TimesApp.apk', array('download' => true, 'name' => 'TimesApp.apk'));
+	    return $this->response;
+	}
 }

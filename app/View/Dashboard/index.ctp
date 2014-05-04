@@ -116,6 +116,7 @@ foreach ($hours as $hour) {
 		</div>
 		<div class="row">
 			<div class="large-6 columns"><?php echo $this->element('tiles/payments'); ?></div>
+			<div class="large-6 columns"><?php echo $this->element('tiles/download_app'); ?></div>
 		</div>
 	</div>
 </div>

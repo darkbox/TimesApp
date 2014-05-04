@@ -5,7 +5,7 @@
 	
 	<footer>
 		<ul>
-			<li>users</li>
+			<li>Payments</li>
 			<li class="btn"><a href="<?php echo Router::url(array('controller' => 'payments', 'action' => 'index')); ?>"><i class="fi-widget"></i></a></li>
 		</ul>
 	</footer>
