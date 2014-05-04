@@ -1,163 +1,50 @@
-<div class="invoices view">
-<h2><?php echo __('Invoice'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Project'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($invoice['Project']['code'], array('controller' => 'projects', 'action' => 'view', $invoice['Project']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Title'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['title']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Status'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['status']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Due'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['due']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Currency Symbol'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['currency_symbol']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Currency Code'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['currency_code']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Discount'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['discount']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Terms'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['terms']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Note'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['note']); ?>
-			&nbsp;
-		</dd>
-	
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($invoice['Invoice']['modified']); ?>
-			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Invoice'), array('action' => 'edit', $invoice['Invoice']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Invoice'), array('action' => 'delete', $invoice['Invoice']['id']), null, __('Are you sure you want to delete # %s?', $invoice['Invoice']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Invoices'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Invoice'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Lines'), array('controller' => 'lines', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Line'), array('controller' => 'lines', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Payments'), array('controller' => 'payments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Payment'), array('controller' => 'payments', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Lines'); ?></h3>
-	<?php if (!empty($invoice['Line'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Invoice Id'); ?></th>
-		<th><?php echo __('Tax Id'); ?></th>
-		<th><?php echo __('Type'); ?></th>
-		<th><?php echo __('Code'); ?></th>
-		<th><?php echo __('Description'); ?></th>
-		<th><?php echo __('Rate'); ?></th>
-		<th><?php echo __('Amount Hours'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($invoice['Line'] as $line): ?>
-		<tr>
-			<td><?php echo $line['id']; ?></td>
-			<td><?php echo $line['invoice_id']; ?></td>
-			<td><?php echo $line['tax_id']; ?></td>
-			<td><?php echo $line['type']; ?></td>
-			<td><?php echo $line['code']; ?></td>
-			<td><?php echo $line['description']; ?></td>
-			<td><?php echo $line['rate']; ?></td>
-			<td><?php echo $line['amount_hours']; ?></td>
-			<td><?php echo $line['created']; ?></td>
-			<td><?php echo $line['modified']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'lines', 'action' => 'view', $line['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'lines', 'action' => 'edit', $line['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'lines', 'action' => 'delete', $line['id']), null, __('Are you sure you want to delete # %s?', $line['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Line'), array('controller' => 'lines', 'action' => 'add')); ?> </li>
-		</ul>
+<header class="row">
+	<div class="medium-7 columns">
+		<h1><?php echo h($appSettings['companyName']) ?></h1>
 	</div>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Payments'); ?></h3>
-	<?php if (!empty($invoice['Payment'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Invoice Id'); ?></th>
-		<th><?php echo __('Amount'); ?></th>
-		<th><?php echo __('Date'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($invoice['Payment'] as $payment): ?>
-		<tr>
-			<td><?php echo $payment['id']; ?></td>
-			<td><?php echo $payment['invoice_id']; ?></td>
-			<td><?php echo $payment['amount']; ?></td>
-			<td><?php echo $payment['date']; ?></td>
-			<td><?php echo $payment['created']; ?></td>
-			<td><?php echo $payment['modified']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'payments', 'action' => 'view', $payment['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'payments', 'action' => 'edit', $payment['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'payments', 'action' => 'delete', $payment['id']), null, __('Are you sure you want to delete # %s?', $payment['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Payment'), array('controller' => 'payments', 'action' => 'add')); ?> </li>
-		</ul>
+	<div class="medium-5 columns">
+		<h3>Invoice <?php echo h($invoice['Invoice']['title']) ?></h3>
+		<p><?php echo "<strong>" . __('Date Of Invoice') . "</strong> " . h($invoice['Invoice']['invoice_date']) ?><br><?php echo "<strong>" . __('Payment Is Due') . " </strong>" . h($invoice['Invoice']['due_date']) ?></p>
 	</div>
-</div>
+</header>
+<section id="address" class="row">
+	<div class="medium-4 columns">
+		<h4>To</h4>
+		<p><strong><?php echo h($invoice['Client']['name']) ?></strong><br><?php echo h($invoice['Client']['address']) ?><br><?php echo h($invoice['Client']['city']) .  " " . h($invoice['Client']['city']) . " " . h($invoice['Client']['zip_code']) ?><br><?php echo h($invoice['Client']['country']) ?></p>
+	</div>
+	<div class="medium-4 columns">
+		<h4>From</h4>
+		<p><strong><?php echo h($appSettings['companyName']) ?></strong><br><?php echo h($appSettings['country']) ?></p>
+	</div>
+	<div class="medium-4 columns"></div>
+</section>
+<section id="body">
+	<table cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<th>Qty</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Subtotal</th>
+				<th>Tax</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($invoice['Line'] as $line): ?>
+			<tr>
+				<td><?php echo h($line['amount_hours']) ?></td>
+				<td><?php echo h($line['description']) ?></td>
+				<td><?php echo h($line['rate']) ?></td>
+				<td><?php echo h($line['id']) ?></td>
+				<td><?php echo h($line['tax_id']) ?></td>
+				<td><?php echo h($line['id']) ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+</section>
+<section>
+	<h3>Notes</h3>
+	<p><?php echo h($invoice['Invoice']['note']) ?></p>
+</section>
