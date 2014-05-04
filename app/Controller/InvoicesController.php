@@ -39,26 +39,22 @@ class InvoicesController extends AppController {
 	public function view($id = null) {
 		$this->layout="invoice_permalink";
 		
-		if ($id != null) {
-
-			// Settings
-			$appSettings = include APP_SETTINGS;
-			$this->set('appSettings', $appSettings);
-
-			// data
-			$invoice = array();
-			$options = array('conditions' => array('Invoice.id' => $id));
-			$invoice = $this->Invoice->find('first', $options);
-			$this->set('invoice', $invoice);
-
-			$this->loadModel('Tax');
-			$taxes = $this->Tax->find('all');
-			$this->set('taxes', $taxes);
-		 
-		}else{
-			throw new BadRequestException(__('Error generating permalink'));
-
+		if (!$this->Invoice->exists($id)) {
+			throw new NotFoundException(__('Invalid invoice'));
 		}
+
+		// Settings
+		$appSettings = include APP_SETTINGS;
+		$this->set('appSettings', $appSettings);
+
+		// data
+		$options = array('conditions' => array('Invoice.id' => $id));
+		$invoice = $this->Invoice->find('first', $options);
+		$this->set('invoice', $invoice);
+
+		$this->loadModel('Tax');
+		$taxes = $this->Tax->find('all');
+		$this->set('taxes', $taxes);
 	}
 
 /**
@@ -299,7 +295,6 @@ class InvoicesController extends AppController {
 			$this->set('appSettings', $appSettings);
 
 			// data
-			$invoice = array();
 			$options = array('conditions' => array('Invoice.id' => $id));
 			$invoice = $this->Invoice->find('first', $options);
 			$this->set('invoice', $invoice);
