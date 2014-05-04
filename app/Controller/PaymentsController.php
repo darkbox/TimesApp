@@ -25,13 +25,9 @@ class PaymentsController extends AppController {
 		$this->Payment->recursive = 0;
 		$this->set('payments', $this->Paginator->paginate());
 
-		$options = array(
-			'conditions' => array(
-				'status' => 1,
-				'status' => 2,
-				'status' => 3,
-				)
-			);
+		$options = array('conditions' => 
+			array('status' => array(1, 2, 3))
+		);
 
 		$invoices = $this->Payment->Invoice->find('list', $options);
 		$this->set(compact('invoices'));
@@ -57,13 +53,9 @@ class PaymentsController extends AppController {
 			}
 		}
 
-		$options = array(
-			'conditions' => array(
-				'status' => 1,
-				'status' => 2,
-				'status' => 3,
-				)
-			);
+		$options = array('conditions' => 
+			array('status' => array(1, 2, 3))
+		);
 
 		$invoices = $this->Payment->Invoice->find('list', $options);
 		$this->set(compact('invoices'));

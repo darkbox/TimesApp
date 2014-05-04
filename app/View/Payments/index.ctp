@@ -79,7 +79,7 @@
 		<div class="row">
 		<div class="medium-6 large-6 columns">
 			<label><?php echo __('Date') ?><small>Required</small>
-				
+				<input name="data[Payment][date]" id="dpPaymentDate" type="text" placeholder="YYYY-MM-DD" required>
 			</label>
 			<small class="error">Date is required.</small>
 		</div>
@@ -91,3 +91,6 @@
 	</div>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
+
+<?php echo $this->Html->script('zebra_datepicker'); ?>
+<?php echo $this->Html->script('datepicker'); ?>

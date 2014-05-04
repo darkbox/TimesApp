@@ -116,19 +116,7 @@ foreach ($hours as $hour) {
 		</div>
 		<div class="row">
 			<div class="large-6 columns"><?php echo $this->element('tiles/payments'); ?></div>
-			<div class="large-6 columns"><?php echo $this->element('tiles/time'); ?></div>
 		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="large-3 columns">
-		<?php echo $this->element('tiles/time'); ?>
-	</div>
-	<div class="large-6 columns">
-		<?php echo $this->element('tiles/chart', array('planned' => $planned, 'inProgress' => $inProgress, 'completed' => $completed, 'canceled' => $canceled)); ?>
-	</div>
-	<div class="large-3 columns">
-		<?php echo $this->element('tiles/time'); ?>
 	</div>
 </div>
 <div style="margin-top: 50px;"></div>
