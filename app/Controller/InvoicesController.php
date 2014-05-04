@@ -259,4 +259,33 @@ class InvoicesController extends AppController {
 			
 		}
 	}
+
+
+/**
+ * generatePDF method for generating invoice's PDF
+ * @return void       
+ */
+	public function generatePDF(){
+
+		if (1) { //$this->request->is('post')
+
+			// Settings
+			$appSettings = include APP_SETTINGS;
+			$this->set('appSettings', $appSettings);
+
+			/*$results = array();
+			$data = array();
+
+			$this->set('report', $this->request->data);
+			$this->set('data', $data);
+			$this->set('results', $results);
+			$this->set('thePoll', $thePoll);
+*/
+			$this->render('/PDF/invoice');
+
+		}else{
+			throw new BadRequestException(__('Error generating PDF'));
+
+		}
+	}
 }
