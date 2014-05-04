@@ -34,17 +34,31 @@ class InvoicesController extends AppController {
 
 /**
  * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
+ * @return void       
  */
 	public function view($id = null) {
-		if (!$this->Invoice->exists($id)) {
-			throw new NotFoundException(__('Invalid invoice'));
+		$this->layout="invoice_permalink";
+		
+		if ($id != null) {
+
+			// Settings
+			$appSettings = include APP_SETTINGS;
+			$this->set('appSettings', $appSettings);
+
+			// data
+			$invoice = array();
+			$options = array('conditions' => array('Invoice.id' => $id));
+			$invoice = $this->Invoice->find('first', $options);
+			$this->set('invoice', $invoice);
+
+			$this->loadModel('Tax');
+			$taxes = $this->Tax->find('all');
+			$this->set('taxes', $taxes);
+		 
+		}else{
+			throw new BadRequestException(__('Error generating permalink'));
+
 		}
-		$options = array('conditions' => array('Invoice.' . $this->Invoice->primaryKey => $id));
-		$this->set('invoice', $this->Invoice->find('first', $options));
 	}
 
 /**
@@ -298,35 +312,6 @@ class InvoicesController extends AppController {
 
 		}else{
 			throw new BadRequestException(__('Error generating PDF'));
-
-		}
-	}
-
-/**
- * permalink method for generating permalink's PDF
- * @return void       
- */
-	public function permalink($id=null){
-		$this->layout="permalink";
-		
-		if ($id != null) {
-
-			// Settings
-			$appSettings = include APP_SETTINGS;
-			$this->set('appSettings', $appSettings);
-
-			// data
-			$invoice = array();
-			$options = array('conditions' => array('Invoice.id' => $id));
-			$invoice = $this->Invoice->find('first', $options);
-			$this->set('invoice', $invoice);
-
-			$this->loadModel('Tax');
-			$taxes = $this->Tax->find('all');
-			$this->set('taxes', $taxes);
-
-		}else{
-			throw new BadRequestException(__('Error generating permalink'));
 
 		}
 	}
