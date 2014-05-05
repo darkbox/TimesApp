@@ -98,7 +98,7 @@ class Invoice extends AppModel {
 		'Line' => array(
 			'className' => 'Line',
 			'foreignKey' => 'invoice_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -111,7 +111,7 @@ class Invoice extends AppModel {
 		'Payment' => array(
 			'className' => 'Payment',
 			'foreignKey' => 'invoice_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

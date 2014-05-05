@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 29, 2014 at 07:08 PM
+-- Generation Time: May 05, 2014 at 06:35 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `clients`
@@ -57,7 +57,8 @@ INSERT INTO `clients` (`id`, `name`, `email`, `contact_name`, `address`, `city`,
 (1, 'NoTime S.L', 'contact@notime.es', 'Rafael García', 'C. inventada nº13', 'Córdoba', 14000, 'España', 'Andalucía', '555 67 89 53', '659 89 54 63', 6, 'Spanish', 'VAT NUMBER', 1, '2014-04-08 17:10:05', '2014-04-08 17:10:05'),
 (2, 'Darkbox Studios', 'contact@dbs.com', 'Rafael García', 'Somewhere on the third planet spinning around the sun', 'Córdoba', 14720, 'España', 'Andalucía', '957 65 89 12', '659 54 21 45', 6, 'Spanish', 'VAT NUMBER', 1, '2014-04-08 17:16:07', '2014-04-08 17:16:07'),
 (3, 'Internal', 'rgtresd@gmail.com', 'Internal', '', '', NULL, '', '', '', '', NULL, '', '', 1, '2014-04-09 18:42:13', '2014-04-09 18:42:13'),
-(4, 'Paco ', 'pacovalmisa@gmail.com', 'Paco', '', '', NULL, '', '', '', '', NULL, '', '', 0, '2014-04-13 12:25:16', '2014-04-13 12:25:16');
+(4, 'Paco ', 'pacovalmisa@gmail.com', 'Paco', '', '', NULL, '', '', '', '', NULL, '', '', 0, '2014-04-13 12:25:16', '2014-04-13 12:25:16'),
+(5, 'Jose', 'souanyirer@gmail.com', 'Jose', '', 'Córdoba', 14710, 'Spain', 'Andalucía', '', '', NULL, 'spanish', '', 1, '2014-04-29 19:35:36', '2014-04-29 19:35:36');
 
 -- --------------------------------------------------------
 
@@ -76,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `hours` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `hours`
@@ -93,7 +94,16 @@ INSERT INTO `hours` (`id`, `project_id`, `service_id`, `user_id`, `hours`, `bill
 (10, 2, 1, 1, '2.00', 0, 'Creado el formulario para añadir horas', '2014-04-15 16:31:41', '2014-04-15 16:31:41'),
 (11, 1, 1, 1, '60.00', 1, 'Comprobando las horas', '2014-04-16 12:32:02', '2014-04-16 12:32:02'),
 (15, 1, 1, 1, '1.67', 1, 'Continuo con las pruebas en el timer.', '2014-04-17 11:59:18', '2014-04-17 11:59:18'),
-(18, 1, 3, 1, '23.00', 1, 'Mucho trabajo, poco dinero.', '2014-04-27 12:09:38', '2014-04-27 12:09:38');
+(18, 1, 3, 1, '23.00', 1, 'Mucho trabajo, poco dinero.', '2014-04-27 12:09:38', '2014-04-27 12:09:38'),
+(19, 6, 2, 1, '1.29', 1, 'Calculando perforaciones', '2014-04-30 18:19:07', '2014-04-30 18:19:07'),
+(20, 1, 1, 1, '0.02', 1, 'algo', '2014-05-01 09:55:03', '2014-05-01 09:55:03'),
+(21, 1, 1, 1, '10.80', 1, 'hola desde android', '2014-05-02 17:49:38', '2014-05-02 17:49:38'),
+(22, 1, 1, 1, '10.80', 1, 'hola desde android', '2014-05-02 17:54:35', '2014-05-02 17:54:35'),
+(23, 1, 1, 1, '0.02', 0, 'Hola', '2014-05-02 18:44:29', '2014-05-02 18:44:29'),
+(24, 2, 1, 1, '0.01', 1, 'fjcdgcghcg', '2014-05-02 18:50:58', '2014-05-02 18:50:58'),
+(25, 1, 1, 1, '0.03', 1, 'fjcdgcghcggdkdbdjdhd\n\n', '2014-05-02 18:52:12', '2014-05-02 18:52:12'),
+(26, 6, 2, 1, '0.95', 1, 'perforando lateral', '2014-05-03 11:28:19', '2014-05-03 11:28:19'),
+(27, 6, 2, 1, '3.77', 1, 'Perforaciones, limpiando vértices', '2014-05-03 13:01:11', '2014-05-03 13:01:11');
 
 -- --------------------------------------------------------
 
@@ -120,16 +130,17 @@ CREATE TABLE IF NOT EXISTS `invoices` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `invoices`
 --
 
 INSERT INTO `invoices` (`id`, `project_id`, `client_id`, `title`, `status`, `due`, `amount`, `currency_symbol`, `currency_code`, `discount`, `terms`, `note`, `invoice_date`, `due_date`, `display_country`, `created`, `modified`) VALUES
-(1, 3, 0, 'Whatever', 3, 500, '0', '', '', 0, '', '', NULL, NULL, 0, '2014-04-20 18:12:38', '2014-04-29 17:35:01'),
-(2, 3, 0, 'Whatever', 4, 500, '0', '', '', 0, '', '', NULL, NULL, 0, '2014-04-20 18:12:38', '2014-04-23 16:00:45'),
-(14, 1, 0, '000231', 0, 0, '1243', '€', 'USD', 0, 'Please, pay me, I''m begging you!', 'Thank you!', '2014-04-30', '2014-05-31', 1, '2014-04-29 17:18:37', '2014-04-29 17:18:37');
+(21, 5, 3, '00000023', 0, 0, '91', '$', 'USD', 0, 'Please, pay me, I''m begging you!', 'Thank you!', '2014-05-05', '2014-05-30', 1, '2014-05-05 18:25:40', '2014-05-05 18:25:40'),
+(22, NULL, 5, '00000024', 3, 156, '756', '€', 'EUR', 0, 'Please, pay me, I''m begging you!', 'Thank you!', '2014-05-05', '2014-05-31', 1, '2014-05-05 18:27:39', '2014-05-05 18:29:06'),
+(23, 3, 5, '00000025', 4, -893, '612', '€', 'EUR', 0, 'Please, pay me, I''m begging you!', 'Thank you!', '2014-05-20', '2014-05-21', 1, '2014-05-05 18:30:26', '2014-05-05 18:33:02'),
+(24, 1, 1, '00000026', 1, 0, '1505', '¥', 'JPY', 0, 'Please, pay me, I''m begging you!', 'Thank you!', '2014-05-06', '2014-05-31', 1, '2014-05-05 18:32:19', '2014-05-05 18:33:41');
 
 -- --------------------------------------------------------
 
@@ -149,36 +160,23 @@ CREATE TABLE IF NOT EXISTS `lines` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
 -- Dumping data for table `lines`
 --
 
 INSERT INTO `lines` (`id`, `invoice_id`, `tax_id`, `type`, `code`, `description`, `rate`, `amount_hours`, `created`, `modified`) VALUES
-(8, 8, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 40, '2014-04-27 10:42:45', '2014-04-27 10:42:45'),
-(9, 8, 6, 1, 'Standard modeling', 'A standard modeling hour.', 10, 30, '2014-04-27 10:42:45', '2014-04-27 10:42:45'),
-(10, 8, 5, 1, 'Texturing', 'Texturing proccess', 18, 25, '2014-04-27 10:42:45', '2014-04-27 10:42:45'),
-(11, 8, 6, 2, 'USB stick', 'Usb stick 1Gb storage', 15, 1, '2014-04-27 10:42:45', '2014-04-27 10:42:45'),
-(12, 9, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 61.71, '2014-04-27 13:35:50', '2014-04-27 13:35:50'),
-(13, 9, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-04-27 13:35:50', '2014-04-27 13:35:50'),
-(14, 9, 6, 1, 'Standard modeling', 'A standard modeling hour.', 10, 2, '2014-04-27 13:35:50', '2014-04-27 13:35:50'),
-(15, 9, 6, 2, 'USB stick', 'Usb stick 1Gb storage', 15, 0, '2014-04-27 13:35:50', '2014-04-27 13:35:50'),
-(16, 10, 6, 1, 'Standard modeling', 'A standard modeling hour.', 10, 5, '2014-04-28 18:19:39', '2014-04-28 18:19:39'),
-(17, 10, 6, 1, 'Standard modeling', 'A standard modeling hour.', 10, 18, '2014-04-28 18:19:39', '2014-04-28 18:19:39'),
-(18, 10, 6, 1, 'Standard modeling', 'A standard modeling hour.', 10, 0, '2014-04-28 18:19:39', '2014-04-28 18:19:39'),
-(19, 10, 6, 2, 'USB stick 0001', 'Usb stick 4Gb storage', 25, 1, '2014-04-28 18:19:39', '2014-04-28 18:19:39'),
-(20, 10, 6, 2, 'ASD8689577', 'Maintenance pack - Pro', 39.99, 1, '2014-04-28 18:19:39', '2014-04-28 18:19:39'),
-(21, 11, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 10, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
-(22, 11, 6, 1, 'Standard modeling', 'A standard modeling hour.', 10, 20, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
-(23, 11, 5, 1, 'Texturing', 'Texturing proccess', 18, 5, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
-(24, 11, 6, 2, 'USB stick', 'Usb stick 1Gb storage', 15, 1, '2014-04-28 18:23:47', '2014-04-28 18:23:47'),
-(25, 12, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 61.67, '2014-04-29 16:07:55', '2014-04-29 16:07:55'),
-(26, 12, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-04-29 16:07:55', '2014-04-29 16:07:55'),
-(27, 13, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 61.67, '2014-04-29 16:12:08', '2014-04-29 16:12:08'),
-(28, 13, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-04-29 16:12:08', '2014-04-29 16:12:08'),
-(29, 14, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 61.67, '2014-04-29 17:18:37', '2014-04-29 17:18:37'),
-(30, 14, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-04-29 17:18:37', '2014-04-29 17:18:37');
+(50, 21, 6, 2, 'USB stick 0001', 'Usb stick 4Gb storage', 25, 3, '2014-05-05 18:25:40', '2014-05-05 18:25:40'),
+(51, 22, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 50, '2014-05-05 18:27:39', '2014-05-05 18:27:39'),
+(52, 22, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 10, '2014-05-05 18:27:39', '2014-05-05 18:27:39'),
+(53, 22, 6, 2, 'USB stick 0001', 'Usb stick 4Gb storage', 25, 1, '2014-05-05 18:27:39', '2014-05-05 18:27:39'),
+(54, 23, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 6, '2014-05-05 18:30:26', '2014-05-05 18:30:26'),
+(55, 23, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-05-05 18:30:26', '2014-05-05 18:30:26'),
+(56, 23, 6, 2, 'USB stick', 'Usb stick 1Gb storage', 15, 1, '2014-05-05 18:30:26', '2014-05-05 18:30:26'),
+(57, 23, 6, 2, '012873', 'Maintenance pack - Standard', 19.99, 1, '2014-05-05 18:30:26', '2014-05-05 18:30:26'),
+(58, 24, 6, 1, 'Mantenimiento del sistema', 'Mantenimiento integral del sistema TimesApp', 10, 83.32, '2014-05-05 18:32:19', '2014-05-05 18:32:19'),
+(59, 24, 5, 1, 'Texturing', 'Texturing proccess', 18, 23, '2014-05-05 18:32:19', '2014-05-05 18:32:19');
 
 -- --------------------------------------------------------
 
@@ -193,15 +191,15 @@ CREATE TABLE IF NOT EXISTS `payments` (
   `date` date NOT NULL,
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `payments`
 --
 
 INSERT INTO `payments` (`id`, `invoice_id`, `amount`, `date`, `created`) VALUES
-(2, 1, '60', '0000-00-00', '2014-04-29 17:55:30'),
-(3, 1, '80', '0000-00-00', '2014-04-29 17:56:42');
+(21, 22, '600', '2014-05-05', '2014-05-05 18:29:06'),
+(22, 23, '1505', '2014-05-30', '2014-05-05 18:33:02');
 
 -- --------------------------------------------------------
 
@@ -253,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `projects`
@@ -262,9 +260,10 @@ CREATE TABLE IF NOT EXISTS `projects` (
 INSERT INTO `projects` (`id`, `code`, `status`, `description`, `client_id`, `init_date`, `deadline`, `estimate_time`, `estimate_price`, `billable`, `created`, `modified`) VALUES
 (1, 'Mi primer proyecto', 1, 'Este proyecto es de prueba.', 1, NULL, NULL, '01:00:00', NULL, 1, '2014-04-09 19:09:47', '2014-04-27 12:09:08'),
 (2, 'TimesApp', 1, 'Una aplicación para ayudar a controlar el tiempo de tus proyectos y facturar mejor.', 1, '2014-03-19', '2014-06-09', '00:00:00', 3000, 0, '2014-04-12 15:17:36', '2014-04-12 15:17:36'),
-(3, 'Blog projectTimesApp', 2, '', 1, NULL, NULL, '15:38:00', NULL, 0, '2014-04-12 15:18:55', '2014-04-12 15:39:03'),
+(3, 'Blog projectTimesApp', 2, '', 5, NULL, NULL, '15:38:00', NULL, 1, '2014-04-12 15:18:55', '2014-04-29 19:35:50'),
 (4, 'Proyecto con Node js', 3, 'Proyecto realizado en Node js y MongoBD', 3, NULL, NULL, '15:39:00', NULL, 1, '2014-04-12 15:19:17', '2014-04-13 14:29:04'),
-(5, 'Encuestas & informes', 2, '', 3, NULL, NULL, NULL, 3000, 1, '2014-04-12 15:40:43', '2014-04-27 12:21:28');
+(5, 'Encuestas & informes', 2, '', 3, NULL, NULL, NULL, 3000, 1, '2014-04-12 15:40:43', '2014-04-27 12:21:28'),
+(6, 'Sumergible Tipo C', 1, '', 3, NULL, NULL, NULL, NULL, 1, '2014-04-30 17:00:57', '2014-04-30 17:00:57');
 
 -- --------------------------------------------------------
 
