@@ -20,16 +20,16 @@ class XTCPDF extends TCPDF{
 
 		$datediff = strtotime($this->dueDate) - strtotime($this->invoiceDate);
 		 // Set font
-        $this->SetFont('helvetica', 'B', 15);
+        $this->SetFont('helvetica', 'B', 20);
         // Title
         $this->SetY(15);
         $this->Cell(0, 15, $this->companyName, 0, false, 'L', 0, '', 0, false, 'T', 'T');
-        $this->MultiCell(130,30,'Invoice: ' . $this->invoiceCode . '<br>Date of invoice: ' . $this->invoiceDate . '<br>Payment is due: ' . $this->dueDate . '(' . floor($datediff/(60*60*24)) . ' days)', 0, 'L', false, 0, 110, 15, true, 0, true);
-        $this->SetFont('helvetica', '', 15);
+        $this->SetFont('helvetica', '', 12);
+        $this->MultiCell(130,30,'<b>Invoice: ' . $this->invoiceCode . '</b><br><b>Date of invoice:</b> ' . $this->invoiceDate . '<br><b>Payment is due:</b> ' . $this->dueDate . '(' . floor($datediff/(60*60*24)) . ' days)', 0, 'L', false, 0, 110, 15, true, 0, true);
         $this->MultiCell(130,30,'<b>To</b> ' . '<b><br>' . $this->clientName . '</b><br>' . $this->clientAddress . '<br>' . 
         																				$this->clientCity . ' ' . $this->clientState . ' ' . $this->clientZipCode .
-        																				'<br>' . $this->clientCountry, 0, 'L', false, 0, 15, 50, true, 0, true);
-        $this->MultiCell(130,30,'<b>From</b> ' . '<b><br>' . $this->companyName . '</b><br>' . $this->companyCountry, 0, 'L', false, 0, 110, 50, true, 0, true);
+        																				'<br>' . $this->clientCountry, 0, 'L', false, 0, 15, 40, true, 0, true);
+        $this->MultiCell(130,30,'<b>From</b> ' . '<b><br>' . $this->companyName . '</b><br>' . $this->companyCountry, 0, 'L', false, 0, 110, 40, true, 0, true);
 	}
 
 	public function setParameters($companyName = "", $companyCountry = "", $invoiceCode = "", $invoiceDate = "", $dueDate = "", $clientName = "", $clientAddress = "", $clientCity = "", $clientState = "", $clientZipCode = "", $clientCountry = "") {
