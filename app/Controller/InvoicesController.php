@@ -290,6 +290,8 @@ class InvoicesController extends AppController {
 
 		if ($id != null) {
 
+			$this->layout = '/pdf/default';
+
 			// Settings
 			$appSettings = include APP_SETTINGS;
 			$this->set('appSettings', $appSettings);
@@ -303,7 +305,7 @@ class InvoicesController extends AppController {
 			$taxes = $this->Tax->find('all');
 			$this->set('taxes', $taxes);
 
-			$this->render('/PDF/invoice');
+			$this->render('/Pdf/invoice');
 
 		}else{
 			throw new BadRequestException(__('Error generating PDF'));
