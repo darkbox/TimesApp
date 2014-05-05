@@ -18,6 +18,8 @@ class InvoicesController extends AppController {
  */
 	public $components = array('Paginator', 'Session');
 
+	private $seed = 1990;
+
 /**
  * index method
  *
@@ -30,6 +32,8 @@ class InvoicesController extends AppController {
 		// Settings
 		$appSettings = include APP_SETTINGS;
 		$this->set('appSettings', $appSettings);
+
+		$this->set('seed', $this->seed);
 	}
 
 /**
@@ -38,6 +42,8 @@ class InvoicesController extends AppController {
  */
 	public function view($id = null) {
 		$this->layout="invoice_permalink";
+
+		$id = $id / $this->seed;
 		
 		if (!$this->Invoice->exists($id)) {
 			throw new NotFoundException(__('Invalid invoice'));
@@ -247,6 +253,44 @@ class InvoicesController extends AppController {
 		$projectsByClient = $this->Invoice->Project->find('all', $options);
 		$this->set('projects', $projectsByClient);
 	}
+/**
+ * getMessage ajax method
+ * {{clientName}}
+ * {{amount}}
+ * {{permalink}}
+ * 
+ * @param  string $message [description]
+ * @return string          [description]
+ */
+	function getMessage($id = null){
+		$this->layout = 'ajax';
+
+		$id = $id / $this->seed;
+
+		if (!$this->Invoice->exists($id)) {
+			throw new NotFoundException(__('Invalid invoice'));
+		}
+		// Invoice
+		$options = array('conditions' => array(
+			'Invoice.id' => $id
+			),
+		);
+		$invoice = $this->Invoice->find('first', $options);
+
+		// Settings
+		$appSettings = include APP_SETTINGS;
+
+		$message = "";
+		if(isset($appSettings['email_message'])){
+			$message = $appSettings['email_message'];
+		}
+		$link = Router::url(array('controller' => 'invoice', 'action' => 'view', $id * $this->seed), array('full' => true));
+		$message = str_replace("{{clientName}}", $invoice['Client']['name'], $message);
+		$message = str_replace("{{amount}}", $invoice['Invoice']['amount'], $message);
+		$message = str_replace("{{permalink}}", $link, $message);
+
+		$this->set('response', $message);
+	}	
 
 /**
  * sendInvoice method for sending invoice to client
@@ -327,5 +371,4 @@ class InvoicesController extends AppController {
 		$numberDays = $timeDiff/86400;  // 86400 seconds in one day
 		return intval($numberDays);
 	}
-
 }

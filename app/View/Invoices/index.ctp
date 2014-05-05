@@ -67,8 +67,8 @@
 				<td class="action">
 					<?php 
 					$links = array(
-						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false, 'data-reveal-id' => 'sendInvoice', 'data-reveal' => true, 'class' => 'linkReceiver', 'data-id' => $invoice['Invoice']['id'])),
-						$this->Html->link('<i class="fi-paperclip"></i> ' . __('Permalink'), array('action' => 'view', $invoice['Invoice']['id']), array('escape' => false, 'target' => '_blank')),
+						$this->Html->link('<i class="fi-mail"></i> ' . __('Send invoice'), array('action' => 'send', $invoice['Invoice']['id']), array('escape' => false, 'data-reveal-id' => 'sendInvoice', 'data-reveal' => true, 'class' => 'linkReceiver', 'data-id' => $invoice['Invoice']['id'], 'data-en' => ($invoice['Invoice']['id'] * $seed))),
+						$this->Html->link('<i class="fi-paperclip"></i> ' . __('Permalink'), array('action' => 'view', ($invoice['Invoice']['id'] * $seed)), array('escape' => false, 'target' => '_blank')),
 						$this->Html->link('<i class="fi-download"></i> ' . __('Download pdf'), array('action' => 'generatePDF', $invoice['Invoice']['id']), array('escape' => false))
 						);
 
@@ -115,7 +115,7 @@
 
 		<div>
 			<label><?php echo __('Message'); ?> <small>required</small>
-				<textarea name="message" rows="8" required><?php echo $appSettings['email_message']; ?></textarea>
+				<textarea name="message" id="responseMessage" rows="8" required></textarea>
 			</label>
 			<small class="error">Message is required and must be a string.</small>
 		</div>
@@ -132,8 +132,36 @@
 		var cell = list.parent();
 		var receiver = cell.find('#receiverMail').val();
 
-		$('#invoice_id').val($(this).attr('data-id'));
+		var data_id = $(this).attr('data-id');
+		var data_en = $(this).attr('data-en');
+		var respond = "";
+		$.post(getBaseURL() + "invoices/getMessage/" + data_en)
+			.done(function( data ) {
+			respond = data;
+			$('#responseMessage').html(respond);
+		});
+
+		$('#invoice_id').val(data_id);
 		$('#receiver').val(receiver);
 		$('#receiverA').html(receiver);
+
+		function getBaseURL() {
+	    var url = location.href;
+	    var baseURL = url.substring(0, url.indexOf('/', 14));
+
+	    if (baseURL.indexOf('http://localhost') != -1) {
+	        var url = location.href;
+	        var pathname = location.pathname;
+	        var index1 = url.indexOf(pathname);
+	        var index2 = url.indexOf("/", index1 + 1);
+	        var baseLocalUrl = url.substr(0, index2);
+
+	        return baseLocalUrl + "/";
+	    }
+	    else {
+	        // Root Url for domain name
+	        return baseURL + "/";
+	    }
+	}
 	});
 </script>
