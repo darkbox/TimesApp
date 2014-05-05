@@ -55,6 +55,9 @@ class InvoicesController extends AppController {
 		$this->loadModel('Tax');
 		$taxes = $this->Tax->find('all');
 		$this->set('taxes', $taxes);
+
+		//dates
+		$this->set('dueDays', $this->countDaysBetween($invoice['Invoice']['invoice_date'], $invoice['Invoice']['due_date']));
 	}
 
 /**
@@ -309,6 +312,20 @@ class InvoicesController extends AppController {
 			throw new BadRequestException(__('Error generating PDF'));
 
 		}
+	}
+
+/**
+ * countDaysBetween method
+ * @param  date $start start date
+ * @param  date $end   end date
+ * @return int        days between
+ */
+	private function countDaysBetween($start, $end){
+		$startTimeStamp = strtotime($start);
+		$endTimeStamp = strtotime($end);
+		$timeDiff = abs($endTimeStamp - $startTimeStamp);
+		$numberDays = $timeDiff/86400;  // 86400 seconds in one day
+		return intval($numberDays);
 	}
 
 }

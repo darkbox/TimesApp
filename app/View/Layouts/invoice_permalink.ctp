@@ -18,12 +18,6 @@
 		echo $this->fetch('script');
 		echo $this->Html->script('modernizr');
 	?>
-
-	<style type="text/css">
-		.invoice-paper{
-		
-		}
-	</style>
 </head>
 <body style="height: 100% !important;">
 
