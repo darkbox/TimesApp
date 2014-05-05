@@ -11,6 +11,12 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class InvoicesController extends AppController {
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('view');
+	}	
+
+
 /**
  * Components
  *
