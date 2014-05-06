@@ -26,7 +26,7 @@ class XTCPDF extends TCPDF{
         $this->Cell(0, 15, $this->companyName, 0, false, 'L', 0, '', 0, false, 'T', 'T');
         $this->SetFont('helvetica', '', 12);
         $this->MultiCell(130,30,'<b>Invoice: ' . $this->invoiceCode . '</b><br><b>Date of invoice:</b> ' . $this->invoiceDate . '<br><b>Payment is due:</b> ' . $this->dueDate . '(' . floor($datediff/(60*60*24)) . ' days)', 0, 'L', false, 0, 110, 15, true, 0, true);
-        $this->MultiCell(130,30,'<b>To</b> ' . '<b><br>' . $this->clientName . '</b><br>' . $this->clientAddress . '<br>' . 
+        $this->MultiCell(200,30,'<b>To</b> ' . '<b><br>' . $this->clientName . '</b><br>' . $this->clientAddress . '<br>' . 
         																				$this->clientCity . ' ' . $this->clientState . ' ' . $this->clientZipCode .
         																				'<br>' . $this->clientCountry, 0, 'L', false, 0, 15, 40, true, 0, true);
         $this->MultiCell(130,30,'<b>From</b> ' . '<b><br>' . $this->companyName . '</b><br>' . $this->companyCountry, 0, 'L', false, 0, 110, 40, true, 0, true);
