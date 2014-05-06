@@ -21,15 +21,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 $pdf->AddPage();
 
+$pdf->SetFont('helvetica', '', 9);
+
 $html = '<table cellpadding="10" cellspacing="0">
 		<thead>
 			<tr style="background-color: #ccc;">
-				<th style="border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;">Qty</th>
-				<th style="border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;">Description</th>
-				<th style="text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;">Price</th>
-				<th style="text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;">Subtotal</th>
-				<th style="text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;">Tax</th>
-				<th style="text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;">Total</th>
+				<th style="border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;"><b>Qty</b></th>
+				<th style="width: 125px; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;"><b>Description</b></th>
+				<th style="width: 75px;text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;"><b>Price</b></th>
+				<th style="width: 75px;text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;"><b>Subtotal</b></th>
+				<th style="width: 75px;text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;"><b>Tax</b></th>
+				<th style="width: 75px;text-align: right; border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;"><b>Total</b></th>
 			</tr>
 		</thead>
 		<tbody>';
@@ -55,11 +57,11 @@ foreach($invoice['Line'] as $line) {
 	}
 	
 		$html .= '<td style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . h($line['amount_hours']) . " " . labels($line['type'], $line['amount_hours']) . '</td>
-		<td style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . h($line['description']) . '</td>
-		<td style="text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format(h($line['rate']), 2) . '</td>
-		<td style="text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format($subtotalLine, 2) . '</td>
-		<td style="text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format($taxRate, 2) . ' %</td>
-		<td style="text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format($totalLine, 2) . '</td>
+		<td style="width: 125px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . h($line['description']) . '</td>
+		<td style="width: 75px;text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format(h($line['rate']), 2) . '</td>
+		<td style="width: 75px;text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format($subtotalLine, 2) . '</td>
+		<td style="width: 75px;text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format($taxRate, 2) . ' %</td>
+		<td style="width: 75px;text-align: right; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">' . number_format($totalLine, 2) . '</td>
 	</tr>';
 
 	$stripped++;
@@ -82,7 +84,7 @@ $pdf->lastPage();
 // Nombre del pdf
 $date = date('m/-d/-Y_h:i:s', time());
 $name = "Invoice";
-$name .= "_" . $date;
+$name .= "_" . $invoice['Invoice']['title'] . "_" . $date;
 
 echo $pdf->Output($name . '.pdf', 'D');
 
