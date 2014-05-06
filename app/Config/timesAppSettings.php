@@ -17,14 +17,14 @@
   'email_subject' => 'Invoice',
   'email_message' => 'Hello {{clientName}},
 
-Here is the invoice of {{amount}}.
+Here is the invoice of {{amount}}{{currencySymbol}} ({{currencyCode}}).
 
 You can view the invoice online at:
 {{permalink}}
 
 Best regards,
 Dexter Morgan
-Darkbox studios',
+{{companyName}}',
   'email_username' => 'swagsura@gmail.com',
   'email_password' => 'swag1234',
   'email_port' => '465',

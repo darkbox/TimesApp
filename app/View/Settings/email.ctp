@@ -26,6 +26,7 @@
 						  <div class="row">
 						    <div class="medium-12 large-12 columns">
 						      <label><?php echo __('Default message') ?>
+						      	<span data-tooltip data-options="disable_for_touch:true" class="has-tip tip-bottom radius" title="{{clientName}} , {{amount}}, {{currencySymbol}}, {{currencyCode}}, {{permalink}}, {{companyName}}">Hint</span>
 						       	<textarea rows="6" name="data[Settings][email_message]"><?php echo h($s['email_message']) ?></textarea>
 						      </label>
 						    </div>

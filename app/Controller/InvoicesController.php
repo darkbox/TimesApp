@@ -292,8 +292,11 @@ class InvoicesController extends AppController {
 		}
 		$link = Router::url(array('controller' => 'invoice', 'action' => 'view', $id * $this->seed), array('full' => true));
 		$message = str_replace("{{clientName}}", $invoice['Client']['name'], $message);
-		$message = str_replace("{{amount}}", $invoice['Invoice']['amount'], $message);
+		$message = str_replace("{{amount}}", number_format($invoice['Invoice']['amount'], 2), $message);
+		$message = str_replace("{{currencySymbol}}", $invoice['Invoice']['currency_symbol'], $message);
+		$message = str_replace("{{currencyCode}}", $invoice['Invoice']['currency_code'], $message);
 		$message = str_replace("{{permalink}}", $link, $message);
+		$message = str_replace("{{companyName}}", $appSettings['companyName'], $message);
 
 		$this->set('response', $message);
 	}	
