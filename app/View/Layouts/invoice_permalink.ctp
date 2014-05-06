@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" style="background-color: #EDECE4 !important;">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,6 @@
 	?>
 </head>
 <body style="height: 100% !important;">
-
 	<!-- Página principal -->
 	<div class="row">
 		<div class="medium-12 columns">
@@ -29,7 +28,7 @@
 			</div>		
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" style="padding-bottom: 100px">
 		<div class="medium-12 columns">
 			<div class="page-wrapper" style="width=700px; margin: 0 auto; padding:30px">
 			<?php echo $this->fetch('content'); ?>         

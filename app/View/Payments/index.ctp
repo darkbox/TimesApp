@@ -29,7 +29,7 @@
 			<tbody>
 			<?php foreach ($payments as $payment): ?>
 			<tr>
-				<td><?php echo h($payment['Invoice']['title']); ?>&nbsp;</td>
+				<td><?php echo $this->Html->link(h($payment['Invoice']['title']), array('controller' => 'invoices', 'action' => 'view', ($payment['Payment']['invoice_id'] * $seed)), array('target' => '_blank')); ?>&nbsp;</td>
 				<td><?php echo h($payment['Payment']['amount']); ?>&nbsp;</td>
 				<td><?php echo h($payment['Payment']['date']); ?>&nbsp;</td>
 				<td class="action">

@@ -57,7 +57,7 @@
 		</tbody>
 	</table>
 </section>
-<section class="row">
+<section class="row" style="padding-top: 50px">
 	<div class="medium-6 medium-offset-6 columns">
 		<div class="row">
 			<div class="medium-6 columns" style="text-align: right;">

@@ -116,7 +116,7 @@ $(document).ready(function(){
 </script>
 <section class="dash-tile" id="chart-tile" style="height: 490px;">
 	<header>
-		<h1>Total hours</h1>
+		<h1>Total hours <small>(per month)</small></h1>
 	</header>
 	<center style="margin-top: 30px">
 	<canvas id="lines" height="300" width="500" data-type="Lines" style="width: 500px; height: 300px;"></canvas>

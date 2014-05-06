@@ -20,8 +20,8 @@
 			<table cellpadding="0" cellspacing="0">
 			<thead>
 				<tr>
-					<th><?php echo $this->Paginator->sort('project_id'); ?></th>
 					<th><?php echo $this->Paginator->sort('title'); ?></th>
+					<th><?php echo $this->Paginator->sort('project_id'); ?></th>
 					<th><?php echo $this->Paginator->sort('status'); ?></th>
 					<th><?php echo $this->Paginator->sort('amount'); ?></th>
 					<th><?php echo $this->Paginator->sort('due'); ?></th>
@@ -31,6 +31,7 @@
 			<tbody>
 			<?php foreach ($invoices as $invoice): ?>
 			<tr>
+				<td><?php echo $this->Html->link(h($invoice['Invoice']['title']), array('controller' => 'invoices', 'action' => 'view', (h($invoice['Invoice']['id']) * $seed)), array('target' => '_blank')); ?>&nbsp;</td>
 				<td>
 					<?php 
 					if($invoice['Project']['id'] > 0){
@@ -39,7 +40,6 @@
 						echo __('None');
 					}?>
 				</td>
-				<td><?php echo h($invoice['Invoice']['title']); ?>&nbsp;</td>
 				<td><?php
 					switch (h($invoice['Invoice']['status'])) {
 					 	case 0: // draft
@@ -76,8 +76,10 @@
 						$links[] = $this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $invoice['Invoice']['id']), array('escape' => false));
 					}
 
-					$links[] = 
-						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $invoice['Invoice']['id']), array('action' => 'delete', $invoice['Invoice']['id']));
+					if($invoice['Invoice']['status'] < 1){
+						$links[] = 
+							$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $invoice['Invoice']['id']), array('action' => 'delete', $invoice['Invoice']['id']));
+					}
 
 					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $invoice['Invoice']['id']); 
 					?>

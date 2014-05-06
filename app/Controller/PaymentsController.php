@@ -16,6 +16,8 @@ class PaymentsController extends AppController {
  */
 	public $components = array('Paginator', 'Session');
 
+	private $seed = 1990;
+
 /**
  * index method
  *
@@ -31,6 +33,7 @@ class PaymentsController extends AppController {
 
 		$invoices = $this->Payment->Invoice->find('list', $options);
 		$this->set(compact('invoices'));
+		$this->set('seed', $this->seed);
 	}
 
 /**
