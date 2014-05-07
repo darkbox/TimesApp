@@ -1,9 +1,9 @@
 <?php return array (
   'companyName' => 'NoTime',
-  'cif' => 'A58818501',
+  'cif' => 'A-58818501',
   'country' => 'España',
   'stateProvince' => 'Córdoba',
-  'address' => 'NoTimeLand',
+  'address' => 'C. NoTimeLand nº1',
   'city' => 'Córdoba',
   'zipCode' => '14014',
   'email' => 'noreply@notime.es',

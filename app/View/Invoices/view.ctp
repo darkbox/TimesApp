@@ -46,11 +46,26 @@
 <section id="address" class="row">
 	<div class="medium-4 columns">
 		<h4>To</h4>
-		<p><strong><?php echo h($invoice['Client']['name']) ?></strong><br><?php echo h($invoice['Client']['address']) ?><br><?php echo h($invoice['Client']['city']) .  " " . h($invoice['Client']['city']) . " " . h($invoice['Client']['zip_code']) ?><br><?php echo h($invoice['Client']['country']) ?></p>
+		<p><strong><?php echo h($invoice['Client']['name']) ?></strong><br><?php echo h($invoice['Client']['address']) ?><br><?php echo h($invoice['Client']['state']) .  " " . h($invoice['Client']['city']) . " " . h($invoice['Client']['zip_code']) ?><br>
+			<?php
+				if($invoice['Invoice']['display_country']){
+					echo h($invoice['Client']['country']);
+				}
+			?>
 	</div>
 	<div class="medium-4 columns">
 		<h4>From</h4>
-		<p><strong><?php echo h($appSettings['companyName']) ?></strong><br><?php echo h($appSettings['country']) ?></p>
+		<p><strong><?php echo h($appSettings['companyName']) ?></strong> <?php echo h($appSettings['cif']) ?><br>
+		<?php echo h($appSettings['address']) ?><br>
+		<?php echo h($appSettings['stateProvince']) ?>
+		<?php echo h($appSettings['city']) ?>
+		<?php echo h($appSettings['zipCode']) ?><br>
+		<?php
+			if($invoice['Invoice']['display_country']){
+				echo h($appSettings['country']);
+			}
+		?>
+		</p>
 	</div>
 	<div class="medium-4 columns"></div>
 </section>
