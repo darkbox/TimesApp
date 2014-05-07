@@ -22,6 +22,12 @@
 						        <input type="text" name="data[Settings][companyName]" value="<?php echo $s['companyName']; ?>" required/>
 						      </label>
 						    </div>
+						    <div class="medium-6 large-6 columns">
+						      <label><?php echo __('NIF/CIF') ?>
+						      	<small>Required</small>
+						        <input type="text" name="data[Settings][cif]" value="<?php echo $s['cif']; ?>" required/>
+						      </label>
+						    </div>
 						  </div>
 						  <h2><?php echo __('Address'); ?></h2>
 						  <div class="row">
