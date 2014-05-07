@@ -1,7 +1,39 @@
 <?php
 	$subtotal = 0;
 	$taxSubtotal = 0;
+
+	$statusLabel = array('draft', 'sent', 'due', 'partial', 'paid');
 ?>
+<style type="text/css">
+	.status-label{
+		display: block;
+		width: 95px;
+		height: 93px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		background-image: url(<?php echo $this->webroot; ?>img/invoice-status.png);
+	}
+	.draft{
+		background-position: 0px 0px;
+	}
+	.sent{
+		background-position: -95px 0px;
+	}
+	.paid{
+		background-position: -190px 0px;
+	}
+	.due{
+		background-position: -285px 0px;
+	}
+	.partial{
+		background-position: -380px 0px;
+	}
+</style>
+
+<div class="status-label <?php echo $statusLabel[$invoice['Invoice']['status']] ?>"></div>
+
 <header class="row">
 	<div class="medium-8 columns">
 		<h1><?php echo h($appSettings['companyName']) ?></h1>
