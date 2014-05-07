@@ -71,7 +71,14 @@
 		<div class="row">
 			<div class="medium-5 large-5 columns">
 				<label><?php echo __('Hours'); ?> <small>required</small>
-					<input type="text" name="data[Hour][hours]" maxlength="60" placeholder="Hours" required/>
+					<div id="hoursConverter" class="has-tip tip-top" style="float: right;" data-tooltip title="Click me if you need help converting hours!" data-dropdown="formConverter" data-options="align:left">Need help?</div>
+						<div id="formConverter" data-dropdown-content class="content f-dropdown">
+							<label><?php echo __('Hours'); ?><input id="inputHoursConverter" type="number" value="0" min="0"></label>
+							<label><?php echo __('Minutes'); ?><input id="inputMinutesConverter" type="number" value="0" min="0" max="60"></label>
+							<label><?php echo __('Seconds'); ?><input id="inputSecondsConverter" type="number" value="0" min="0" max="60"></label>
+							<div><b><span id="resultConverter">0.00</span> hours</b><a id="addHoursConverter" class="button tiny success radius" style="float: right; display: block; margin: 0;">Add</a></div>
+						</div>
+					<input type="text" id="hours" name="data[Hour][hours]" maxlength="60" placeholder="Hours" required/>
 				</label>
 				<small class="error">Hours is required and must be a number.</small>
 			</div>
@@ -110,3 +117,4 @@
 	</div>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
+<?php echo $this->Html->script('hoursConverter'); ?>

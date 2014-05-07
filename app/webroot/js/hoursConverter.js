@@ -22,6 +22,10 @@ $(function(){
 		$('#hours').val($('#resultConverter').html());
 		$('#hoursConverter').trigger('click');
 	});
+
+	$('#formConverter').on('closed', function(event){
+		return false;
+	});
 });
 
 function roundToTwo(num) {    
