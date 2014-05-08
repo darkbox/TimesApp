@@ -15,7 +15,7 @@ $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->SetMargins(PDF_MARGIN_LEFT, '80', PDF_MARGIN_RIGHT);
 $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
@@ -77,7 +77,7 @@ $html .= '<tr>
 		</tbody>
 	</table>';
 
-$pdf->writeHTMLCell('', '', '', 80, $html, '', '', false, true, '', true);
+$pdf->writeHTMLCell('', '', '', '', $html, '', '', false, true, '', true);
 
 $pdf->lastPage();
 
