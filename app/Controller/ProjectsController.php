@@ -47,7 +47,8 @@ class ProjectsController extends AppController {
 			throw new NotFoundException(__('Invalid project'));
 		}
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
-		$this->set('project', $this->Project->find('first', $options));
+		$project = $this->Project->find('first', $options);
+		$this->set('project', $project);
 
 		$this->loadModel('Hour');
 		$conditions = array("Hour.project_id" => $id);
@@ -59,6 +60,18 @@ class ProjectsController extends AppController {
 		$services = $this->Hour->Service->find('list', $options);
 		$users = $this->Hour->User->find('list');
 		$this->set(compact('services', 'users'));
+
+		//days
+		$daysLeft = 0;
+		$daysSpent = 0;
+
+		if($project['Project']['init_date'] != 0 && $project['Project']['deadline'] != 0){
+			$daysLeft = $this->countDaysBetween($project['Project']['init_date'], $project['Project']['deadline']);
+			$daysSpent = $this->countDaysBetween($project['Project']['init_date'], date('Y-m-d', strtotime("now")));
+		}
+
+		$this->set('daysLeft', $daysLeft);
+		$this->set('daysSpent', $daysSpent);
 	}
 
 /**
@@ -126,4 +139,19 @@ class ProjectsController extends AppController {
 			$this->Session->setFlash(__('The project could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+
+/**
+ * countDaysBetween method
+ * @param  date $start start date
+ * @param  date $end   end date
+ * @return int        days between
+ */
+	private function countDaysBetween($start, $end){
+		$startTimeStamp = strtotime($start);
+		$endTimeStamp = strtotime($end);
+		$timeDiff = abs($endTimeStamp - $startTimeStamp);
+		$numberDays = $timeDiff/86400;  // 86400 seconds in one day
+		return intval($numberDays);
+	}
+}
