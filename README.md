@@ -19,23 +19,24 @@ app/Config/timesAppSettings.php
 - [x] Corregir color de fondo en los permalinks 
 - [x] Mostrar estado de la factura en el permalink
 - [x] No borrar facturas ya enviadas
-- [ ] Número NIF/CIF y su validación
 - [x] Aviso de cierre en el temporizador de horas
 - [x] Paginación de horas en Project view
-- [ ] Obligar a cambiar la contraseña al primer uso (Admin)
 - [x] Conversor/Asistente de H:M:S a horas en formato decimal
 - [x] Terminar formulario user/add
 - [x] Dar formato al formulario clients/edit
-- [ ] Editar facturas cuando el estado es borrador
-- [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo 
 - [x] Tile de payments
 - [x] Mostrar más información el la vista de proyectos
-- [ ] Recuperar contraseñas
 - [x] Restringir permisos a los usuarios con role 'minion'
-- [ ] Agregar desplegables con los países
 - [x] Mejorar formato PDF al cambiar de página
 - [x] Corregir input Tax de Client/add
-- [x] Corregir validación abide de emails 
+- [x] Corregir validación abide de emails
+- [ ] Obligar a cambiar la contraseña al primer uso (Admin)
+- [ ] Número NIF/CIF y su validación
+- [ ] Editar facturas cuando el estado es borrador
+- [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
+- [ ] Permitir editar su propio perfil de usuario
+- [ ] Agregar desplegables con los países
+- [ ] Recuperar contraseñas
 
 
 ##TODO DOC LIST
