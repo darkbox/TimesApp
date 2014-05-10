@@ -44,10 +44,14 @@
 				<div>
 					<label><?php echo __('User'); ?> <small>required</small>
 						<select name="data[Hour][user_id]" required>
+						<?php if($current_user['role'] != 'overlord'): ?>
+							<option value="<?php echo $current_user['id'] ?>"><?php echo h($current_user['name']) ?></option>
+						<?php else: ?>
 							<option value=""><?php echo __('Select a user') ?></option>
 							<?php foreach($users as $key => $user): ?>
 							<option value="<?php echo $key ?>"><?php echo h($user) ?></option>
 							<?php endforeach; ?>
+						<?php endif; ?>
 						</select>
 					</label>
 					<small class="error">A user is required.</small>
