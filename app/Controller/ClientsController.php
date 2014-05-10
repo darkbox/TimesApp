@@ -23,9 +23,6 @@ class ClientsController extends AppController {
  */
 	public function isAuthorized($user = null) {
         if($user['role'] != 'overlord'){
-        	if(in_array($this->action, array('index'))){
-        		return true;
-        	}
         	return false;
         }
         return true;
