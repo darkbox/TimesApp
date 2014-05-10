@@ -385,10 +385,15 @@
 		</div>
 		<div class="row">
 			<div class="medium-6 large-6 columns">
-				<label><?php echo __('Tax'); ?>
-					<input type="text" name="data[Client][tax_id]">
+				<label><?php echo __('Tax'); ?> <small>required</small>
+					<select name="data[Client][tax_id]" data-invalid required>
+					<?php foreach ($taxes as $id => $tax): ?>
+						<option value="<?php echo $id; ?>"><?php echo h($tax); ?></option>
+					<?php endforeach; ?>
+					</select>
 				</label>
 			</div>
+
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Language'); ?>
 					<select name="data[Client][language]">

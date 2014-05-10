@@ -32,6 +32,9 @@ app/Config/timesAppSettings.php
 - [ ] Recuperar contraseñas
 - [ ] Restringir permisos a los usuarios con role 'minion'
 - [ ] Agregar desplegables con los países
+- [x] Mejorar formato PDF al cambiar de página
+- [x] Corregir input Tax de Client/add
+- [ ] Corregir validación abide de emails 
 
 
 ##TODO DOC LIST

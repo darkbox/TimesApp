@@ -34,7 +34,9 @@ class ClientsController extends AppController {
     	    	'conditions' => array('Client.status' => 1)
     		);
     	}
-
+		
+		$taxes = $this->Client->Tax->find('list');
+		$this->set(compact('taxes'));
 	    $this->set('clients', $this->paginate());
 
 	}
