@@ -24,7 +24,7 @@ app/Config/timesAppSettings.php
 - [x] Paginación de horas en Project view
 - [ ] Obligar a cambiar la contraseña al primer uso (Admin)
 - [x] Conversor/Asistente de H:M:S a horas en formato decimal
-- [ ] Terminar formulario user/add
+- [x] Terminar formulario user/add
 - [x] Dar formato al formulario clients/edit
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Tile de payments
