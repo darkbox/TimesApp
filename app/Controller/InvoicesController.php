@@ -87,7 +87,7 @@ class InvoicesController extends AppController {
 				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
 			}
 		}
-		// Desde proyecto
+		// From project
 		if($fromProject != null){
 			if (!$this->Invoice->Project->exists($fromProject)) {
 				throw new NotFoundException(__('Invalid project for invoicing'));
@@ -99,6 +99,24 @@ class InvoicesController extends AppController {
 			// Calcula las horas y servicios
 			$this->set('hoursServices', $this->getServicesFromHours($fromProject));
 		}
+		// Last invoice number
+		$lastUsed = 0;
+		$lastInvoice = $this->Invoice->find('all', array(
+			'fields' => array(
+				'Invoice.title'
+				),
+			'order' => array(
+				'Invoice.created' => 'desc'
+				),
+			'limit' => 1
+			));
+		if($lastInvoice){
+			$lastUsed = $lastInvoice[0]['Invoice']['title'];
+		}
+		$this->set('lastUsed', $lastUsed);
+		// Next number
+		$nextToUse = $this->number_pad(($lastUsed + 1), 7);
+		$this->set('nextToUse', $nextToUse);
 
 
 		// Normal
@@ -382,4 +400,14 @@ class InvoicesController extends AppController {
 		$numberDays = $timeDiff/86400;  // 86400 seconds in one day
 		return intval($numberDays);
 	}
+
+/**
+ * number_pad method
+ * @param  int $number [description]
+ * @param  int $n      [description]
+ * @return String         [description]
+ */
+	private function number_pad($number,$n) {
+    	return str_pad((int) $number,$n,"0",STR_PAD_LEFT);
+	} 
 }

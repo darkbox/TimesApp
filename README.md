@@ -14,7 +14,7 @@ Project status: **In progress**
 app/Config/timesAppSettings.php
 
 ##TODO LIST
-- [ ] Enumeración de las facturas
+- [x] Enumeración de las facturas
 - [x] Cambiar orden de columnas en Invoices y agregar links
 - [x] Corregir color de fondo en los permalinks 
 - [x] Mostrar estado de la factura en el permalink

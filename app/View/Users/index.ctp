@@ -62,7 +62,7 @@
 	<form id="addUserForm" method="post" action="<?php echo Router::url(array('controller' => 'Users', 'action' => 'add')); ?>" data-abide>
 		<div>
 			<label><?php echo __('Name'); ?> <small>required</small>
-				<input type="text" name="data[User][name]" maxlength="80" id="UserName" required="required" placeholder="Jhon Smith"/>
+				<input type="text" name="data[User][name]" maxlength="80" id="UserName" required="required" placeholder="Jhon Doe"/>
 			</label>
 			<small class="error">Name is required and must be a string.</small>
 		</div>

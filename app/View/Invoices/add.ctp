@@ -6,6 +6,10 @@
   		$client_id = $fromProject['Client']['id'];
 		$project_id =  $fromProject['Project']['id'];
 	} 
+
+	// Necesario para mostrar los mensajes de validación del modelo
+	$this->Form->create('Invoice');
+	
 ?>
 <div class="page-wrapper">
 	<div class="row">
@@ -52,11 +56,14 @@
 					</div>
 				</div>
 				<div class="medium-4 large-4 columns">
-					<div>
-						<label><?php echo __('Invoice title/number') ?> <small>Required</small>
-							<input name="data[Invoice][title]" type="text" length="25" required>
+					<div >
+						<label><?php echo __('Invoice number') ?> <small>Required</small>
+							<input name="data[Invoice][title]" type="text" length="25" value="<?php echo $nextToUse ?>" required pattern="invoiceNumber" <?php if ($this->Form->isFieldError('title')){ echo 'data-invalid'; } ?>>
 						</label>
-						<small class="error">This field is required</small>
+						<small class="error"><?php if ($this->Form->isFieldError('title')){ echo $this->Form->error('title') . '<br>'; } ?> This field is required and must be a number</small>
+					</div>
+					<div>
+						(<?php echo __('Last used: ') . $lastUsed ?>)
 					</div>
 				</div>
 				<div class="medium-4 large-4 columns">
@@ -273,3 +280,9 @@
 <?php echo $this->Html->script('invoices'); ?>
 <?php echo $this->Html->script('zebra_datepicker'); ?>
 <?php echo $this->Html->script('datepicker'); ?>
+<script type="text/javascript">
+	$('#InvoiceAddForm').ready(function (){
+    var invalid_fields = $(this).find('[data-invalid]');
+    invalid_fields.blur();
+  });
+</script>

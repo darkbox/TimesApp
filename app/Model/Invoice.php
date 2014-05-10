@@ -32,6 +32,10 @@ class Invoice extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'unique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'Invoice number already exists',
+				),
 		),
 		'status' => array(
 			'numeric' => array(
