@@ -95,14 +95,17 @@ foreach ($hours as $hour) {
 } ?>
 
 <div class="row" style="margin-top: 40px;">
-	<div class="large-3 columns">
+	<div class="medium-6 large-3 columns">
 		<?php echo $this->element('tiles/time'); ?>
 	</div>
-	<div class="large-6 columns">
-		<?php echo $this->element('tiles/chart', array('planned' => $planned, 'inProgress' => $inProgress, 'completed' => $completed, 'canceled' => $canceled)); ?>
+	<div class="medium-12 large-6 columns show-for-large-up">
+		<?php echo $this->element('tiles/chart', array('planned' => $planned, 'inProgress' => $inProgress, 'completed' => $completed, 'canceled' => $canceled, 'id' => 'project1')); ?>
 	</div>
-	<div class="large-3 columns">
+	<div class="medium-6 large-3 columns">
 		<?php echo $this->element('tiles/due', array('paid' => $paid, 'due' => $due)); ?>
+	</div>
+	<div class="medium-12 large-6 columns hide-for-large-up">
+		<?php echo $this->element('tiles/chart', array('planned' => $planned, 'inProgress' => $inProgress, 'completed' => $completed, 'canceled' => $canceled, 'id' => 'project2')); ?>
 	</div>
 </div>
 <div class="row">
@@ -111,12 +114,12 @@ foreach ($hours as $hour) {
 	</div>
 	<div class="large-6 columns">
 		<div class="row">
-			<div class="large-6 columns"><?php echo $this->element('tiles/users_status'); ?></div>
-			<div class="large-6 columns"><?php echo $this->element('tiles/vcard'); ?></div>
+			<div class="medium-6 large-6 columns"><?php echo $this->element('tiles/users_status'); ?></div>
+			<div class="medium-6 large-6 columns"><?php echo $this->element('tiles/vcard'); ?></div>
 		</div>
 		<div class="row">
-			<div class="large-6 columns"><?php echo $this->element('tiles/payments'); ?></div>
-			<div class="large-6 columns"><?php echo $this->element('tiles/download_app'); ?></div>
+			<div class="medium-6 large-6 columns"><?php echo $this->element('tiles/payments'); ?></div>
+			<div class="medium-6 large-6 columns"><?php echo $this->element('tiles/download_app'); ?></div>
 		</div>
 	</div>
 </div>

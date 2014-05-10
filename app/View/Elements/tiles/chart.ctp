@@ -18,14 +18,14 @@ $(document).ready(function(){
 		color : "#e25440"
 	}
 ];
-	var ctx = document.getElementById("doughnut").getContext("2d");
+	var ctx = document.getElementById("<?php echo $id ?>").getContext("2d");
 	var chart = new Chart(ctx).Doughnut(data);
 });
 </script>
 <section class="dash-tile" id="chart-tile">
 	<div class="row">
 		<div class="medium-6 columns">
-		<canvas id="doughnut" height="200" width="200" data-type="Doughnut" style="width: 200px; height: 200px;"></canvas>
+		<canvas id="<?php echo $id ?>" height="200" width="200" data-type="Doughnut" style="width: 200px; height: 200px;"></canvas>
 		</div>
 		<div class="medium-6 columns">
 			<header>
