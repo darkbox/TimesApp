@@ -17,6 +17,15 @@ class SettingsController extends AppController {
  */
 	public $components = array('Session');
 
+
+	public function isAuthorized($user = null) {
+        if($this->Auth->user('role') == 'overlord'){
+        	return true;
+        }
+        // Default deny
+        return false;
+    }
+
 	/**
 	 * index method
 	 * Muestra la configruación de la aplicación

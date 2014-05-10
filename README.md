@@ -27,6 +27,7 @@ app/Config/timesAppSettings.php
 - [x] Terminar formulario user/add
 - [x] Dar formato al formulario clients/edit
 - [ ] Editar facturas cuando el estado es borrador
+- [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo 
 - [x] Tile de payments
 - [x] Mostrar más información el la vista de proyectos
 - [ ] Recuperar contraseñas

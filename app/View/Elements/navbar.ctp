@@ -1,4 +1,5 @@
 <?php
+if($current_user['role'] === 'overlord'){
   $menuItems = array(
     'dashboard' => __('Dashboard'),
     'invoices' => __('Invoices'),
@@ -7,6 +8,12 @@
     'taxes' => __('Presets'),
     'users' => __('Users'),
     );
+}else{ //minion
+  $menuItems = array(
+    'dashboard' => __('Dashboard'),
+    'projects' => __('Projects'),
+    );
+}
   $activeLink = $this->params['controller'];
 ?>
 
