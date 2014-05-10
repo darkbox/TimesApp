@@ -27,7 +27,7 @@ app/Config/timesAppSettings.php
 - [x] Terminar formulario user/add
 - [x] Dar formato al formulario clients/edit
 - [ ] Editar facturas cuando el estado es borrador
-- [ ] Tile de payments
+- [x] Tile de payments
 - [x] Mostrar más información el la vista de proyectos
 - [ ] Recuperar contraseñas
 - [ ] Restringir permisos a los usuarios con role 'minion'

@@ -17,6 +17,7 @@ class DashboardController extends AppController {
 		$this->loadModel('Invoice');
 		$this->loadModel('Hour');
 		$this->loadModel('User');
+		$this->loadModel('Payment');
 
 		//Retrieve all the projects
 		$projects = $this->Project->find('all');
@@ -36,6 +37,13 @@ class DashboardController extends AppController {
 		$hours = $this->Hour->find('all');
 
 		$this->set(compact('projects', 'hours'));
+
+		//Retrieve lastest payments
+		$payments = $this->Payment->find('all', array(
+			'order' => array('Payment.date' => 'desc'),
+			'limit' => 3
+			));
+		$this->set('payments', $payments);
 
 		// Settings
 		$appSettings = include APP_SETTINGS;
