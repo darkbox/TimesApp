@@ -11,12 +11,6 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class InvoicesController extends AppController {
 
-	public function beforeFilter() {
-		parent::beforeFilter();
-		$this->Auth->allow('view', 'generatePDF');
-	}	
-
-
 /**
  * Components
  *
@@ -25,6 +19,27 @@ class InvoicesController extends AppController {
 	public $components = array('Paginator', 'Session');
 
 	private $seed = 1990;
+
+/**
+ * beforeFilter method
+ * @return void
+ */
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('view', 'generatePDF');
+	}
+
+/**
+ * isAuthorized method
+ * @param  array  $user user currently log in
+ * @return boolean      
+ */
+	public function isAuthorized($user = null) {
+        if($user['role'] != 'overlord'){
+        	return false;
+        }
+        return true;
+    }
 
 /**
  * index method

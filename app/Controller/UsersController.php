@@ -24,6 +24,18 @@ class UsersController extends AppController {
 	public $helpers = array('Gravatar');
 
 /**
+ * isAuthorized method
+ * @param  array  $user user currently log in
+ * @return boolean      
+ */
+	public function isAuthorized($user = null) {
+        if($user['role'] != 'overlord'){
+        	return false;
+        }
+        return true;
+    }
+
+/**
  * index method
  *
  * @return void

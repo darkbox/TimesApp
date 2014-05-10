@@ -31,7 +31,7 @@ app/Config/timesAppSettings.php
 - [x] Tile de payments
 - [x] Mostrar más información el la vista de proyectos
 - [ ] Recuperar contraseñas
-- [ ] Restringir permisos a los usuarios con role 'minion'
+- [X] Restringir permisos a los usuarios con role 'minion'
 - [ ] Agregar desplegables con los países
 - [x] Mejorar formato PDF al cambiar de página
 - [x] Corregir input Tax de Client/add

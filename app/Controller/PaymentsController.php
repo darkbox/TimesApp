@@ -19,6 +19,19 @@ class PaymentsController extends AppController {
 	private $seed = 1990;
 
 /**
+ * isAuthorized method
+ * @param  array  $user user currently log in
+ * @return boolean      
+ */
+	public function isAuthorized($user = null) {
+        if($user['role'] != 'overlord'){
+        	return false;
+        }
+        return true;
+    }
+
+
+/**
  * index method
  *
  * @return void

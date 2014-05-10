@@ -17,6 +17,21 @@ class HoursController extends AppController {
 	public $components = array('Paginator', 'Session');
 
 /**
+ * isAuthorized method
+ * @param  array  $user user currently log in
+ * @return boolean      
+ */
+	public function isAuthorized($user = null) {
+        if($user['role'] != 'overlord'){
+        	if(in_array($this->action, array('index', 'timer', 'add'))){
+        		return true;
+        	}
+        	return false;
+        }
+        return true;
+    }
+
+/**
  * index method
  *
  * @return void

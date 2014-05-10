@@ -19,6 +19,18 @@ class TaxesController extends AppController {
 	public $helpers = array('Fn5');
 
 /**
+ * isAuthorized method
+ * @param  array  $user user currently log in
+ * @return boolean      
+ */
+	public function isAuthorized($user = null) {
+        if($user['role'] != 'overlord'){
+        	return false;
+        }
+        return true;
+    }
+
+/**
  * index method
  *
  * @return void

@@ -43,7 +43,7 @@ class AppController extends Controller {
         ),
 		'loginRedirect' => array('controller' => 'dashboard', 'action' => 'index'),
 		'logoutRedirect' => array('controller' => 'login', 'action' => 'index'),
-		'authError' => 'You don\'t have enough permissions.',
+		'authError' => 'You don\'t have enough permissions. Nice try!',
 		'authenticate' => array(
 			'Basic' => array('userModel' => 'User'),
             'Form' => array(
@@ -80,4 +80,6 @@ class AppController extends Controller {
 	public function isAuthorized($user) {
 		return true;
 	}
+
+	
 }

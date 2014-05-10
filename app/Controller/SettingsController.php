@@ -17,13 +17,16 @@ class SettingsController extends AppController {
  */
 	public $components = array('Session');
 
-
+/**
+ * isAuthorized method
+ * @param  array  $user user currently log in
+ * @return boolean      
+ */
 	public function isAuthorized($user = null) {
-        if($this->Auth->user('role') == 'overlord'){
-        	return true;
+        if($user['role'] != 'overlord'){
+        	return false;
         }
-        // Default deny
-        return false;
+        return true;
     }
 
 	/**

@@ -36,7 +36,7 @@
 	<div class="row">
     	<div class="large-12 columns">
     	<?php echo $this->Session->flash(); ?>
-    	<?php echo $this->Session->flash('auth'); ?>
+    	<?php echo $this->Session->flash('auth', array( 'element'=>'flash_warning' )); ?>
 
 		<?php echo $this->fetch('content'); ?>
 

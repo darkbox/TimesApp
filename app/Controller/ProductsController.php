@@ -15,6 +15,18 @@ class ProductsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+	
+/**
+ * isAuthorized method
+ * @param  array  $user user currently log in
+ * @return boolean      
+ */
+	public function isAuthorized($user = null) {
+        if($user['role'] != 'overlord'){
+        	return false;
+        }
+        return true;
+    }
 
 /**
  * index method
