@@ -34,7 +34,7 @@ app/Config/timesAppSettings.php
 - [ ] Agregar desplegables con los países
 - [x] Mejorar formato PDF al cambiar de página
 - [x] Corregir input Tax de Client/add
-- [ ] Corregir validación abide de emails 
+- [x] Corregir validación abide de emails 
 
 
 ##TODO DOC LIST
