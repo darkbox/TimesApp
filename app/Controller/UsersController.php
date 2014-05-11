@@ -30,6 +30,9 @@ class UsersController extends AppController {
  */
 	public function isAuthorized($user = null) {
         if($user['role'] != 'overlord'){
+        	if(in_array($this->action, array('profile'))){
+        		return true;
+        	}
         	return false;
         }
         return true;
@@ -43,6 +46,33 @@ class UsersController extends AppController {
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
+	}
+
+/**
+ * profile method
+ * @param  integer $id user id
+ * @return void     
+ */
+	public function profile($id = null){
+		if (!$this->User->exists($id)) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		// Solo se puede editar a sí mismo
+		if($this->Auth->user('id') != $id){
+			throw new NotFoundException(__('Are you trying to edit another user?'));
+		}
+
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->User->save($this->request->data)) {
+				$this->Session->setFlash(__('Your profile has been saved.'), 'flash_success');
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('Your profile could not be saved. Please, try again.'), 'flash_danger');
+			}
+		} else {
+			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+			$this->request->data = $this->User->find('first', $options);
+		}
 	}
 
 /**
