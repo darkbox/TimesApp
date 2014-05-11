@@ -34,9 +34,10 @@ app/Config/timesAppSettings.php
 - [ ] Número NIF/CIF y su validación
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
-- [ ] Permitir editar su propio perfil de usuario
+- [x] Permitir editar su propio perfil de usuario
 - [ ] Agregar desplegables con los países
 - [ ] Recuperar contraseñas
+- [ ] Personalizar excepciones (404, 502, etc)
 
 
 ##TODO DOC LIST
