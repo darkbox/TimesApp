@@ -20,7 +20,7 @@
             <div class="small-4 medium-4 large-4 columns"><input type="submit" value="<?php echo __('Login'); ?>" class="tiny radius secondary button"/></div>
             <div class="small-8 medium-8 large-8 columns">
               <a href="<?php echo Router::url(array('controller' => 'login', 'action' => 'signup')) ?>"><small>Sing up</small></a><br>
-              <a href=""><small>Forgotten password?</small></a>
+              <a href="<?php echo Router::url(array('controller' => 'login', 'action' => 'forgetpwd')) ?>"><small>Forgotten password?</small></a>
             </div>
           </div>
          </form>

@@ -12,7 +12,7 @@
 				<label>Email <small>Required</small>
 				<input type="email" name="data[User][email]" length="80" placeholder="example@timesapp.com" required>
 				</label>
-				<small class="error">Name is required and must be a string.</small>
+				<small class="error">Email is required and must be valid.</small>
 			</div>
 			<div>
 				<label>Password <small>Required</small>

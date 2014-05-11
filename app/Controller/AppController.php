@@ -65,7 +65,7 @@ class AppController extends Controller {
 	*/
 	public function beforeFilter() {
 		// Permite acceder sin realizar login
-		$this->Auth->allow('signup');
+		$this->Auth->allow('signup', 'forgetpwd', 'reset');
 		$this->Auth->authorize = 'Controller';
 		// Variable local accesibles en todas las vistas
 		$this->set('logged_in', $this->Auth->loggedIn());

@@ -2,10 +2,10 @@
 -- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: May 05, 2014 at 06:35 PM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Servidor: localhost
+-- Tiempo de generación: 11-05-2014 a las 18:50:54
+-- Versión del servidor: 5.6.12-log
+-- Versión de PHP: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `timesapp`
+-- Base de datos: `timesapp`
 --
 CREATE DATABASE IF NOT EXISTS `timesapp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `timesapp`;
@@ -25,7 +25,7 @@ USE `timesapp`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Estructura de tabla para la tabla `clients`
 --
 
 CREATE TABLE IF NOT EXISTS `clients` (
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `clients`
+-- Volcado de datos para la tabla `clients`
 --
 
 INSERT INTO `clients` (`id`, `name`, `email`, `contact_name`, `address`, `city`, `zip_code`, `country`, `state`, `phone_number`, `mobile_number`, `tax_id`, `language`, `vat_number`, `status`, `created`, `modified`) VALUES
@@ -63,7 +63,7 @@ INSERT INTO `clients` (`id`, `name`, `email`, `contact_name`, `address`, `city`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hours`
+-- Estructura de tabla para la tabla `hours`
 --
 
 CREATE TABLE IF NOT EXISTS `hours` (
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `hours` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
--- Dumping data for table `hours`
+-- Volcado de datos para la tabla `hours`
 --
 
 INSERT INTO `hours` (`id`, `project_id`, `service_id`, `user_id`, `hours`, `billed`, `note`, `created`, `modified`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `hours` (`id`, `project_id`, `service_id`, `user_id`, `hours`, `bill
 -- --------------------------------------------------------
 
 --
--- Table structure for table `invoices`
+-- Estructura de tabla para la tabla `invoices`
 --
 
 CREATE TABLE IF NOT EXISTS `invoices` (
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `invoices` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
--- Dumping data for table `invoices`
+-- Volcado de datos para la tabla `invoices`
 --
 
 INSERT INTO `invoices` (`id`, `project_id`, `client_id`, `title`, `status`, `due`, `amount`, `currency_symbol`, `currency_code`, `discount`, `terms`, `note`, `invoice_date`, `due_date`, `display_country`, `created`, `modified`) VALUES
@@ -145,7 +145,7 @@ INSERT INTO `invoices` (`id`, `project_id`, `client_id`, `title`, `status`, `due
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lines`
+-- Estructura de tabla para la tabla `lines`
 --
 
 CREATE TABLE IF NOT EXISTS `lines` (
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `lines` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
--- Dumping data for table `lines`
+-- Volcado de datos para la tabla `lines`
 --
 
 INSERT INTO `lines` (`id`, `invoice_id`, `tax_id`, `type`, `code`, `description`, `rate`, `amount_hours`, `created`, `modified`) VALUES
@@ -181,7 +181,7 @@ INSERT INTO `lines` (`id`, `invoice_id`, `tax_id`, `type`, `code`, `description`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payments`
+-- Estructura de tabla para la tabla `payments`
 --
 
 CREATE TABLE IF NOT EXISTS `payments` (
@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `payments` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
--- Dumping data for table `payments`
+-- Volcado de datos para la tabla `payments`
 --
 
 INSERT INTO `payments` (`id`, `invoice_id`, `amount`, `date`, `created`) VALUES
@@ -204,7 +204,7 @@ INSERT INTO `payments` (`id`, `invoice_id`, `amount`, `date`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Estructura de tabla para la tabla `products`
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `products`
+-- Volcado de datos para la tabla `products`
 --
 
 INSERT INTO `products` (`id`, `code`, `status`, `description`, `unit_price`, `tax_id`, `created`, `modified`) VALUES
@@ -233,7 +233,7 @@ INSERT INTO `products` (`id`, `code`, `status`, `description`, `unit_price`, `ta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projects`
+-- Estructura de tabla para la tabla `projects`
 --
 
 CREATE TABLE IF NOT EXISTS `projects` (
@@ -254,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data for table `projects`
+-- Volcado de datos para la tabla `projects`
 --
 
 INSERT INTO `projects` (`id`, `code`, `status`, `description`, `client_id`, `init_date`, `deadline`, `estimate_time`, `estimate_price`, `billable`, `created`, `modified`) VALUES
@@ -268,7 +268,7 @@ INSERT INTO `projects` (`id`, `code`, `status`, `description`, `client_id`, `ini
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services`
+-- Estructura de tabla para la tabla `services`
 --
 
 CREATE TABLE IF NOT EXISTS `services` (
@@ -285,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `services` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `services`
+-- Volcado de datos para la tabla `services`
 --
 
 INSERT INTO `services` (`id`, `code`, `status`, `description`, `rate`, `tax_id`, `created`, `modified`) VALUES
@@ -297,7 +297,7 @@ INSERT INTO `services` (`id`, `code`, `status`, `description`, `rate`, `tax_id`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taxes`
+-- Estructura de tabla para la tabla `taxes`
 --
 
 CREATE TABLE IF NOT EXISTS `taxes` (
@@ -312,7 +312,7 @@ CREATE TABLE IF NOT EXISTS `taxes` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
--- Dumping data for table `taxes`
+-- Volcado de datos para la tabla `taxes`
 --
 
 INSERT INTO `taxes` (`id`, `description`, `status`, `rate`, `created`, `modified`) VALUES
@@ -337,7 +337,7 @@ INSERT INTO `taxes` (`id`, `description`, `status`, `rate`, `created`, `modified
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -347,23 +347,25 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(80) NOT NULL,
   `role` enum('overlord','minion') NOT NULL,
   `status` int(1) NOT NULL,
+  `tokenhash` varchar(300) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `status`, `created`, `modified`) VALUES
-(1, 'Dexter', 'rgtresd@gmail.com', '7afc1acca61202fb3215ed44dd0470cdbd1e142c', 'overlord', 1, '2014-04-03 16:16:52', '2014-04-20 11:00:48'),
-(2, 'Jose', 'souanyirer@gmail.com', '4e05c61fa71454de69a7d59d1a43f92477169877', 'overlord', 1, '2014-04-05 14:15:39', '2014-04-20 11:12:31'),
-(3, 'Paco', 'pacovalmisa@gmail.com', '27a40e13da83533c08c1524b6a4787a8e11143f3', 'minion', 1, '2014-04-05 15:26:31', '2014-04-10 15:59:29'),
-(4, 'Jimmy', 'jimmy@timesapp.com', 'b2000b9e57ea0cf455bab4958e3aa3b3b671b858', 'minion', 0, '2014-04-08 16:46:46', '2014-04-26 16:30:56'),
-(9, 'Pepito', 'pepito@gmail.com', '32e3f167be19a051debd2121d9e90ac9597f9375', 'minion', 1, '2014-04-26 16:31:24', '2014-04-27 18:15:25'),
-(10, 'Jhonny', 'lol@gmail.com', 'fa5dcc789967c146828a3c557306f3dee3a4bf48', 'minion', 0, '2014-04-26 16:55:17', '2014-04-26 16:55:17');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `status`, `tokenhash`, `created`, `modified`) VALUES
+(1, 'Dexter', 'rgtresd@gmail.com', '7afc1acca61202fb3215ed44dd0470cdbd1e142c', 'overlord', 1, '', '2014-04-03 16:16:52', '2014-04-20 11:00:48'),
+(2, 'Jose', 'souanyirer@gmail.com', '4e05c61fa71454de69a7d59d1a43f92477169877', 'overlord', 1, '', '2014-04-05 14:15:39', '2014-04-20 11:12:31'),
+(3, 'Paco', 'pacovalmisa@gmail.com', '27a40e13da83533c08c1524b6a4787a8e11143f3', 'minion', 1, '', '2014-04-05 15:26:31', '2014-04-10 15:59:29'),
+(4, 'Jimmy', 'jimmy@timesapp.com', 'b2000b9e57ea0cf455bab4958e3aa3b3b671b858', 'minion', 0, '', '2014-04-08 16:46:46', '2014-04-26 16:30:56'),
+(9, 'Pepito', 'pepito@gmail.com', '32e3f167be19a051debd2121d9e90ac9597f9375', 'minion', 1, '', '2014-04-26 16:31:24', '2014-04-27 18:15:25'),
+(10, 'Jhonny', 'lol@gmail.com', 'fa5dcc789967c146828a3c557306f3dee3a4bf48', 'minion', 0, '', '2014-04-26 16:55:17', '2014-04-26 16:55:17'),
+(11, 'swagsura', 'swagsura@gmail.com', '3dc6fd65bad4c218fe5b55db927f1a1a4416e88f', 'minion', 1, 'f7446e0cb9497ce6d276b74413341424e9480f31', '2014-05-11 15:14:17', '2014-05-11 18:47:46');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

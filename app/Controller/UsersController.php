@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+
 /**
  * Users Controller
  *
@@ -105,4 +106,6 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('The user could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+
+}

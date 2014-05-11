@@ -30,13 +30,14 @@ app/Config/timesAppSettings.php
 - [x] Mejorar formato PDF al cambiar de página
 - [x] Corregir input Tax de Client/add
 - [x] Corregir validación abide de emails
+- [x] Recuperar contraseñas
 - [ ] Obligar a cambiar la contraseña al primer uso (Admin)
 - [ ] Número NIF/CIF y su validación
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Permitir editar su propio perfil de usuario
 - [ ] Agregar desplegables con los países
-- [ ] Recuperar contraseñas
+
 
 
 ##TODO DOC LIST
