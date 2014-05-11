@@ -53,13 +53,9 @@ class UsersController extends AppController {
  * @param  integer $id user id
  * @return void     
  */
-	public function profile($id = null){
-		if (!$this->User->exists($id)) {
+	public function profile(){
+		if (!$this->User->exists($this->Auth->user('id'))) {
 			throw new NotFoundException(__('Invalid user'));
-		}
-		// Solo se puede editar a sí mismo
-		if($this->Auth->user('id') != $id){
-			throw new NotFoundException(__('Are you trying to edit another user?'));
 		}
 
 		if ($this->request->is(array('post', 'put'))) {
@@ -70,7 +66,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('Your profile could not be saved. Please, try again.'), 'flash_danger');
 			}
 		} else {
-			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+			$options = array('conditions' => array('User.' . $this->User->primaryKey => $this->Auth->user('id')));
 			$this->request->data = $this->User->find('first', $options);
 		}
 	}

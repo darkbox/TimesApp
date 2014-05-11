@@ -61,7 +61,7 @@ if($current_user['role'] === 'overlord'){
             <?php if($current_user['role'] == 'overlord'): ?>
             <li><a href="<?php echo Router::url(array('controller' => 'settings', 'action' => 'index')); ?>" ><i class="fi-widget"></i> <?php echo __('Settings'); ?></a></li>
             <?php endif; ?>
-            <li><a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'profile', $current_user['id'])); ?>" ><i class="fi-torso"></i> <?php echo __('Profile'); ?></a></li>
+            <li><a href="<?php echo Router::url(array('controller' => 'users', 'action' => 'profile')); ?>" ><i class="fi-torso"></i> <?php echo __('Profile'); ?></a></li>
             <li><a href="<?php echo Router::url(array('controller' => 'login', 'action' => 'out')); ?>" ><i class="fi-power"></i> <?php echo __('Logout'); ?></a></li>
           </ul>
         </li>
