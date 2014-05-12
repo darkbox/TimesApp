@@ -38,7 +38,7 @@ app/Config/timesAppSettings.php
 - [x] Permitir editar su propio perfil de usuario
 - [ ] Agregar desplegables con los países
 - [ ] Personalizar excepciones (404, 502, etc)
-- [ ] Revisar diversos mensajes
+- [x] Revisar diversos mensajes
 - [x] Mejorar formato de emails
 
 ##TODO DOC LIST
