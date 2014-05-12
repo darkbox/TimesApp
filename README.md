@@ -39,7 +39,7 @@ app/Config/timesAppSettings.php
 - [ ] Agregar desplegables con los países
 - [ ] Personalizar excepciones (404, 502, etc)
 - [ ] Revisar diversos mensajes
-- [ ] Mejorar formato de emails
+- [x] Mejorar formato de emails
 
 ##TODO DOC LIST
 - [ ] Configuración SMTP + SSL para el envío de emails

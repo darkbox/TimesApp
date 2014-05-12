@@ -102,7 +102,7 @@ class LoginController extends AppController {
 				$fu=$this->User->find('first',array('conditions'=>array('User.email'=>$email)));
 				if($fu)
 				{
-					//debug($fu);
+
 					if($fu['User']['status']==1)
 					{
 						$key = Security::hash(String::uuid(),'sha512',true);
@@ -110,7 +110,7 @@ class LoginController extends AppController {
 						$url = Router::url( array('controller'=>'login','action'=>'reset'), true ).'/'.$key.'#'.$hash;
 						$ms=$url;
 						$ms=wordwrap($ms,1000);
-						//debug($url);
+
 						$fu['User']['tokenhash']=$key;
 						$this->User->id=$fu['User']['id'];
 						if($this->User->saveField('tokenhash',$fu['User']['tokenhash'])){
@@ -122,7 +122,7 @@ class LoginController extends AppController {
 							$Email->template('resetpwd');
 							$Email->subject('Reset Your TimesApp Password');
 							$Email->emailFormat('html');
-							$Email->viewVars(array('ms' => $ms));
+							$Email->viewVars(array('ms' => $ms, 'username' => $fu['User']['name']));
 
 							try {
 							    $Email->send();

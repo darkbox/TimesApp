@@ -341,11 +341,13 @@ class InvoicesController extends AppController {
 	public function sendInvoice(){
 		if(isset($_POST['subject']) && isset($_POST['message']) && isset($_POST['receiver'])) {
 			$Email = new CakeEmail('smtp');
-
+			$Email->template('invoice');
+			$Email->emailFormat('html');
 			$Email->to($_POST['receiver'])->subject($_POST['subject']);
+			$Email->viewVars(array('ms' => $_POST['message']));
 
 			try {
-			    $Email->send($_POST['message']);
+			    $Email->send();
 			    // update status invoice to sent
 	        	if (!$this->Invoice->exists($_POST['invoice_id'])) {
 					throw new NotFoundException(__('Invalid invoice'));
