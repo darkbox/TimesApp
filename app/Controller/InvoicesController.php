@@ -345,7 +345,7 @@ class InvoicesController extends AppController {
 			$Email->to($_POST['receiver'])->subject($_POST['subject']);
 
 			try {
-			    $Email->send();
+			    $Email->send($_POST['message']);
 			    // update status invoice to sent
 	        	if (!$this->Invoice->exists($_POST['invoice_id'])) {
 					throw new NotFoundException(__('Invalid invoice'));
