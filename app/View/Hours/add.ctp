@@ -54,7 +54,7 @@
 						<?php endif; ?>
 						</select>
 					</label>
-					<small class="error">A user is required.</small>
+					<small class="error">An user is required.</small>
 				</div>
 				<div>
 					<label><?php echo __('Hours'); ?> <small>required</small>

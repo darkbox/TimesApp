@@ -7,7 +7,7 @@
             <small>Required</small>
             <input type="email" name="data[User][email]" placeholder="example@timesapp.com" pattern="email" required/>
           </label>
-          <small class="error">An email address is required.</small>
+          <small class="error">An email address is required and must be valid.</small>
         </div>
         <div class="password-field">
           <label>Password
