@@ -46,6 +46,7 @@ app/Config/timesAppSettings.php
 - [ ] Añadir longitud mínima a note de añadir horas
 - [ ] Coger moneda de settings para mostrar en presets
 - [ ] Profundizar en la legislación
+
 ##TODO DOC LIST
 - [ ] Documentar descargas de la aplicación
 - [ ] Configuración SMTP + SSL para el envío de emails
