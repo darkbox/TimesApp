@@ -90,7 +90,7 @@
 						<tr>
 							<td><?php echo $hour['Hour']['note']; ?></td>
 							<td><?php echo $hour['Hour']['hours']; ?></td>
-							<td><?php echo $this->Fn5->drawStatus($hour['Hour']['billed']); ?></td>
+							<td><?php echo $this->Fn5->drawStatusBillable($hour['Hour']['billed']); ?></td>
 							<td><?php echo $hour['Hour']['created']; ?></td>
 							<td class="action">
 								<?php 

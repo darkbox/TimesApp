@@ -37,6 +37,22 @@ class Fn5Helper extends AppHelper {
 		return $out;
 	}
 
+	public function drawStatusBillable($status){
+		$out = "";
+
+		switch ($status) {
+			case 1: // activo
+				$out = "<i class='status active has-tip' data-tooltip title='" . __('Billable') . "'></i>";
+				break;
+			
+			default: // inactivo
+				$out = "<i class='status inactive has-tip has-tip' data-tooltip title='" . __('No Billable') . "'></i>";
+				break;
+		}
+
+		return $out;
+	}
+
 
 	public function dropdownButton($title, $links, $key){
 		$out = "<a href='#' data-options='align:left' data-dropdown='drop" . $key . "' class='dropdown'>"
