@@ -40,8 +40,14 @@ app/Config/timesAppSettings.php
 - [ ] Personalizar excepciones (404, 502, etc)
 - [x] Revisar diversos mensajes
 - [x] Mejorar formato de emails
-
+- [ ] Repetir contraseña en perfil
+- [ ] Cambiar tooltop de billed a billed en vez de active
+- [ ] Eliminar posibilidad de crear facturas a minion
+- [ ] Añadir longitud mínima a note de añadir horas
+- [ ] Coger moneda de settings para mostrar en presets
+- [ ] Profundizar en la legislación
 ##TODO DOC LIST
+- [ ] Documentar descargas de la aplicación
 - [ ] Configuración SMTP + SSL para el envío de emails
 - [ ] Expresiones regulares
 - [ ] Uso e instalación
