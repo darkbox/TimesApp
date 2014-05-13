@@ -43,11 +43,13 @@ app/Config/timesAppSettings.php
 - [x] Revisar diversos mensajes
 - [x] Mejorar formato de emails
 - [ ] Repetir contraseña en perfil
-- [ ] Cambiar tooltop de billed a billed en vez de active
+- [x] Cambiar tooltop de billed a billed en vez de active
 - [ ] Eliminar posibilidad de crear facturas a minion
 - [ ] Añadir longitud mínima a note de añadir horas
-- [ ] Coger moneda de settings para mostrar en presets
+- [x] Coger moneda de settings para mostrar en presets
+- [x] Select de currency_code y currency_symbol en settings e invoices
 - [ ] Profundizar en la legislación
+- [ ] Añadir validación a añadir horas para que sea un número obligatoriamente
 
 ##TODO DOC LIST
 - [ ] Documentar descargas de la aplicación

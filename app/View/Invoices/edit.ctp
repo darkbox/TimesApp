@@ -1,5 +1,6 @@
 <?php 
-	$currency_symbol = array("$", "€", "£", "¥");
+	$currency_symbol = array("", "$", "€", "£", "¥");
+	$currency_code = array("", "USD", "EUR", "GBP", "JPY", "AUD", "CAD", "BRL", "CZK", "DKK", "HKD", "HUF", "ILS", "MYR", "MXN", "NZD", "NOK", "PHP", "PLN", "SGD", "SEK", "CHF", "TWD", "HTB");
 ?>
 <div class="page-wrapper">
 	<div class="row">
@@ -84,30 +85,9 @@
 				    			<div class="medium-4 large-4 columns">
 				    				<label><?php echo __('Currency Code') ?></label>
 				    				<select name="data[Invoice][currency_code]">
-
-										<option value="USD">USD</option>
-										<option value="EUR">EUR</option>
-										<option value="GBP">GBP</option>
-										<option value="JPY">JPY</option>
-										<option value="AUD">AUD</option>
-										<option value="CAD">CAD</option>
-										<option value="BRL">BRL</option>
-										<option value="CZK">CZK</option>
-										<option value="DKK">DKK</option>
-										<option value="HKD">HKD</option>
-										<option value="HUF">HUF</option>
-										<option value="ILS">ILS</option>
-										<option value="MYR">MYR</option>
-										<option value="MXN">MXN</option>
-										<option value="NZD">NZD</option>
-										<option value="NOK">NOK</option>
-										<option value="PHP">PHP</option>
-										<option value="PLN">PLN</option>
-										<option value="SGD">SGD</option>
-										<option value="SEK">SEK</option>
-										<option value="CHF">CHF</option>
-										<option value="TWD">TWD</option>
-										<option value="THB">THB</option>
+										<?php foreach($currency_code as $code): ?>
+										<option value="<?php echo $code; ?>" <?php if($code == $this->request->data['Invoice']['currency_code']){ echo 'selected'; } ?>><?php echo $code; ?></option>
+										<?php endforeach; ?>
 				    				</select>
 				    			</div>
 				    			<div class="medium-4 large-4 columns">

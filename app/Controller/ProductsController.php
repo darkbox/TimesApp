@@ -39,6 +39,10 @@ class ProductsController extends AppController {
 
 		$taxes = $this->Product->Tax->find('list');
 		$this->set(compact('taxes'));
+
+		// Settings
+		$appSettings = include APP_SETTINGS;
+		$this->set('appSettings', $appSettings);
 	}
 
 /**

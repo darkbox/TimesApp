@@ -31,7 +31,7 @@
 			<tr>
 				<td><?php echo h($tax['Tax']['description']); ?>&nbsp;</td>
 				<td><?php echo $this->Fn5->drawStatus($tax['Tax']['status']); ?>&nbsp;</td>
-				<td><?php echo number_format(h($tax['Tax']['rate']), 2); ?>&nbsp;</td>
+				<td><?php echo number_format(h($tax['Tax']['rate']), 2) . " " . $appSettings['currency_symbol']; ?>&nbsp;</td>
 				<td class="action">
 					<?php 
 					$links = array(

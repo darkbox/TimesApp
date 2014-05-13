@@ -19,12 +19,43 @@
 						    <div class="medium-6 large-6 columns">
 						      <label><?php echo __('Currency symbol') ?>
 						      	<small>Required</small>
-						        <input type="text" name="data[Settings][currency_symbol]" value="<?php echo h($s['currency_symbol']) ?>" required/>
+						        <select name="data[Settings][currency_symbol]">
+									<option value="" <?php if("" == h($s['currency_symbol'])) echo 'selected'; ?>><?php echo __(''); ?></option>
+									<option value="$" <?php if("$" == h($s['currency_symbol'])) echo 'selected'; ?>><?php echo __('$'); ?></option>
+									<option value="€" <?php if("€" == h($s['currency_symbol'])) echo 'selected'; ?>><?php echo __('€'); ?></option>
+									<option value="£" <?php if("£" == h($s['currency_symbol'])) echo 'selected'; ?>><?php echo __('£'); ?></option>
+									<option value="¥" <?php if("¥" == h($s['currency_symbol'])) echo 'selected'; ?>><?php echo __('¥'); ?></option>
+				    			</select>
 						      </label>
 						    </div>
 						    <div class="medium-6 large-6 columns">
 						      <label><?php echo __('Currency code') ?>
-						        <input type="text" name="data[Settings][currency_code]" value="<?php echo h($s['currency_code'])  ?>" required/>
+						        <select name="data[Settings][currency_code]">
+									<option value="" <?php if("" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __(''); ?></option>
+									<option value="USD" <?php if("USD" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('USD'); ?></option>
+									<option value="EUR" <?php if("EUR" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('EUR'); ?></option>
+									<option value="GBP" <?php if("GBP" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('GBP'); ?></option>
+									<option value="JPY" <?php if("JPY" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('JPY'); ?></option>
+									<option value="AUD" <?php if("AUD" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('AUD'); ?></option>
+									<option value="CAD" <?php if("CAD" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('CAD'); ?></option>
+									<option value="BRL" <?php if("BRL" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('BRL'); ?></option>
+									<option value="CZK" <?php if("CZK" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('CZK'); ?></option>
+									<option value="DKK" <?php if("DKK" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('DKK'); ?></option>
+									<option value="HKD" <?php if("HKD" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('HKD'); ?></option>
+									<option value="HUF" <?php if("HUF" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('HUF'); ?></option>
+									<option value="ILS" <?php if("ILS" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('ILS'); ?></option>
+									<option value="MYR" <?php if("MYR" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('MYR'); ?></option>
+									<option value="MXN" <?php if("MXN" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('MXN'); ?></option>
+									<option value="NZD" <?php if("NZD" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('NZD'); ?></option>
+									<option value="NOK" <?php if("NOK" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('NOK'); ?></option>
+									<option value="PHP" <?php if("PHP" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('PHP'); ?></option>
+									<option value="PLN" <?php if("PLN" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('PLN'); ?></option>
+									<option value="SGD" <?php if("SGD" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('SGD'); ?></option>
+									<option value="SEK" <?php if("SEK" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('SEK'); ?></option>
+									<option value="CHF" <?php if("CHF" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('CHF'); ?></option>
+									<option value="TWD" <?php if("TWD" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('TWD'); ?></option>
+									<option value="THB" <?php if("THB" == h($s['currency_code'])) echo 'selected'; ?>><?php echo __('THB'); ?></option>
+				    			</select>
 						      </label>
 						    </div>
 						  </div>

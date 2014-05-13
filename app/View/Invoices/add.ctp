@@ -93,41 +93,41 @@
 				    			<div class="medium-4 large-4 columns">
 				    				<label><?php echo __('Currency Symbol') ?></label>
 				    				<select name="data[Invoice][currency_symbol]">
-										<option value="" selected="selected"></option>
-										<option value="$">$</option>
-										<option value="€">€</option>
-										<option value="£">£</option>
-										<option value="¥">¥</option>
-				    				</select>
+									<option value="" <?php if("" == h($appSettings['currency_symbol'])) echo 'selected'; ?>><?php echo __(''); ?></option>
+									<option value="$" <?php if("$" == h($appSettings['currency_symbol'])) echo 'selected'; ?>><?php echo __('$'); ?></option>
+									<option value="€" <?php if("€" == h($appSettings['currency_symbol'])) echo 'selected'; ?>><?php echo __('€'); ?></option>
+									<option value="£" <?php if("£" == h($appSettings['currency_symbol'])) echo 'selected'; ?>><?php echo __('£'); ?></option>
+									<option value="¥" <?php if("¥" == h($appSettings['currency_symbol'])) echo 'selected'; ?>><?php echo __('¥'); ?></option>
+				    			</select>
 				    			</div>
 				    			<div class="medium-4 large-4 columns">
 				    				<label><?php echo __('Currency Code') ?></label>
 				    				<select name="data[Invoice][currency_code]">
-										<option value="" selected="selected"></option>
-										<option value="USD">USD</option>
-										<option value="EUR">EUR</option>
-										<option value="GBP">GBP</option>
-										<option value="JPY">JPY</option>
-										<option value="AUD">AUD</option>
-										<option value="CAD">CAD</option>
-										<option value="BRL">BRL</option>
-										<option value="CZK">CZK</option>
-										<option value="DKK">DKK</option>
-										<option value="HKD">HKD</option>
-										<option value="HUF">HUF</option>
-										<option value="ILS">ILS</option>
-										<option value="MYR">MYR</option>
-										<option value="MXN">MXN</option>
-										<option value="NZD">NZD</option>
-										<option value="NOK">NOK</option>
-										<option value="PHP">PHP</option>
-										<option value="PLN">PLN</option>
-										<option value="SGD">SGD</option>
-										<option value="SEK">SEK</option>
-										<option value="CHF">CHF</option>
-										<option value="TWD">TWD</option>
-										<option value="THB">THB</option>
-				    				</select>
+									<option value="" <?php if("" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __(''); ?></option>
+									<option value="USD" <?php if("USD" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('USD'); ?></option>
+									<option value="EUR" <?php if("EUR" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('EUR'); ?></option>
+									<option value="GBP" <?php if("GBP" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('GBP'); ?></option>
+									<option value="JPY" <?php if("JPY" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('JPY'); ?></option>
+									<option value="AUD" <?php if("AUD" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('AUD'); ?></option>
+									<option value="CAD" <?php if("CAD" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('CAD'); ?></option>
+									<option value="BRL" <?php if("BRL" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('BRL'); ?></option>
+									<option value="CZK" <?php if("CZK" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('CZK'); ?></option>
+									<option value="DKK" <?php if("DKK" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('DKK'); ?></option>
+									<option value="HKD" <?php if("HKD" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('HKD'); ?></option>
+									<option value="HUF" <?php if("HUF" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('HUF'); ?></option>
+									<option value="ILS" <?php if("ILS" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('ILS'); ?></option>
+									<option value="MYR" <?php if("MYR" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('MYR'); ?></option>
+									<option value="MXN" <?php if("MXN" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('MXN'); ?></option>
+									<option value="NZD" <?php if("NZD" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('NZD'); ?></option>
+									<option value="NOK" <?php if("NOK" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('NOK'); ?></option>
+									<option value="PHP" <?php if("PHP" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('PHP'); ?></option>
+									<option value="PLN" <?php if("PLN" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('PLN'); ?></option>
+									<option value="SGD" <?php if("SGD" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('SGD'); ?></option>
+									<option value="SEK" <?php if("SEK" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('SEK'); ?></option>
+									<option value="CHF" <?php if("CHF" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('CHF'); ?></option>
+									<option value="TWD" <?php if("TWD" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('TWD'); ?></option>
+									<option value="THB" <?php if("THB" == h($appSettings['currency_code'])) echo 'selected'; ?>><?php echo __('THB'); ?></option>
+				    			</select>
 				    			</div>
 				    			<div class="medium-4 large-4 columns">
 					    			<div class="divToggle" style="margin-top: 22px">

@@ -33,7 +33,7 @@
 				<td><?php echo h($product['Product']['code']); ?>&nbsp;</td>
 				<td><?php echo h($product['Product']['description']); ?>&nbsp;</td>
 				<td><?php echo $this->Fn5->drawStatus($product['Product']['status']); ?>&nbsp;</td>
-				<td><?php echo number_format(h($product['Product']['unit_price']), 2); ?>&nbsp;</td>
+				<td><?php echo number_format(h($product['Product']['unit_price']), 2) . " " . $appSettings['currency_symbol']; ?>&nbsp;</td>
 				<td class="action">
 					<?php 
 					$links = array(

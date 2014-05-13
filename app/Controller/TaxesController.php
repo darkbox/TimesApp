@@ -42,6 +42,10 @@ class TaxesController extends AppController {
 
 		$this->Tax->recursive = 0;
 		$this->set('taxes', $this->Paginator->paginate());
+
+		// Settings
+		$appSettings = include APP_SETTINGS;
+		$this->set('appSettings', $appSettings);
 	}
 
 /**
