@@ -32,23 +32,22 @@ app/Config/timesAppSettings.php
 - [x] Mejorar formato PDF al cambiar de página
 - [x] Corregir input Tax de Client/add
 - [x] Corregir validación abide de emails
+- [x] Permitir editar su propio perfil de usuario
 - [x] Recuperar contraseñas
+- [x] Cambiar tooltip de billed a billed en vez de active
+- [x] Revisar diversos mensajes
+- [x] Mejorar formato de emails
+- [x] Coger moneda de settings para mostrar en presets
+- [x] Select de currency_code y currency_symbol en settings e invoices
 - [ ] Obligar a cambiar la contraseña al primer uso (Admin)
 - [ ] Número NIF/CIF y su validación
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
-- [x] Permitir editar su propio perfil de usuario
 - [ ] Agregar desplegables con los países
 - [ ] Personalizar excepciones (404, 502, etc)
-- [x] Revisar diversos mensajes
-- [x] Mejorar formato de emails
 - [ ] Repetir contraseña en perfil
-- [x] Cambiar tooltop de billed a billed en vez de active
 - [ ] Eliminar posibilidad de crear facturas a minion
 - [ ] Añadir longitud mínima a note de añadir horas
-- [x] Coger moneda de settings para mostrar en presets
-- [x] Select de currency_code y currency_symbol en settings e invoices
-- [ ] Profundizar en la legislación
 - [ ] Añadir validación a añadir horas para que sea un número obligatoriamente
 
 ##TODO DOC LIST
@@ -57,3 +56,4 @@ app/Config/timesAppSettings.php
 - [ ] Expresiones regulares
 - [ ] Uso e instalación
 - [ ] Cuestiones de seguridad
+- [ ] Profundizar en la legislación
