@@ -53,14 +53,15 @@ The default administrator account is **admin** and password is **admin**.
 
 #### Mail
 In order to use some features, like sending invoices by email, or be able to reset your password, you need to configure the SMTP options of the app.
-You have to do this as administrator since you need to access the application Settings, Email tab.
-Under “Email Options” you can configure Default Subject and Default message of your invoice Email. You can always change those by the time you’re generating the invoice email.
-Under “Smtp Settings” you have the following fields:
-> **Email username:** email address of SMTP sender, like noreply@yourdomain.com , i.e. if you’re using gmail as SMTP, it would be emailaddress@gmail.com .
-> **Email password:** SMTP password of the email address you put as Email username.
-> **Email host:** your SMTP host, if it uses ssl it must start with ssl://whatever.
-> **Email port:** your SMTP port.
-> **Email sender:** this is the email address that will appear as sender of the email. Note this is **NOT** the Email username of your SMTP.
+You have to do this as administrator since you need to access the application Settings, Email tab.  
+Under “**Email Options**” you can configure Default Subject and Default message of your invoice Email. 
+You can always change those by the time you’re generating the invoice email.  
+Under “**Smtp Settings**” you have the following fields:
+* **Email username:** email address of SMTP sender, like noreply@yourdomain.com , i.e. if you’re using gmail as SMTP, it would be emailaddress@gmail.com .
+* **Email password:** SMTP password of the email address you put as Email username.
+* **Email host:** your SMTP host, if it uses ssl it must start with ssl://whatever.
+* **Email port:** your SMTP port.
+* **Email sender:** this is the email address that will appear as sender of the email. Note this is **NOT** the Email username of your SMTP.
 
 **Note:** Don’t forget to enable the php_openssl extension if you’re using a SSL SMTP. 
 
