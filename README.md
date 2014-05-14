@@ -7,13 +7,60 @@ Project status: **In progress**
 
 Project website: [http://darkbox.github.io/TimesApp/](http://darkbox.github.io/TimesApp/)
 
-##Database info:
-+ __server:__ localhost
-+ __username:__ timesapp
-+ __password:__ timesapp
 
-##App config file:
-app/Config/timesAppSettings.php
+## Requirements
+
+In order to install TimesApp you'll need to accomplish some requirements:
+
+- Web server (Apache 2 recomended)
+	- mod_rewrite active
+	- open SSL
+- Mysql database server
+- SMTP server for mailing
+
+## Installation
+
+1. Download latest TimesApp from the [release page](http://darkbox.github.io/TimesApp/ "download").
+
+2. Deploy it on a web server such as Apache 2.
+
+3. Permissions (If you are a windows user skip this step): 
+TODO
+
+4. Create database and configure their params in `app/Config/database.php`.
+``` php
+public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'timesapp',
+		'password' => 'timesapp',
+		'database' => 'timesapp',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+```
+
+
+And that's all, you'll be able to access from http://[hostname]:[port]/TimesApp/ or your custom domain using your web browser.
+
+## Configuration
+The default administrator account is **admin** and password is **admin**. 
+
+**Note:** It's highly recommended to change it at first login for security reasons. Otherwise the minions may take control of the application! You don't want that to happen do you? ;) 
+
+### Settings
+TODO
+
+#### Mail
+TODO
+
+#### Security
+TODO
+
+## Help
+If you have trouble setting up or using this app, please [contact us](http://example.com "contact").
+
 
 ##TODO LIST
 - [x] Enumeración de las facturas
@@ -40,7 +87,6 @@ app/Config/timesAppSettings.php
 - [x] Coger moneda de settings para mostrar en presets
 - [x] Select de currency_code y currency_symbol en settings e invoices
 - [ ] Obligar a cambiar la contraseña al primer uso (Admin)
-- [ ] Número NIF/CIF y su validación
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Agregar desplegables con los países
