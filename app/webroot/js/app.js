@@ -5,7 +5,8 @@ $(document).foundation({
     patterns: {
       pass: /^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W])|(?=.*[a-z])(?=.*[0-9])(?=.*[\\W])|(?=.*[A-Z])(?=.*[0-9])(?=.*[\\W])).{6,}$/,
       invoiceNumber: /^\d{1,9}$/,
-      email: /^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{1,63}$/
+      email: /^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{1,63}$/,
+      minLength3: /^.{3,}$/
     },
     validators: {
     	dateValidate: function(el, required, parent) {

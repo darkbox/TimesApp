@@ -39,7 +39,19 @@
 						<div class="row">
 							<div class="medium-12 large-12 columns">
 								<label><?php echo __('Password') ?> <small>Leave password field in blank if you don't want to change it</small></label>
-								<input type="password" name="data[User][password]" value="" placeholder="Password: Leave password field in blank if you don't want to change it">
+								<input type="password" id="password" pattern="pass" maxlength="25" name="data[User][password]" value="" placeholder="Password: Leave password field in blank if you don't want to change it">
+								<small class="error">
+									A password must be valid.<br>
+									* It must be 6 to 25 characters in length<br>
+									* It must contain characters in two or more of these groups: lower case, upper case, numbers, and punctuation.
+								</small>
+							</div>
+						</div>
+						<div class="row">
+							<div class="medium-12 large-12 columns">
+								<label><?php echo __('Repeat Password') ?> <small>Leave password field in blank if you don't want to change it</small></label>
+								<input type="password" id="password2" name="data[User][password]" value="" data-abide-validator="equalTo" placeholder="Repeat Password: Leave password field in blank if you don't want to change it">
+								<small class="error">Passwords must be equals.</small>
 							</div>
 						</div>
 					</div>

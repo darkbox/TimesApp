@@ -76,7 +76,7 @@
           		</div>
 				<div>
 					<label><?php echo __('Note'); ?> <small>required</small>
-						<input type="text" name="data[Hour][note]" placeholder="Example: Fixing errors or building a better world" required>
+						<input type="text" name="data[Hour][note]" pattern="minLength3" placeholder="Example: Fixing errors or building a better world" required>
 					</label>
 					<small class="error">A note is required and must be a string.</small>
 				</div>

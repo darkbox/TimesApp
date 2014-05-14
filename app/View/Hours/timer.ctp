@@ -71,9 +71,9 @@
             </div>
             <div class="row">
               <label><?php echo __('Note'); ?> <small>required</small>
-                <textarea name="data[Hour][note]" required></textarea>
+                <textarea name="data[Hour][note]" pattern="minLength3" required></textarea>
               </label>
-              <small class="error">A note is required.</small>
+              <small class="error">A note is required that contains more than 3 characters.</small>
             </div>
 
             <input type="hidden" id="hidden_hours" name="data[Hour][hours]" value="0.00">

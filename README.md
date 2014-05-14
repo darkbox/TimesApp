@@ -86,15 +86,15 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Mejorar formato de emails
 - [x] Coger moneda de settings para mostrar en presets
 - [x] Select de currency_code y currency_symbol en settings e invoices
+- [x] Repetir contraseña en perfil
+- [x] Añadir validación a añadir horas para que sea un número obligatoriamente
+- [x] Añadir longitud mínima a note de añadir horas
 - [ ] Obligar a cambiar la contraseña al primer uso (Admin)
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Agregar desplegables con los países
 - [ ] Personalizar excepciones (404, 502, etc)
-- [ ] Repetir contraseña en perfil
-- [ ] Eliminar posibilidad de crear facturas a minion
-- [ ] Añadir longitud mínima a note de añadir horas
-- [ ] Añadir validación a añadir horas para que sea un número obligatoriamente
+- [ ] Eliminar posibilidad de crear facturas a minion 
 
 ##TODO DOC LIST
 - [ ] Documentar descargas de la aplicación

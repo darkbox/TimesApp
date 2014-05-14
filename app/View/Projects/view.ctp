@@ -128,7 +128,7 @@
 							<label><?php echo __('Seconds'); ?><input id="inputSecondsConverter" type="number" value="0" min="0" max="60"></label>
 							<div><b><span id="resultConverter">0.00</span> hours</b><a id="addHoursConverter" class="button tiny success radius" style="float: right; display: block; margin: 0;">Add</a></div>
 						</div>
-					<input type="text" id="hours" name="data[Hour][hours]" maxlength="60" placeholder="Hours" required/>
+					<input type="number" id="hours" name="data[Hour][hours]" maxlength="60" placeholder="Hours" required/>
 				</label>
 				<small class="error">Hours is required and must be a number.</small>
 			</div>
@@ -154,9 +154,9 @@
 		<div class="row">
 			<div class="large-12 columns">
 				<label><?php echo __('Note'); ?><small>Required</small>
-					<textarea name="data[Hour][note]" required></textarea>
+					<textarea name="data[Hour][note]" pattern="minLength3" required></textarea>
 				</label>
-				<small class="error">Please, write a note.</small>
+				<small class="error">Please, write a note that has as at least 3 characters</small>
 			</div>
 		</div>
 
