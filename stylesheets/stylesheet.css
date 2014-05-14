@@ -124,6 +124,15 @@ header h2 {
   max-width: 100%;
 }
 
+article{
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: none repeat scroll 0% 0% #FFF;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
 aside#sidebar {
   width: 200px;
   padding-left: 20px;
@@ -170,6 +179,15 @@ aside a.button {
   background: transparent url(../images/download-button.png) 0 0 no-repeat;
   margin-bottom: 20px;
   font-size: 21px;
+}
+
+.doc{
+  background: transparent url(../images/doc-button.png) 0 0 no-repeat !important;
+}
+
+.append {
+    position:fixed;
+    top:48px;
 }
 
 code, pre {
@@ -247,10 +265,10 @@ form {
 } 
 
 #main-content h1:before {
-  content: "/";
+
   color: #222;
   padding-right: 0.3em;
-  margin-left: -0.9em;
+
 }
 
 #main-content h2 {
@@ -261,10 +279,10 @@ form {
   color: #474747;
 } 
 #main-content h2:before {
-  content: "//";
+
   color: #222;
   padding-right: 0.3em;
-  margin-left: -1.5em;
+
 }
 
 #main-content h3 {
@@ -277,10 +295,10 @@ form {
 } 
  
 #main-content h3:before {
-  content: "///";
+
   color: #222;
   padding-right: 0.3em;
-  margin-left: -2em;
+
 }
 
 #main-content h4 {
@@ -291,10 +309,10 @@ form {
 } 
 
 h4:before {
-  content: "////";
+
   color: #222;
   padding-right: 0.3em;
-  margin-left: -2.8em;
+
 }
 
 #main-content h5 {
@@ -303,10 +321,10 @@ h4:before {
   color: #474747;
 } 
 h5:before {
-  content: "/////";
+
   color: #222;
   padding-right: 0.3em;
-  margin-left: -3.2em;
+
 }
 
 #main-content h6 {
@@ -315,10 +333,10 @@ h5:before {
   color: #474747;
 } 
 h6:before {
-  content: "//////";
+
   color: #222;
   padding-right: 0.3em;
-  margin-left: -3.7em;
+
 }
 
 p {
@@ -373,6 +391,19 @@ footer a:hover {
   color: #444;
 }
 
+.side-nav{
+  list-style: none;
+}
+
+.side-nav li a{
+  font-size: 1.5em;
+
+}
+
+.task-list p{
+display: inline-block;
+}
+
 /* MISC */
 .clearfix:after {
   clear: both;
@@ -385,6 +416,8 @@ footer a:hover {
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
+
+.left{float: left !important;}
 
 /* #Media Queries
 ================================================== */

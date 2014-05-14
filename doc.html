@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>TimesApp by darkbox</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <div id="logo"></div>
+        <h1>TimesApp</h1>
+        <h2>A free and open source web application for tracking your time while working.</h2>
+        <a href="https://github.com/darkbox/TimesApp" class="button" style="color:#222"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+<article>
+<h1>
+<a name="user-content--timesapp" class="anchor" href="#-timesapp"><span class="octicon octicon-link"></span></a> TimesApp</h1>
+<p>A free and open source web application for tracking your time while working.</p>
+<p>Project status: <strong>In progress</strong></p>
+
+<h2>
+<a name="user-content-requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>In order to install TimesApp you'll need to accomplish some requirements:</p>
+
+<ul class="task-list">
+<li>Web server (Apache 2 recomended)
+
+<ul class="task-list">
+<li>mod_rewrite active</li>
+<li>open SSL</li>
+</ul>
+</li>
+<li>Mysql database server</li>
+<li>SMTP server for mailing (You can use services like gmail)</li>
+</ul><h2>
+<a name="user-content-installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol class="task-list">
+<li><p>Download latest TimesApp from the <a href="http://darkbox.github.io/TimesApp/" title="download">release page</a>.</p></li>
+<li><p>Deploy it on a web server such as Apache 2.</p></li>
+<li><p>Permissions (If you are a windows user skip this step): 
+TODO</p></li>
+<li><p>Create database and configure their params in <code>app/Config/database.php</code>.</p></li>
+</ol><div class="highlight highlight-php"><pre><span class="k">public</span> <span class="nv">$default</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'datasource'</span> <span class="o">=&gt;</span> <span class="s1">'Database/Mysql'</span><span class="p">,</span>
+        <span class="s1">'persistent'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span>
+        <span class="s1">'login'</span> <span class="o">=&gt;</span> <span class="s1">'timesapp'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'timesapp'</span><span class="p">,</span>
+        <span class="s1">'database'</span> <span class="o">=&gt;</span> <span class="s1">'timesapp'</span><span class="p">,</span>
+        <span class="s1">'prefix'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="s1">'encoding'</span> <span class="o">=&gt;</span> <span class="s1">'utf8'</span><span class="p">,</span>
+    <span class="p">);</span>
+</pre></div>
+
+<p>And that's all, you'll be able to access from http://[hostname]:[port]/TimesApp/ or your custom domain using your web browser.</p>
+
+<h2>
+<a name="user-content-configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>The default administrator account is <strong>admin</strong> and password is <strong>admin</strong>. </p>
+
+<p><strong>Note:</strong> It's highly recommended to change it at first login for security reasons. Otherwise the minions may take control of the application! You don't want that to happen do you? ;)</p>
+
+<h3>
+<a name="user-content-settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h3>
+
+<h4>
+<a name="user-content-mail" class="anchor" href="#mail"><span class="octicon octicon-link"></span></a>Mail</h4>
+
+<p>In order to use some features, like sending invoices by email, or be able to reset your password, you need to configure the SMTP options of the app.
+You have to do this as administrator since you need to access the application Settings, Email tab.<br>
+Under “<strong>Email Options</strong>” you can configure Default Subject and Default message of your invoice Email. 
+You can always change those by the time you’re generating the invoice email.<br>
+Under “<strong>Smtp Settings</strong>” you have the following fields:</p>
+
+<ul class="task-list">
+<li>
+<strong>Email username:</strong> email address of SMTP sender, like <a href="mailto:noreply@yourdomain.com">noreply@yourdomain.com</a> , i.e. if you’re using gmail as SMTP, it would be <a href="mailto:emailaddress@gmail.com">emailaddress@gmail.com</a> .</li>
+<li>
+<strong>Email password:</strong> SMTP password of the email address you put as Email username.</li>
+<li>
+<strong>Email host:</strong> your SMTP host, if it uses ssl it must start with ssl://whatever.</li>
+<li>
+<strong>Email port:</strong> your SMTP port.</li>
+<li>
+<strong>Email sender:</strong> this is the email address that will appear as sender of the email. Note this is <strong>NOT</strong> the Email username of your SMTP.</li>
+</ul><p><strong>Note:</strong> Don’t forget to enable the php_openssl extension if you’re using a SSL SMTP. </p>
+
+<h4>
+<a name="user-content-security-optional" class="anchor" href="#security-optional"><span class="octicon octicon-link"></span></a>Security (optional)</h4>
+
+<p>TimesApp comes with two pairs of keys (salt &amp; seed) for encryption purpose but you can change it to one you feel more comfortable and secure.
+To do that edit the next lines located at <code>app/Config/core.php</code>.</p>
+
+<div class="highlight highlight-php"><pre><span class="sd">/**</span>
+<span class="sd"> * A random string used in security hashing methods.</span>
+<span class="sd"> */</span>
+    <span class="nx">Configure</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">'Security.salt'</span><span class="p">,</span> <span class="s1">'fc7f678b23asdf765as76d4f567asd442890df5e9f'</span><span class="p">);</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * A random numeric string (digits only) used to encrypt/decrypt strings.</span>
+<span class="sd"> */</span>
+    <span class="nx">Configure</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">'Security.cipherSeed'</span><span class="p">,</span> <span class="s1">'7682345634563456345981245'</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="user-content-help" class="anchor" href="#help"><span class="octicon octicon-link"></span></a>Help</h2>
+
+<p>If you have trouble setting up or using this app, please <a href="http://example.com" title="contact">contact us</a>.</p>
+</article>
+        </section>
+
+        <aside id="sidebar">
+          <a href="index.html" class="button">
+            <small>Download</small>
+            Get it now
+          </a>
+          <div id="nav">
+            <ul id="large-nav" class="side-nav">
+              <li><a href="#user-content-introduction">Introduction</a></li>
+              <li><a href="#user-content-requirements">Requirements</a></li>
+              <li><a href="#user-content-installation">Installation</a></li>
+              <li><a href="#user-content-configuration">Configuration</a>
+              </li>
+              <li><a href="#user-content-help">Help</a></li>
+            </ul>
+        </div>
+        </aside>
+      </div>
+    </div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  calpos();
+
+  $(window).resize(function() {
+    calpos();
+  });
+
+  $(window).scroll(function() {
+    
+    //Sticky Nav
+
+    var scroll = $(window).scrollTop();
+    var wrapper = $("body").offset().top;
+    var appendNav = wrapper + 237;
+
+    if (scroll >= appendNav) {
+        $("#sidebar").addClass("append"),
+        stag = true;
+    } else{
+        $("#sidebar").removeClass("append"),
+        stag = false;
+    }
+   
+});
+
+    function calpos(){
+      var left = $("#sidebar").offset().left;
+      $("#sidebar").css("left", left);
+    }
+
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+});
+
+});
+
+</script>
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-50921683-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
