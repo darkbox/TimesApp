@@ -154,6 +154,9 @@ $(document).ready(function(){
 
   $(window).resize(function() {
     calpos();
+    setTimeout(function() {
+    calpos();
+  }, 150);
   });
 
   $(window).scroll(function() {
