@@ -117,6 +117,8 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [ ] Agregar desplegables con los países
 - [ ] Personalizar excepciones (404, 502, etc)
 - [ ] Eliminar posibilidad de crear facturas a minion 
+- [ ] Meter efecto de scroll a la documentación 
+- [ ] Investigar por qué falla en chrome 
 
 ##TODO DOC LIST
 - [ ] Documentar descargas de la aplicación
