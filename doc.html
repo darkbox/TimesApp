@@ -24,7 +24,6 @@
         <a href="https://github.com/darkbox/TimesApp" class="button" style="color:#222"><small>View project on</small>GitHub</a>
       </div>
     </header>
-
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
@@ -34,8 +33,8 @@
 <p>A free and open source web application for tracking your time while working.</p>
 <p>Project status: <strong>In progress</strong></p>
 
-<h2>
-<a name="user-content-requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<h2 id="h2Requirements">
+<a name="user-content-requirements" class="anchor" href=""><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>In order to install TimesApp you'll need to accomplish some requirements:</p>
 
@@ -49,8 +48,8 @@
 </li>
 <li>Mysql database server</li>
 <li>SMTP server for mailing (You can use services like gmail)</li>
-</ul><h2>
-<a name="user-content-installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+</ul><h2 id="h2Installation">
+<a name="user-content-installation" class="anchor"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <ol class="task-list">
 <li><p>Download latest TimesApp from the <a href="http://darkbox.github.io/TimesApp/" title="download">release page</a>.</p></li>
@@ -72,18 +71,18 @@ TODO</p></li>
 
 <p>And that's all, you'll be able to access from http://[hostname]:[port]/TimesApp/ or your custom domain using your web browser.</p>
 
-<h2>
-<a name="user-content-configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+<h2 id="h2Configuration">
+<a name="user-content-configuration" class="anchor"><span class="octicon octicon-link"></span></a>Configuration</h2>
 
 <p>The default administrator account is <strong>admin</strong> and password is <strong>admin</strong>. </p>
 
 <p><strong>Note:</strong> It's highly recommended to change it at first login for security reasons. Otherwise the minions may take control of the application! You don't want that to happen do you? ;)</p>
 
 <h3>
-<a name="user-content-settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h3>
+<a name="user-content-settings" class="anchor"><span class="octicon octicon-link"></span></a>Settings</h3>
 
 <h4>
-<a name="user-content-mail" class="anchor" href="#mail"><span class="octicon octicon-link"></span></a>Mail</h4>
+<a name="user-content-mail" class="anchor"><span class="octicon octicon-link"></span></a>Mail</h4>
 
 <p>In order to use some features, like sending invoices by email, or be able to reset your password, you need to configure the SMTP options of the app.
 You have to do this as administrator since you need to access the application Settings, Email tab.<br>
@@ -105,7 +104,7 @@ Under “<strong>Smtp Settings</strong>” you have the following fields:</p>
 </ul><p><strong>Note:</strong> Don’t forget to enable the php_openssl extension if you’re using a SSL SMTP. </p>
 
 <h4>
-<a name="user-content-security-optional" class="anchor" href="#security-optional"><span class="octicon octicon-link"></span></a>Security (optional)</h4>
+<a name="user-content-security-optional" class="anchor"><span class="octicon octicon-link"></span></a>Security (optional)</h4>
 
 <p>TimesApp comes with two pairs of keys (salt &amp; seed) for encryption purpose but you can change it to one you feel more comfortable and secure.
 To do that edit the next lines located at <code>app/Config/core.php</code>.</p>
@@ -121,29 +120,28 @@ To do that edit the next lines located at <code>app/Config/core.php</code>.</p>
     <span class="nx">Configure</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">'Security.cipherSeed'</span><span class="p">,</span> <span class="s1">'7682345634563456345981245'</span><span class="p">);</span>
 </pre></div>
 
-<h2>
-<a name="user-content-help" class="anchor" href="#help"><span class="octicon octicon-link"></span></a>Help</h2>
+<h2 id="h2Help">
+<a name="user-content-help" class="anchor"><span class="octicon octicon-link"></span></a>Help</h2>
 
 <p>If you have trouble setting up or using this app, please <a href="http://example.com" title="contact">contact us</a>.</p>
 </article>
         </section>
-
-        <aside id="sidebar">
+          <aside id="sidebar">
           <a href="index.html" class="button">
             <small>Download</small>
             Get it now
           </a>
           <div id="nav">
             <ul id="large-nav" class="side-nav">
-              <li><a href="#user-content-introduction">Introduction</a></li>
-              <li><a href="#user-content-requirements">Requirements</a></li>
-              <li><a href="#user-content-installation">Installation</a></li>
-              <li><a href="#user-content-configuration">Configuration</a>
-              </li>
-              <li><a href="#user-content-help">Help</a></li>
+              <li><a id="aIntroduction" href="">Introduction</a></li>
+              <li><a id="aRequirements" href="">Requirements</a></li>
+              <li><a id="aInstallation" href="">Installation</a></li>
+              <li><a id="aConfiguration" href="">Configuration</a></li>
+              <li><a id="aHelp" href="">Help</a></li>
             </ul>
         </div>
         </aside>
+        
       </div>
     </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -151,7 +149,34 @@ To do that edit the next lines located at <code>app/Config/core.php</code>.</p>
 <script type="text/javascript">
   $(document).ready(function(){
     $("#sidebar").sticky({topSpacing:10});
+      $('#aRequirements').on('click', function(event){
+        event.preventDefault();
+        scrollToDiv("#h2Requirements");
+      });
+
+      $('#aInstallation').on('click', function(event){
+        event.preventDefault();
+        scrollToDiv("#h2Installation");
+      });
+
+      $('#aConfiguration').on('click', function(event){
+        event.preventDefault();
+        scrollToDiv("#h2Configuration");
+      });
+
+      $('#aHelp').on('click', function(event){
+        event.preventDefault();
+        scrollToDiv("#h2Help");
+      });
+
+
   });
+
+  function scrollToDiv(divId) {
+    $('html, body').animate({
+        scrollTop: $(divId).offset().top
+    }, 500);
+  }
 
 </script>
 <script type="text/javascript">
