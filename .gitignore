@@ -18,3 +18,6 @@ app/tmp/sessions/sess_422v5q8bgf528ie5uq37egfk86
 app/tmp/sessions/sess_qnhqif4go4n4tbj81757m0l7a7
 app/tmp/cache/models/myapp_cake_model_default_timesapp_clients
 app/tmp/cache/persistent/myapp_cake_core_cake_dev_es
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_es-es
+app/tmp/cache/persistent/myapp_cake_core_default_es-es
+app/tmp/cache/persistent/myapp_cake_core_cake_es-es

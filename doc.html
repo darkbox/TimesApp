@@ -147,61 +147,23 @@ To do that edit the next lines located at <code>app/Config/core.php</code>.</p>
       </div>
     </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="javascripts/jquery.sticky.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-
-  calpos();
-
-  $(window).resize(function() {
-    calpos();
-    setTimeout(function() {
-    calpos();
-  }, 150);
+  $(document).ready(function(){
+    $("#sidebar").sticky({topSpacing:10});
   });
 
-  $(window).scroll(function() {
-    
-    //Sticky Nav
-
-    var scroll = $(window).scrollTop();
-    var wrapper = $("body").offset().top;
-    var appendNav = wrapper + 237;
-
-    if (scroll >= appendNav) {
-        $("#sidebar").addClass("append"),
-        stag = true;
-    } else{
-        $("#sidebar").removeClass("append"),
-        stag = false;
-    }
-   
-});
-
-    function calpos(){
-      var left = $("#sidebar").offset().left;
-      $("#sidebar").css("left", left);
-    }
-
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
-    }, 500);
-    return false;
-});
-
-});
-
 </script>
-            <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-50921683-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-50921683-1");
+  pageTracker._trackPageview();
+  } catch(err) {}
+</script>
 
   </body>
 </html>
