@@ -116,13 +116,13 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Agregar desplegables con los países
 - [ ] Personalizar excepciones (404, 502, etc)
-- [ ] Eliminar posibilidad de crear facturas a minion 
-- [ ] Meter efecto de scroll a la documentación 
+- [x] Eliminar posibilidad de crear facturas a minion 
+- [x] Meter efecto de scroll a la documentación 
 - [ ] Investigar por qué falla en chrome 
 
 ##TODO DOC LIST
-- [ ] Documentar descargas de la aplicación
-- [ ] Configuración SMTP + SSL para el envío de emails
+- [x] Documentar descargas de la aplicación
+- [x] Configuración SMTP + SSL para el envío de emails
 - [ ] Expresiones regulares
 - [ ] Uso e instalación
 - [ ] Cuestiones de seguridad

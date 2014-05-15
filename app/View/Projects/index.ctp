@@ -72,15 +72,21 @@
 					?>&nbsp;</td>
 				<td class="action">
 					<?php 
-					$links = array(
-						$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $project['Project']['id']), array('escape' => false)),
-						$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $project['Project']['id']), array('escape' => false)),
-						$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $project['Project']['id']), array('action' => 'delete', $project['Project']['id']))
-					);
+					if($current_user['role'] == 'overlord'){
+						$links = array(
+							$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $project['Project']['id']), array('escape' => false)),
+							$this->Html->link('<i class="fi-pencil"></i> ' . __('Edit'), array('action' => 'edit', $project['Project']['id']), array('escape' => false)),
+							$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $project['Project']['id']), array('action' => 'delete', $project['Project']['id']))
+						);
 
-					// Es facturable?
-					if($project['Project']['billable'] == 1){
-						array_push($links, $this->Html->link('<i class="fi-plus"></i> ' . __('Invoice'), array('controller' => 'invoices','action' => 'add', $project['Project']['id']), array('escape' => false)));
+						// Es facturable?
+						if($project['Project']['billable'] == 1){
+							array_push($links, $this->Html->link('<i class="fi-plus"></i> ' . __('Invoice'), array('controller' => 'invoices','action' => 'add', $project['Project']['id']), array('escape' => false)));
+						}
+					}else{
+						$links = array(
+							$this->Html->link('<i class="fi-eye"></i> ' . __('View'), array('action' => 'view', $project['Project']['id']), array('escape' => false)),
+						);
 					}
 
 					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $project['Project']['id']); 
