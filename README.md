@@ -111,14 +111,15 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Repetir contraseña en perfil
 - [x] Añadir validación a añadir horas para que sea un número obligatoriamente
 - [x] Añadir longitud mínima a note de añadir horas
+- [x] Eliminar posibilidad de crear facturas a minion 
+- [x] Meter efecto de scroll a la documentación 
 - [ ] Obligar a cambiar la contraseña al primer uso (Admin)
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Agregar desplegables con los países
 - [ ] Personalizar excepciones (404, 502, etc)
-- [x] Eliminar posibilidad de crear facturas a minion 
-- [x] Meter efecto de scroll a la documentación 
-- [ ] Investigar por qué falla en chrome 
+
+
 
 ##TODO DOC LIST
 - [x] Documentar descargas de la aplicación
