@@ -37,7 +37,8 @@ class LoginController extends AppController {
 
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
-				if($this->request->data['User']['password']=='admin') {
+
+				if($this->request->data['User']['password'] === 'admin') {
 					$this->Session->write('defaultPassword', true);
 				}
 
@@ -54,6 +55,9 @@ class LoginController extends AppController {
 	 */
 	public function out(){
 		$this->Session->delete('defaultPassword');
+		if($this->Session->check('Message.dp')){
+			$this->Session->delete('Message.dp');
+		}
 		return $this->redirect($this->Auth->logout());
 	}
 

@@ -61,6 +61,10 @@ class UsersController extends AppController {
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
+				$this->Session->delete('defaultPassword');
+				if($this->Session->check('Message.dp')){
+					$this->Session->delete('Message.dp');
+				}
 				$this->Session->setFlash(__('Your profile has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
@@ -102,6 +106,10 @@ class UsersController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
+				$this->Session->delete('defaultPassword');
+				if($this->Session->check('Message.dp')){
+					$this->Session->delete('Message.dp');
+				}
 				$this->Session->setFlash(__('The user has been saved.'), 'flash_success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
