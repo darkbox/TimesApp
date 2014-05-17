@@ -8,10 +8,14 @@ if($current_user['role'] === 'overlord'){
     'taxes' => __('Presets'),
     'users' => __('Users'),
     );
-}else{ //minion
+}elseif($current_user['role'] === 'minion'){ //minion
   $menuItems = array(
     'dashboard' => __('Dashboard'),
     'projects' => __('Projects'),
+    );
+}else{
+   $menuItems = array(
+    'login' => __('Login'),
     );
 }
   $activeLink = $this->params['controller'];
