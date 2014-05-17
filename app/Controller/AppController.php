@@ -53,8 +53,9 @@ class AppController extends Controller {
             ),
 
         ),
-		'authorize' => array('Controller')
-		)
+		'authorize' => array('Controller'),
+		),
+		'Session'
 	);
 
 
@@ -70,6 +71,10 @@ class AppController extends Controller {
 		// Variable local accesibles en todas las vistas
 		$this->set('logged_in', $this->Auth->loggedIn());
 		$this->set('current_user', $this->Auth->user());
+		//Aviso de cambiar contraseña por defecto
+		if($this->Session->read('defaultPassword') == true) {
+			$this->Session->setFlash(__('We strongly recommend you to change default password <a href="'. Router::url(array('controller' => 'users', 'action' => 'profile')) . '">here</a>'), 'flash_info');
+		} 
 	}
 
 	/**
