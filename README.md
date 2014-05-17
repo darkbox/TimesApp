@@ -115,6 +115,7 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Meter efecto de scroll a la documentación
 - [x] Personalizar excepciones (404, 500)
 - [x] Advertir cambiar la contraseña al primer uso (Admin)
+- [x] Corregir days spent en view de Projects
 - [ ] Editar facturas cuando el estado es borrador
 - [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Agregar desplegables con los países
