@@ -73,7 +73,7 @@ class AppController extends Controller {
 		$this->set('current_user', $this->Auth->user());
 		//Aviso de cambiar contraseña por defecto
 		if($this->Session->read('defaultPassword')){
-			$defaultPasswordMessage = __('We strongly recommend you to change default password' ) . '<a href="' . Router::url(array('controller' => 'users', 'action' => 'profile')) . '">here</a>';
+			$defaultPasswordMessage = __('We strongly recommend you to change default password ' ) . '<a href="' . Router::url(array('controller' => 'users', 'action' => 'profile')) . '">here</a>';
 			$this->Session->setFlash($defaultPasswordMessage, 'flash_info', array(), 'dp');
 		} 
 	}

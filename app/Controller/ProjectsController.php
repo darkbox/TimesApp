@@ -82,7 +82,19 @@ class ProjectsController extends AppController {
 
 		if($project['Project']['init_date'] != 0 && $project['Project']['deadline'] != 0){
 			$daysLeft = $this->countDaysBetween($project['Project']['init_date'], $project['Project']['deadline']);
-			$daysSpent = $this->countDaysBetween($project['Project']['init_date'], date('Y-m-d', strtotime("now")));
+			$initDate = $project['Project']['init_date'];
+			$deadlineDate = $project['Project']['deadline'];
+			$currentDate = date('Y-m-d');
+
+			if($currentDate>=$initDate) {
+				if($currentDate>$deadlineDate) {
+					$daysSpent = $this->countDaysBetween($project['Project']['init_date'], $project['Project']['deadline']);
+				} else {
+					$daysSpent = $this->countDaysBetween($project['Project']['init_date'], date('Y-m-d', strtotime("now")));
+				}
+			} else {
+				$daysSpent = 0;
+			}
 		}
 
 		$this->set('daysLeft', $daysLeft);

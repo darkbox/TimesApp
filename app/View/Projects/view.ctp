@@ -18,6 +18,7 @@
 			<!-- Contenido -->
 			<section class="row">
 				<div class="large-3 columns">
+					Days left, spent
 					<script type="text/javascript">
 						$(document).ready(function(){
 								var data = [
@@ -35,8 +36,8 @@
 						});
 						</script>
 					<center>
-						<span style="position: absolute; top: 80px; left: 110px"><?php echo $daysLeft; ?> <span style="font-size: 0.7em">left</span></span>
-						<span style="position: absolute; top: 100px; left: 110px"><?php echo $daysSpent; ?> <span style="font-size: 0.7em">spent</span></span>
+						<span style="position: absolute; top: 100px; left: 110px"><?php echo $daysLeft; ?> <span style="font-size: 0.7em">left</span></span>
+						<span style="position: absolute; top: 120px; left: 110px"><?php echo $daysSpent; ?> <span style="font-size: 0.7em">spent</span></span>
 					<canvas id="doughnut" height="200" width="200" data-type="Doughnut" style="width: 200px; height: 200px;">
 						
 					</canvas>
