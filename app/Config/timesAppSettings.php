@@ -1,7 +1,7 @@
 <?php return array (
   'companyName' => 'NoTime',
   'cif' => 'A-58818501',
-  'country' => 'España',
+  'country' => 'Spain',
   'stateProvince' => 'Córdoba',
   'address' => 'C. NoTimeLand nº1',
   'city' => 'Córdoba',

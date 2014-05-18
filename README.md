@@ -118,8 +118,8 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Advertir cambiar la contraseña al primer uso (Admin)
 - [x] Corregir days spent en view de Projects
 - [x] Cambiar estado a due en facturas cuando ha pasado el tiempo
-- [ ] Editar facturas cuando el estado es borrador
-- [ ] Agregar desplegables con los países
+- [x] Agregar desplegables con los países
+- [ ] Editar facturas cuando el estado es borrador 
 
 
 ##TODO DOC LIST
