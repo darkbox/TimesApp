@@ -57,6 +57,9 @@
 					 	case 4: // Paid
 					 		echo '<span class="success radius label" style="width: 100%; text-align: center">' . __('Paid') . '</span>';
 					 		break;
+					 	case 5: // Due
+					 		echo '<span class="alert radius label" style="width: 100%; text-align: center">' . __('Due') . '</span>';
+					 		break;
 					 	default: // unknown
 					 		echo '<span class="alert radius label" style="width: 100%; text-align: center">' . __('Unknown') . '</span>';
 					 		break;

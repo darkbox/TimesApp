@@ -40,12 +40,13 @@ public $default = array(
         'encoding' => 'utf8',
     );
 ```
+**Be sure** you have activated *Event scheduler status* to **ON** (root permissions to perform this action).
 
 
 And that's all, you'll be able to access from http://[hostname]:[port]/TimesApp/ or your custom domain using your web browser.
 
 ## Configuration
-The default administrator account is **admin** and password is **admin**. 
+The default administrator account is **admin@timesapp.com** and password is **admin**. 
 
 **Note:** It's highly recommended to change it at first login for security reasons. Otherwise the minions may take control of the application! You don't want that to happen do you? ;)
 
@@ -116,8 +117,8 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Personalizar excepciones (404, 500)
 - [x] Advertir cambiar la contraseña al primer uso (Admin)
 - [x] Corregir days spent en view de Projects
+- [x] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Editar facturas cuando el estado es borrador
-- [ ] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [ ] Agregar desplegables con los países
 
 

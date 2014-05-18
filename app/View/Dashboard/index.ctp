@@ -40,7 +40,7 @@ foreach ($projects as $value) {
 foreach ($invoices as $value) {
 	switch (intval($value['Invoice']['status'])) {
 		case 2: // due
-		case 3: // due
+		case 5: // due
 			$due++;
 			break;
 		case 4: // paid
