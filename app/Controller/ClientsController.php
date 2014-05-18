@@ -46,6 +46,10 @@ class ClientsController extends AppController {
     	    	'conditions' => array('Client.status' => 1)
     		);
     	}
+
+    	// Settings
+		$appSettings = include APP_SETTINGS;
+		$this->set('appSettings', $appSettings);
 		
 		$taxes = $this->Client->Tax->find('list');
 		$this->set(compact('taxes'));

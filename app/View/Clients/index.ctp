@@ -136,7 +136,7 @@
 					<select name="data[Client][country]">
 						<option value="">Pick a country</option>
 			        	<?php foreach ($country_array as $key => $country): ?>
-							<option value="<?php echo $country ?>"><?php echo $country ?></option>
+							<option value="<?php echo $country ?>" <?php if($country==$appSettings['country']) echo "selected" ?>><?php echo $country ?></option>
 			        	<?php endforeach ?>
 			        </select>
 				</label>
