@@ -2,7 +2,7 @@
 	$subtotal = 0;
 	$taxSubtotal = 0;
 
-	$statusLabel = array('draft', 'sent', 'due', 'partial', 'paid');
+	$statusLabel = array('draft', 'sent', 'due', 'partial', 'paid', 'due');
 ?>
 <style type="text/css">
 	.status-label{
