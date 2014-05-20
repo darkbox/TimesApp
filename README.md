@@ -116,11 +116,11 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Meter efecto de scroll a la documentación
 - [x] Personalizar excepciones (404, 500)
 - [x] Advertir cambiar la contraseña al primer uso (Admin)
-- [x] Corregir days spent en view de Projects
 - [x] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [x] Agregar desplegables con los países
 - [x] Etiquetas de estado mejoradas 
-- [ ] Editar facturas cuando el estado es borrador 
+- [ ] Editar facturas cuando el estado es borrador
+- [ ] Corregir days left en view de Projects (left actualmente no es left, es total) 
 
 
 ##TODO DOC LIST
@@ -131,4 +131,9 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [ ] Cuestiones de seguridad
 - [ ] Profundizar en la legislación
 
-
+##TODO PRESENTACIÓN
+- [ ] Abrir puertos necesarios en la red para enviar correos SMTP SSL
+- [ ] Preparar descargas móvil (avisar permitir aplicaciones de origen desconocido)
+- [ ] Preparar usuarios de los profesores (Minions)
+- [ ] Preparar un proyecto con muchas líneas (casos reales)
+- [ ] Documentar base de datos (esquemas y tal)
