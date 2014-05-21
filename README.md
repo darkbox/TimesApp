@@ -119,8 +119,8 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Cambiar estado a due en facturas cuando ha pasado el tiempo
 - [x] Agregar desplegables con los países
 - [x] Etiquetas de estado mejoradas 
-- [ ] Editar facturas cuando el estado es borrador
-- [ ] Corregir days left en view de Projects (left actualmente no es left, es total) 
+- [x] Corregir days left en view de Projects (left actualmente no es left, es total)
+- [ ] Editar facturas cuando el estado es borrador 
 
 
 ##TODO DOC LIST

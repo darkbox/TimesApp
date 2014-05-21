@@ -23,7 +23,7 @@
 						$(document).ready(function(){
 								var data = [
 							{
-								value: <?php if($daysLeft < 1){ echo 1; }else{ echo $daysLeft; } ?>,
+								value: <?php if($daysLeft < 1 && $daysSpent < 1){ $daysSpent = 1; echo $daysLeft; }else{ echo $daysLeft; } ?>,
 								color: "#4A4A4A"
 							},
 							{
