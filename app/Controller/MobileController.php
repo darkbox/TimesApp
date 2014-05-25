@@ -16,14 +16,24 @@ class MobileController extends AppController {
 
 /**
  * add method
+ * @return JSON response
  */
 	public function add(){
-		$this->layout = 'ajax';
-		$this->render('index');
+		$response = array();
 
 		$this->loadModel('Hour');
 		$this->Hour->create();
-		$this->Hour->save($this->request->data);
+		if($this->Hour->save($this->request->data)){
+			$response['success'] = 1;
+			$response['message'] = "Your time was saved";
+		}else{
+			$response['success'] = 0;
+			$response['message'] = "Oops! Wrong username or password";
+		}
+
+		$this->set('response', json_encode($response));
+		$this->layout = 'ajax';
+		$this->render('index');
 
 	}
 
