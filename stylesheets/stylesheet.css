@@ -185,6 +185,10 @@ aside a.button {
   background: transparent url(../images/doc-button.png) 0 0 no-repeat !important;
 }
 
+.android{
+  background: transparent url(../images/android-button.png) 0 0 no-repeat !important;
+}
+
 .append {
     position:fixed;
     top:48px;
