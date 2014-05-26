@@ -29,11 +29,16 @@ class XTCPDF extends TCPDF{
         $this->MultiCell(200,30,'<b>To</b> ' . '<b><br>' . $this->clientName . '</b><br>' . $this->clientAddress . '<br>' . 
         																				$this->clientCity . ' ' . $this->clientState . ' ' . $this->clientZipCode .
         																				'<br>' . $this->clientCountry, 0, 'L', false, 0, 15, 40, true, 0, true);
-        $this->MultiCell(130,30,'<b>From</b> ' . '<b><br>' . $this->companyName . '</b><br>' . $this->companyCountry, 0, 'L', false, 0, 110, 40, true, 0, true);
+        $this->MultiCell(130,30,'<b>From</b> ' . '<b><br>' . $this->companyName . "</b> " . $this->companyNIF . '<br>' . $this->companyAddress . '<br>' . $this->companyCity . " " . $this->companyState . " " . $this->companyZipCode . "<br>" . $this->companyCountry, 0, 'L', false, 0, 110, 40, true, 0, true);
 	}
 
-	public function setParameters($companyName = "", $companyCountry = "", $invoiceCode = "", $invoiceDate = "", $dueDate = "", $clientName = "", $clientAddress = "", $clientCity = "", $clientState = "", $clientZipCode = "", $clientCountry = "") {
+	public function setParameters($companyName = "", $companyNIF = "", $companyAddress = "", $companyCity = "", $companyState = "", $companyZipCode = "", $companyCountry = "", $invoiceCode = "", $invoiceDate = "", $dueDate = "", $clientName = "", $clientAddress = "", $clientCity = "", $clientState = "", $clientZipCode = "", $clientCountry = "") {
 		$this->companyName = $companyName;
+		$this->companyNIF = $companyNIF;
+		$this->companyAddress = $companyAddress;
+		$this->companyCity = $companyCity;
+		$this->companyState = $companyState;
+		$this->companyZipCode = $companyZipCode;
 		$this->companyCountry = $companyCountry;
 		$this->invoiceCode = $invoiceCode;
 		$this->invoiceDate = $invoiceDate;

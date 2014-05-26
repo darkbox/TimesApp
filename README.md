@@ -107,6 +107,7 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Cambiar tooltip de billed a billed en vez de active
 - [x] Revisar diversos mensajes
 - [x] Mejorar formato de emails
+- [x] Añadir datos faltantes al PDF
 - [x] Coger moneda de settings para mostrar en presets
 - [x] Select de currency_code y currency_symbol en settings e invoices
 - [x] Repetir contraseña en perfil
@@ -121,7 +122,6 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Etiquetas de estado mejoradas 
 - [x] Corregir days left en view de Projects (left actualmente no es left, es total)
 - [x] Respuesta del servidor al guardar tiempo con el cliente móvil
-- [ ] Añadir datos faltantes al PDF
 - [ ] Revisar el tamaño del gráfico de horas en dispositivos móviles
 - [ ] Editar facturas cuando el estado es borrador 
 

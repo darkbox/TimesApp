@@ -2,10 +2,11 @@
 App::import('Vendor','xtcpdf');
 
 $pdf = new XTCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-$pdf->setParameters($appSettings['companyName'], $appSettings['country'], $invoice['Invoice']['title'],
+$pdf->setParameters($appSettings['companyName'], $appSettings['cif'], $appSettings['address'], $appSettings['city'],
+					 $appSettings['stateProvince'], $appSettings['zipCode'], $appSettings['country'], $invoice['Invoice']['title'],
 					 $invoice['Invoice']['invoice_date'], $invoice['Invoice']['due_date'], $invoice['Client']['name'],
 					 $invoice['Client']['address'], $invoice['Client']['city'], $invoice['Client']['state'],
-					 $invoice['Client']['zip_code'], $invoice['Client']['city'], $invoice['Client']['country']);
+					 $invoice['Client']['zip_code'], $invoice['Client']['country']);
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
