@@ -7,9 +7,9 @@
 				<input type="password" id="password" pattern="pass" maxlength="25" name="data[User][password]" length="25" required>
 				</label>
 				<small class="error">
-					A password is required and must be valid.<br>
+					A password must be valid.<br>
 					* It must be 6 to 25 characters in length<br>
-					* It must contain characters in two or more of these groups: lower case, upper case, numbers, and punctuation.
+					* It must contain characters in three or more of these groups: lower case, upper case, numbers, and punctuation.
 				</small>
 			</div>
 			<div>

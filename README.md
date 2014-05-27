@@ -122,7 +122,7 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Etiquetas de estado mejoradas 
 - [x] Corregir days left en view de Projects (left actualmente no es left, es total)
 - [x] Respuesta del servidor al guardar tiempo con el cliente móvil
-- [ ] Revisar mensaje de cohtraseña inválida, son 3 o más, footer registrarse negro
+- [x] Revisar mensaje de cohtraseña inválida, son 3 o más, footer registrarse negro
 - [ ] Revisar el tamaño del gráfico de horas en dispositivos móviles
 - [ ] Editar facturas cuando el estado es borrador 
 

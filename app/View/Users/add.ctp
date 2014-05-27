@@ -27,7 +27,9 @@
 			<label><?php echo __('Password'); ?> <small>required</small>
 				<input type="password" name="data[User][password]" pattern="pass" maxlength="25" id="UserPassword" required="required" />
 			</label>
-			<small class="error">A password is required and must have at least 3 lowercase letter, 2 uppercase letter, 1 special case letter, and 2 digit. The length should be greater than 8 characters.</small>
+			<small class="error">A password must be valid.<br>
+									* It must be 6 to 25 characters in length<br>
+									* It must contain characters in three or more of these groups: lower case, upper case, numbers, and punctuation.</small>
 		</div>
 		<div class="row">
 			<div class="medium-6 large-6 columns">
