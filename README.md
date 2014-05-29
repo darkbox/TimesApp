@@ -46,7 +46,7 @@ public $default = array(
 And that's all, you'll be able to access from http://[hostname]:[port]/TimesApp/ or your custom domain using your web browser.
 
 ## Configuration
-The default administrator account is **admin@timesapp.com** and password is **admin**. 
+The default administrator account is **admin@timesapp.com** and password is **Admin1234**. 
 
 **Note:** It's highly recommended to change it at first login for security reasons. Otherwise the minions may take control of the application! You don't want that to happen do you? ;)
 
