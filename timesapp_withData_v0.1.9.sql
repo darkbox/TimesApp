@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 18, 2014 at 09:53 AM
+-- Generation Time: May 29, 2014 at 06:01 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `hours` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `hours`
@@ -103,7 +103,14 @@ INSERT INTO `hours` (`id`, `project_id`, `service_id`, `user_id`, `hours`, `bill
 (24, 2, 1, 1, '0.01', 1, 'fjcdgcghcg', '2014-05-02 18:50:58', '2014-05-02 18:50:58'),
 (25, 1, 1, 1, '0.03', 1, 'fjcdgcghcggdkdbdjdhd\n\n', '2014-05-02 18:52:12', '2014-05-02 18:52:12'),
 (26, 6, 2, 1, '0.95', 1, 'perforando lateral', '2014-05-03 11:28:19', '2014-05-03 11:28:19'),
-(27, 6, 2, 1, '3.77', 1, 'Perforaciones, limpiando vértices', '2014-05-03 13:01:11', '2014-05-03 13:01:11');
+(27, 6, 2, 1, '3.77', 1, 'Perforaciones, limpiando vértices', '2014-05-03 13:01:11', '2014-05-03 13:01:11'),
+(28, 2, 1, 1, '0.02', 1, 'Probando mensajes de respuesta', '2014-05-25 09:08:32', '2014-05-25 09:08:32'),
+(29, 2, 1, 1, '0.00', 1, 'Mi nota', '2014-05-25 09:15:04', '2014-05-25 09:15:04'),
+(30, 2, 1, 1, '0.00', 1, 'Mi nota', '2014-05-25 09:15:11', '2014-05-25 09:15:11'),
+(31, 2, 1, 1, '0.01', 1, 'Mi nota', '2014-05-25 09:17:19', '2014-05-25 09:17:19'),
+(32, 2, 1, 1, '0.02', 1, 'Mi nota', '2014-05-25 09:17:58', '2014-05-25 09:17:58'),
+(33, 1, 1, 1, '0.04', 1, 'Mi nota', '2014-05-25 09:19:28', '2014-05-25 09:19:28'),
+(34, 2, 1, 1, '0.02', 1, 'djdhdhv\nfjdhcfjcgg\ngjfjfk', '2014-05-25 09:37:16', '2014-05-25 09:37:16');
 
 -- --------------------------------------------------------
 
