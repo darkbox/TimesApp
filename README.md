@@ -131,13 +131,13 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Documentar descargas de la aplicación
 - [x] Configuración SMTP + SSL para el envío de emails
 - [ ] Expresiones regulares
-- [ ] Uso e instalación
-- [ ] Cuestiones de seguridad
-- [ ] Profundizar en la legislación
+- [x] Uso e instalación
+- [x] Cuestiones de seguridad
+- [x] Profundizar en la legislación
 
 ##TODO PRESENTACIÓN
 - [ ] Abrir puertos necesarios en la red para enviar correos SMTP SSL
 - [x] Preparar descargas móvil (avisar permitir aplicaciones de origen desconocido)
 - [ ] Preparar usuarios de los profesores (Minions)
 - [ ] Preparar un proyecto con muchas líneas (casos reales)
-- [ ] Documentar base de datos (esquemas y tal)
+- [x] Documentar base de datos (esquemas y tal)
