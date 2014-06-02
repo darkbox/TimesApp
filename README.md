@@ -124,13 +124,15 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Respuesta del servidor al guardar tiempo con el cliente móvil
 - [x] Revisar mensaje de cohtraseña inválida, son 3 o más, footer registrarse negro
 - [ ] Revisar el tamaño del gráfico de horas en dispositivos móviles
+- [ ] Revisar menu del engranaje, cuando está muy abajo en la tabla se mete por dentro en lugar de por encima.
+- [ ] Al eliminar factura, cuando sale la confirmación, que pille el número completo de la factura.
 - [ ] Editar facturas cuando el estado es borrador 
 
 
 ##TODO DOC LIST
 - [x] Documentar descargas de la aplicación
 - [x] Configuración SMTP + SSL para el envío de emails
-- [ ] Expresiones regulares
+- [x] Expresiones regulares
 - [x] Uso e instalación
 - [x] Cuestiones de seguridad
 - [x] Profundizar en la legislación
