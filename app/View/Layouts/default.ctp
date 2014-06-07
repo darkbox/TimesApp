@@ -22,6 +22,11 @@
 	?>
 </head>
 <body>
+	<style>
+		.page-wrapper {
+			padding-bottom: 100px;
+		}
+	</style>
 	<!-- Header -->
 	<header class="top-bar-wrapper">
 	    <div class="row">
