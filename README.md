@@ -125,8 +125,8 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Revisar mensaje de cohtraseña inválida, son 3 o más, footer registrarse negro
 - [x] Editar servicios, impuestos y productos; estado (desplegable)
 - [x] No cargan los servicios/productos al editar una factura
-- [ ] Revisar el tamaño del gráfico de horas en dispositivos móviles
-- [ ] Revisar menu del engranaje, cuando está muy abajo en la tabla se mete por dentro en lugar de por encima.
+- [x] Revisar el tamaño del gráfico de horas en dispositivos móviles
+- [x] Revisar menu del engranaje, cuando está muy abajo en la tabla se mete por dentro en lugar de por encima.
 - [x] Al eliminar factura, cuando sale la confirmación, que pille el número completo de la factura.
 - [x] Editar facturas cuando el estado es borrador 
 - [x] Editar facturas eliminar linea producto no funciona
