@@ -164,11 +164,17 @@ class InvoicesController extends AppController {
 			throw new NotFoundException(__('Invalid invoice'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Invoice->save($this->request->data)) {
-				$this->Session->setFlash(__('The invoice has been saved.'), 'flash_success');
-				return $this->redirect(array('action' => 'index'));
+			// borra las lineas antes de guardar
+			if($this->Invoice->Line->deleteAll(array('Line.invoice_id' => $this->request->data['Invoice']['id']), false)){
+				// Guarda los cambios
+				if ($this->Invoice->saveAll($this->request->data)) {
+					$this->Session->setFlash(__('The invoice has been saved.'), 'flash_success');
+					return $this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
+				}
 			} else {
-				$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
+					$this->Session->setFlash(__('The invoice could not be saved. Please, try again.'), 'flash_danger');
 			}
 		} else {
 			$options = array('conditions' => array('Invoice.' . $this->Invoice->primaryKey => $id));

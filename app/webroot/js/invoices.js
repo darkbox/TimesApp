@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 	var index = 0;
 	initRemoveButtons('#tableServiceLine');
+	initRemoveButtons('#tableProductLine');
+
 
 	$(".accordion").on("click", "a", function (event) {
        $(".accordion").find(".content").slideToggle("fast");
