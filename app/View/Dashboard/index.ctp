@@ -109,7 +109,7 @@ foreach ($hours as $hour) {
 	</div>
 </div>
 <div class="row">
-	<div class="large-6 columns">
+	<div class="large-6 columns columns hide-for-small-only">
 		<?php echo $this->element('tiles/lines', array('hoursByMonth' => $hoursByMonth)); ?>
 	</div>
 	<div class="large-6 columns">
