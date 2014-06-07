@@ -143,6 +143,6 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 ##TODO PRESENTACIÓN
 - [ ] Abrir puertos necesarios en la red para enviar correos SMTP SSL
 - [x] Preparar descargas móvil (avisar permitir aplicaciones de origen desconocido)
-- [ ] Preparar usuarios de los profesores (Minions)
+- [x] Preparar usuarios de los profesores (Minions)
 - [ ] Preparar un proyecto con muchas líneas (casos reales)
 - [x] Documentar base de datos (esquemas y tal)
