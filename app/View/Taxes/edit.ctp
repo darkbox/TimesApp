@@ -15,16 +15,31 @@
 				</ul>
 			</section>
 			<div class="taxes form">
-			<?php echo $this->Form->create('Tax'); ?>
-
-				<?php
-					echo $this->Form->input('id');
-					echo $this->Form->input('description');
-					echo $this->Form->input('status');
-					echo $this->Form->input('rate');
-				?>
+			<form id="editTaxForm" method="post" action="<?php echo Router::url(array('controller' => 'taxes', 'action' => 'edit', $this->request->data['Tax']['id'])); ?>" data-abide>
+				<input type="hidden" name="data[Tax][id]" value="<?php echo $this->request->data['Tax']['id'] ?>">
+				<div>
+					<label><?php echo __('Description'); ?> <small>required</small>
+						<input type="text" name="data[Tax][description]" value="<?php echo $this->request->data['Tax']['description'] ?>" required>
+					</label>
+					<small class="error">Description is required and must be a string.</small>
+				</div>
+				<div>
+					<label><?php echo __('Status'); ?> <small>required</small>
+						<select name="data[Tax][status]" data-invalid required>
+							<option value="1" <?php if($this->request->data['Tax']['status'] > 0) echo 'selected'; ?> ><?php echo __('Active'); ?></option>
+							<option value="0" <?php if($this->request->data['Tax']['status'] < 1) echo 'selected'; ?> ><?php echo __('Inactive'); ?></option>
+						</select>
+					</label>
+					<small class="error">Status is required.</small>
+				</div>
+				<div>
+					<label><?php echo __('Rate'); ?> <small>required</small>
+						<input type="number" name="data[Tax][rate]" value="<?php echo $this->request->data['Tax']['rate'] ?>" required>
+					</label>
+					<small class="error">Rate is required and must be a number.</small>
+				</div>
 			<input type="submit" class="button tiny radius success" value="<?php echo __('Save changes') ?>" />
-			<?php echo $this->Form->end(); ?>
+			</form>
 			</div>
 			</div>
 		</div>
