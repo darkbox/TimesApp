@@ -14,6 +14,7 @@
 			<!-- Contenido -->
 			<div class="invoices form">
 			<form action="<?php echo Router::url(array('controller' => 'invoices', 'action' => 'edit', $this->request->data['Invoice']['id'])); ?>" id="InvoiceEditForm" method="post" accept-charset="utf-8" data-abide>
+				<input type="hidden" name="data[Invoice][id]" value="<?php echo  $this->request->data['Invoice']['id'] ?>">
 				<div style="display:none;"><input name="_method" value="POST" type="hidden"></div>
 			<!-- Formulario básico -->	
 			<div class="row">

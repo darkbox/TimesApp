@@ -179,8 +179,12 @@ class InvoicesController extends AppController {
 		$projects = $this->Invoice->Project->find('list');
 		$clients = $this->Invoice->Client->find('list', $options);
 		$this->loadModel('Tax');
+		$this->loadModel('Service');
+		$this->loadModel('Product');
 		$taxes = $this->Tax->find('all', $options);
-		$this->set(compact('projects', 'clients'));
+		$services = $this->Service->find('list', $options);
+		$products = $this->Product->find('list', $options);
+		$this->set(compact('projects','services', 'products', 'clients'));
 		$this->set('taxes', $taxes);
 	}
 

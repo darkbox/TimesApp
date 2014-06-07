@@ -123,6 +123,8 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Corregir days left en view de Projects (left actualmente no es left, es total)
 - [x] Respuesta del servidor al guardar tiempo con el cliente móvil
 - [x] Revisar mensaje de cohtraseña inválida, son 3 o más, footer registrarse negro
+- [ ] Editar servicios estado (desplegable)
+- [x] No cargan los servicios/productos al editar una factura
 - [ ] Revisar el tamaño del gráfico de horas en dispositivos móviles
 - [ ] Revisar menu del engranaje, cuando está muy abajo en la tabla se mete por dentro en lugar de por encima.
 - [ ] Al eliminar factura, cuando sale la confirmación, que pille el número completo de la factura.
