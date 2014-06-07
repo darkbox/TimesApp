@@ -81,7 +81,7 @@
 
 					if($invoice['Invoice']['status'] < 1){
 						$links[] = 
-							$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete # %s?', $invoice['Invoice']['id']), array('action' => 'delete', $invoice['Invoice']['id']));
+							$this->Fn5->confirmModal(__('Delete'), '<i class="fi-trash"></i> ' . __('Delete'),__('Are you sure you want to delete the invoice #%s?', $invoice['Invoice']['title']), array('action' => 'delete', $invoice['Invoice']['id']));
 					}
 
 					echo $this->Fn5->dropdownButton('<i class="fi-widget"></i> ', $links, $invoice['Invoice']['id']); 
