@@ -2,6 +2,14 @@
 	$currency_symbol = array("", "$", "€", "£", "¥");
 	$currency_code = array("", "USD", "EUR", "GBP", "JPY", "AUD", "CAD", "BRL", "CZK", "DKK", "HKD", "HUF", "ILS", "MYR", "MXN", "NZD", "NOK", "PHP", "PLN", "SGD", "SEK", "CHF", "TWD", "HTB");
 ?>
+<style>
+	#notify-service, #notify-product {
+		position: absolute;
+		top: 175px;
+		left: 320px;
+		display: none;
+	}
+</style>
 <div class="page-wrapper">
 	<div class="row">
 		<div class="large-12 medium-12 columns">
@@ -246,6 +254,7 @@
 			</label>
 		</div>
 	</div>
+	<div id="notify-service">Line added</div>
 	<a href="#" class="button tiny success radius right" id="btnInsertService"><?php echo __('Insert') ?></a>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>
@@ -264,6 +273,7 @@
 			</label>
 		</div>
 	</div>
+	<div id="notify-product">Line added</div>
 	<a href="#" class="button tiny success radius right" id="btnInsertProduct"><?php echo __('Insert') ?></a>
 	<a class="close-reveal-modal">&#215;</a> 
 </div>

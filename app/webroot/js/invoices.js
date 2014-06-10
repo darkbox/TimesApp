@@ -17,6 +17,9 @@ $(document).ready(function(){
 		if(service != undefined){
 			if(service.val() != undefined){
 				addLineService(table, service.val());
+				var notify = $('#notify-service');
+				notify.fadeIn("fast");
+				notify.fadeOut("slow");
 				console.log('Service inserted');
 			}else{
 				console.log('Service not valid');
@@ -33,6 +36,9 @@ $(document).ready(function(){
 		if(product != undefined){
 			if(product.val() != undefined){
 				addLineProduct(table, product.val());
+				var notify = $('#notify-product');
+				notify.fadeIn("fast");
+				notify.fadeOut("slow");
 				console.log('Product inserted');
 			}else{
 				console.log('Product not valid');
