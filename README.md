@@ -130,7 +130,10 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Al eliminar factura, cuando sale la confirmación, que pille el número completo de la factura.
 - [x] Editar facturas cuando el estado es borrador 
 - [x] Editar facturas eliminar linea producto no funciona
-
+- [ ] Mostrar añadido de productos y servicios en facturas.
+- [ ] En pagos, eliminar el link de añadir pagos.
+- [ ] En pagos, poner como tope a pagar lo que falta por pagar de la factura.
+- [ ] En payments, corregir que el campo fecha muestre error al elegir una (quitando el focus del campo al elegir una) 
 
 ##TODO DOC LIST
 - [x] Documentar descargas de la aplicación
