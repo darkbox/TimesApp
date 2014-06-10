@@ -149,3 +149,4 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] Preparar usuarios de los profesores (Minions)
 - [ ] Preparar un proyecto con muchas líneas (casos reales)
 - [x] Documentar base de datos (esquemas y tal)
+- [ ] Hacer presentación para introducir y dar una vista global de las herramientas usadas para el proyecto 
