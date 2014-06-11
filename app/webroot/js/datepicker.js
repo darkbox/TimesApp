@@ -61,5 +61,9 @@ $('#dpDueDate').Zebra_DatePicker({
 
 $('#dpPaymentDate').Zebra_DatePicker({
   show_icon: false,
-  offset: [-300, -5]
+  offset: [-300, -5],
+  
+  onSelect: function() {
+    $('#dpPaymentDate').blur();
+  }
 });
