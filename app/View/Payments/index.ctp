@@ -5,7 +5,6 @@
 				<ul>
 				<li><?php echo $this->Html->link(__('Invoices'), array('controller' => 'invoices', 'action' => 'index')); ?></li>
 				<li class="current"><a href=""><?php echo __('Payments'); ?></a></li>
-				<li><?php echo $this->Html->link(__('Add Payment'), array('controller' => 'payments', 'action' => 'add')); ?> </li>
 				</ul>
 			</nav>
 		</div>
