@@ -3,8 +3,6 @@
 
 A free and open source web application for tracking your time while working.
 
-Project status: **In progress**
-
 Project website: [http://darkbox.github.io/TimesApp/](http://darkbox.github.io/TimesApp/)
 
 
