@@ -31,7 +31,16 @@ $(document).foundation({
             } else {
                 return false;
             }
-        }
+        },
+		maxThan: function(el, required, parent) {
+			var amount = $('#amountMax');
+			if(amount.val()>0 && amount.val()<=amount.attr('max')) {
+				
+				return true;
+			}
+			
+			return false;
+		}
     }
   }
 });
