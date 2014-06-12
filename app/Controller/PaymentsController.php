@@ -41,7 +41,7 @@ class PaymentsController extends AppController {
 		$this->set('payments', $this->Paginator->paginate());
 
 		$options = array('conditions' => 
-			array('status' => array(1, 2, 3))
+			array('status' => array(1, 3, 5))
 		);
 
 		$invoices = $this->Payment->Invoice->find('list', $options);
@@ -96,7 +96,7 @@ class PaymentsController extends AppController {
 		}
 
 		$options = array('conditions' => 
-			array('status' => array(1, 2, 3))
+			array('status' => array(1, 3, 5))
 		);
 
 		$invoices = $this->Payment->Invoice->find('list', $options);
@@ -122,4 +122,36 @@ class PaymentsController extends AppController {
 			$this->Session->setFlash(__('The payment could not be deleted. Please, try again.'), 'flash_danger');
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+
+/**
+ * getAmountByInvoice method
+ *
+ * @return void
+ */
+	public function getAmountByInvoice() {
+		$this->layout = 'ajax';
+		$id = $this->request->data('idInvoice');
+		
+		$options = array(
+			'conditions' => array(
+				'Invoice.id' => $id,
+				),
+			);
+		$invoiceById = $this->Payment->Invoice->find('first', $options);
+		
+		if($invoiceById['Invoice']['due'] > 0) {
+			$amount = $invoiceById['Invoice']['due'];
+		} else {
+			$amount = $invoiceById['Invoice']['amount'];
+		}
+		
+		$currency = $invoiceById['Invoice']['currency_symbol'];
+		if($invoiceById['Invoice']['currency_code']) {
+			$currency .= "(" . $invoiceById['Invoice']['currency_code'] . ")";
+		}
+			
+		$this->set('amount', $amount);
+		$this->set('currency', $currency);
+	}
+}
