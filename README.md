@@ -132,7 +132,8 @@ If you have trouble setting up or using this app, please [contact us](http://exa
 - [x] En pagos, eliminar el link de añadir pagos.
 - [x] En pagos, poner como tope a pagar lo que falta por pagar de la factura.
 - [x] En payments, corregir que el campo fecha muestre error al elegir una (quitando el focus del campo al elegir una)
-- [ ] Url añadir líneas con routes 
+- [ ] Url añadir líneas con routes
+- [ ] Url show clients inactivos con routes
 
 
 ##TODO DOC LIST
