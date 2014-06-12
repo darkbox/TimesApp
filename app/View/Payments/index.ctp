@@ -59,7 +59,7 @@
 		<div class="row">
 		<div class="medium-6 large-6 columns">
 			<label><?php echo __('Invoice') ?><small>Required</small>
-				<select name="data[Payment][invoice_id]" required>
+				<select name="data[Payment][invoice_id]" required id="invoicePayment">
 					<option value=""><?php echo __('Select an invoice') ?></option>
 					<?php foreach($invoices as $key => $invoice): ?>
 					<option value="<?php echo $key ?>"><?php echo $invoice ?></option>
@@ -68,7 +68,7 @@
 			</label>
 			<small class="error">Please, select an invoice.</small>
 		</div>
-		<div class="medium-6 large-6 columns">
+		<div class="medium-6 large-6 columns" id="divAmount">
 			<label><?php echo __('Amount') ?><small>Required</small>
 				<input type="number" step="any" min="0.01" name="data[Payment][amount]" placeholder="0.00" required>
 			</label>
@@ -93,3 +93,22 @@
 
 <?php echo $this->Html->script('zebra_datepicker'); ?>
 <?php echo $this->Html->script('datepicker'); ?>
+<script type="text/javascript">
+	$(function(){
+		$('#invoicePayment').change(function(){
+			if( $(this).val() === "" ) {
+				return false;
+			}
+
+			$.ajax({
+				type: "POST",
+				url: "<?php echo Router::url(array('controller' => 'payments', 'action' => 'getAmountByInvoice')); ?>",
+				data: "idInvoice=" + $(this).val(),
+				success: function(datos){
+					$('#divAmount').empty();
+					$('#divAmount').html(datos);
+				}
+			});
+		});
+	});
+</script>
