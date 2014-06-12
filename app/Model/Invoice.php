@@ -61,10 +61,12 @@ class Invoice extends AppModel {
 		}
 
 		// billable
-		if($this->data['Project']['display_country'] == 'on')
-			$this->data['Project']['display_country'] = true;
-		else
-			$this->data['Project']['display_country'] = false;
+		if(!empty($this->data['Project']['display_country'])){
+			if($this->data['Project']['display_country'] == 'on')
+				$this->data['Project']['display_country'] = true;
+			else
+				$this->data['Project']['display_country'] = false;
+		}
 		return true;
 	}
 
