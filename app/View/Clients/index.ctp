@@ -150,13 +150,13 @@
 		<div class="row">
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Phone number'); ?>
-					<input type="number" name="data[Client][phone_number]">
+					<input type="text" name="data[Client][phone_number]">
 				</label>
 				<small class="error">Phone number must be a number.</small>
 			</div>
 			<div class="medium-6 large-6 columns">
 				<label><?php echo __('Mobile number'); ?>
-					<input type="number" name="data[Client][mobile_number]">
+					<input type="text" name="data[Client][mobile_number]">
 				</label>
 				<small class="error">Mobile number must be a number.</small>
 			</div>
