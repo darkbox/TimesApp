@@ -203,4 +203,19 @@
 	</div>
 	<a class="close-reveal-modal">&#215;</a>
 </div>
-<?php echo $this->Html->script('listClients'); ?>
+<script type="text/javascript">
+$(function() {
+    var listClients = $('#listClients');
+    var URLBase = "<?php echo Router::url(array('controller' => 'clients', 'action' => 'index')); ?>";
+    $('#showInactiveUsers').on('click', function() {
+        
+        if($(this).prop('checked')==true) {
+            window.location.href= URLBase + '?var=true';
+        } else {
+            window.location.href= URLBase + '?var=false';
+        }
+        
+    });
+});
+</script>
+
