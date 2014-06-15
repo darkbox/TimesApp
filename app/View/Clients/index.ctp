@@ -193,7 +193,7 @@
 		</div>
 		<div class="row">
 			<div class="medium-6 large-6 column">
-				<label><?php echo __('Vat number'); ?>
+				<label><?php echo __('CIF, NIF or equivalent'); ?>
 					<input type="text" name="data[Client][vat_number]">
 				</label>
 			</div>
