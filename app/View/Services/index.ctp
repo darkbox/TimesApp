@@ -33,7 +33,7 @@
 				<td><?php echo h($service['Service']['code']); ?>&nbsp;</td>
 				<td><?php echo h($service['Service']['description']); ?>&nbsp;</td>
 				<td><?php echo $this->Fn5->drawStatus($service['Service']['status']); ?>&nbsp;</td>
-				<td><?php echo number_format(h($service['Service']['rate']), 2) . " " . $appSettings['currency_symbol']; ?>&nbsp;</td>
+				<td><?php echo number_format(h($service['Service']['rate']), 2) . "" . $appSettings['currency_symbol']; ?>&nbsp;</td>
 				<td class="action">
 					<?php 
 					$links = array(
