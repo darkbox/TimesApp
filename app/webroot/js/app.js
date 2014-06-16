@@ -34,11 +34,9 @@ $(document).foundation({
         },
 		maxThan: function(el, required, parent) {
 			var amount = $('#amountMax');
-			if(amount.val()>0 && amount.val()<=amount.attr('max')) {
-				
+      if (amount.val() > 0 && Math.round(amount.val() * 100) <= Math.round(amount.attr('max') * 100)){
 				return true;
 			}
-			
 			return false;
 		}
     }
